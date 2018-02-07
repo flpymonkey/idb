@@ -1,10 +1,10 @@
 .DEFAULT_GOAL := run
 
 FILES :=             \
-	hello.py
+	app/main.py
 
 run:
-	python3 hello.py
+	python3 app/main.py
 
 clean:
 	rm -rf __pycache__
