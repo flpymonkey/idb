@@ -1,0 +1,12 @@
+.title {
+	background-color: red;
+	font-size: 30px;
+}
+
+nav {
+	display: block;
+}
+
+ul {
+	display: block;
+}
