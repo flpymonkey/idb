@@ -8,3 +8,14 @@ run:
 
 clean:
 	rm -rf __pycache__
+
+docker:
+	docker build -t natphoto .
+
+serve: docker
+	docker run -d --name natphoto_run --restart=always -p 80:80 -t natphoto
+
+halt:
+	docker kill natphoto_run
+	docker rm   natphoto_run
+
