@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+	display: block;
+	width: 100%;
+}
+
+ul {
+  display: block;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  font-family: fantasy;
+  font-style: italic;
+  
+}
+
+#logo {
+  float:left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+header {
+  text-align: center;
+}
+
+article {
+  text-align: right;
+}
+
+footer {
+  bottom: 0;
+  margin: 0px 5px 5px 150px;
+}
+
+.left {
+  display: block;
+  float: left;
+}
+
+.right {
+  display: block;
+  float: right;
+}
