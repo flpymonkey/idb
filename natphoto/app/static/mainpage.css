@@ -1,20 +1,29 @@
 div.desc {
-	/*display: inline;
-	margin: auto;
-	width: auto;
-	text-align: center;*/
 	display: table-cell;
   align-items: center;
 	vertical-align: middle;
 	width: 30%;
+	padding-right: 20px;
+}
+
+.textWrapper {
+	padding-bottom: 10%;
+}
+
+body {
+	background-color: #262626;
 }
 
 .title {
 	text-align: center;
 	font-size: 50px;
 	display: block;
-	/*align-items: center;
-	justify-content: center*/
+	font-family: Ahem!, sans-serif;
+	border-radius: 25px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+	color: #EAEAEA;
 }
 
 .container {
@@ -23,17 +32,22 @@ div.desc {
 }
 
 div#myCarousel.carousel.slide {
-	margin: 1.5% 0% 0% 1%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: 2.5%;
 	width: 95%;
 }
 
 p {
+	font-family: Ahem!, sans-serif;
+	font-size: large;
 	display: table-cell;
 	text-align: center;
 	padding: 0px 20px 0px 20px;
 	vertical-align: center;
 	height: auto;
 	width: auto;
+	color: #EAEAEA;
 }
 
 * {
@@ -51,7 +65,7 @@ ul {
   list-style-type: none;
   overflow: hidden;
   list-style-type: none;
-  background-color: #333;
+	background-color: black;
 }
 
 li {
@@ -63,8 +77,8 @@ li a {
   color: white;
   text-align: center;
   padding: 14px 16px;
-	font-family: fantasy;
-	font-style: italic;
+	font-family: Ahem!, sans-serif;
+	font-size: large;
 }
 
 #logo {
@@ -74,20 +88,61 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+	font-family: Ahem!, sans-serif;
+	font-size: large;
 }
 
 li a:hover {
-  background-color: #111;
+	color: #009D00;
+	text-decoration: none;
 }
 
 .carousel {
 	width: 100%;
 	height: 100%;
-	position: inline;
+	position: relative;
+	border: 1px solid #E6E6E6;
 }
 
 
 #myCarousel {
 	display: inline;
 	float:left;
+}
+
+.typeicons {
+	align-content: center;
+	padding-top: 7%;
+	align: center;
+	padding-left: 22%;
+}
+
+#mountains {
+	color: #EAEAEA;
+	font-size: 50px;
+	text-align: center;
+	align: center;
+	padding: 0px 10px 0px 10px;
+}
+
+#cam {
+	color: #EAEAEA;
+	font-size: 50px;
+	text-align: center;
+	align: center;
+	padding: 0px 10px 0px 10px;
+}
+
+#photos {
+	color: #EAEAEA;
+	font-size: 50px;
+	text-align: center;
+	align: center;
+	padding: 0px 10px 0px 10px;
+}
+
+.carousel {
+  width:640px;
+  height:600px;
+	overflow: hidden;
 }
