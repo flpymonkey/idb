@@ -1,0 +1,16 @@
+six>=1.5.2
+requests>=2.2.1
+requests_oauthlib>=0.4.0
+requests_toolbelt>=0.3.1
+
+[docs]
+sphinx >= 1.5.1
+
+[qa]
+flake8
+
+[test]
+mock;python_version<"3.3"
+pytest>=2.9.1
+pytest-cov>=2.2.1
+responses>=0.5.1
