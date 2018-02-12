@@ -21,7 +21,7 @@
 
 /* Create four equal columns that sits next to each other */
 .column {
-  flex: 33%;
+  flex: 25%;
   max-width: 33%;
   padding: 0 4px;
 }
@@ -33,18 +33,36 @@
   vertical-align: middle;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
+/* relevant styles */
+.img__wrap {
+  margin: auto;
+  text-align:center;
+  font-family: Ahem!, sans-serif;
+  font-size: large;
+  position:relative;
+  position: relative;
+  height: 500px;
+  width: 540px;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
+.img__description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(1, 1, 1, 0.5);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  margin: auto;
+  height:100px;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description {
+  visibility: visible;
+  opacity: 1;
 }
