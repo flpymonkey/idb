@@ -13,18 +13,11 @@ tr {
 
 #profile {
   align-content: center;
-  /* display: inline-block; */
-  /* padding-left: 10%; */
-  /* padding-right: 10%; */
 }
 
 .aboutHeader {
   width: 100%;
-  /* text-shadow: 2px 2px #4d4d4d; */
-  /* margin: 25% 0 25%; */
   font-family: Ahem!, sans-serif;
-  text-align: center;
-  /* border-bottom: 1px solid #000; */
   overflow: hidden;
   text-align: center;
   color: #EAEAEA;
@@ -54,7 +47,6 @@ tr {
 .aboutDesc {
   padding-top: 5%;
   padding-bottom: 5%;
-  /* border-bottom: solid; */
 }
 
 .aboutHeader:before,
