@@ -38,7 +38,7 @@ div#myCarousel.carousel.slide {
 	width: 95%;
 }
 
-p {
+#description {
 	font-family: Ahem!, sans-serif;
 	font-size: large;
 	display: table-cell;
