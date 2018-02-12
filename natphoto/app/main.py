@@ -19,6 +19,13 @@ app = Flask(__name__)
 def main():
     return render_template("mainpage.html")
 
+
+#@app.route("/photos/id/<id>")
+#def photo_url_by_id(id):
+#    sets   = flickr.photosets.getList(photo_ids = [str(id)])
+#    photo_url = sets.photosets.
+#    return str(photo_urls)
+
 @app.route("/photos/<location>")
 def show_photo_by_location(location):
     photo_titles = []
@@ -27,7 +34,7 @@ def show_photo_by_location(location):
         min_taken_date='2017-11-10'):
         photo_titles.append(photo.get('title'))
         if len(photo_titles) > 10:
-            break        
+            break
     return str(photo_titles)
 
 @app.route("/photos/tag/<tag>")
