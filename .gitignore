@@ -4,3 +4,4 @@ __pycache__
 *.swo
 .DS_Store
 creds.txt
+node_modules
