@@ -30,7 +30,7 @@
   * Content-Type: application/json
     * Park name - String - The name of the national park \(ex. "Yellowstone"\)
     * Location - String - The address of the national park \(ex. "Yellowstone National Park, Wyoming, United States"\)
-    * Website url - String - The url of the national park's webpage on nps.gov \(ex. "https://www.nps.gov/yell"\)
+    * Website url - String - The url of the national park's webpage on nps.gov \(ex. "[https://www.nps.gov/yell"\](https://www.nps.gov/yell"\)\)
     * Hours - String - The operating hours of the park \(ex. "Open 24 hours a day"\)
     * Weather - String - The general weather conditions of the national park according to nps.gov \(ex. "Yosemite National Park covers nearly 1,200 square miles \(3,100 square km\) in the Sierra Nevada, with elevations ranging from about 2,000 feet \(600 m\) to 13,000 ft \(4,000 m\). Yosemite receives 95% of its precipitation between October and May \(and over 75% between November and March\). Most of Yosemite is blanketed in snow from about November through May. \(Yosemite Valley can be rainy or snowy in any given winter storm."\)
 
@@ -58,6 +58,12 @@
     * date  - Datetime - The date and time the phototgraph was taken \(ex. YYYYMMDDHHMMSS\)
     * national park - Int - The parkID of the national park this photograph was taken in \(ex. 3\)
     * camera used - Int - The cameraID of what camera was used to take this photograph \(ex. 12\)
+
+# Search
+
+* **GET** /search/keyword
+  * Returns a list of pairings of name and &lt;object&gt;ID for all objects in our database containing the keyword string in their title.
+  * Parameters: keyword - String - A keyword to search all titles for \(ex. "Canon", "Yellowstone", "Bison"\)
 
 
 
