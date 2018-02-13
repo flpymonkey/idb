@@ -1,0 +1,6 @@
+Camera brand: Nikon
+Camera model: Coolpix P7700
+Max Resolution: 4000x3000
+Effective Pixels: 12 megapixels
+Continuous drive speed: None
+Video enabled: Yes

@@ -1,0 +1,6 @@
+Camera brand: Canon
+Camera model: EOS 5D Mark IV
+Max Resolution: 6720x4480
+Effective Pixels: 30 megapixels
+Continuous drive speed: 7.0 fps
+Video enabled: Yes
