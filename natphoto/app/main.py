@@ -4,6 +4,10 @@ natphoto
 """
 
 from flask import Flask, render_template
+import requests
+
+GITHUB_ROOT_ = "https://api.github.com"
+USERS_ = ["flpymonkey", "jhbell", "vargasbri2", "tonydenapoli", "dayannyc"]
 
 app = Flask(__name__)
 
@@ -16,7 +20,16 @@ def main():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    commits = get_user_commits()
+    issues  = get_user_issues()
+    total_commits = sum(commits.values())
+    total_issues = sum(issues.values())
+
+    return render_template("about.html", 
+                           commits=commits,
+                           issues=issues,
+                           total_commits=total_commits,
+                           total_issues=total_issues)
 
 # Routes for our general model gird pages
 @app.route("/cameras")
@@ -68,6 +81,39 @@ def photo2():
 @app.route("/photo/3")
 def photo3():
     return render_template("TODO.html")
+
+def get_json(request_path: str, params: dict={}) -> list:
+    """
+    Return the JSON result for the given request path
+    request_path - the path to the data we are requesting
+    """
+    url = GITHUB_ROOT_ + request_path
+    response = requests.get(url, params=params)
+    response = response.json()
+    return response
+
+def get_user_commits() -> dict:
+    """
+    Get the contribution data for the project repository
+    return a json responce containing contribution statistics
+    """
+    path = "/repos/flpymonkey/idb/stats/contributors"
+    commit_data = get_json(path)
+    print(commit_data)
+    commits = {data["author"]["login"]: data["total"] for data in commit_data}
+    return commits
+
+def get_user_issues() -> dict:
+    """
+    Get all of the issues and count by user
+    return a dict() of users to the number of issues they created.
+    """
+    path = "/repos/flpymonkey/idb/issues"
+    issues = {}
+    for user in USERS_:
+        response = get_json(path, {"creator": user, "state": "all"})
+        issues[user] = len(response)
+    return issues
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")

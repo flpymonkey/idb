@@ -25,8 +25,8 @@
         <h2 class="name">Jeff Bell</h2>
         <h3 class="resp">Backend Developer</h3>
         <span>insert bio here</span></br>
-        <span class="gitProfile">Commits: </span></br>
-        <span class="gitProfile">Issues: </span></br>
+        <span class="gitProfile">Commits: {{ commits["jhbell"] }}</span></br>
+        <span class="gitProfile">Issues: {{ issues["jhbell"] }}</span></br>
         <span class="gitProfile">Unit Tests: </span>
       </td>
       <td id="profile">
@@ -34,8 +34,8 @@
         <h2 class="name">Dayanny Caballero</h2>
         <h3 class="resp">Frontend Developer</h3>
         <span>insert bio here</span></br>
-        <span class="gitProfile">Commits: </span></br>
-        <span class="gitProfile">Issues: </span></br>
+        <span class="gitProfile">Commits: {{ commits["dayannyc"] }}</span></br>
+        <span class="gitProfile">Issues: {{ issues["dayannyc"] }}</span></br>
         <span class="gitProfile">Unit Tests: </span>
       </td>
       <td id="profile">
@@ -43,8 +43,8 @@
         <h2 class="name">Tony DeNapoli</h2>
         <h3 class="resp">Frontend Developer</h3>
         <span>insert bio here</span></br>
-        <span class="gitProfile">Commits: </span></br>
-        <span class="gitProfile">Issues: </span></br>
+        <span class="gitProfile">Commits: {{ commits["tonydenapoli"] }}</span></br>
+        <span class="gitProfile">Issues: {{ issues["tonydenapoli"] }}</span></br>
         <span class="gitProfile">Unit Tests: </span>
       </td>
     </tr>
@@ -56,8 +56,8 @@
         <h2 class="name">Ben Johnson</h2>
         <h3 class="resp">Backend Developer</h3>
         <span>insert bio here</span></br>
-        <span class="gitProfile">Commits: </span></br>
-        <span class="gitProfile">Issues: </span></br>
+        <span class="gitProfile">Commits: {{ commits["flpymonkey"] }}</span></br>
+        <span class="gitProfile">Issues: {{ issues["flpymonkey"] }}</span></br>
         <span class="gitProfile">Unit Tests: </span>
       </td>
       <td id="profile">
@@ -65,8 +65,8 @@
         <h2 class="name">Bri Vargas</h2>
         <h3 class="resp">Frontend Developer</h3>
         <span>insert bio here</span></br>
-        <span class="gitProfile">Commits: </span></br>
-        <span class="gitProfile">Issues: </span></br>
+        <span class="gitProfile">Commits: {{ commits["vargasbri2"] }}</span></br>
+        <span class="gitProfile">Issues: {{ issues["vargasbri2"] }}</span></br>
         <span class="gitProfile">Unit Tests: </span>
       </td>
     </tr>
@@ -82,9 +82,9 @@
           <h2 class="teamStatsInfo">Total Unit Tests: </h2>
         </div>
         <div class="col-sm-6">
-          <h2 class="teamStatsData">?</h2></br>
-          <h2 class="teamStatsData">?</h2></br>
-          <h2 class="teamStatsData">?</h2>
+          <h2 class="teamStatsData">{{ total_commits }}</h2></br>
+          <h2 class="teamStatsData">{{ total_issues }}</h2></br>
+          <h2 class="teamStatsData">0</h2>
         </div>
       </div>
     </div>
