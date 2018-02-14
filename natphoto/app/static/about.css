@@ -15,12 +15,15 @@ tr {
   align-content: center;
 }
 
+h1, h2, h3, p, span {
+  font-family: Ahem!, sans-serif;
+  color: #EAEAEA;
+}
+
 .aboutHeader {
   width: 100%;
-  font-family: Ahem!, sans-serif;
   overflow: hidden;
   text-align: center;
-  color: #EAEAEA;
   padding-bottom: 10%;
 }
 
@@ -32,7 +35,6 @@ tr {
 
 .name {
   font-size: 20px;
-  color: #EAEAEA;
   font-weight: bold;
 }
 
@@ -70,10 +72,30 @@ tr {
   margin-right: -50%;
 }
 
-span {
-  font-family: Ahem!, sans-serif;
+#teamStats {
+  padding-top: 10%;
+  padding-bottom: 5%;
+  font-size: 75px;
 }
 
-#teamStats {
-    padding-top: 10%;
+.resp {
+  font-style: italic;
+  font-size: 15px;
+}
+
+.gitProfile {
+  font-size: 17px;
+  text-align: left;
+}
+
+.teamStatsInfo {
+  text-align: right;
+}
+
+.dataHeader {
+  text-align: center;
+}
+
+.teamStatsWrapper {
+  margin-bottom: 10%;
 }
