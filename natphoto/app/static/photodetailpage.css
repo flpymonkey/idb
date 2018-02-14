@@ -1,22 +1,20 @@
-header {
-  text-align: center;
+.material-icons {
+  color: #EAEAEA;
 }
 
-article {
-  text-align: right;
+.fluid-container {
+	color: #EAEAEA;
 }
 
-footer {
-  bottom: 0;
-  margin: 0px 5px 5px 150px;
+.row {
+	margin-top: 20px;
 }
 
-.left {
-  display: block;
-  float: left;
+#title {
+	text-align: center;
 }
 
-.right {
-  display: block;
-  float: right;
+#linksRow {
+	text-align: center;
+	font-size: x-large;
 }

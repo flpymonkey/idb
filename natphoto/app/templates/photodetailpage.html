@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='../static/photodetailpage.css' rel='stylesheet'>
     <link href='../static/mainpage.css' rel='stylesheet'>
 </head>
+
 <ul class = "navbar">
     <a href="about.html" class = "navList">About</a>
     <a href="cameragridpage.html" class = "navList">Cameras</a>
@@ -12,24 +16,33 @@
     <a href="mainpage.html" class = "navList">Home</a>
     <a id="logo"><span>NatPhoto</span><i class="material-icons">landscape</i></a>
 </ul>
+
 <body>
-	<header class="w3-container title">
-  		<h1>Title</h1>
-  		<h2>by</h2>
-  		<h1>Photographer</h1>
-  		<h2>Popularity</h2>
-	</header>
-
-	<img src="http://allswalls.com/images/grinnell-glacier-national-park-wallpaper-2.jpg" alt="Beautiful Picture" style="width:100%">
-
-	<article class="w3-container date">
-  		<h3>2-2-18</h3>
-	</article>
-
-	<footer class="w3-container links">
-		<div class="left">Yellowstone</div>
-		<div class="right">Cannon PowerShot</div>
-	</footer>
-
+		
+	<div class="fluid-container">
+		<div class="row">
+			<div class="col-sm-12" id="title">
+  				<h1>Title</h1>
+  				<h3>by</h3>
+  				<h1>Photographer</h1>
+  				<h3>on</h3>
+  				<h2>February 13th, 2018</h2>
+  				<h2>Popularity</h2>
+  			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10" id="photo">
+				<img src="http://allswalls.com/images/grinnell-glacier-national-park-wallpaper-2.jpg" alt="Beautiful Picture" style="width:100%">
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+    	<div class="row" id="linksRow">
+   			<div class="col-sm-6" id="cameraLink">Canon Camera <i class="material-icons">camera</i></div>
+   			<div class="col-sm-6" id="parkLink">Yellowstone <i class="material-icons">landscape</i></div>
+ 		</div>
+	</div>
+	
 </body>
+
 </html>
