@@ -5,6 +5,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='../static/parkgridpage.css' rel='stylesheet'>
 	<link href='../static/general.css' rel='stylesheet'>
+	<link href='../static/navbar.css' rel='stylesheet'>
 </head>
 <ul class = "navbar">
     <a href="/about" class = "navList">About</a>
@@ -15,26 +16,33 @@
     <a id="logo"><span>NatPhoto</span><i class="material-icons">landscape</i></a>
 </ul>
 <body>
-	<div class="row">
-  		<div class="column">
-    		<div class="img__wrap">
-  				<img class="img__img" src="https://media-cdn.tripadvisor.com/media/photo-s/0b/c8/ff/df/park-entrance-sign.jpg" />
-  				<p class="img__description">Redwood National Park</p>
-			</div>
-  		</div>
-  		<div class="column">
-  			<div class="img__wrap">
-  				<img class="img__img" src="http://pictures.richardhealey.com/pictures/original/p227_sign.jpg" />
-  				<p class="img__description">Yellowstone National Park</p>
-			</div>
- 		</div>
-  		<div class="column">
-  			<div class="img__wrap">
-  				<img class="img__img" src="https://media-cdn.tripadvisor.com/media/photo-s/03/e0/7e/86/entrance-sign.jpg" />
-  				<p class="img__description">Yosemite National Park</p>
-			</div>
-  		</div>
+	<div class="fluid-container">
+		<div class="row">
+  			<div class="col-sm-4">
+    			<div class="hovereffect">
+        			<img class="img-responsive" src="https://media-cdn.tripadvisor.com/media/photo-s/0b/c8/ff/df/park-entrance-sign.jpg" alt="">
+            			<div class="overlay">
+               			 	<h1>Redwood National Park</h1>
+           				</div>
+    			</div>
+  			</div>
+  			<div class="col-sm-4">
+    			<div class="hovereffect">
+        			<img class="img-responsive" src="http://pictures.richardhealey.com/pictures/original/p227_sign.jpg" alt="">
+            			<div class="overlay">
+               			 	<h1>Yellowstone National Park</h1>
+           				</div>
+    			</div>
+  			</div>
+  			<div class="col-sm-4">
+    			<div class="hovereffect">
+        			<img class="img-responsive" src="https://media-cdn.tripadvisor.com/media/photo-s/03/e0/7e/86/entrance-sign.jpg" alt="">
+            			<div class="overlay">
+               			 	<h1>Yosemite National Park</h1>
+           				</div>
+    			</div>
+    		</div>
+		</div>
 	</div>
-
 </body>
 </html>
