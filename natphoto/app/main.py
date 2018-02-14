@@ -60,15 +60,15 @@ def camera3():
 
 @app.route("/park/1")
 def park1():
-    return render_template("parkdetailpage.html")
+    return render_template("deathvalley.html")
 
 @app.route("/park/2")
 def park2():
-    return render_template("parkdetailpage.html")
+    return render_template("yellowstone.html")
 
 @app.route("/park/3")
 def park3():
-    return render_template("parkdetailpage.html")
+    return render_template("yosemite.html")
 
 @app.route("/photo/1")
 def photo1():
