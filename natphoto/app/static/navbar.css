@@ -1,0 +1,41 @@
+.navbar {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	display: block;
+  list-style-type: none;
+  overflow: hidden;
+  list-style-type: none;
+	background-color: black;
+	margin-bottom: 5%;
+	z-index:9999;
+}
+
+.navList {
+  float: right;
+}
+
+.navList, #logo {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+	font-family: Ahem!, sans-serif;
+	font-size: large;
+}
+
+#logo {
+  float:left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+	font-family: Ahem!, sans-serif;
+	font-size: large;
+}
+
+.navList:hover {
+	color: #009D00;
+	text-decoration: none;
+}
