@@ -32,6 +32,7 @@ div#myCarousel.carousel.slide {
 	margin-bottom: 5%;
 	margin-left: 2.5%;
 	width: 95%;
+	height: 80%;
 }
 
 #description {
@@ -53,7 +54,7 @@ div#myCarousel.carousel.slide {
 
 .carousel {
 	border: 1px solid #E6E6E6;
-	height: 800px;
+	height: 80%;
 	overflow: hidden;
 }
 
