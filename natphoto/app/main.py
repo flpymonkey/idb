@@ -48,39 +48,39 @@ def view_photos():
 # Hard coded routes for instance pages. BAD #FIXME
 @app.route("/camera/1")
 def camera1():
-    return render_template("TODO.html")
+    return render_template("nikoncoolpix.html")
 
 @app.route("/camera/2")
 def camera2():
-    return render_template("TODO.html")
+    return render_template("nikond1700.html")
 
 @app.route("/camera/3")
 def camera3():
-    return render_template("TODO.html")
+    return render_template("canon.html")
 
 @app.route("/park/1")
 def park1():
-    return render_template("TODO.html")
+    return render_template("parkdetailpage.html")
 
 @app.route("/park/2")
 def park2():
-    return render_template("TODO.html")
+    return render_template("parkdetailpage.html")
 
 @app.route("/park/3")
 def park3():
-    return render_template("TODO.html")
+    return render_template("parkdetailpage.html")
 
 @app.route("/photo/1")
 def photo1():
-    return render_template("TODO.html")
+    return render_template("yellowstonenationalpark-3.html")
 
 @app.route("/photo/2")
 def photo2():
-    return render_template("TODO.html")
+    return render_template("mesquiteflatdunes.html")
 
 @app.route("/photo/3")
 def photo3():
-    return render_template("TODO.html")
+    return render_template("halfasunset.html")
 
 def get_json(request_path: str, params: dict={}) -> list:
     """
