@@ -2,6 +2,6 @@ __pycache__
 *.pyc
 *.swp
 *.swo
-.DS_Store
+*.DS_Store
 creds.txt
 node_modules
