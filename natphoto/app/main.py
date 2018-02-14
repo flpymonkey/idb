@@ -15,7 +15,7 @@ def main():
     return render_template("mainpage.html")
 
 @app.route("/about")
-def main():
+def about():
     return render_template("about.html")
 
 # Routes for our general model gird pages
