@@ -2,6 +2,8 @@
 
 * [Introduction](README.md)
 * [RESTful API](doc/restful-api.md)
-* [Hosting](doc/hosting.md)
-* [Tools](doc/tools.md)
+* [Amazon Web Services](doc/hosting.md)
+* [Development Tools](doc/tools.md)
+* [Motivation](doc/motivation.md)
+* [Models](doc/models.md)
 
