@@ -1,5 +1,5 @@
 .cameraHeader {
- 	width: 100%;
+  width: 100%;
   font-family: Ahem!, sans-serif;
   color: #EAEAEA;
   text-align: center;
@@ -28,20 +28,20 @@
   margin-right: -50%;
 }
 
-.row {
+#camera-row {
   margin-top: 3%;
   margin-bottom: 7%;
 }
 
 .cameraImage {
- 	width: 70%;
+  width: 70%;
   margin-left: 25%;
   border: 1px solid #EAEAEA;
 }
 
 #info-text > h3 {
-	text-align-last: end;
-	color: #EAEAEA;
+  text-align-last: end;
+  color: #EAEAEA;
   font-family: Ahem!, sans-serif;
 }
 
@@ -53,9 +53,8 @@
 }
 
 #ans-text {
-	padding-top: 76px;
-	padding-left: 8px;
-	color: #EAEAEA;
+  padding-top: 5.25%;
+  color: #EAEAEA;
   font-family: Ahem!, sans-serif;
 }
 
@@ -79,4 +78,15 @@
   color: #EAEAEA;
   font-size: 50px;
   margin-bottom: .5%;
+}
+
+#table-row {
+  margin-left: 0%;
+}
+
+#park-name {
+  color: #EAEAEA;
+  font-size: 30px;
+  font-family: Ahem!, sans-serif;
+  padding-left: 5%;
 }
