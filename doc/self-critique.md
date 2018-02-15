@@ -9,7 +9,7 @@
   * Our front-end team had little experience with HTML, CSS, Bootstrap, and React. We all learned the basics of these various tools in order to make a nicely designed and intuitive front-end for our website.
   * Our back-end team learned how to use Amazon EC2 to host our website. We also learned about using Docker for simplifying the deployment process.
 * What can we do better?
-  * We need to add bootstrap to the main page. Add bootstrap to detail page.
+  * We need to add bootstrap to the main page, detail pages, and about page.
   * Some small design and front-end tweaks need to be made so that our site looks better.
   * We need to make images line up on grids.
   * We need more information on the gird page to filter by in the future.
