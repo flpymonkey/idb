@@ -4,15 +4,17 @@
 	* Resolution
 	* Continuous drive speed
 	* Video enabled
+	* Photographs
+	* National Parks
 
 # National Park
-	* Parks need
 	* Location
-	* Website link
+	* Website URL
 	* Park hours
 	* Weather
 	* Daylight hours
-	* Photograph
+	* Photographs
+	* Cameras
 
 # Photograph
 	* Photographer
@@ -20,4 +22,5 @@
 	* Title
 	* Date taken
 	* Park taken at
-	* Camera used
+	* Camera
+	* National Park
