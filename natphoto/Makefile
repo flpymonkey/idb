@@ -6,6 +6,9 @@ FILES :=			\
 run:
 	python3 app/main.py
 
+test:
+	python3 app/tests.py
+
 clean:
 	rm -rf __pycache__
 
