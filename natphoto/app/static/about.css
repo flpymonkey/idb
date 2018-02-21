@@ -13,6 +13,7 @@ tr {
 
 #profile {
   align-content: center;
+  text-align: center;
 }
 
 h1, h2, h3, p, span {
@@ -34,7 +35,7 @@ h1, h2, h3, p, span {
 }
 
 .name {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -49,6 +50,15 @@ h1, h2, h3, p, span {
 .aboutDesc {
   padding-top: 5%;
   padding-bottom: 5%;
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 20px;
+}
+
+.data {
+  text-align: center;
+  font-size: 20px;
 }
 
 .aboutHeader:before,
@@ -80,7 +90,7 @@ h1, h2, h3, p, span {
 
 .resp {
   font-style: italic;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .gitProfile {
@@ -98,4 +108,19 @@ h1, h2, h3, p, span {
 
 .teamStatsWrapper {
   margin-bottom: 10%;
+}
+
+#bio {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 20px;
+}
+
+#bioLine {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+  border-bottom: 1px solid #EAEAEA;
+  width: 80%;
+  text-align: center;
 }

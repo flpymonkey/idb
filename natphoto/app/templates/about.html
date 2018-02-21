@@ -16,61 +16,64 @@
     <a id="logo" href="/"><span>NatPhoto</span><i class="material-icons">landscape</i></a>
 </ul>
 <body>
-  <p class="aboutDesc">There is a lot that goes into a photograph. Natphoto.me will show off the beautiful United States National Parks while giving you an inside look at the lens that took the photo. The proposed project will connect cameras, photos taken by those cameras, and the locations of the photos (one of the national parks in the US).</p>
+  <p class="aboutDesc">Natphoto allows photographers to compare cameras, photos, and the locations where photos are taken so they can improve their overall trip and photography. This site allows photographers to compare specific cameras details by showing pictures taken with cameras in specific locations. Additionally, this site pulls data about national parks from NPS.gov so that people can get a better idea of weather conditions, park hours, and park alerts before they travel. This website is a one-stop-shop for picking the right camera for the best possible photos in the best national parks in the United States!</p>
   <h1 class="aboutHeader" id="aboutTitle"><span>Meet the SWEet Tea Team</span></h1>
-  <table class="topProfiles">
-    <tr class="profileRowOne">
-      <td id="profile">
+  <div class="topProfiles row">
+      <div id="profile" class="col-sm-4">
         <img src="../static/photos/jeff.png">
         <h2 class="name">Jeff Bell</h2>
         <h3 class="resp">Backend Developer</h3>
-        <span>insert bio here</span></br>
+        <span id="bio">Still thinking... about my bio.</span></br>
+        <div id="bioLine"></div>
         <span class="gitProfile">Commits: {{ commits["jhbell"] }}</span></br>
         <span class="gitProfile">Issues: {{ issues["jhbell"] }}</span></br>
-        <span class="gitProfile">Unit Tests: </span>
-      </td>
-      <td id="profile">
+        <span class="gitProfile">Unit Tests: 0</span>
+      </div>
+      <div id="profile" class="col-sm-4">
         <img src="../static/photos/dayanny.png">
         <h2 class="name">Dayanny Caballero</h2>
         <h3 class="resp">Frontend Developer</h3>
-        <span>insert bio here</span></br>
+        <span id="bio">I am a third-year computer science major interested in IOS mobile development. I enjoy being a TA for the freshman class and watching Netflix in my free time.</span></br>
+        <div id="bioLine"></div>
         <span class="gitProfile">Commits: {{ commits["dayannyc"] }}</span></br>
         <span class="gitProfile">Issues: {{ issues["dayannyc"] }}</span></br>
-        <span class="gitProfile">Unit Tests: </span>
-      </td>
-      <td id="profile">
+        <span class="gitProfile">Unit Tests: 0</span>
+      </div>
+      <div id="profile" class="col-sm-4">
         <img src="../static/photos/tony.png">
         <h2 class="name">Tony DeNapoli</h2>
         <h3 class="resp">Frontend Developer</h3>
-        <span>insert bio here</span></br>
+        <span id="bio">I am a fourth year computer science major at UT. I have experience working with Android and iOS and my main interest is in mobile computing. I enjoy playing drums, playing video games, skating, and music!</span></br>
+        <div id="bioLine"></div>
         <span class="gitProfile">Commits: {{ commits["tonydenapoli"] }}</span></br>
         <span class="gitProfile">Issues: {{ issues["tonydenapoli"] }}</span></br>
-        <span class="gitProfile">Unit Tests: </span>
-      </td>
-    </tr>
-  </table>
-  <table class="bottomProfiles">
-    <tr class="profileRowTwo">
-      <td id="profile">
+        <span class="gitProfile">Unit Tests: 0</span>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1"></div>
+      <div id="profile" class="col-sm-4">
         <img src="../static/photos/ben.png">
         <h2 class="name">Ben Johnson</h2>
         <h3 class="resp">Backend Developer</h3>
-        <span>insert bio here</span></br>
+        <span id="bio">I am a third-year computer science major who also is interested in film-making and traveling. I plan to graduate and move to a small village in South Africa.</span></br>
+        <div id="bioLine"></div>
         <span class="gitProfile">Commits: {{ commits["flpymonkey"] }}</span></br>
         <span class="gitProfile">Issues: {{ issues["flpymonkey"] }}</span></br>
-        <span class="gitProfile">Unit Tests: </span>
-      </td>
-      <td id="profile">
+        <span class="gitProfile">Unit Tests: 0</span>
+      </div>
+      <div class="col-sm-2"></div>
+      <div id="profile" class="col-sm-4">
         <img src="../static/photos/bri.png">
         <h2 class="name">Bri Vargas</h2>
         <h3 class="resp">Frontend Developer</h3>
-        <span>insert bio here</span></br>
+        <span id="bio">I am a third-year computer science major interested in full-stack web development. In my free time I enjoy playing soccer, watching movies, and hanging out with family.</span></br>
+        <div id="bioLine"></div>
         <span class="gitProfile">Commits: {{ commits["vargasbri2"] }}</span></br>
         <span class="gitProfile">Issues: {{ issues["vargasbri2"] }}</span></br>
-        <span class="gitProfile">Unit Tests: </span>
-      </td>
-    </tr>
-  </table>
+        <span class="gitProfile">Unit Tests: 0</span>
+      </div>
+  </div>
   <h2 class="aboutHeader" id="teamStats">Team Stats:</h2>
   <div class="row teamStatsWrapper">
     <span class="col-sm-1"></span>
@@ -88,11 +91,21 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="data col-sm-4">
       <h2 class="dataHeader">The Data:</h2></br>
+      <p>https://www.nps.gov/subjects/digital/nps-data-api.htm</br>
+        https://www.reddit.com/dev/api</br>
+        https://www.flickr.com/services/api/</br>
+        https://www.instagram.com/developer/</br>
+        https://www.digicamdb.com/</br>
+        https://aws.amazon.com/documentation/</br>
+        https://www.dpreview.com/</br>
+        https://developer.yahoo.com/weather/
+      </p>
     </div>
-    <div class="col-sm-4">
-      <h2>Toolbox:</h2>
+    <div class="data col-sm-4">
+      <h2 class="dataHeader">Toolbox:</h2>
+      <span>AWS</br>Bootstrap</br>Docker</br>Flask</br>Github</br>Postman</span>
     </div>
 </div>
 </body>
