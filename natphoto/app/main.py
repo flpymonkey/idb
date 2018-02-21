@@ -115,5 +115,8 @@ def get_user_issues() -> dict:
         issues[user] = len(response)
     return issues
 
+def add(a: int, b: int) -> int:
+    return a + b
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
