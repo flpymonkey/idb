@@ -4,7 +4,8 @@ python:
   - "3.6"
 
 install:
-  - pip install -r natphoto/requirments.txt
+  - pwd
+  - pip install -r ./natphoto/requirments.txt
 
 script:
   - cd natphoto
