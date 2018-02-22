@@ -1,14 +1,4 @@
-sudo: false
-
 language: python
 
 python:
-        - "3.6"
-
-before_install:
-        - cat .travis.yml
-        - pip install --upgrade pip
-        - pip --version
-
-script:
-        - python /app/tests.py
+  - "3.6"
