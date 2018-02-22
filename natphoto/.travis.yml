@@ -9,3 +9,6 @@ before_install:
         - cat .travis.yml
         - pip install --upgrade pip
         - pip --version
+
+script:
+        - python /app/tests.py
