@@ -5,7 +5,7 @@ python:
 
 install:
   - pwd
-  - pip install -r ./natphoto/requirments.txt
+  - pip install -r ./natphoto/requirements.txt
 
 script:
   - cd natphoto
