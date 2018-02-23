@@ -4,5 +4,10 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Our components
+import NavBar from './components/NavBar.js'
+
+
+
+ReactDOM.render(<NavBar />, document.getElementById('root'));
 registerServiceWorker();
