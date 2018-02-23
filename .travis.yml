@@ -1,0 +1,12 @@
+language: python
+
+python:
+  - "3.6"
+
+install:
+  - pwd
+  - pip install -r ./natphoto/requirements.txt
+
+script:
+  - cd natphoto
+  - make test
