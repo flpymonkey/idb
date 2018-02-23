@@ -1,16 +1,16 @@
 import React, {Component} from "react"
-import '../css/navbar.css';
+import '../stylesheets/navbar.css'
 
 export default class NavBar extends Component {
 	render (){
 		return (
-			<ul class = "navbar">
-		  	<a href="/about" class = "navList">About</a>
-		    <a href="/cameras" class = "navList">Cameras</a>
-		    <a href="/photos" class = "navList">Photos</a>
-		    <a href="/parks" class = "navList">Parks</a>
-		    <a href="/" class = "navList">Home</a>
-		    <a id="logo" href="/"><span>NatPhoto</span><i class="material-icons">landscape</i></a>
+			<ul className = "navbar">
+		  	<a href="/about" className = "navList">About</a>
+		    <a href="/cameras" className = "navList">Cameras</a>
+		    <a href="/photos" className = "navList">Photos</a>
+		    <a href="/parks" className = "navList">Parks</a>
+		    <a href="/" className = "navList">Home</a>
+		    <a id="logo" href="/"><span>NatPhoto</span><i className="material-icons">landscape</i></a>
 			</ul>);
 	}
 }
