@@ -4,7 +4,7 @@ import '../stylesheets/navbar.css'
 export default class NavBar extends Component {
 	render (){
 		return (
-			<ul className = "navbar">
+			<ul className = "customNavbar">
 		  	<a href="/about" className = "navList">About</a>
 		    <a href="/cameras" className = "navList">Cameras</a>
 		    <a href="/photos" className = "navList">Photos</a>
