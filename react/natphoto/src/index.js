@@ -7,9 +7,10 @@ import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 
 // Our components
-import NavBar from './components/NavBar.js'
+//import NavBar from './components/NavBar.js'
+import PhotoGrid from './components/PhotoGrid.js'
 
 
 
-ReactDOM.render(<NavBar />, document.getElementById('root'));
+ReactDOM.render(<PhotoGrid />, document.getElementById('root'));
 registerServiceWorker();
