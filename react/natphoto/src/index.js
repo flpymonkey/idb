@@ -7,8 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 // Our components
 //import NavBar from './components/NavBar.js'
-import PhotoGrid from './components/PhotoGrid.js'
+import Home from './components/Home.js'
 
 
-ReactDOM.render(<PhotoGrid />, document.getElementById('root'));
+ReactDOM.render(<Home />, document.getElementById('root'));
 registerServiceWorker();

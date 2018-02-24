@@ -1,0 +1,100 @@
+div.desc {
+	display: table-cell;
+  align-items: center;
+	vertical-align: middle;
+	width: 30%;
+	padding-right: 20px;
+}
+
+img {
+	width: 100%;
+}
+
+.textWrapper {
+	padding-bottom: 10%;
+}
+
+.title {
+	text-align: center;
+	font-size: 50px;
+	display: block;
+	font-family: Ahem!, sans-serif;
+	border-radius: 25px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+	color: #EAEAEA;
+}
+
+.container {
+	width: auto;
+	display: table-row;
+}
+
+div#myCarousel.carousel.slide {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: 2.5%;
+	width: 95%;
+	height: 80%;
+}
+
+#description {
+	font-family: Ahem!, sans-serif;
+	font-size: large;
+	display: table-cell;
+	text-align: center;
+	padding: 0px 20px 0px 20px;
+	vertical-align: center;
+	height: auto;
+	width: auto;
+	color: #EAEAEA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel {
+	border: 1px solid #E6E6E6;
+	height: 80%;
+	overflow: hidden;
+}
+
+
+#myCarousel {
+	display: inline;
+	float:left;
+}
+
+.typeicons {
+	align-content: center;
+	padding-top: 7%;
+	align: center;
+	padding-left: 22%;
+}
+
+#mountains {
+	color: #EAEAEA;
+	font-size: 50px;
+	text-align: center;
+	align: center;
+	padding: 0px 10px 0px 10px;
+}
+
+#cam {
+	color: #EAEAEA;
+	font-size: 50px;
+	text-align: center;
+	align: center;
+	padding: 0px 10px 0px 10px;
+}
+
+#photos {
+	color: #EAEAEA;
+	font-size: 50px;
+	text-align: center;
+	align: center;
+	padding: 0px 10px 0px 10px;
+}
