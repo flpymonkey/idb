@@ -1,3 +1,7 @@
+.body {
+	background-color: #262626;
+}
+
 div.desc {
 	display: table-cell;
   align-items: center;
