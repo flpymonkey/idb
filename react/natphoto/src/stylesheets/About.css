@@ -40,3 +40,42 @@
   left: 0.5em;
   margin-right: -50%;
 }
+
+#profile {
+  align-content: center;
+  text-align: center;
+}
+
+#bio {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 20px;
+}
+
+#bioLine {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+  border-bottom: 1px solid #EAEAEA;
+  width: 80%;
+  text-align: center;
+}
+
+.resp {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.gitProfile {
+  font-size: 17px;
+  text-align: left;
+}
+
+.topProfiles {
+  margin-bottom: 3%;
+}
