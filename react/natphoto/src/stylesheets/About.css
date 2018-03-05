@@ -79,3 +79,26 @@
 .topProfiles {
   margin-bottom: 3%;
 }
+
+.dataHeader {
+  text-align: center;
+}
+
+.teamStatsInfo {
+  text-align: right;
+}
+
+#teamStats {
+  padding-top: 10%;
+  padding-bottom: 5%;
+  font-size: 75px;
+}
+
+.teamStatsWrapper {
+  margin-bottom: 10%;
+}
+
+.data {
+  text-align: center;
+  font-size: 20px;
+}

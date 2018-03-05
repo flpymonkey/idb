@@ -1,0 +1,20 @@
+.material-icons {
+  color: #EAEAEA;
+}
+
+.fluid-container {
+	color: #EAEAEA;
+}
+
+.row {
+	margin-top: 20px;
+}
+
+#title {
+	text-align: center;
+}
+
+#linksRow {
+	text-align: center;
+	font-size: x-large;
+}

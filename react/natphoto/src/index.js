@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // Our components
 //import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
-//import About from './components/About.js'
+import About from './components/About.js'
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+ReactDOM.render(<About />, document.getElementById('root'));
 registerServiceWorker();
