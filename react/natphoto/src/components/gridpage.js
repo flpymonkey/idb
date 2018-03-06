@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Row, Col } from 'reactstrap';
 import NavBar from './NavBar.js';
 import '../stylesheets/gridpage.css';
 import '../stylesheets/general.css';
@@ -21,13 +22,11 @@ class Grid extends Component {
 		return (
 			<div className="body">
 				<NavBar />
-				<div className="fluid-container">
-					<div className="row">
+					<Row>
   						<GridItem data={this.props.data[0]} />
   						<GridItem data={this.props.data[1]} />
   						<GridItem data={this.props.data[2]} />
-					</div>
-				</div>
+					</Row>
 			</div>
 		);
 	}
@@ -37,7 +36,7 @@ class GridItem extends Component {
 	render() {
 
 		return (
-			<div className="col-sm-4">
+			 <Col sm="4">
     			<div className="hovereffect">
 					<a href="/photo/3">
         				<img className="img-responsive" src={this.props.data.img} alt=""/>
@@ -48,7 +47,7 @@ class GridItem extends Component {
            				</div>
 					</a>
     			</div>
-    		</div>
+    		</Col>
 		);
 	}
 }

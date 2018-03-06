@@ -11,5 +11,5 @@ import Home from './components/Home.js'
 import About from './components/About.js'
 import PhotoGrid from './components/gridpage.js'
 
-ReactDOM.render(<PhotoGrid />, document.getElementById('root'));
+ReactDOM.render(<About />, document.getElementById('root'));
 registerServiceWorker();
