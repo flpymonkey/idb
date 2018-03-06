@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 //import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import About from './components/About.js'
+import PhotoGrid from './components/gridpage.js'
 
-ReactDOM.render(<About />, document.getElementById('root'));
+ReactDOM.render(<PhotoGrid />, document.getElementById('root'));
 registerServiceWorker();
