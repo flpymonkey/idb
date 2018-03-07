@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Home from './components/Home.js'
 import About from './components/About.js'
 import PhotoGrid from './components/gridpage.js'
+import PhotoDetail from './components/photodetailpage.js'
 
-ReactDOM.render(<About />, document.getElementById('root'));
+ReactDOM.render(<PhotoDetail />, document.getElementById('root'));
 registerServiceWorker();

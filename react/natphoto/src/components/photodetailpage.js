@@ -1,36 +1,41 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import { Row, Col } from 'reactstrap';
+import NavBar from './NavBar.js';
 import '../stylesheets/photodetailpage.css';
-import NavBar from './NavBar.js'
+import '../stylesheets/general.css';
 
 export default class PhotoDetail extends Component {
 	render (){
 		return (
-			<body>
+			<div className="body">
 				<NavBar />
-				<div class="fluid-container">
-					<div class="row">
-						<div class="col-sm-12" id="title">
-  							<h1>Mesquite Flat Dunes</h1>
-  							<h3>by</h3>
-  							<h1>I-Ting Chiang</h1>
-  							<h3>on</h3>
-  							<h2>April 14th, 2013</h2>
-  							<h2>47 Favorites</h2>
-  						</div>
-					</div>
-				<div class="row">
-					<div class="col-sm-1"></div>
-					<div class="col-sm-10" id="photo">
-						<img src="https://c1.staticflickr.com/9/8406/8679159813_1f23534aed_b.jpg" alt="Beautiful Picture" style="width:100%">
-					</div>
-					<div class="col-sm-1"></div>
-				</div>
-    				<div class="row" id="linksRow">
-   						<div class="col-sm-6" id="cameraLink">Nikon Coolpix P7700 <i class="material-icons">camera</i></div>
-   						<div class="col-sm-6" id="parkLink">Death Valley National Park <i class="material-icons">landscape</i></div>
- 					</div>
-			</div>
-		</body>
+
+				<Row>
+					<Col sm="12" id="title">
+  						<h1>Half A Sunset</h1>
+  					</Col>
+				</Row>
+				<Row>
+					<Col sm="1"></Col>
+					<Col sm="10" id="photo">
+						<img id="picture" src="https://c1.staticflickr.com/5/4529/37718090005_023fa923a2_h.jpg" alt="Beautiful Picture"  />
+					</Col>
+					<Col sm="1"></Col>
+				</Row>
+				<Row>
+					<Col sm="12" id="title">
+  						<h3>by</h3>
+  						<h1>Nicolas Jaud</h1>
+  						<h3>on</h3>
+  						<h2>June 25th, 2017</h2>
+  						<h2>3 Favorites</h2>
+  					</Col>
+				</Row>
+    			<Row id="linksRow">
+   					<Col sm="6" id="cameraLink">Canon EOS 5D Mark IV <i className="material-icons">photo_camera</i></Col>
+   					<Col sm="6" id="parkLink">Yosemite National Park <i className="material-icons">landscape</i></Col>
+ 				</Row>
+ 		 	</div>
 		);
 	}
 }
