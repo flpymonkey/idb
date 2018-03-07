@@ -11,6 +11,7 @@ import Home from './components/Home.js'
 import About from './components/About.js'
 import PhotoGrid from './components/gridpage.js'
 import PhotoDetail from './components/photodetailpage.js'
+import CameraDetail from './components/CameraDetail.js'
 
-ReactDOM.render(<PhotoDetail />, document.getElementById('root'));
+ReactDOM.render(<CameraDetail />, document.getElementById('root'));
 registerServiceWorker();
