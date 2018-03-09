@@ -18,7 +18,7 @@ export default class PhotoDetail extends Component {
 				<Row>
 					<Col sm="1"></Col>
 					<Col sm="10" id="photo">
-						<img id="picture" src="https://c1.staticflickr.com/5/4529/37718090005_023fa923a2_h.jpg" alt="Beautiful Picture"  />
+						<img id="picture" src="https://c1.staticflickr.com/5/4529/37718090005_023fa923a2_h.jpg" alt="BeautifulPicture"  />
 					</Col>
 					<Col sm="1"></Col>
 				</Row>

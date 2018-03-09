@@ -31,7 +31,6 @@ export default class About extends Component {
 
 class GroupMember extends Component {
 	render() {
-		let picName = `/photo/ ${this.props.pic}`;
 		return (
 			<Col sm="4" id="profile">
         		<img className="picName" src={require(`../../../../natphoto/app/static/photos/${this.props.pic}`)} alt = "hello"/>
