@@ -1,0 +1,104 @@
+.aboutHeader {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 10%;
+}
+
+#aboutTitle {
+  text-align: center;
+  height: 100px;
+  font-size: 75px;
+}
+
+.aboutDesc {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 20px;
+}
+
+.aboutHeader:before,
+.aboutHeader:after {
+  background-color: #EAEAEA;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.aboutHeader:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.aboutHeader:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+#profile {
+  align-content: center;
+  text-align: center;
+}
+
+#bio {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 20px;
+}
+
+#bioLine {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+  border-bottom: 1px solid #EAEAEA;
+  width: 80%;
+  text-align: center;
+}
+
+.resp {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.gitProfile {
+  font-size: 17px;
+  text-align: left;
+}
+
+.topProfiles {
+  margin-bottom: 3%;
+}
+
+.dataHeader {
+  text-align: center;
+}
+
+.teamStatsInfo {
+  text-align: right;
+}
+
+#teamStats {
+  padding-top: 10%;
+  padding-bottom: 5%;
+  font-size: 75px;
+}
+
+.teamStatsWrapper {
+  margin-bottom: 10%;
+}
+
+.data {
+  text-align: center;
+  font-size: 20px;
+}
