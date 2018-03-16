@@ -9,18 +9,18 @@
   * Returns information about a specific camera
   * Parameters: cameraID - Int - The ID of a camera
   * Return Content-Type: application/json
-    * Camera brand - String - The name of the camera brand \(ex. "Canon"\)
-    * Camera model - String - The name of the camera model \(ex. "EOS 5D Mark 
+    * brand - text - The name of the camera brand \(ex. "Canon"\)
+    * model - text - The name of the camera model \(ex. "EOS 5D Mark 
       IV"\)
-    * Max Resolution Width - Int - The width of the max resolution measured in 
+    * max_resolution_width - integer - The width of the max resolution measured in 
       pixels \(ex. 6720\)
-    * Max Resolution Height - Int - The height of the max resolution measured 
+    * max_resolution_height - integer - The height of the max resolution measured 
       in pixels \(ex. 4480\)
-    * Effective Pixels - Int - The max number of megapixels this camera uses 
-      \(ex. 30\)
-    * Continuous drive speed - Int - The max speed of continuous drive measured
-      in frames per second \(ex. 7\)
-    * Video enabled - Boolean - A boolean depicting if the camera has video 
+    * megapixels - real - The max number of megapixels this camera uses 
+      \(ex. 28.4\)
+    * continuous_drive_speed - real - The max speed of continuous drive measured
+      in frames per second \(ex. 7.2\)
+    * video_enabled - boolean - A boolean depicting if the camera has video 
       capabilities \(ex. True\)
 
 
