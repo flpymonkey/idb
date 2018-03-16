@@ -11,7 +11,8 @@
   * Content-Type: application/json
     * Park name - String - The name of the national park \(ex. "Yellowstone"\)
     * Location - String - The address of the national park \(ex. "Yellowstone National Park, Wyoming, United States"\)
-    * Website url - String - The url of the national park's webpage on nps.gov 
+    * Website url - String - The url of the national park's webpage on nps.gov
+      \(ex. [https://www.nps.gov/yell](https://www.nps.gov/yell)\)
     * Hours - String - The operating hours of the park \(ex. "Open 24 hours a day"\)
     * Weather - String - The general weather conditions of the national park
       according to nps.gov \(ex. "Yosemite National Park covers nearly 1,200
