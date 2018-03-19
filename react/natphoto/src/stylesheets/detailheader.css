@@ -1,0 +1,24 @@
+.image {
+  width: 70%;
+  margin-left: 25%;
+  border: 1px solid #EAEAEA;
+}
+
+#info-text > h3 {
+  text-align-last: end;
+  color: #EAEAEA;
+  font-family: Ahem!, sans-serif;
+}
+
+#infoHeader {
+  margin-left: 93%;
+  color: #EAEAEA;
+  font-family: Ahem!, sans-serif;
+  font-size: 50px;
+}
+
+#ans-text {
+  padding-top: 5.25%;
+  color: #EAEAEA;
+  font-family: Ahem!, sans-serif;
+}
