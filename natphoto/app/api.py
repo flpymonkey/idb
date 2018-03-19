@@ -33,6 +33,38 @@ class ParkList(Resource):
         return results
 
 ##
+## Photo
+##
+class PhotoList(Resource):
+    def get(self):
+        result = handler.get_photos()
+        row = result.fetchone() #use fetchone() because the query returns lots of rows
+        results=[]
+        while row is not None:
+            results.append(dict(row))
+            row = result.fetchone()
+        return results
+
+##
+## Camera
+##
+# shows a single camera
+class Camera(Resource):
+    def get(self, camera_name):
+        result = handler.get_camera(camera_name)
+        return [dict(r) for r in result]
+
+class CameraList(Resource):
+    def get(self):
+        result = handler.get_cameras()
+        row = result.fetchone() #use fetchone() because the query returns lots of rows
+        results=[]
+        while row is not None:
+            results.append(dict(row))
+            row = result.fetchone()
+        return results
+
+##
 ## DataHandler
 ##
 # A general class to access data in the database
@@ -89,11 +121,23 @@ class DataHandler (object):
         result = self.connection.execute(sel)
         return result
 
+    def get_camera(self, name):
+        '''
+        Get a single park from the database by name
+        '''
+        cameras_table = self.metadata.tables['cameras']
+        sel = select([cameras_table]).where(cameras_table.c.name == name)
+        result = self.connection.execute(sel)
+        return result
+
 ##
 ## Api resource routing here
 ##
 api.add_resource(ParkList, '/parks')
 api.add_resource(Park, '/parks/<park_name>')
+api.add_resource(PhotoList, '/photos')
+api.add_resource(CameraList, '/cameras')
+api.add_resource(Camera, '/cameras/<camera_name>')
 
 handler = DataHandler(database_creds)
 
