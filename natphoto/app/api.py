@@ -35,6 +35,12 @@ class ParkList(Resource):
 ##
 ## Photo
 ##
+# shows a single camera
+class Photo(Resource):
+    def get(self, photo_id):
+        result = handler.get_photo(photo_id)
+        return [dict(r) for r in result]
+
 class PhotoList(Resource):
     def get(self):
         result = handler.get_photos()
@@ -112,6 +118,15 @@ class DataHandler (object):
         result = self.connection.execute(sel)
         return result
 
+    def get_photo(self, id):
+        '''
+        Get a single park from the database by name
+        '''
+        photos_table = self.metadata.tables['photos']
+        sel = select([photos_table]).where(photos_table.c.id== id)
+        result = self.connection.execute(sel)
+        return result
+
     def get_cameras(self):
         '''
         Get all cameras from the database
@@ -136,6 +151,7 @@ class DataHandler (object):
 api.add_resource(ParkList, '/parks')
 api.add_resource(Park, '/parks/<park_name>')
 api.add_resource(PhotoList, '/photos')
+api.add_resource(Photo, '/photos/<photo_id>')
 api.add_resource(CameraList, '/cameras')
 api.add_resource(Camera, '/cameras/<camera_name>')
 
