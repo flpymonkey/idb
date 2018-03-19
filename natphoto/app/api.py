@@ -6,7 +6,7 @@ from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
 
 # Path to the database credentials file
-database_creds = '../idb_scraper/dbinfo.txt'
+database_creds = 'dbinfo.txt'
 
 # Flask API setup
 app = Flask(__name__)
