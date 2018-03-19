@@ -12,7 +12,7 @@ export default class CameraDetail extends Component {
 		return (
 			<div className="body">
 				<NavBar />
-				<h1 className="header"><span>Canon EOS 5D Mark IV</span></h1>
+				<h1 className="cameraHeader"><span>Canon EOS 5D Mark IV</span></h1>
 				<DetailHeader pic="https://4.img-dpreview.com/files/p/E~TS520x0~articles/9335477559/canon_16_35mm_III_5.jpeg" name="Death Valley National Park" infoAttributes={cameraLabels}/>
 
 				<Row id="table-row">

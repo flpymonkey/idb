@@ -15,5 +15,5 @@ import PhotoDetail from './components/photodetailpage.js'
 import CameraDetail from './components/CameraDetail.js'
 import ParkDetail from './components/ParkDetail.js'
 
-ReactDOM.render(<CameraDetail />, document.getElementById('root'));
+ReactDOM.render(<ParkDetail />, document.getElementById('root'));
 registerServiceWorker();

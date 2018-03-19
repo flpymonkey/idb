@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
-import '../stylesheets/cameradetail.css';
+import '../stylesheets/detailheader.css';
 
 
 export default class DetailHeader extends Component {
