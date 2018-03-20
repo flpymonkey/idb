@@ -27,6 +27,7 @@ export default class CameraDetail extends Component {
     					</tr>
   					</table>
   				</Row>
+
   				<h1 id = "parksListed" >Parks Used At</h1>
 			</div>
 
