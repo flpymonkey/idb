@@ -1,6 +1,7 @@
+/*eslint no-unused-vars: "off" */
 import React from "react"
 import { Link } from 'react-router-dom'
-import MaterialIcon, {colorPallet} from 'material-icons-react'
+import MaterialIcon from 'material-icons-react'
 import '../stylesheets/navbar.css'
 
 const NavBar = () => (

@@ -5,6 +5,8 @@ import '../stylesheets/general.css';
 
 export default class Grid extends Component {
 	render() {
+		console.log(this.props.data);
+		console.log(this.props.data[0]);
 		return (
 			<div className="body">
 					<Row>
@@ -19,7 +21,6 @@ export default class Grid extends Component {
 
 class GridItem extends Component {
 	render() {
-
 		return (
 			 <Col sm="4">
     			<div className="hovereffect">
@@ -27,7 +28,6 @@ class GridItem extends Component {
         				<img className="img-responsive" src={this.props.data.img} alt=""/>
 						<div className="overlay">
                			 	<h1>{this.props.data.title}</h1>
-               			 	<h3>by</h3>
                			 	<h2>{this.props.data.subtitle}</h2>
            				</div>
 					</a>
