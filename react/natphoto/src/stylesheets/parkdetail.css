@@ -1,31 +1,27 @@
 .parkHeader {
- 	width: 100%;
-  	font-family: Ahem!, sans-serif;
-  	color: #EAEAEA;
-  	text-align: center;
-  	height: 100px;
-  	font-size: 75px;
+ overflow: hidden;
+ text-align: center;
+ font-size: 75px;
+ font-family: Ahem!, sans-serif;
 }
 
 .parkHeader:before,
 .parkHeader:after {
-  	background-color: #EAEAEA;
-  	content: "";
-  	display: inline-block;
-  	height: 1px;
-  	position: relative;
-  	vertical-align: middle;
-  	width: 50%;
+ background-color: #EAEAEA;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 50%;
 }
-
 .parkHeader:before {
-  	right: 0.5em;
-  	margin-left: -50%;
+ right: 0.5em;
+ margin-left: -50%;
 }
-
 .parkHeader:after {
-  	left: 0.5em;
-  	margin-right: -50%;
+ left: 0.5em;
+ margin-right: -50%;
 }
 
 .row {

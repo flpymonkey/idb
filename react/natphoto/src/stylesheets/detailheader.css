@@ -1,7 +1,11 @@
 .image {
-  width: 70%;
+  width: 100%;
   margin-left: 25%;
   border: 1px solid #EAEAEA;
+}
+
+.imgWrapper {
+  padding-right: 10%;
 }
 
 #info-text > h3 {
@@ -11,7 +15,7 @@
 }
 
 #infoHeader {
-  margin-left: 93%;
+  margin-left: 25%;
   color: #EAEAEA;
   font-family: Ahem!, sans-serif;
   font-size: 50px;
