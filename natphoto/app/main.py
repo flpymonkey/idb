@@ -141,5 +141,12 @@ api.add_resource(Camera, '/cameras/<camera_name>')
 
 handler = DataHandler(database_creds)
 
+
+def add(a: int, b: int) -> int:
+    """
+    Temporary function for testing travis
+    """
+    return a + b
+
 if __name__ == '__main__':
     app.run(debug=True)
