@@ -9,3 +9,4 @@ COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 COPY ./app /app
+COPY ./cors.conf /etc/nginx/conf.d/cors.conf
