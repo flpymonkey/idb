@@ -15,14 +15,18 @@ api = Api(app)
 ##
 ## Park
 ##
-# shows a single park
 class Park(Resource):
+    """
+    shows a single park
+    """
     def get(self, park_name):
         result = handler.get_park(park_name)
         return [dict(r) for r in result]
 
-# shows a list of all parks
 class ParkList(Resource):
+    """
+    shows a list of all parks
+    """
     def get(self):
         result = handler.get_parks()
         row = result.fetchone() #use fetchone() because the query returns lots of rows
@@ -35,7 +39,19 @@ class ParkList(Resource):
 ##
 ## Photo
 ##
+
+class Photo(Resource):
+    """
+    Return a single photo resource
+    """
+    def get(self, photo_id):
+        result = handler.get_photo(photo_id)
+        return [dict(r) for r in result]
+
 class PhotoList(Resource):
+    """
+    Get a container with all photo data
+    """
     def get(self):
         result = handler.get_photos()
         row = result.fetchone() #use fetchone() because the query returns lots of rows
@@ -48,8 +64,10 @@ class PhotoList(Resource):
 ##
 ## Camera
 ##
-# shows a single camera
 class Camera(Resource):
+    """
+    shows a single camera
+    """
     def get(self, camera_name):
         result = handler.get_camera(camera_name)
         return [dict(r) for r in result]
@@ -104,11 +122,20 @@ class DataHandler (object):
         return result
 
     def get_photos(self):
-        '''
+        """
         Get all photos from the database
-        '''
+        """
         photos_table = self.metadata.tables['photos']
         sel = select([photos_table])
+        result = self.connection.execute(sel)
+        return result
+
+    def get_photo(self, id):
+        """
+        Get a single photo from the database by name
+        """
+        photos_table = self.metadata.tables['photos']
+        sel = select([photos_table]).where(photos_table.c.id== id)
         result = self.connection.execute(sel)
         return result
 
@@ -136,6 +163,7 @@ class DataHandler (object):
 api.add_resource(ParkList, '/parks')
 api.add_resource(Park, '/parks/<park_name>')
 api.add_resource(PhotoList, '/photos')
+api.add_resource(Photo, '/photos/<photo_id>')
 api.add_resource(CameraList, '/cameras')
 api.add_resource(Camera, '/cameras/<camera_name>')
 
