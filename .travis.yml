@@ -5,7 +5,7 @@ python:
 
 install:
   - pwd
-  - cat $DB_INFO > ./natphoto/app/dbinfo.txt
+  - echo $DB_INFO > ./natphoto/app/dbinfo.txt
   - pip install -r ./natphoto/requirements.txt
 
 script:
