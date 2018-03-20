@@ -4,10 +4,10 @@ FILES :=			\
 	app/main.py
 
 run:
-	python3 app/main.py
+	cd app && python3 main.py
 
 test:
-	python3 app/tests.py
+	cd app && python3 tests.py
 
 clean:
 	rm -rf __pycache__

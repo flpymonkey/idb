@@ -1,1 +1,0 @@
-postgresql+psycopg2://bencj96:tonytime69@natphotodb.cnqkiqa2emjo.us-east-2.rds.amazonaws.com/natphotodb
