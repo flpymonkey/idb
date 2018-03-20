@@ -1,16 +1,15 @@
 import React, {Component} from "react"
+import { Link } from 'react-router-dom'
 import '../stylesheets/navbar.css'
 
-export default class NavBar extends Component {
-	render (){
-		return (
-			<ul className = "customNavbar">
-		  	<a href="/about" className = "navList">About</a>
-		    <a href="/cameras" className = "navList">Cameras</a>
-		    <a href="/photos" className = "navList">Photos</a>
-		    <a href="/parks" className = "navList">Parks</a>
-		    <a href="/" className = "navList">Home</a>
-		    <a id="logo" href="/"><span>NatPhoto</span><i className="material-icons">landscape</i></a>
-			</ul>);
-	}
-}
+const NavBar = () => (
+	<div>
+		<ul className = "customNavbar">
+			<Link to ="/">Home</Link>
+			<Link to="/about">About</Link>
+			<Link to="/photos">Photos</Link>
+		</ul>
+	</div>
+);
+		
+export default NavBar

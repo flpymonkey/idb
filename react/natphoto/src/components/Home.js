@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import { MyCarousel } from './Carousel.js'
-// import '../stylesheets/Home.css'
-// import '../stylesheets/navbar.css'
+import '../stylesheets/Home.css'
+import '../stylesheets/navbar.css'
 
 import NavBar from './NavBar.js'
 
