@@ -3,14 +3,11 @@ import { MyCarousel } from './Carousel.js'
 import '../stylesheets/Home.css'
 import '../stylesheets/navbar.css'
 
-import NavBar from './NavBar.js'
-
 export default class Home extends Component {
 	render (){
 		return (
 			<div className="body">
 				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
-				<NavBar />
 				<MyCarousel/>
 		    <div className="desc">
 		      <div className="textWrapper">
