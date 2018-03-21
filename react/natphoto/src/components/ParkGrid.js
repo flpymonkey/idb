@@ -2,14 +2,32 @@ import React, {Component} from "react";
 import Grid from './GridPage.js';
 
 export default class ParkGrid extends Component {
-	render() {
-		var park1 = {img:"https://media-cdn.tripadvisor.com/media/photo-s/07/94/2e/d6/death-valley-sign.jpg", title:"Death Valley", subtitle:"California"};
-		var park2 = {img:"http://pictures.richardhealey.com/pictures/original/p227_sign.jpg", title:"Yellowstone", subtitle:"Wyoming"};
-		var park3 = {img:"https://media-cdn.tripadvisor.com/media/photo-s/03/e0/7e/86/entrance-sign.jpg", title:"Yosemite", subtitle:"California"};
-		var parks = [park1, park2, park3];
-		
+
+	constructor(props){
+		super(props);
+    	this.state = {
+      		parks: []
+		};
+  	}
+	
+  	componentDidMount() {
+
+    	fetch('http://api.natphoto.me/parks', {
+    		method: 'GET', 
+    		dataType: 'json'
+    	}).then(results => {
+    		return results.json();
+    	}).then(data => { 
+    		var curr_parks = data.map((elem) => ({img: elem.image_url, title: elem.name, subtitle: elem.states}));
+      		this.setState({
+      			parks: curr_parks
+      		});
+    	})
+  	}
+      	
+	render () {
 		return (
-			<Grid data={parks} />
+	  		<Grid data={this.state.parks} /> 
 		);
-	}
+  	}
 }

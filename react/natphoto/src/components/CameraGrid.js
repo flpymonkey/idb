@@ -2,14 +2,32 @@ import React, {Component} from "react";
 import Grid from './GridPage.js';
 
 export default class CameraGrid extends Component {
-	render() {
-		var camera1 = {img:"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5792/5792700_sd.jpg", title:"Canon", subtitle:"30 megapixels"};
-		var camera2 = {img:"https://n3.sdlcdn.com/imgs/a/i/q/Nikon-Coolpix-P7700-12-2-1536150-6-f2879.jpg", title:"Nikon Cool Pix", subtitle:"12 megapixels"};
-		var camera3 = {img:"https://cdnl.ritzcamera.com/media/catalog/product/1/0/10268770.jpg", title:"Nikon D7100", subtitle:"24 megapixels"};
-		var cameras = [camera1, camera2, camera3];
-		
+
+	constructor(props){
+		super(props);
+    	this.state = {
+      		cameras: []
+		};
+  	}
+	
+  	componentDidMount() {
+
+    	fetch('http://api.natphoto.me/cameras', {
+    		method: 'GET', 
+    		dataType: 'json'
+    	}).then(results => {
+    		return results.json();
+    	}).then(data => { 
+    		var curr_cameras = data.map((elem) => ({img: elem.image_url, title: elem.name, subtitle: elem.price}));
+      		this.setState({
+      			cameras: curr_cameras
+      		});
+    	})
+  	}
+      	
+	render () {
 		return (
-			<Grid data={cameras} />
+	  		<Grid data={this.state.cameras} /> 
 		);
-	}
+  	}
 }
