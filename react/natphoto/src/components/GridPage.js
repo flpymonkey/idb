@@ -5,14 +5,13 @@ import '../stylesheets/general.css';
 
 export default class Grid extends Component {
 	render() {
-		console.log(this.props.data);
-		console.log(this.props.data[0]);
+		const photos = this.props.data.map((photo) =>
+  			<GridItem data={photo} />
+  		);
 		return (
 			<div className="body">
 					<Row>
-  						<GridItem data={this.props.data[0]} />
-  						<GridItem data={this.props.data[1]} />
-  						<GridItem data={this.props.data[2]} />
+						<div>{photos}</div>
 					</Row>
 			</div>
 		);
