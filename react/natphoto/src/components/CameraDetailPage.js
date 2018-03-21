@@ -23,7 +23,8 @@ export default class CameraDetail extends Component {
       type: "",
       video_resolution: "",
       water_resistant: "",
-      weight: ""
+      weight: "",
+      photos: ""
     }
   }
 
@@ -34,7 +35,6 @@ export default class CameraDetail extends Component {
     }).then(results => {
       return results.json();
     }).then(data => {
-      console.log(data['0'])
       this.setState({
           effective_megapixels: data['0'].effective_megapixels,
           image_resolution: data['0'].image_resolution,
@@ -50,7 +50,16 @@ export default class CameraDetail extends Component {
           water_resistant: data['0'].water_resistant,
           weight: data['0'].weight
       });
-    })
+        // // Get photos for this camera
+        // fetch('http://api.natphoto.me/photos?camera=' + this.props.match.params.camera_name, {
+        //   method: 'GET',
+        //   dataType: 'json',
+        // }).then(results => {
+        //   return results.json();
+        // }).then(data => {
+        //   console.log("HERE IS DATA" + data)
+        // });
+    });
   }
 
 	render (){
@@ -67,7 +76,9 @@ export default class CameraDetail extends Component {
         "Weight": this.state.weight,
         "Sensor": this.state.sensor
     }
-
+    // const elems = this.state.photos.map((elem) =>
+    // 		<td><img className = "photoImage" src={elem.image_url} alt=""/></td>
+    // );
 		return (
 			<div className="body">
 				<NavBar />
@@ -78,12 +89,8 @@ export default class CameraDetail extends Component {
 					<h1 id = "photos">Photos Taken</h1>
   					<table className = "photoTable">
     					<tr>
-      						<td><img className = "photoImage" src="https://travel.usnews.com/static-travel/images/destinations/7/grand_prismatic_spring_yellowstone.jpg" alt=""/></td>
-      						<td><img className = "photoImage" src="http://cdn.newsapi.com.au/image/v1/f03f880ac3fe263b0309c1987c69008b" alt=""/></td>
-      						<td><img className = "photoImage" src="https://www.travelwyoming.com/sites/default/files/styles/16_9_wide/public/assets/YNP_hero1_v2.gif?itok=N0SaAXh6&timestamp=1457981209" alt=""/></td>
-     		 				<td><img className = "photoImage" src="http://cdn.history.com/sites/2/2017/03/GettyImages-154931596.jpg" alt=""/></td>
-      						<td><img className = "photoImage" src="http://cdn-image.travelandleisure.com/sites/default/files/styles/medium_2x/public/1517261363/yellowstone-national-park-wyoming-YELLOWSTONE0118.jpg?itok=1ETM2GNU" alt=""/></td>
-    					</tr>
+                  // Put the elems here!!!!!!!!!!! TODO
+      				</tr>
   					</table>
   				</Row>
 
