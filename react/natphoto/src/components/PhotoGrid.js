@@ -11,25 +11,25 @@ export default class PhotoGrid extends Component {
       photos: []
     };
   }
-	
+
   componentDidMount() {
 
     fetch('http://api.natphoto.me/photos', {
-    	method: 'GET', 
+    	method: 'GET',
     	dataType: 'json'
     }).then(results => {
     	return results.json();
-    }).then(data => { 
-    	var curr_photos = data.map((elem) => ({img: elem.flickr_url, title: elem.title, subtitle: elem.photographer}));
+    }).then(data => {
+    	var curr_photos = data.map((elem) => ({img: elem.image_url, title: elem.title, subtitle: elem.photographer}));
       	this.setState({
       		photos: curr_photos
       	});
     })
   }
-      	
+
   render () {
 	return (
-	  <Grid data={this.state.photos} /> 
+	  <Grid data={this.state.photos} />
 	);
   }
 }
