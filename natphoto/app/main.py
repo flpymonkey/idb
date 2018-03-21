@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine, MetaData, and_
 from sqlalchemy.sql import select
 import json
 
@@ -53,7 +53,20 @@ class PhotoList(Resource):
     Get a container with all photo data
     """
     def get(self):
-        result = handler.get_photos()
+        parser = reqparse.RequestParser()
+        parser.add_argument('park')
+        parser.add_argument('camera')
+        args = parser.parse_args()
+
+        if args['park'] is not None and args['camera'] is not None:
+            result = handler.get_photos_by_park_camera(args['park'], args['camera'])
+        elif args['park'] is not None:
+            result = handler.get_photos_by_park(args['park'])
+        elif args['camera'] is not None:
+            result = handler.get_photos_by_camera(args['camera'])
+        else:
+            result = handler.get_photos()
+
         row = result.fetchone() #use fetchone() because the query returns lots of rows
         results=[]
         while row is not None:
@@ -118,6 +131,33 @@ class DataHandler (object):
         '''
         parks_table = self.metadata.tables['parks']
         sel = select([parks_table]).where(parks_table.c.name == name)
+        result = self.connection.execute(sel)
+        return result
+
+    def get_photos_by_park_camera(self, park, camera):
+        """
+        Gets all photos taken at a specific park with a specific camera
+        """
+        photos_table =  self.metadata.tables['photos']
+        sel = select([photos_table]).where(and_(photos_table.c.camera == camera, photos_table.c.park == park))
+        result = self.connection.execute(sel)
+        return result
+
+    def get_photos_by_camera(self, camera):
+        """
+        Gets all photos taken with a specific camera
+        """
+        photos_table =  self.metadata.tables['photos']
+        sel = select([photos_table]).where(photos_table.c.camera == camera)
+        result = self.connection.execute(sel)
+        return result
+
+    def get_photos_by_park(self, park):
+        """
+        Gets all photos taken at a specific park
+        """
+        photos_table =  self.metadata.tables['photos']
+        sel = select([photos_table]).where(photos_table.c.park == park)
         result = self.connection.execute(sel)
         return result
 
