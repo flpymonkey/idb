@@ -6,14 +6,51 @@ import '../stylesheets/general.css';
 import '../stylesheets/parkdetail.css';
 
 export default class ParkDetail extends Component {
+
+    constructor(props){
+      super(props);
+    	this.state = {
+        description: "",
+        directions : "",
+        directions_url: "",
+        image_url: "",
+        latlong: "",
+        name: "",
+        states: "",
+        url: "",
+        weather: ""
+      };
+    }
+
+  	componentDidMount() {
+      fetch('http://api.natphoto.me/parks/' + this.props.match.params.park_name, {
+      	method: 'GET',
+      	dataType: 'json'
+      }).then(results => {
+      	return results.json();
+      }).then(data => {
+        console.log(data["0"]);
+      	this.setState({
+          description: data["0"].description,
+          directions : data["0"].direction,
+          directions_url: data["0"].directions_url,
+          image_url: data["0"].image_url,
+          latlong: data["0"].latlong,
+          name: data["0"].name,
+          states: data["0"].states,
+          url: data["0"].url,
+          weather: data["0"].weather
+        });
+      })
+  	}
+
 	render() {
-		var parkLabels = {'Location:':"Death Valley National Park", 'Website:':"https://w", 'Daylight hours:':"Sometime", 'Weather:':"HOT", 'ParkHours:':"24/7", 'Other:':"Other"};
+		var parkLabels = {'Location:':this.state.latlong, 'Website:':this.state.url, 'Weather:':this.state.weather, 'Directions':this.state.directions};
 
 		return(
 			<div className="body">
-				<NavBar />
-				<h1 className="parkHeader"><span>Death Valley National Park</span></h1>
-				<DetailHeader pic="https://www.nps.gov/deva/planyourvisit/images/Above-Golden-Canyon-04.jpg?maxwidth=1200&maxheight=1200&autorotate=false" name="Death Valley National Park" infoAttributes={parkLabels}/>
+				<h1 className="parkHeader"><span>{this.state.name}</span></h1>
+				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={parkLabels}/>
 
 				<ScrollableTable />
 
@@ -31,4 +68,3 @@ export default class ParkDetail extends Component {
 		);
 	}
 }
-
