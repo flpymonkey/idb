@@ -28,7 +28,13 @@ class ParkList(Resource):
     shows a list of all parks
     """
     def get(self):
-        result = handler.get_parks()
+        parser = reqparse.RequestParser()
+        parser.add_argument('camera')
+        args = parser.parse_args()
+        if args['camera'] is not None:
+            result = handler.get_parks_by_camera(args['camera'])
+        else:
+            result = handler.get_parks()
         row = result.fetchone() #use fetchone() because the query returns lots of rows
         results=[]
         while row is not None:
@@ -115,6 +121,18 @@ class DataHandler (object):
         self.connection = self.engine.connect()
         self.metadata = MetaData()
         self.metadata.reflect(bind=self.engine)
+
+    def get_parks_by_camera(self, camera):
+        """
+        Get all parks that a camera was used at
+        """
+        parks_table = self.metadata.tables['parks']
+        photos_table = self.metadata.tables['photos']
+        my_join = parks_table.join(photos_table,
+                    parks_table.c.name == photos_table.c.park)
+        sel = select([parks_table]).select_from(my_join).where(parks_table.c.camera == camera)
+        result = self.connection.execute(sel)
+        return result
 
     def get_parks(self):
         '''
