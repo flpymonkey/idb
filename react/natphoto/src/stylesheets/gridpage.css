@@ -34,6 +34,8 @@
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
+	height: 300px;
+	width: auto;
 }
 
 .hovereffect img {
@@ -42,6 +44,7 @@
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
   height: 300px;
+	width: auto;
 }
 
 .hovereffect:hover img {
@@ -82,4 +85,19 @@
   filter: alpha(opacity=100);
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
+}
+
+.card-img {
+	top width: 100px;
+	height: 200px;
+}
+
+.CardBody {
+	flex: 1 1 auto;
+}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
 }

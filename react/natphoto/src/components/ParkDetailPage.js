@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar.js';
 import DetailHeader from './DetailHeader.js';
 import ScrollableTable from './ScrollableTable.js';
 import '../stylesheets/general.css';

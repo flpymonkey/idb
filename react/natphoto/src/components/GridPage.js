@@ -1,9 +1,14 @@
 import React, {Component} from "react";
 import { Link } from 'react-router-dom';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Container} from 'reactstrap';
+import Pagination from 'react-js-pagination';
 import '../stylesheets/gridpage.css';
 import '../stylesheets/general.css';
-import Pagination from 'react-js-pagination';
+
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle } from 'reactstrap';
+
+
 
 export default class Grid extends Component {
 
@@ -39,13 +44,14 @@ export default class Grid extends Component {
 		// console.log(`data length is ${this.props.data.length}`);
 
 		const elems = this.state.photos.map((elem) =>
-  			<GridItem data={elem} />
+  			<GridItemCard data={elem} />
   		);
 
 		return (
 			<div className="body">
+        <Container>
 					<Row>
-						<div>{elems}</div>
+						{elems}
 					</Row>
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 					<Pagination
@@ -57,20 +63,36 @@ export default class Grid extends Component {
           				className = "pagination"
         			/>
 
-
+        </Container>
 			</div>
 		);
 	}
 }
 
+class GridItemCard extends Component {
+  render() {
+      return(
+        <Col sm="3">
+          <div>
+            <Card>
+              <CardImg src={this.props.data.img} alt="Card image cap" />
+              <CardBody>
+                <CardTitle>{this.props.data.title}</CardTitle>
+                <CardSubtitle>{this.props.data.subtitle}</CardSubtitle>
+                <CardText>Some quick example text to build on the card title and make up the bulk of the cards content.</CardText>
+              </CardBody>
+            </Card>
+          </div>
+        </Col>
+      );
+  }
+}
+
 class GridItem extends Component {
-    constructor(props) {
-        super(props)
-    }
 
 	render() {
 		return (
-			 <Col sm="4">
+			 <Col sm="3">
     			<div className="hovereffect">
 					<Link to={this.props.data.detail_url}>
         				<img className="img-responsive" src={this.props.data.img} alt=""/>

@@ -78,6 +78,13 @@
 
 .topProfiles {
   margin-bottom: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.bottomProfiles {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .dataHeader {

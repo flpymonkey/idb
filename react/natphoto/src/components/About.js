@@ -10,15 +10,15 @@ export default class About extends Component {
 		 		<p className="aboutDesc">Natphoto allows photographers to compare cameras, photos, and the locations where photos are taken so they can improve their overall trip and photography. This site allows photographers to compare specific cameras details by showing pictures taken with cameras in specific locations. Additionally, this site pulls data about national parks from NPS.gov so that people can get a better idea of weather conditions, park hours, and park alerts before they travel. This website is a one-stop-shop for picking the right camera for the best possible photos in the best national parks in the United States!</p>
  		 		<h1 className="aboutHeader" id="aboutTitle"><span>Meet the SWEet Tea Team</span></h1>
  		 		<Row className="topProfiles">
-					<GroupMember name="Jeff Bell" devtype="Backend" pic="jeff.png" bio="Still thinking... about my bio."/>
-					<GroupMember name="Dayanny Caballero" devtype="Frontend" pic="dayanny.png" bio= "I am a third-year computer science major interested in IOS mobile development. I enjoy being a TA for the freshman class and watching Netflix in my free time."/>
-					<GroupMember name="Tony DeNapoli" devtype="Frontend" pic="tony.png" bio="I am a fourth year computer science major at UT. I have experience working with Android and iOS and my main interest is in mobile computing. I enjoy playing drums, playing video games, skating, and music!"/>
+					<GroupMember name="Jeff Bell" gitId="jhbell" devtype="Backend" pic="jeff.png" bio="Still thinking... about my bio."/>
+					<GroupMember name="Dayanny Caballero" gitId="dayannyc" devtype="Frontend" pic="dayanny.png" bio= "I am a third-year computer science major interested in IOS mobile development. I enjoy being a TA for the freshman class and watching Netflix in my free time."/>
+					<GroupMember name="Tony DeNapoli" gitId="tonydenapoli" devtype="Frontend" pic="tony.png" bio="I am a fourth year computer science major at UT. I have experience working with Android and iOS and my main interest is in mobile computing. I enjoy playing drums, playing video games, skating, and music!"/>
  		 		</Row>
- 		 		<Row>
+ 		 		<Row className="bottomProfiles">
  		 			<Col sm="1"></Col>
- 		 			<GroupMember name="Ben Johnson" devtype="Backend" pic="ben.png" bio="I am a third-year computer science major who also is interested in film-making and traveling. I plan to graduate and move to a small village in South Africa."/>
+ 		 			<GroupMember name="Ben Johnson" gitId="flpymonkey" devtype="Backend" pic="ben.png" bio="I am a third-year computer science major who also is interested in film-making and traveling. I plan to graduate and move to a small village in South Africa."/>
  		 			<Col sm="2"></Col>
- 		 			<GroupMember name="Bri Vargas" devtype="Frontend" pic="bri.png" bio="I am a third-year computer science major interested in full-stack web development. In my free time I enjoy playing soccer, watching movies, and hanging out with family."/>
+ 		 			<GroupMember name="Bri Vargas" gitId="vargasbri2" devtype="Frontend" pic="bri.png" bio="I am a third-year computer science major interested in full-stack web development. In my free time I enjoy playing soccer, watching movies, and hanging out with family."/>
  		 		</Row>
  		 		<TeamStats />
 
@@ -36,9 +36,9 @@ class GroupMember extends Component {
         		<h3 className="resp">{this.props.devtype} Developer</h3>
         		<span id="bio">{this.props.bio}<br/></span>
         		<div id="bioLine"></div>
-        		<span className="gitProfile">Commits:  <br/></span>
-        		<span className="gitProfile">Issues:  <br/></span>
-        		<span className="gitProfile">Unit Tests: 0</span>
+        		<span className="gitProfile">Commits: ?<br/></span>
+        		<span className="gitProfile">Issues: ?<br/></span>
+        		<span className="gitProfile">Unit Tests: ?</span>
       		</Col>
 		);
 	}
@@ -54,9 +54,9 @@ class TeamStats extends Component {
     				<Col sm="3">
       					<Row id="teamStatsBox">
        						<Col sm="6">
-          						<h2 className="teamStatsInfo">Total Commits: <br/></h2>
-          						<h2 className="teamStatsInfo">Total Issues: <br/></h2>
-         						<h2 className="teamStatsInfo">Total Unit Tests: </h2>
+          						<h2 className="teamStatsInfo">Total Commits: ?<br/></h2>
+          						<h2 className="teamStatsInfo">Total Issues: ?<br/></h2>
+         						<h2 className="teamStatsInfo">Total Unit Tests: ?</h2>
         					</Col>
         					<Col sm="6">
           						<h2 className="teamStatsData">0</h2>
