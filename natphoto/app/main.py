@@ -93,7 +93,15 @@ class Camera(Resource):
 
 class CameraList(Resource):
     def get(self):
-        result = handler.get_cameras()
+        parser = reqparse.RequestParser()
+        parser.add_argument('park')
+        args = parser.parse_args()
+
+        if args['park'] is not None:
+            result = handler.get_cameras_by_park(args['park'])
+        else:
+            result = handler.get_cameras()
+
         row = result.fetchone() #use fetchone() because the query returns lots of rows
         results=[]
         while row is not None:
@@ -130,7 +138,7 @@ class DataHandler (object):
         photos_table = self.metadata.tables['photos']
         my_join = parks_table.join(photos_table,
                     parks_table.c.name == photos_table.c.park)
-        sel = select([parks_table]).select_from(my_join).where(parks_table.c.camera == camera)
+        sel = select([parks_table]).select_from(my_join).where(photos_table.c.camera == camera)
         result = self.connection.execute(sel)
         return result
 
@@ -157,7 +165,9 @@ class DataHandler (object):
         Gets all photos taken at a specific park with a specific camera
         """
         photos_table =  self.metadata.tables['photos']
-        sel = select([photos_table]).where(and_(photos_table.c.camera == camera, photos_table.c.park == park))
+        sel = select([photos_table]).where(
+                and_(photos_table.c.camera == camera,
+                     photos_table.c.park == park))
         result = self.connection.execute(sel)
         return result
 
@@ -197,6 +207,18 @@ class DataHandler (object):
         result = self.connection.execute(sel)
         return result
 
+    def get_cameras_by_park(self, park):
+        """
+        Get all cameras that are used at this park
+        """
+        cameras_table = self.metadata.tables['cameras']
+        photos_table = self.metadata.tables['photos']
+        my_join = cameras_table.join(photos_table,
+                    cameras_table.c.name == photos_table.c.camera)
+        sel = select([cameras_table]).select_from(my_join).where(photos_table.c.park == park)
+        result = self.connection.execute(sel)
+        return result
+
     def get_cameras(self):
         '''
         Get all cameras from the database
@@ -214,7 +236,7 @@ class DataHandler (object):
         sel = select([cameras_table]).where(cameras_table.c.name == name)
         result = self.connection.execute(sel)
         return result
-
+    
 ##
 ## Api resource routing here
 ##
