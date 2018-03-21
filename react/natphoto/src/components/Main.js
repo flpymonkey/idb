@@ -5,6 +5,7 @@ import About from './About.js'
 import PhotoGrid from './PhotoGrid.js'
 import ParkGrid from './ParkGrid.js'
 import CameraGrid from './CameraGrid.js'
+import PhotoDetailPage from './PhotoDetailPage.js'
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -15,6 +16,7 @@ const Main = () => (
   <main>
     <Switch>
       <Route exact path='/' component={Home}/>
+      <Route path='/photos/:photo_id' component={PhotoDetailPage}/>
       <Route path='/photos' component={PhotoGrid}/>
       <Route path='/parks' component={ParkGrid}/>
       <Route path='/cameras' component={CameraGrid}/>
