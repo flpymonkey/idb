@@ -1,9 +1,9 @@
 import * as $ from "jquery";
 
-API_URL = 'http://api.natphoto.me'
+var API_URL = 'http://api.natphoto.me'
 
 
-export default class ApiService {
+export default class ApiHandler {
 
   static getPhotos(offset=0, limit=9) {
     return $.ajax({
