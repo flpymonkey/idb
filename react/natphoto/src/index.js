@@ -6,7 +6,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import 'bootstrap/dist/css/bootstrap.css';
+
+document.body.style = 'background: #262626;';
 
 ReactDOM.render(
 	<BrowserRouter>

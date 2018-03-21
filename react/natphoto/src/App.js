@@ -6,11 +6,11 @@ import NavBar from './components/NavBar.js'
 import Main from './components/Main.js';
 
 const App = () => (
-	<div>
+	<div className = "appBody">
 		<NavBar />
 		<Main />
 	</div>
-      
+
 )
 
 export default App;
