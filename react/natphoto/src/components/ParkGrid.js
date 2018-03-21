@@ -18,7 +18,12 @@ export default class ParkGrid extends Component {
     	}).then(results => {
     		return results.json();
     	}).then(data => { 
-    		var curr_parks = data.map((elem) => ({img: elem.image_url, title: elem.name, subtitle: elem.states}));
+    		var curr_parks = data.map((elem) => ({
+                img: elem.image_url,
+                title: elem.name, 
+                subtitle: elem.states, 
+                detail_url: "/parks/" + elem.name}
+            ));
       		this.setState({
       			parks: curr_parks
       		});

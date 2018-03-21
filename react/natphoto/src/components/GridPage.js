@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
 import '../stylesheets/gridpage.css';
 import '../stylesheets/general.css';
@@ -37,14 +38,14 @@ export default class Grid extends Component {
 	render() {
 		// console.log(`data length is ${this.props.data.length}`);
 
-		const photos = this.state.photos.map((photo) =>
-  			<GridItem data={photo} />
+		const elems = this.state.photos.map((elem) =>
+  			<GridItem data={elem} />
   		);
 
 		return (
 			<div className="body">
 					<Row>
-						<div>{photos}</div>
+						<div>{elems}</div>
 					</Row>
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 					<Pagination
@@ -63,17 +64,21 @@ export default class Grid extends Component {
 }
 
 class GridItem extends Component {
+    constructor(props) {
+        super(props)
+    }
+
 	render() {
 		return (
 			 <Col sm="4">
     			<div className="hovereffect">
-					<a href="/photo/3">
+					<Link to={this.props.data.detail_url}>
         				<img className="img-responsive" src={this.props.data.img} alt=""/>
 						<div className="overlay">
                			 	<h1>{this.props.data.title}</h1>
                			 	<h2>{this.props.data.subtitle}</h2>
            				</div>
-					</a>
+					</Link>
     			</div>
     		</Col>
 		);

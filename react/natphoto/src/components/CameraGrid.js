@@ -18,7 +18,12 @@ export default class CameraGrid extends Component {
     	}).then(results => {
     		return results.json();
     	}).then(data => { 
-    		var curr_cameras = data.map((elem) => ({img: elem.image_url, title: elem.name, subtitle: elem.price}));
+    		var curr_cameras = data.map((elem) => ({
+                img: elem.image_url,
+                title: elem.name, 
+                subtitle: elem.price,
+                detail_url: "/cameras/" + elem.name
+            }));
       		this.setState({
       			cameras: curr_cameras
       		});
