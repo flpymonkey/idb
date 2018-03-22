@@ -6,8 +6,8 @@ retrieve data from our database to serve to our API endpoints.
 
 Tools we use for our database and data retrieval:
 
-1. **PostgreSQL** - The database engine we use on our Amazon Relational Database
-Service instance.
+1. **PostgreSQL** - The SQL based database engine we use on our Amazon Relational
+Database Service instance.
 
 2. **sqlalchemy** - A Python library we use to perform queries on the database and
 retrieve data to serve to our API endpoints.
