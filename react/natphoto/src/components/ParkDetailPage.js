@@ -33,8 +33,7 @@ export default class ParkDetail extends Component {
         console.log(data["0"]);
       	this.setState({
           description: data["0"].description,
-          directions : data["0"].direction,
-          directions_url: data["0"].directions_url,
+          directions : data["0"].directions_url,
           image_url: data["0"].image_url,
           latlong: data["0"].latlong,
           name: data["0"].name,
@@ -74,7 +73,7 @@ export default class ParkDetail extends Component {
   	}
 
 	render() {
-		var parkLabels = {'Location:':this.state.latlong, 'Website:':this.state.url, 'Weather:':this.state.weather, 'Directions':this.state.directions};
+		var parkLabels = {'Location:':this.state.latlong, 'Website:':this.state.url, 'Weather:':this.state.weather, 'Directions:':this.state.directions};
 
 		return(
 			<div className="body">
@@ -82,8 +81,7 @@ export default class ParkDetail extends Component {
 				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={parkLabels}/>
 
 				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos} />
-        <ScrollableTable tableTitle="Cameras Used" data={this.state.cameras} />
-
+        		<ScrollableTable tableTitle="Cameras Used" data={this.state.cameras} />
 			</div>
 		);
 	}

@@ -8,10 +8,10 @@ export default class DetailHeader extends Component {
 		var keys = Object.keys(this.props.infoAttributes);
 		const listItems = keys.map((key) =>
 			<Row>
-				<Col sm="6">
+				<Col sm="3" className="descKeys">
 					<h3>{key} </h3>
 				</Col>
-				<Col sm="6">
+				<Col sm="9" className="descVals">
 					<h3>{this.props.infoAttributes[key+""]}</h3>
 				</Col>
 			</Row>
@@ -30,9 +30,7 @@ export default class DetailHeader extends Component {
 						<Row>
 			  			<h2 id = "infoHeader">Info</h2>
 						</Row>
-						<Row>
-							<div>{listItems}</div>
-						</Row>
+						<div className="infoRow">{listItems}</div>
       		</Col>
   		</Row>
 		);

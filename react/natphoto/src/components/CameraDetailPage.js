@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Row } from 'reactstrap';
 import NavBar from './NavBar.js';
 import DetailHeader from './DetailHeader.js';
 import ScrollableTable from './ScrollableTable.js';
@@ -110,21 +109,18 @@ export default class CameraDetail extends Component {
 
 	render (){
 		var cameraLabels = {
-        "Price": this.state.price,
-        "Camera Type": this.state.type,
-        "Effective Megapixels": this.state.effective_megapixels,
-        "Total Megapixels": this.state.total_megapixels,
-        "Image Resolution": this.state.image_resolution,
-        "Video Resolution": this.state.video_resolution,
-        "Shutter Speeds": this.state.shutter_speeds,
-        "ISO": this.state.iso,
-        "Water Resistant": this.state.water_resistant,
-        "Weight": this.state.weight,
-        "Sensor": this.state.sensor
+        "Price:": this.state.price,
+        "Camera Type:": this.state.type,
+        "Effective Megapixels:": this.state.effective_megapixels,
+        "Total Megapixels:": this.state.total_megapixels,
+        "Image Resolution:": this.state.image_resolution,
+        "Video Resolution:": this.state.video_resolution,
+        "Shutter Speeds:": this.state.shutter_speeds,
+        "ISO:": this.state.iso,
+        "Water Resistant:": this.state.water_resistant,
+        "Weight:": this.state.weight,
+        "Sensor:": this.state.sensor
     }
-    // const elems = this.state.photos.map((elem) =>
-    // 		<td><img className = "photoImage" src={elem.image_url} alt=""/></td>
-    // );
 		return (
 			<div className="body">
 				<NavBar />
