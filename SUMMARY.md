@@ -14,7 +14,6 @@
     * [Park](doc/models.md#park)
     * [Photo](doc/models.md#photo)
     * [UML Diagram](doc/models.md#uml)
-* [Self Critique](/doc/self-critique.md)
 * [Database](doc/database.md)
 * [Testing](doc/testing.md)
 * [Self Critique](doc/self-critique.md)

@@ -35,13 +35,19 @@ Below are the models for cameras, national parks, and photos.
 | `image_url` | A link to an image of the park provided by nps.gov | "https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg" |
 
 ## Photo {#photo}
-	* Photographer
-	* Number of likes
-	* Title
-	* Date taken
-	* Park taken at
-	* Camera
-	* National Park
+
+| Field           | Description                       | Example               |
+|-----------------|-----------------------------------|-----------------------|
+| `id` | The id of the photo | 1 |
+| `photographer` | The photographer of the photo | "Dan Giveon" |
+| `title` | The title of the photo | "Buffalo in South Dakota" |
+| `park` | The `name` of the park where the photo was taken | "Badlands National Park" |
+| `camera` | The `name` of the camera that took the photo | "Canon PowerShot SX710 HS" |
+| `date` | The date the photo was taken | "2017-08-26 04:07:05" |
+| `likes` | The number of favorites on Flickr for that photo | "0" |
+| `flickr_url` | A link to the photo on Flickr | "https://www.flickr.com/photos/dangiveon/38977153140/" |
+| `image_url` | A link to the actual image file | "https://c1.staticflickr.com/5/4776/38977153140_f7e605e884_h.jpg" |
+| `description` | A description of the photo | "Badlands National Park" |
 
 ## UML Diagram {#uml}
 
