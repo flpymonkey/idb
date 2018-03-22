@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Row } from 'reactstrap';
 import NavBar from './NavBar.js';
 import DetailHeader from './DetailHeader.js';
+import ScrollableTable from './ScrollableTable.js';
 import '../stylesheets/general.css';
 import '../stylesheets/cameradetail.css';
 
@@ -84,17 +85,8 @@ export default class CameraDetail extends Component {
 				<NavBar />
 				<h1 className="cameraHeader"><span>{this.state.name}</span></h1>
 				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={cameraLabels}/>
-
-				<Row id="table-row">
-					<h1 id = "photos">Photos Taken</h1>
-  					<table className = "photoTable">
-    					<tr>
-                  // Put the elems here!!!!!!!!!!! TODO
-      				</tr>
-  					</table>
-  				</Row>
-
-  				<h1 id = "parksListed" >Parks Used At</h1>
+				<ScrollableTable tableTitle="Photos Taken" />
+				<ScrollableTable tableTitle="Parks Used At" />
 			</div>
 
 		);

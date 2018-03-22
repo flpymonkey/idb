@@ -51,18 +51,9 @@ export default class ParkDetail extends Component {
 				<h1 className="parkHeader"><span>{this.state.name}</span></h1>
 				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={parkLabels}/>
 
-				<ScrollableTable />
+				<ScrollableTable tableTitle="Photos Taken" />
+				<ScrollableTable tableTitle="Cameras Used" />
 
-    			<h1 id = "parkPhotos" >Cameras Used</h1>
-    			<table className = "parkTable">
-      				<tr>
-        				<td>
-        					<a href="/camera/1">
-        						<img className = "camImage" src="https://n3.sdlcdn.com/imgs/a/i/q/Nikon-Coolpix-P7700-12-2-1536150-6-f2879.jpg"alt=""/>
-        					</a>
-        				</td>
-      				</tr>
-    			</table>
 			</div>
 		);
 	}
