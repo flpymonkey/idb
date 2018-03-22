@@ -25,7 +25,8 @@ export default class CameraDetail extends Component {
       video_resolution: "",
       water_resistant: "",
       weight: "",
-      photos: []
+      photos: [],
+      parks: []
     }
   }
 
@@ -70,7 +71,7 @@ export default class CameraDetail extends Component {
         return results.json();
       }).then(data => {
           var curr_photos = data.map((elem) => ({
-                img: elem.image_url}
+                img: elem.image_url, path: "/photos/" + elem.id, name: elem.title}
             ));
           this.setState({
             effective_megapixels: effective_megapixels,
@@ -88,8 +89,22 @@ export default class CameraDetail extends Component {
             weight: weight,
             photos: curr_photos
           });
-          console.log("hellloooo")
       });
+    });
+
+    fetch('http://api.natphoto.me/parks?camera=' + this.props.match.params.camera_name, {
+      method: 'GET',
+      dataType: 'json',
+    }).then(results => {
+      return results.json();
+    }).then(data => {
+        console.log(data);
+        var curr_parks = data.map((elem) => ({
+              img: elem.image_url, path: "/parks/" + elem.name, name: elem.name}
+          ));
+        this.setState({
+          parks: curr_parks
+        });
     });
   }
 
@@ -116,6 +131,7 @@ export default class CameraDetail extends Component {
 				<h1 className="cameraHeader"><span>{this.state.name}</span></h1>
 				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={cameraLabels}/>
 				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos}/>
+        <ScrollableTable tableTitle="Parks" data={this.state.parks}/>
 			</div>
 
 		);
