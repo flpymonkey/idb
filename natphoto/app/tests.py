@@ -1,5 +1,5 @@
 from unittest import main, TestCase
-from main import add, app
+from main import app
 
 import json
 
@@ -8,10 +8,6 @@ class Tests(TestCase):
     def setUp(self):
         self.app = app.test_client()
         self.app.testing = True
-
-    def test_add(self):
-        v = add(2, 3)
-        self.assertEqual(v, 5)
 
     def test_site_cameras(self):
         r = self.app.get('/cameras')
@@ -31,6 +27,11 @@ class Tests(TestCase):
         self.assertEqual(len(_json_r), 1)
         self.assertEqual(r.status_code, 200)
 
+    def test_site_individual_camera_fail(self):
+        r = self.app.get('/cameras/abc')
+        _json_r = json.loads(r.data)
+        self.assertEqual(r.status_code, 404)
+
     def test_site_parks(self):
         r = self.app.get('/parks')
         _json_r = json.loads(r.data)
@@ -48,6 +49,11 @@ class Tests(TestCase):
         _json_r = json.loads(r.data)
         self.assertEqual(len(_json_r), 1)
         self.assertEqual(r.status_code, 200)
+
+    def test_site_individual_park_fail(self):
+        r = self.app.get('/parks/abc')
+        _json_r = json.loads(r.data)
+        self.assertEqual(r.status_code, 404)
 
     def test_site_photos(self):
         r = self.app.get('/photos')
@@ -90,6 +96,11 @@ class Tests(TestCase):
         _json_r = json.loads(r.data)
         self.assertEqual(len(_json_r), 1)
         self.assertEqual(r.status_code, 200)
+
+    def test_site_individual_photo_fail(self):
+        r = self.app.get('/photos/abc')
+        _json_r = json.loads(r.data)
+        self.assertEqual(r.status_code, 404)
 
     def test_site_about(self):
         r = self.app.get('/about')

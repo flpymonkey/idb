@@ -3,7 +3,7 @@ from sqlalchemy.sql import select
 import json
 import requests
 
-from flask import Flask
+from flask import Flask, abort
 from flask_restful import reqparse, abort, Api, Resource
 
 # Path to the database credentials file
@@ -11,6 +11,7 @@ database_creds = 'dbinfo.txt'
 
 # Flask API setup
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 api = Api(app)
 
 ##
@@ -22,7 +23,10 @@ class Park(Resource):
     """
     def get(self, park_name):
         result = handler.get_park(park_name)
-        return [dict(r) for r in result]
+        response = [dict(r) for r in result]
+        if len(response) == 0:
+            abort(404)
+        return response
 
 class ParkList(Resource):
     """
@@ -52,8 +56,16 @@ class Photo(Resource):
     Return a single photo resource
     """
     def get(self, photo_id):
+        try:
+            int(photo_id)
+        except ValueError:
+            abort(404)
+
         result = handler.get_photo(photo_id)
-        return [dict(r) for r in result]
+        response = [dict(r) for r in result]
+        if len(response) == 0:
+            abort(404)
+        return response
 
 class PhotoList(Resource):
     """
@@ -90,7 +102,10 @@ class Camera(Resource):
     """
     def get(self, camera_name):
         result = handler.get_camera(camera_name)
-        return [dict(r) for r in result]
+        response = [dict(r) for r in result]
+        if len(response) == 0:
+            abort(404)
+        return response
 
 class CameraList(Resource):
     def get(self):
@@ -304,12 +319,6 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
     return response
-
-def add(a: int, b: int) -> int:
-    """
-    Temporary function for testing travis
-    """
-    return a + b
 
 if __name__ == '__main__':
     app.run(debug=True)
