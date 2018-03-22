@@ -320,11 +320,5 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
     return response
 
-def add(a: int, b: int) -> int:
-    """
-    Temporary function for testing travis
-    """
-    return a + b
-
 if __name__ == '__main__':
     app.run(debug=True)
