@@ -6,12 +6,12 @@ import '../stylesheets/scrollabletable.css';
 export default class ScrollableTable extends Component {
 
 	render() {
-		console.log("child " + this.props.data)
-		/*const elems = this.props.data.map((elem) =>
+		console.log(this.props.data)
+		const elems = this.props.data.map((elem) =>
 				<td>
 					<img className = "photoImage" src={elem.img} alt="hi"/>
 				</td>
-			);*/
+			);
 
 		return(
 			<div className="body">
@@ -21,6 +21,7 @@ export default class ScrollableTable extends Component {
     					<tbody>
           					<tr>
             					<th scope="row"></th>
+											{elems}
           					</tr>
         				</tbody>
       				</Table>

@@ -88,6 +88,7 @@ export default class CameraDetail extends Component {
             weight: weight,
             photos: curr_photos
           });
+          console.log("hellloooo")
       });
     });
   }
@@ -115,7 +116,6 @@ export default class CameraDetail extends Component {
 				<h1 className="cameraHeader"><span>{this.state.name}</span></h1>
 				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={cameraLabels}/>
 				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos}/>
-				<ScrollableTable tableTitle="Parks Used At" />
 			</div>
 
 		);
