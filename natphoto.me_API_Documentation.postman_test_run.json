@@ -1,0 +1,694 @@
+{
+	"id": "6202dd7d-353f-4633-ac59-97b8ad9723ad",
+	"name": "natphoto.me API Documentation",
+	"allTests": [],
+	"timestamp": "2018-03-22T16:03:17.077Z",
+	"collection_id": "4a5dbb75-905e-167a-fd8a-aef976c28adf",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "4a5dbb75-905e-167a-fd8a-aef976c28adf",
+		"name": "natphoto.me API Documentation",
+		"description": "# Introduction\nPulls data from the database at natphoto.me\n\n# Overview\nAll of the data stored in this database are pulled from credible sources such as nps.gov (National Park Information), flickr.com (Photograph Information), and bestbuy.com (Camera Information)\n\n# Authentication\nWhat is the preferred way of using the API? \n\n# Error Codes\nWhat errors and status codes can a user expect?\n200- the API request was successful and data was returned (may be empty data)\n404- the API request was not successful\n\n# Rate limit\nIs there a limit to the number of requests an user can send?\nThere is no limit to the number of requests a user can send.",
+		"auth": null,
+		"events": [],
+		"variables": [],
+		"order": [
+			"41e127a4-e575-7413-24bc-e88aa82fdad8",
+			"4cf2678f-5b80-0de9-4d9b-44d3e64a5737",
+			"9f62a8fa-2d2a-012e-26bf-61d00f8bc463",
+			"5a0b7469-4d14-e0d7-f881-1b2d8f9ee880",
+			"cfab9c03-6fd3-2eaa-f0f6-03a8ab608ca2",
+			"4abcf409-f387-b80f-1027-a4006106c8d1",
+			"2719f30b-c124-27d7-310f-075281c78f93"
+		],
+		"folders_order": [],
+		"owner": "3690793",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "api.natphoto.me/cameras",
+			"id": "41e127a4-e575-7413-24bc-e88aa82fdad8",
+			"url": "api.natphoto.me/cameras?park=Yellowstone National Park",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "response is okay",
+				"status": "pass",
+				"response should be okay to process": true,
+				"Body does not contain a camera that should be filtered out": true,
+				"Body contains string camera": true
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a camera that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string camera": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"129"
+			],
+			"allTests": [
+				{
+					"response is okay": true,
+					"response should be okay to process": true,
+					"Body does not contain a camera that should be filtered out": true,
+					"Body contains string camera": true
+				}
+			],
+			"time": "129",
+			"totalRequestTime": "129",
+			"iterationResults": {}
+		},
+		{
+			"name": "api.natphoto.me/cameras/cameraName",
+			"id": "4cf2678f-5b80-0de9-4d9b-44d3e64a5737",
+			"url": "api.natphoto.me/cameras/Canon EOS 80D",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "response is okay",
+				"status": "pass",
+				"response should be okay to process": true,
+				"Body contains string name": true,
+				"Body contains string megapixels": true
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string megapixels": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"53"
+			],
+			"allTests": [
+				{
+					"response is okay": true,
+					"response should be okay to process": true,
+					"Body contains string name": true,
+					"Body contains string megapixels": true
+				}
+			],
+			"time": "53",
+			"totalRequestTime": "53",
+			"iterationResults": {}
+		},
+		{
+			"name": "api.natphoto.me/parks",
+			"id": "9f62a8fa-2d2a-012e-26bf-61d00f8bc463",
+			"url": "api.natphoto.me/parks?camera=Canon EOS 5D Mark II",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "response is okay",
+				"status": "pass",
+				"response should be okay to process": true,
+				"Body does not contain a park that should be filtered out": true,
+				"Body contains string park": true
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a park that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string park": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"105"
+			],
+			"allTests": [
+				{
+					"response is okay": true,
+					"response should be okay to process": true,
+					"Body does not contain a park that should be filtered out": true,
+					"Body contains string park": true
+				}
+			],
+			"time": "105",
+			"totalRequestTime": "105",
+			"iterationResults": {}
+		},
+		{
+			"name": "api.natphoto.me/parks/parkName",
+			"id": "5a0b7469-4d14-e0d7-f881-1b2d8f9ee880",
+			"url": "api.natphoto.me/parks/Big Bend National Park",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "response is okay",
+				"status": "pass",
+				"response should be okay to process": true,
+				"Body contains string name": true,
+				"Body contains string lat/long": true
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string lat/long": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"65"
+			],
+			"allTests": [
+				{
+					"response is okay": true,
+					"response should be okay to process": true,
+					"Body contains string name": true,
+					"Body contains string lat/long": true
+				}
+			],
+			"time": "65",
+			"totalRequestTime": "65",
+			"iterationResults": {}
+		},
+		{
+			"name": "api.natphoto.me/photos",
+			"id": "cfab9c03-6fd3-2eaa-f0f6-03a8ab608ca2",
+			"url": "api.natphoto.me/photos?park=Yellowstone National Park&camera=Canon EOS 5D Mark II",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "response is okay",
+				"status": "pass",
+				"response should be okay to process": true,
+				"Body does not contain a park that should be filtered out": true,
+				"Body does not contain a camera that should be filtered out": true,
+				"Body contains string park": true,
+				"Body contains string camera": true
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a park that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a camera that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string park": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string camera": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"97"
+			],
+			"allTests": [
+				{
+					"response is okay": true,
+					"response should be okay to process": true,
+					"Body does not contain a park that should be filtered out": true,
+					"Body does not contain a camera that should be filtered out": true,
+					"Body contains string park": true,
+					"Body contains string camera": true
+				}
+			],
+			"time": "97",
+			"totalRequestTime": "97",
+			"iterationResults": {}
+		},
+		{
+			"name": "api.natphoto.me/photos/photoID",
+			"id": "4abcf409-f387-b80f-1027-a4006106c8d1",
+			"url": "api.natphoto.me/photos/113",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "response is okay",
+				"status": "pass",
+				"response should be okay to process": true,
+				"Body contains string photographer": true,
+				"Body contains string camera": true,
+				"Body contains string title": true
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string photographer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string camera": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string title": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"54"
+			],
+			"allTests": [
+				{
+					"response is okay": true,
+					"response should be okay to process": true,
+					"Body contains string photographer": true,
+					"Body contains string camera": true,
+					"Body contains string title": true
+				}
+			],
+			"time": "54",
+			"totalRequestTime": "54",
+			"iterationResults": {}
+		},
+		{
+			"name": "api.natphoto.me/search/keyword",
+			"id": "2719f30b-c124-27d7-310f-075281c78f93",
+			"url": "api.natphoto.me/search/Canon EOS 80D",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {
+				"name": "response is okay",
+				"status": "fail",
+				"response should be okay to process": false,
+				"Body does not contain a park that should be filtered out": true,
+				"Body does not contain a camera that should be filtered out": true,
+				"Body contains string title": false,
+				"Body contains string camera": false
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 0,
+					"fail": 1
+				},
+				"response should be okay to process": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Body does not contain a park that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a camera that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string title": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Body contains string camera": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"51"
+			],
+			"allTests": [
+				{
+					"response is okay": false,
+					"response should be okay to process": false,
+					"Body does not contain a park that should be filtered out": true,
+					"Body does not contain a camera that should be filtered out": true,
+					"Body contains string title": false,
+					"Body contains string camera": false
+				}
+			],
+			"time": "51",
+			"totalRequestTime": "51",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 29,
+	"totalFail": 4,
+	"totalTime": 554,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "api.natphoto.me/cameras",
+			"id": "41e127a4-e575-7413-24bc-e88aa82fdad8",
+			"url": "api.natphoto.me/cameras?park=Yellowstone National Park",
+			"time": "2018-03-22T16:03:17.077Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a camera that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string camera": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "api.natphoto.me/cameras/cameraName",
+			"id": "4cf2678f-5b80-0de9-4d9b-44d3e64a5737",
+			"url": "api.natphoto.me/cameras/Canon EOS 80D",
+			"time": "2018-03-22T16:03:17.077Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string megapixels": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "api.natphoto.me/parks",
+			"id": "9f62a8fa-2d2a-012e-26bf-61d00f8bc463",
+			"url": "api.natphoto.me/parks?camera=Canon EOS 5D Mark II",
+			"time": "2018-03-22T16:03:17.077Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a park that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string park": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "api.natphoto.me/parks/parkName",
+			"id": "5a0b7469-4d14-e0d7-f881-1b2d8f9ee880",
+			"url": "api.natphoto.me/parks/Big Bend National Park",
+			"time": "2018-03-22T16:03:17.077Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string lat/long": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "api.natphoto.me/photos",
+			"id": "cfab9c03-6fd3-2eaa-f0f6-03a8ab608ca2",
+			"url": "api.natphoto.me/photos?park=Yellowstone National Park&camera=Canon EOS 5D Mark II",
+			"time": "2018-03-22T16:03:17.077Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a park that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a camera that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string park": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string camera": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "api.natphoto.me/photos/photoID",
+			"id": "4abcf409-f387-b80f-1027-a4006106c8d1",
+			"url": "api.natphoto.me/photos/113",
+			"time": "2018-03-22T16:03:17.077Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string photographer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string camera": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string title": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "api.natphoto.me/search/keyword",
+			"id": "2719f30b-c124-27d7-310f-075281c78f93",
+			"url": "api.natphoto.me/search/Canon EOS 80D",
+			"time": "2018-03-22T16:03:17.077Z",
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {
+				"response is okay": {
+					"pass": 0,
+					"fail": 1
+				},
+				"response should be okay to process": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Body does not contain a park that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body does not contain a camera that should be filtered out": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string title": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Body contains string camera": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		}
+	],
+	"synced": false
+}
