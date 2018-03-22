@@ -1,4 +1,6 @@
-# Creating and accessing the database
+# Database
+
+## Creating and accessing the database
 
 Our database is set up with PostgreSQL 9.6.6 on the Amazon RDB service.
 We access the contents of our database using SQLAlchemy. This allows us to retrieve
@@ -13,7 +15,7 @@ Database Service instance.
 retrieve data to serve to our API endpoints.
 
 
-# Populating the database
+## Populating the database
 
 We populated our database with data culminated using a data scraper which can be
 found at https://github.com/flpymonkey/idb_scraper. We first used the National
@@ -28,13 +30,13 @@ pulled from flickr, and then getting more information from Best Buy's API
 table.
 
 
-# Design of the database
+## Design of the database
 
 The database contains three tables (one for each model) for parks, photos, and cameras.
 The columns of these tables correspond to the model attributes defined in [models](models.md).
 
 
-# Types of database queries used
+## Types of database queries used
 
 The database queries used to serve data from our database to the API endpoints are
 performed in `/natphoto/app/main.py`.

@@ -1,12 +1,14 @@
 # Tools
 
-# Using Docker for NatPhoto development
+## Using Docker for NatPhoto development
 
 NatPhoto.me runs on a dockerized server which uses NGINX and uwsgi. The docker  
 image is based on the [tiangolo/uwsgi-nginx-flask](https://hub.docker.com/r/tiangolo/uwsgi-nginx-flask/) image in  
 DockerHub. We developed the image with the help of [this tutorial](https://ianlondon.github.io/blog/deploy-flask-docker-nginx/).
 
-# Makefile Commands
+## Makefile Commands
+
+The make file can be found at `natphoto\Makefile` in our project directory.
 
 Below are useful Makefile commands for working on the project:
 
@@ -39,5 +41,8 @@ Below are useful Makefile commands for working on the project:
   background. This command is essentially the opposite of `$ make serve` and  
   stops the server.
 
+## Running React in a development environment
 
+A React build of the current app can be built using the command `npm run build` in the `react\natphoto` directory using the node package manager. This build is what we upload to Amazon S3 for hosting a production build.
 
+Running React in the development environment is accomplished using the command `npm start` in the `react\natphoto` directory.
