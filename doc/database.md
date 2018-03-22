@@ -1,4 +1,4 @@
-# Creating the EC2 Instance
+# Creating and accessing the database
 
 Our database is set up with PostgreSQL 9.6.6 on the Amazon RDB service.
 We access the contents of our database using sqlalchemy. This allows us to
