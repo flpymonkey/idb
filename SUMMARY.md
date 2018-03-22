@@ -17,3 +17,4 @@
 * [Database](doc/database.md)
 * [Testing](doc/testing.md)
 * [Self Critique](doc/self-critique.md)
+* [Other Critique](doc/other-critique.md)
