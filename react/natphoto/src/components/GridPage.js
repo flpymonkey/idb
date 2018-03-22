@@ -14,35 +14,22 @@ export default class Grid extends Component {
 
  	constructor(props) {
 		super(props);
-
 		this.state = {
-			data: this.props.data,
-			activePage: 5,
-			start: 0,
-			end: 15,
-			photos: []
+			activePage: 1
 		}
-// 		console.log(`photos in constructor is ${this.state.photos}`);
+
 	}
 
-	componentDidMount() {
-		console.log(`hello`);
-		this.handlePageChange(1);
-	}
-
-	handlePageChange(pageNumber) {
-    	console.log('active page is ' + pageNumber);
-    	var endVal = (pageNumber * 16)
-    	var startVal =  ((pageNumber-1) * 16)
-    	console.log(' end val is ' + endVal + ' startval is ' + startVal);
-    	this.setState({activePage: pageNumber, end: endVal, start: startVal, photos: this.props.data.slice(startVal, endVal)});
-    	console.log('end is ' + this.state.end + ' and start is ' + this.state.start);
-  	}
+    handlePageChange(pageNumber) {
+        console.log("Active page is: " + pageNumber);
+        this.setState({activePage: pageNumber});
+    }
 
 	render() {
-		// console.log(`data length is ${this.props.data.length}`);
-
-		const elems = this.state.photos.map((elem) =>
+    	let endVal = (this.state.activePage * 16)
+    	let startVal = ((this.state.activePage - 1) * 16)
+        const slice = this.props.data.slice(startVal, endVal);
+		const grid_cards = slice.map((elem) =>
   			<GridItemCard data={elem} />
   		);
 
@@ -50,7 +37,7 @@ export default class Grid extends Component {
 			<div className="body">
         <Container>
 					<Row>
-						{elems}
+						{grid_cards}
 					</Row>
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 					<Pagination
@@ -58,7 +45,7 @@ export default class Grid extends Component {
           				itemsCountPerPage={16}
           				totalItemsCount={this.props.data.length}
           				pageRangeDisplayed={5}
-          				onChange={this.handlePageChange.bind(this)}
+                        onChange={this.handlePageChange.bind(this)}
           				className = "pagination"
         			/>
 
@@ -87,23 +74,4 @@ class GridItemCard extends Component {
         </Col>
       );
   }
-}
-
-class GridItem extends Component {
-
-	render() {
-		return (
-			 <Col sm="3">
-    			<div className="hovereffect">
-					<Link to={this.props.data.detail_url}>
-        				<img className="img-responsive" src={this.props.data.img} alt=""/>
-						<div className="overlay">
-               			 	<h1>{this.props.data.title}</h1>
-               			 	<h2>{this.props.data.subtitle}</h2>
-           				</div>
-					</Link>
-    			</div>
-    		</Col>
-		);
-	}
 }
