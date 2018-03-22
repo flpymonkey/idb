@@ -5,7 +5,7 @@ the Python unittest library to test our Python Flask code.
 
 Tools we use for testing:
 1. **Postman** - Software for testing API endpoints and automating unit testing
-on requests to api.natphoto.me
+on requests to api.natphoto.me. Postman tests can be found in [Postman.json](../Postman.json).
 
 2. **unittest** - Used to test our Python Flask code which is used to serve the
 API endpoints.

@@ -8,6 +8,7 @@
 * [Amazon Web Services](doc/hosting.md)
 * [Development Tools](doc/tools.md)
 * [Motivation](doc/motivation.md)
+* [Use Cases](doc/use-cases.md)
 * [Models](doc/models.md)
 * [Database](doc/database.md)
 * [Testing](doc/testing.md)
