@@ -19,10 +19,9 @@ export default class Grid extends Component {
 			data: this.props.data,
 			activePage: 5,
 			start: 0,
-			end: 8,
+			end: 15,
 			photos: []
 		}
-
 // 		console.log(`photos in constructor is ${this.state.photos}`);
 	}
 
@@ -33,8 +32,8 @@ export default class Grid extends Component {
 
 	handlePageChange(pageNumber) {
     	console.log('active page is ' + pageNumber);
-    	var endVal = (pageNumber * 9)
-    	var startVal =  ((pageNumber-1) * 9)
+    	var endVal = (pageNumber * 16)
+    	var startVal =  ((pageNumber-1) * 16)
     	console.log(' end val is ' + endVal + ' startval is ' + startVal);
     	this.setState({activePage: pageNumber, end: endVal, start: startVal, photos: this.props.data.slice(startVal, endVal)});
     	console.log('end is ' + this.state.end + ' and start is ' + this.state.start);
@@ -56,7 +55,7 @@ export default class Grid extends Component {
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 					<Pagination
           				activePage={this.state.activePage}
-          				itemsCountPerPage={9}
+          				itemsCountPerPage={16}
           				totalItemsCount={this.props.data.length}
           				pageRangeDisplayed={5}
           				onChange={this.handlePageChange.bind(this)}
@@ -73,13 +72,13 @@ class GridItemCard extends Component {
   render() {
       return(
         <Col sm="3">
-          <div>
+          <div className="cardDiv">
             <Card>
-              <CardImg src={this.props.data.img} alt="Card image cap" />
+              <CardImg className="imgInCard" src={this.props.data.img} alt="Card image cap" />
               <CardBody>
                 <CardTitle>{this.props.data.title}</CardTitle>
                 <CardSubtitle>{this.props.data.subtitle}</CardSubtitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the cards content.</CardText>
+                <CardText></CardText>
               </CardBody>
             </Card>
           </div>

@@ -101,3 +101,9 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.cardDiv {
+  padding-bottom: 10%;
+}
+
+
