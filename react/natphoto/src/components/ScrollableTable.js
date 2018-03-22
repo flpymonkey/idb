@@ -7,7 +7,7 @@ export default class ScrollableTable extends Component {
 	render() {
 		return(
 			<div className="body">
-				<h1 id="title" >Photos Taken</h1>
+				<h1 id="title" >{this.props.tableTitle}</h1>
 				<div id="scrollableTable">
 					<Table className = "photoTable">
     					<tbody>
@@ -15,11 +15,9 @@ export default class ScrollableTable extends Component {
             					<th scope="row"></th>
             						<td>
             							<a href="/photo/2">
-        									<img className = "photoImage" src="https://c1.staticflickr.com/9/8406/8679159813_1f23534aed_b.jpg" alt=""/>
+        									<img className = "photoImage" src={this.props.imgLink} alt={this.props.imgName}/>
         								</a>
         							</td>
-            						<td>Otto</td>
-            						<td>@mdo</td>
           					</tr>
         				</tbody>
       				</Table>
