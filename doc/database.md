@@ -1,13 +1,34 @@
 # Creating and accessing the database
 
 Our database is set up with PostgreSQL 9.6.6 on the Amazon RDB service.
-We access the contents of our database using sqlalchemy. This allows us to
-retrieve data from our database to serve to our API endpoints.
+We access the contents of our database using SQLAlchemy. This allows us to retrieve
+data from our database to serve to our API endpoints.
 
 Tools we use for our database and data retrieval:
 
-1. **PostgreSQL** - The database engine we use on our Amazon Relational Database
-Service instance.
+1. **PostgreSQL** - The SQL based database engine we use on our Amazon Relational
+Database Service instance.
 
-2. **sqlalchemy** - A Python library we use to perform queries on the database and
+2. **SQLAlchemy** - A Python library we use to perform queries on the database and
 retrieve data to serve to our API endpoints.
+
+
+# Populating the database
+
+We populated our database with data culminated using a data scraper which can be
+found at https://github.com/flpymonkey/idb_scraper. We first used the National
+Park Service API found at https://www.nps.gov/subjects/digital/nps-data-api.htm
+to populate a national park table with all national parks listed in the API. We
+then used the names of the national parks to scrape image data from flickr's API
+(https://www.flickr.com/services/api/) for each national park. We used this scraped
+data to populate the photos table of our database. Finally, we populated the
+cameras table of our database by using the cameras associated with the photos we
+pulled from flickr, and then getting more information from Best Buy's API
+(https://developer.bestbuy.com/) for each camera so that we can populate the cameras
+table.
+
+
+# Design of the database
+
+The database contains three tables (one for each model) for parks, photos, and cameras.
+The columns of these tables correspond to the model attributes defined in [models](models.md).

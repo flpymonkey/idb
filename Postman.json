@@ -1,588 +1,1239 @@
 {
-	"id": "2fb7b9f4-f22f-443f-9464-dc41627199ca",
-	"name": "natphoto.me API Documentation",
-	"allTests": [],
-	"timestamp": "2018-03-22T17:10:59.989Z",
-	"collection_id": "4a5dbb75-905e-167a-fd8a-aef976c28adf",
-	"folder_id": 0,
-	"target_type": "collection",
-	"environment_id": "0",
-	"data": [],
-	"delay": 0,
-	"count": 1,
-	"collection": {
-		"id": "4a5dbb75-905e-167a-fd8a-aef976c28adf",
+	"info": {
+		"_postman_id": "4a5dbb75-905e-167a-fd8a-aef976c28adf",
 		"name": "natphoto.me API Documentation",
 		"description": "# Introduction\nPulls data from the database at natphoto.me\n\n# Overview\nAll of the data stored in this database are pulled from credible sources such as nps.gov (National Park Information), flickr.com (Photograph Information), and bestbuy.com (Camera Information)\n\n# Authentication\nWhat is the preferred way of using the API? \n\n# Error Codes\nWhat errors and status codes can a user expect?\n200- the API request was successful and data was returned (may be empty data)\n404- the API request was not successful\n\n# Rate limit\nIs there a limit to the number of requests an user can send?\nThere is no limit to the number of requests a user can send.",
-		"auth": null,
-		"events": [],
-		"variables": [],
-		"order": [
-			"41e127a4-e575-7413-24bc-e88aa82fdad8",
-			"4cf2678f-5b80-0de9-4d9b-44d3e64a5737",
-			"9f62a8fa-2d2a-012e-26bf-61d00f8bc463",
-			"5a0b7469-4d14-e0d7-f881-1b2d8f9ee880",
-			"cfab9c03-6fd3-2eaa-f0f6-03a8ab608ca2",
-			"4abcf409-f387-b80f-1027-a4006106c8d1"
-		],
-		"folders_order": [],
-		"owner": "3690793",
-		"permissions": {},
-		"favorite": false,
-		"shared": false,
-		"type": "collection",
-		"depth": 0
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
-	"folder": null,
-	"environment": null,
-	"globals": [],
-	"results": [
+	"item": [
+		{
+			"name": "api.natphoto.me/cameras?park=Yellowstone National Park",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbdd067a-cb04-43a3-9d43-a1801c4b1ea8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body does not contain a camera that should be filtered out\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.not.include(\"Canon EOS 80D\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string camera\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"samsung SM-G955U\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/cameras?park=Yellowstone National Park",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"cameras"
+					],
+					"query": [
+						{
+							"key": "park",
+							"value": "Yellowstone National Park",
+							"description": "Only get cameras used in this national park"
+						}
+					]
+				},
+				"description": "Returns a list of all cameras stored in our database"
+			},
+			"response": [
+				{
+					"id": "ec733755-4677-4f24-9041-8a13b26de045",
+					"name": "Get all cameras",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/cameras?",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"cameras"
+							],
+							"query": [
+								{
+									"key": "park",
+									"value": "Yellowstone National Park",
+									"description": "Only get cameras used in this national park",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type,Authorization",
+							"name": "Access-Control-Allow-Headers",
+							"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE",
+							"name": "Access-Control-Allow-Methods",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5238",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Mar 2018 15:33:51 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "nginx/1.13.7",
+							"name": "Server",
+							"description": "A name for the server"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"name\": \"Panasonic DMC-FZ200\", \"price\": \"599.99\", \"weight\": \"2.5 pounds\", \"type\": \"Mirrorless Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"18.3 megapixels\", \"effective_megapixels\": \"16.1 megapixels\", \"iso\": \"Auto, intelligent ISO, 160, 200, 400, 800, 1600, 3200, 6400, 12,800\", \"shutter_speeds\": \"Still image: 1/4000 - 60 sec., bulb; Motion image: 1/16,000 - 1/30 sec.\", \"video_resolution\": null, \"image_resolution\": \"4608 x 3456\", \"sensor\": \"Live MOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/4032/4032159_ra.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 6D\", \"price\": \"1399.99\", \"weight\": \"1.5 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"20.6 megapixels\", \"effective_megapixels\": \"20.2 megapixels\", \"iso\": \"Manual setting range of ISO 100-25600 (expansion possible to ISO 50, ISO 51200 and 102400) in 1/3-stop or whole-stop increments\", \"shutter_speeds\": \"1/4000 to 30 sec., X-sync at 1/180 sec. (Total shutter speed range. Available range varies by shooting mode.)\", \"video_resolution\": null, \"image_resolution\": \"5472 x 3648\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/6776/6776221_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Sony ILCE-7SM2\", \"price\": \"4499.99\", \"weight\": \"1.293 pounds\", \"type\": \"Mirrorless Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"28.3 megapixels\", \"effective_megapixels\": \"24.2 megapixels\", \"iso\": \"Still images: ISO 50-25600 (electronic shutter), ISO 50-204800 (mechanical shutter); Movies: ISO 100-102400; Auto mode: ISO 100-6400\", \"shutter_speeds\": \"Single shot, mechanical shutter: 1/8000 to 30 sec, Bulb; Auto: 1/32000 to 30 sec, Bulb; Electronic Shutter: 1/32000 to 30 sec; Continuous shooting, mechanical shutter: 1/8000 to 30 sec, Auto: 1/32000\", \"video_resolution\": \"3840 x 2160\", \"image_resolution\": \"6000 x 4000\", \"sensor\": \"Exmor CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/5865/5865600_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark III\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 5DS R\", \"price\": \"3699.99\", \"weight\": \"32.8 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"53.0 megapixels\", \"effective_megapixels\": \"50.6 megapixels\", \"iso\": \"Auto, 100-6400, L (50), H (12,800)\", \"shutter_speeds\": \"1/8000 - 30 sec.\", \"video_resolution\": null, \"image_resolution\": null, \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/3779/3779204_sa.jpg\"}, {\"name\": \"samsung SM-G955U\", \"price\": \"840.0\", \"weight\": null, \"type\": null, \"water_resistant\": \"Yes\", \"total_megapixels\": null, \"effective_megapixels\": null, \"iso\": null, \"shutter_speeds\": null, \"video_resolution\": null, \"image_resolution\": null, \"sensor\": null, \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/5789/5789010_sa.jpg\"}, {\"name\": \"Canon EOS 6D\", \"price\": \"1399.99\", \"weight\": \"1.5 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"20.6 megapixels\", \"effective_megapixels\": \"20.2 megapixels\", \"iso\": \"Manual setting range of ISO 100-25600 (expansion possible to ISO 50, ISO 51200 and 102400) in 1/3-stop or whole-stop increments\", \"shutter_speeds\": \"1/4000 to 30 sec., X-sync at 1/180 sec. (Total shutter speed range. Available range varies by shooting mode.)\", \"video_resolution\": null, \"image_resolution\": \"5472 x 3648\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/6776/6776221_sa.jpg\"}]\n"
+				},
+				{
+					"id": "22a65efd-a4ba-43ab-ab50-0c12e523c0f5",
+					"name": "Filter by park",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/cameras?park=Yellowstone National Park",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"cameras"
+							],
+							"query": [
+								{
+									"key": "park",
+									"value": "Yellowstone National Park",
+									"description": "Only returns cameras used in this park"
+								}
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
 		{
 			"name": "api.natphoto.me/cameras",
-			"id": "41e127a4-e575-7413-24bc-e88aa82fdad8",
-			"url": "api.natphoto.me/cameras?park=Yellowstone National Park",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"name": "response is okay",
-				"status": "pass",
-				"response should be okay to process": true,
-				"Body does not contain a camera that should be filtered out": true,
-				"Body contains string camera": true
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body does not contain a camera that should be filtered out": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string camera": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"188"
-			],
-			"allTests": [
+			"event": [
 				{
-					"response is okay": true,
-					"response should be okay to process": true,
-					"Body does not contain a camera that should be filtered out": true,
-					"Body contains string camera": true
+					"listen": "test",
+					"script": {
+						"id": "b22516a6-ee50-4967-b198-dc7b1a9d0a9a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string camera\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Canon EOS 80D\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string camera 2\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"samsung SM-G955U\");",
+							"});"
+						]
+					}
 				}
 			],
-			"time": "188",
-			"totalRequestTime": "188",
-			"iterationResults": {}
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/cameras",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"cameras"
+					]
+				},
+				"description": "Returns a list of all cameras stored in our database"
+			},
+			"response": [
+				{
+					"id": "c4d7880a-b98d-4099-a9ab-267f9b7aba55",
+					"name": "Get all cameras",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/cameras?",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"cameras"
+							],
+							"query": [
+								{
+									"key": "park",
+									"value": "Yellowstone National Park",
+									"description": "Only get cameras used in this national park",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type,Authorization",
+							"name": "Access-Control-Allow-Headers",
+							"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE",
+							"name": "Access-Control-Allow-Methods",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5238",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 Mar 2018 15:33:51 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "nginx/1.13.7",
+							"name": "Server",
+							"description": "A name for the server"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"name\": \"Panasonic DMC-FZ200\", \"price\": \"599.99\", \"weight\": \"2.5 pounds\", \"type\": \"Mirrorless Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"18.3 megapixels\", \"effective_megapixels\": \"16.1 megapixels\", \"iso\": \"Auto, intelligent ISO, 160, 200, 400, 800, 1600, 3200, 6400, 12,800\", \"shutter_speeds\": \"Still image: 1/4000 - 60 sec., bulb; Motion image: 1/16,000 - 1/30 sec.\", \"video_resolution\": null, \"image_resolution\": \"4608 x 3456\", \"sensor\": \"Live MOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/4032/4032159_ra.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 6D\", \"price\": \"1399.99\", \"weight\": \"1.5 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"20.6 megapixels\", \"effective_megapixels\": \"20.2 megapixels\", \"iso\": \"Manual setting range of ISO 100-25600 (expansion possible to ISO 50, ISO 51200 and 102400) in 1/3-stop or whole-stop increments\", \"shutter_speeds\": \"1/4000 to 30 sec., X-sync at 1/180 sec. (Total shutter speed range. Available range varies by shooting mode.)\", \"video_resolution\": null, \"image_resolution\": \"5472 x 3648\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/6776/6776221_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Sony ILCE-7SM2\", \"price\": \"4499.99\", \"weight\": \"1.293 pounds\", \"type\": \"Mirrorless Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"28.3 megapixels\", \"effective_megapixels\": \"24.2 megapixels\", \"iso\": \"Still images: ISO 50-25600 (electronic shutter), ISO 50-204800 (mechanical shutter); Movies: ISO 100-102400; Auto mode: ISO 100-6400\", \"shutter_speeds\": \"Single shot, mechanical shutter: 1/8000 to 30 sec, Bulb; Auto: 1/32000 to 30 sec, Bulb; Electronic Shutter: 1/32000 to 30 sec; Continuous shooting, mechanical shutter: 1/8000 to 30 sec, Auto: 1/32000\", \"video_resolution\": \"3840 x 2160\", \"image_resolution\": \"6000 x 4000\", \"sensor\": \"Exmor CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/5865/5865600_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark III\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 5DS R\", \"price\": \"3699.99\", \"weight\": \"32.8 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"53.0 megapixels\", \"effective_megapixels\": \"50.6 megapixels\", \"iso\": \"Auto, 100-6400, L (50), H (12,800)\", \"shutter_speeds\": \"1/8000 - 30 sec.\", \"video_resolution\": null, \"image_resolution\": null, \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/3779/3779204_sa.jpg\"}, {\"name\": \"samsung SM-G955U\", \"price\": \"840.0\", \"weight\": null, \"type\": null, \"water_resistant\": \"Yes\", \"total_megapixels\": null, \"effective_megapixels\": null, \"iso\": null, \"shutter_speeds\": null, \"video_resolution\": null, \"image_resolution\": null, \"sensor\": null, \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/5789/5789010_sa.jpg\"}, {\"name\": \"Canon EOS 6D\", \"price\": \"1399.99\", \"weight\": \"1.5 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"20.6 megapixels\", \"effective_megapixels\": \"20.2 megapixels\", \"iso\": \"Manual setting range of ISO 100-25600 (expansion possible to ISO 50, ISO 51200 and 102400) in 1/3-stop or whole-stop increments\", \"shutter_speeds\": \"1/4000 to 30 sec., X-sync at 1/180 sec. (Total shutter speed range. Available range varies by shooting mode.)\", \"video_resolution\": null, \"image_resolution\": \"5472 x 3648\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/6776/6776221_sa.jpg\"}]\n"
+				},
+				{
+					"id": "2a94d55f-5481-4c03-82e8-6a23d6f7c890",
+					"name": "Filter by park",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/cameras?park=Yellowstone National Park",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"cameras"
+							],
+							"query": [
+								{
+									"key": "park",
+									"value": "Yellowstone National Park",
+									"description": "Only returns cameras used in this park"
+								}
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
 		},
 		{
 			"name": "api.natphoto.me/cameras/cameraName",
-			"id": "4cf2678f-5b80-0de9-4d9b-44d3e64a5737",
-			"url": "api.natphoto.me/cameras/Canon EOS 80D",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"name": "response is okay",
-				"status": "pass",
-				"response should be okay to process": true,
-				"Body contains string name": true,
-				"Body contains string megapixels": true
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string name": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string megapixels": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"57"
-			],
-			"allTests": [
+			"event": [
 				{
-					"response is okay": true,
-					"response should be okay to process": true,
-					"Body contains string name": true,
-					"Body contains string megapixels": true
+					"listen": "test",
+					"script": {
+						"id": "0584a7f1-ce23-40b2-aeba-8a66a170b8ae",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string name\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Canon EOS 80D\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string megapixels\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"24.2 megapixels\");",
+							"});"
+						]
+					}
 				}
 			],
-			"time": "57",
-			"totalRequestTime": "57",
-			"iterationResults": {}
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/cameras/Canon EOS 80D",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"cameras",
+						"Canon EOS 80D"
+					]
+				},
+				"description": "Returns information about a specific camera with ID equal to the Int cameraID"
+			},
+			"response": [
+				{
+					"id": "62d52a6e-5978-415e-bd06-60ed023baadb",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/camera/cameraID",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"camera",
+								"cameraID"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "api.natphoto.me/cameras/badCameraName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "521f74c5-15fb-473d-9412-425afc239318",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(404);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/cameras/Canon Super Camera",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"cameras",
+						"Canon Super Camera"
+					]
+				},
+				"description": "Returns information about a specific camera with ID equal to the Int cameraID"
+			},
+			"response": [
+				{
+					"id": "6973c5fb-e1ec-4b91-8094-b55f754a9baf",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/camera/cameraID",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"camera",
+								"cameraID"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "api.natphoto.me/parks?camera=Canon EOS 5D Mark II",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b83503ae-0cab-45a6-9ee8-0fa54cbb4bfa",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body does not contain a park that should be filtered out\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.not.include(\"Bryce Canyon National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string park\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Yellowstone National Park\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/parks?camera=Canon EOS 5D Mark II",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"parks"
+					],
+					"query": [
+						{
+							"key": "camera",
+							"value": "Canon EOS 5D Mark II",
+							"description": "Only show parks this camera was used in"
+						}
+					]
+				},
+				"description": "Returns a list of all parks stored in our database"
+			},
+			"response": [
+				{
+					"id": "92e004c5-8698-4f3e-9f34-4e6e36fcbe3d",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/parks",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"parks"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
 		},
 		{
 			"name": "api.natphoto.me/parks",
-			"id": "9f62a8fa-2d2a-012e-26bf-61d00f8bc463",
-			"url": "api.natphoto.me/parks?camera=Canon EOS 5D Mark II",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"name": "response is okay",
-				"status": "pass",
-				"response should be okay to process": true,
-				"Body does not contain a park that should be filtered out": true,
-				"Body contains string park": true
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body does not contain a park that should be filtered out": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string park": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"103"
-			],
-			"allTests": [
+			"event": [
 				{
-					"response is okay": true,
-					"response should be okay to process": true,
-					"Body does not contain a park that should be filtered out": true,
-					"Body contains string park": true
+					"listen": "test",
+					"script": {
+						"id": "07ea1e29-38cd-4e93-a34b-0cc207325145",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string park\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Bryce Canyon National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string park 2\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Yellowstone National Park\");",
+							"});"
+						]
+					}
 				}
 			],
-			"time": "103",
-			"totalRequestTime": "103",
-			"iterationResults": {}
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/parks",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"parks"
+					]
+				},
+				"description": "Returns a list of all parks stored in our database"
+			},
+			"response": [
+				{
+					"id": "b56e06e9-d2a5-4c9f-8630-761a169aac24",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/parks",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"parks"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
 		},
 		{
 			"name": "api.natphoto.me/parks/parkName",
-			"id": "5a0b7469-4d14-e0d7-f881-1b2d8f9ee880",
-			"url": "api.natphoto.me/parks/Big Bend National Park",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"name": "response is okay",
-				"status": "pass",
-				"response should be okay to process": true,
-				"Body contains string name": true,
-				"Body contains string lat/long": true
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string name": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string lat/long": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"53"
-			],
-			"allTests": [
+			"event": [
 				{
-					"response is okay": true,
-					"response should be okay to process": true,
-					"Body contains string name": true,
-					"Body contains string lat/long": true
+					"listen": "test",
+					"script": {
+						"id": "84db68f1-263e-40e8-a6db-005fe6390c95",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string name\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Big Bend National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string lat/long\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"lat:29.29817767, long:-103.2297897\");",
+							"});"
+						]
+					}
 				}
 			],
-			"time": "53",
-			"totalRequestTime": "53",
-			"iterationResults": {}
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/parks/Big Bend National Park",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"parks",
+						"Big Bend National Park"
+					]
+				},
+				"description": "Returns information about a specific park with ID equal to the Int parkID"
+			},
+			"response": [
+				{
+					"id": "581378a3-e75e-4883-937b-843a31e8b357",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/park/parkID",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"park",
+								"parkID"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "api.natphoto.me/parks/badParkName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "119d96b8-12f8-46ee-ab08-d3f711a823a7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(404);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/parks/Big Ben In A National Park",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"parks",
+						"Big Ben In A National Park"
+					]
+				},
+				"description": "Returns information about a specific park with ID equal to the Int parkID"
+			},
+			"response": [
+				{
+					"id": "2b270a22-8d14-4db3-b249-0ebda167d0e6",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/park/parkID",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"park",
+								"parkID"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "api.natphoto.me/photos?park=Yellowstone National Park&camera=Canon EOS 5D Mark II",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2b4b510a-5e6f-46e2-804d-44eaeeb173f9",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body does not contain a park that should be filtered out\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.not.include(\"Bryce Canyon National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body does not contain a camera that should be filtered out\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.not.include(\"Panasonic DMC-FZ200\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string park\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Yellowstone National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string camera\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Canon EOS 5D Mark II\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/photos?park=Yellowstone National Park&camera=Canon EOS 5D Mark II",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"photos"
+					],
+					"query": [
+						{
+							"key": "park",
+							"value": "Yellowstone National Park",
+							"description": "Returns only photos that were taken in this park"
+						},
+						{
+							"key": "camera",
+							"value": "Canon EOS 5D Mark II",
+							"description": "Returns only photos that were taken with this camera"
+						}
+					]
+				},
+				"description": "Returns a list of all photos stored in our database"
+			},
+			"response": [
+				{
+					"id": "ad4692e0-6c64-493f-a187-c29435fa7f87",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/photos",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
 		},
 		{
 			"name": "api.natphoto.me/photos",
-			"id": "cfab9c03-6fd3-2eaa-f0f6-03a8ab608ca2",
-			"url": "api.natphoto.me/photos?park=Yellowstone National Park&camera=Canon EOS 5D Mark II",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"name": "response is okay",
-				"status": "pass",
-				"response should be okay to process": true,
-				"Body does not contain a park that should be filtered out": true,
-				"Body does not contain a camera that should be filtered out": true,
-				"Body contains string park": true,
-				"Body contains string camera": true
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body does not contain a park that should be filtered out": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body does not contain a camera that should be filtered out": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string park": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string camera": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"53"
-			],
-			"allTests": [
+			"event": [
 				{
-					"response is okay": true,
-					"response should be okay to process": true,
-					"Body does not contain a park that should be filtered out": true,
-					"Body does not contain a camera that should be filtered out": true,
-					"Body contains string park": true,
-					"Body contains string camera": true
+					"listen": "test",
+					"script": {
+						"id": "6430dac4-663c-45ea-8c0d-9921a927cf6e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string park\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Bryce Canyon National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string camera\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Panasonic DMC-FZ200\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string park 2\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Yellowstone National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string camera 2\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Canon EOS 5D Mark II\");",
+							"});"
+						]
+					}
 				}
 			],
-			"time": "53",
-			"totalRequestTime": "53",
-			"iterationResults": {}
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/photos",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"photos"
+					]
+				},
+				"description": "Returns a list of all photos stored in our database"
+			},
+			"response": [
+				{
+					"id": "2b0a5ffd-79af-4ce0-bfe8-83fadf43b385",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/photos",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
 		},
 		{
 			"name": "api.natphoto.me/photos/photoID",
-			"id": "4abcf409-f387-b80f-1027-a4006106c8d1",
-			"url": "api.natphoto.me/photos/113",
-			"totalTime": 0,
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"tests": {
-				"name": "response is okay",
-				"status": "pass",
-				"response should be okay to process": true,
-				"Body contains string photographer": true,
-				"Body contains string camera": true,
-				"Body contains string title": true
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string photographer": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string camera": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string title": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				"52"
-			],
-			"allTests": [
+			"event": [
 				{
-					"response is okay": true,
-					"response should be okay to process": true,
-					"Body contains string photographer": true,
-					"Body contains string camera": true,
-					"Body contains string title": true
+					"listen": "test",
+					"script": {
+						"id": "79053e87-57bf-46bc-839f-a5c3a96d8391",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string photographer\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Susan\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string camera\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Olympus E-M1\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string title\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"Snow-and-ice-encrusted trees -- Narada Falls\");",
+							"});"
+						]
+					}
 				}
 			],
-			"time": "52",
-			"totalRequestTime": "52",
-			"iterationResults": {}
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/photos/113",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"photos",
+						"113"
+					]
+				},
+				"description": "Returns information about a specific photo with ID equal to the Int photoID"
+			},
+			"response": [
+				{
+					"id": "ec67c524-4c68-483d-a57d-f357992d1ac3",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/photo/photoID",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"photo",
+								"photoID"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "api.natphoto.me/photos/badPhotoID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f39d8e8c-1a0f-462f-a716-4b9fb1bbacf9",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function(){",
+							"    pm.response.to.have.status(404);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/photos/itsTonyTime1000",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"photos",
+						"itsTonyTime1000"
+					]
+				},
+				"description": "Returns information about a specific photo with ID equal to the Int photoID"
+			},
+			"response": [
+				{
+					"id": "9eb095f8-513c-4274-a3cb-87ddcdca53c2",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/photo/photoID",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"photo",
+								"photoID"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
 		}
-	],
-	"totalPass": 27,
-	"totalFail": 0,
-	"totalTime": 506,
-	"lifecycle": "done",
-	"requests": [
-		{
-			"name": "api.natphoto.me/cameras",
-			"id": "41e127a4-e575-7413-24bc-e88aa82fdad8",
-			"url": "api.natphoto.me/cameras?park=Yellowstone National Park",
-			"time": "2018-03-22T17:10:59.989Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body does not contain a camera that should be filtered out": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string camera": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "api.natphoto.me/cameras/cameraName",
-			"id": "4cf2678f-5b80-0de9-4d9b-44d3e64a5737",
-			"url": "api.natphoto.me/cameras/Canon EOS 80D",
-			"time": "2018-03-22T17:10:59.989Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string name": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string megapixels": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "api.natphoto.me/parks",
-			"id": "9f62a8fa-2d2a-012e-26bf-61d00f8bc463",
-			"url": "api.natphoto.me/parks?camera=Canon EOS 5D Mark II",
-			"time": "2018-03-22T17:10:59.989Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body does not contain a park that should be filtered out": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string park": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "api.natphoto.me/parks/parkName",
-			"id": "5a0b7469-4d14-e0d7-f881-1b2d8f9ee880",
-			"url": "api.natphoto.me/parks/Big Bend National Park",
-			"time": "2018-03-22T17:10:59.989Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string name": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string lat/long": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "api.natphoto.me/photos",
-			"id": "cfab9c03-6fd3-2eaa-f0f6-03a8ab608ca2",
-			"url": "api.natphoto.me/photos?park=Yellowstone National Park&camera=Canon EOS 5D Mark II",
-			"time": "2018-03-22T17:10:59.989Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body does not contain a park that should be filtered out": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body does not contain a camera that should be filtered out": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string park": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string camera": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		},
-		{
-			"name": "api.natphoto.me/photos/photoID",
-			"id": "4abcf409-f387-b80f-1027-a4006106c8d1",
-			"url": "api.natphoto.me/photos/113",
-			"time": "2018-03-22T17:10:59.989Z",
-			"responseCode": {
-				"code": 200,
-				"name": "OK",
-				"detail": {
-					"name": "OK",
-					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
-				}
-			},
-			"testPassFailCounts": {
-				"response is okay": {
-					"pass": 1,
-					"fail": 0
-				},
-				"response should be okay to process": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string photographer": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string camera": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Body contains string title": {
-					"pass": 1,
-					"fail": 0
-				}
-			}
-		}
-	],
-	"synced": false
+	]
 }
