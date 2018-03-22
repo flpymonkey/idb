@@ -10,7 +10,7 @@ The following requests can be made
   * park - The name of a national park to filter the list with
 * Return Content-Type: application/json
 
-**GET** /cameras/<camera_name>
+**GET** /cameras/\<camera_name\>
 * Returns information about a specific camera
 * camera_name - int - The camera 
 * Additional Parameters:
@@ -33,7 +33,7 @@ The following requests can be made
 | `video_resolution` | The video resolution for the camera (if available) | "1920 x 1080" |
 | `image_resoultion` | The image resolution for the camera | "6000 x 4000" |
 | `sensor` | The sensor for the camera | "CMOS" |
-| `image_url` | A link to an image of the camera | "https://img.bbystatic.com/BestBuy_US/images/products/9999/9999265200050012_sa.jpg" |
+| `image_url` | A link to an image of the camera | "http://via.placeholder.com/350x150" |
 
 ## Usage Examples
 
