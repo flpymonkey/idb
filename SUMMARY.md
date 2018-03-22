@@ -9,4 +9,5 @@
 * [Development Tools](doc/tools.md)
 * [Motivation](doc/motivation.md)
 * [Models](doc/models.md)
+    * [UML Diagram](doc/models.md#uml)
 * [Self Critique](\doc\self-critique.md)
