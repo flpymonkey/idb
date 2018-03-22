@@ -1,10 +1,11 @@
 # Camera
 
-* **GET **/cameras
-  * Returns a list of all cameras stored in our database
-  * Parameters: None
-  * Return Content-Type: application/json
-    * A list of cameras represented by a pairings of camera names and cameraIDs
+## **GET **/cameras
+
+* Returns a list of all cameras stored in our database
+* Parameters: None
+* Return Content-Type: application/json
+  * A list of cameras represented by a pairings of camera names and cameraIDs
 * **GET **/camera/cameraID
   * Returns information about a specific camera
   * Parameters: cameraID - Int - The ID of a camera
@@ -73,12 +74,6 @@
     * date  - Datetime - The date and time the phototgraph was taken \(ex. YYYYMMDDHHMMSS\)
     * national park - Int - The parkID of the national park this photograph was taken in \(ex. 3\)
     * camera used - Int - The cameraID of what camera was used to take this photograph \(ex. 12\)
-
-# Search
-
-* **GET** /search/keyword
-  * Returns a list of pairings of name and &lt;object&gt;ID for all objects in our database containing the keyword string in their title.
-  * Parameters: keyword - String - A keyword to search all titles for \(ex. "Canon", "Yellowstone", "Bison"\)
 
 
 

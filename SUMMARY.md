@@ -5,7 +5,6 @@
     * [Camera](doc/camera.md)
     * [Park](doc/park.md)
     * [Photo](doc/photo.md)
-    * [Search](doc/search.md)
 * [Amazon Web Services](doc/hosting.md)
 * [Development Tools](doc/tools.md)
 * [Motivation](doc/motivation.md)
