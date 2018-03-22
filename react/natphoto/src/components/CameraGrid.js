@@ -22,7 +22,7 @@ export default class CameraGrid extends Component {
                 img: elem.image_url,
                 title: elem.name,
                 subtitle: "$" + elem.price,
-								info: elem.total_megapixels,
+								info: elem.effective_megapixels,
                 detail_url: "/cameras/" + elem.name
             }));
       		this.setState({

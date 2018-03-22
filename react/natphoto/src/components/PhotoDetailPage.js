@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import '../stylesheets/photodetailpage.css';
 import '../stylesheets/general.css';
 
@@ -16,7 +17,9 @@ export default class PhotoDetail extends Component {
       likes: "",
       camera: "",
       park: "",
-      description: ""
+      description: "",
+      park_url: "",
+      camera_url: ""
     };
 	}
 
@@ -36,7 +39,9 @@ export default class PhotoDetail extends Component {
          likes: data['0'].likes,
          camera: data['0'].camera,
          park: data['0'].park,
-         description: data['0'].description
+         description: data['0'].description,
+         park_url: "/parks/" + data['0'].park,
+         camera_url: "/cameras/" + data['0'].camera
     	});
     })
 	}
@@ -74,8 +79,16 @@ export default class PhotoDetail extends Component {
           </Col>
         </Row>
     		<Row id="linksRow">
-   				<Col sm="6" id="cameraLink">{this.state.camera}<i className="material-icons">photo_camera</i></Col>
-   				<Col sm="6" id="parkLink">{this.state.park}<i className="material-icons">landscape</i></Col>
+   				<Col sm="6" id="cameraLink">
+            <Link to={this.state.camera_url}>
+              {this.state.camera}<i className="material-icons">photo_camera</i>
+            </Link>
+          </Col>
+   				<Col sm="6" id="parkLink">
+            <Link to={this.state.park_url}>
+              {this.state.park}<i className="material-icons">landscape</i>
+            </Link>
+          </Col>
  				</Row>
         <br />
  		 	</div>

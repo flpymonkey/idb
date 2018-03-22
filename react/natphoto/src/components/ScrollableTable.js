@@ -4,7 +4,15 @@ import '../stylesheets/general.css';
 import '../stylesheets/scrollabletable.css';
 
 export default class ScrollableTable extends Component {
+
 	render() {
+		console.log("child " + this.props.data)
+		/*const elems = this.props.data.map((elem) =>
+				<td>
+					<img className = "photoImage" src={elem.img} alt="hi"/>
+				</td>
+			);*/
+
 		return(
 			<div className="body">
 				<h1 id="title" >{this.props.tableTitle}</h1>
@@ -13,11 +21,6 @@ export default class ScrollableTable extends Component {
     					<tbody>
           					<tr>
             					<th scope="row"></th>
-            						<td>
-            							<a href="/photo/2">
-        									<img className = "photoImage" src={this.props.imgLink} alt={this.props.imgName}/>
-        								</a>
-        							</td>
           					</tr>
         				</tbody>
       				</Table>
