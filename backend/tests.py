@@ -1,0 +1,1 @@
+../natphoto/app/tests.py

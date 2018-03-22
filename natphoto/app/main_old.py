@@ -25,7 +25,7 @@ def about():
     total_commits = sum(commits.values())
     total_issues = sum(issues.values())
 
-    return render_template("about.html", 
+    return render_template("about.html",
                            commits=commits,
                            issues=issues,
                            total_commits=total_commits,

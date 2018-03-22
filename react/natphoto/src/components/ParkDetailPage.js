@@ -41,7 +41,7 @@ export default class ParkDetail extends Component {
           url: data["0"].url,
           weather: data["0"].weather
         });
-      })
+      });
 
       fetch('http://api.natphoto.me/photos?park=' + this.props.match.params.park_name, {
         method: 'GET',
