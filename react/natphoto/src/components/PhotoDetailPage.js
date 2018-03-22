@@ -49,19 +49,19 @@ export default class PhotoDetail extends Component {
 	render () {
 		return (
 			<div className="body">
-				<Row>
-          <Col sm="4"/>
-					<Col sm="4" id="title">
-  						<h5>{this.state.title}</h5>
-  				</Col>
+				<Row className="headerRow">
+          			<Col sm="3"/>
+					<Col sm="6" id="title">
+  						<h3>{this.state.title}</h3>
+  					</Col>
 
 				</Row>
 				<Row>
 					<Col xs="1" sm="3"></Col>
-					<Col xs="10" sm="5" id="photo">
-            <a href={this.state.flickr_url} target="_blank">
+					<Col xs="10" sm="7" id="photo">
+            		<a href={this.state.flickr_url} target="_blank">
 						  <img id="picture" src={this.state.image_url} alt={this.state.title}  />
-            </a>
+            		</a>
 					</Col>
 				</Row>
 				<Row>
