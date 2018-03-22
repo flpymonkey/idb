@@ -281,7 +281,6 @@ class DataHandler (object):
         """
         path = "/repos/flpymonkey/idb/stats/contributors"
         commit_data = get_json(path)
-        print(commit_data)
         commits = {data["author"]["login"]: data["total"] for data in commit_data}
         return commits
 
