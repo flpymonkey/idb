@@ -71,15 +71,17 @@ export default class Grid extends Component {
 class GridItemCard extends Component {
   render() {
       return(
-        <Col sm="3">
+        <Col xl="3" lg="3" md="3" sm="3">
           <div className="cardDiv">
             <Card>
+              <Link to={this.props.data.detail_url}>
               <CardImg className="imgInCard" src={this.props.data.img} alt="Card image cap" />
               <CardBody>
                 <CardTitle>{this.props.data.title}</CardTitle>
                 <CardSubtitle>{this.props.data.subtitle}</CardSubtitle>
-                <CardText></CardText>
+                <CardText>{this.props.data.info}</CardText>
               </CardBody>
+              </Link>
             </Card>
           </div>
         </Col>

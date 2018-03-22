@@ -9,19 +9,20 @@ export default class CameraGrid extends Component {
       		cameras: []
 		};
   	}
-	
+
   	componentDidMount() {
 
     	fetch('http://api.natphoto.me/cameras', {
-    		method: 'GET', 
+    		method: 'GET',
     		dataType: 'json'
     	}).then(results => {
     		return results.json();
-    	}).then(data => { 
+    	}).then(data => {
     		var curr_cameras = data.map((elem) => ({
                 img: elem.image_url,
-                title: elem.name, 
-                subtitle: elem.price,
+                title: elem.name,
+                subtitle: "$" + elem.price,
+								info: elem.total_megapixels,
                 detail_url: "/cameras/" + elem.name
             }));
       		this.setState({
@@ -29,10 +30,10 @@ export default class CameraGrid extends Component {
       		});
     	})
   	}
-      	
+
 	render () {
 		return (
-	  		<Grid data={this.state.cameras} /> 
+	  		<Grid data={this.state.cameras} />
 		);
   	}
 }

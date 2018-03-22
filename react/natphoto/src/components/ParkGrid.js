@@ -9,19 +9,20 @@ export default class ParkGrid extends Component {
       		parks: []
 		};
   	}
-	
+
   	componentDidMount() {
 
     	fetch('http://api.natphoto.me/parks', {
-    		method: 'GET', 
+    		method: 'GET',
     		dataType: 'json'
     	}).then(results => {
     		return results.json();
-    	}).then(data => { 
+    	}).then(data => {
     		var curr_parks = data.map((elem) => ({
                 img: elem.image_url,
-                title: elem.name, 
-                subtitle: elem.states, 
+                title: elem.name,
+                subtitle: elem.states,
+								info: "", 
                 detail_url: "/parks/" + elem.name}
             ));
       		this.setState({
@@ -29,10 +30,10 @@ export default class ParkGrid extends Component {
       		});
     	})
   	}
-      	
+
 	render () {
 		return (
-	  		<Grid data={this.state.parks} /> 
+	  		<Grid data={this.state.parks} />
 		);
   	}
 }

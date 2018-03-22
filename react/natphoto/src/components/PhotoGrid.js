@@ -22,7 +22,8 @@ export default class PhotoGrid extends Component {
     	var curr_photos = data.map((elem) => ({
             img: elem.image_url,
             title: elem.title,
-            subtitle: elem.photographer,
+            subtitle: "by " + elem.photographer,
+            info: elem.likes + " likes",
             detail_url: "/photos/" + elem.id
         }));
       	this.setState({
