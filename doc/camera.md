@@ -4,13 +4,13 @@
 
 The following requests can be made 
 
-**GET** /cameras
+**GET** `/cameras`
 * Returns a list of all cameras stored in our database
 * Additional Parameters:
   * park - The name of a national park to filter the list with
 * Return Content-Type: application/json
 
-**GET** /cameras/\<camera_name\>
+**GET** `/cameras/<camera_name>`
 * Returns information about a specific camera
 * camera_name - int - The camera 
 * Additional Parameters:
