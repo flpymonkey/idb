@@ -50,18 +50,19 @@ export default class PhotoDetail extends Component {
 		return (
 			<div className="body">
 				<Row>
-					<Col sm="12" id="title">
-  						<h1>{this.state.title}</h1>
-  					</Col>
+          <Col sm="4"/>
+					<Col sm="4" id="title">
+  						<h5>{this.state.title}</h5>
+  				</Col>
+
 				</Row>
 				<Row>
-					<Col sm="1"></Col>
-					<Col sm="10" id="photo">
+					<Col xs="1" sm="3"></Col>
+					<Col xs="10" sm="5" id="photo">
             <a href={this.state.flickr_url} target="_blank">
 						  <img id="picture" src={this.state.image_url} alt={this.state.title}  />
             </a>
 					</Col>
-					<Col sm="1"></Col>
 				</Row>
 				<Row>
 					<Col sm="12" id="title">
