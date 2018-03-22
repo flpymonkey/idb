@@ -37,7 +37,7 @@ The columns of these tables correspond to the model attributes defined in [model
 # Types of database queries used
 
 The database queries used to serve data from our database to the API endpoints are
-performed in [main.py](../natphoto/app/main.py).
+performed in `/natphoto/app/main.py`.
 
 Most of the queries performed were relatively simple; such as selecting all photos
 where a given camera was used or selecting all photos taken in a particular national
