@@ -2,7 +2,7 @@
 
 Below are the models for cameras, national parks, and photos.
 
-## Camera
+## Camera {#camera}
 
 | Field           | Description                       | Example               |
 |-----------------|-----------------------------------|-----------------------|
@@ -20,16 +20,21 @@ Below are the models for cameras, national parks, and photos.
 | `sensor` | The sensor for the camera | "CMOS" |
 | `image_url` | A link to an image of the camera | "http://via.placeholder.com/350x150" |
 
-## National Park
-	* Location
-	* Website URL
-	* Park hours
-	* Weather
-	* Daylight hours
-	* Photographs
-	* Cameras
+## National Park {#park}
 
-## Photo
+| Field           | Description                       | Example               |
+|-----------------|-----------------------------------|-----------------------|
+| `name` | The name of the park | "Yellowstone National Park" |
+| `states` | The U.S. states where the park is located | "ID,MT,WY" |
+| `latlong` | The latitude and longitude location of the park | "lat:44.59824417, long:-110.5471695" |
+| `description` | A description of the park | "Visit Yellowstone and experience the world's first national park. Marvel at a volcano..." |
+| `directions` | A description of directions to the park | "Yellowstone National Park covers nearly 3,500 square miles..." |
+| `url` | A link to the nps.gov website for the park | "https://www.nps.gov/yell/index.htm" |
+| `weather` | A description of the weather at the park | "Yellowstone's weather can vary quite a bit, even in a single day. In the summer..." |
+| `directions_url` | A link to directions to the park | "http://www.nps.gov/yell/planyourvisit/directions.htm" |
+| `image_url` | A link to an image of the park provided by nps.gov | "https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg" |
+
+## Photo {#photo}
 	* Photographer
 	* Number of likes
 	* Title
