@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, MetaData, and_
 from sqlalchemy.sql import select
 import json
+import requests
 
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
@@ -108,6 +109,26 @@ class CameraList(Resource):
             results.append(dict(row))
             row = result.fetchone()
         return results
+
+GITHUB_ROOT_ = "https://api.github.com"
+USERS_ = ["flpymonkey", "jhbell", "vargasbri2", "tonydenapoli", "dayannyc"]
+
+def get_json(request_path, params = {}):
+    """
+    Return the JSON result for the given request path
+    request_path - the path to the data we are requesting
+    """
+    url = GITHUB_ROOT_ + request_path
+    response = requests.get(url, params=params)
+    response = response.json()
+    return response
+
+class About(Resource):
+    def get(self):
+        commits = handler.get_user_commits()
+        issues = handler.get_user_issues()
+        return [commits, issues, sum(commits.values()), sum(issues.values())]
+
 
 ##
 ## DataHandler
@@ -236,7 +257,32 @@ class DataHandler (object):
         sel = select([cameras_table]).where(cameras_table.c.name == name)
         result = self.connection.execute(sel)
         return result
-    
+
+    # Get dynamic data from GITHUB API for the about page
+    def get_user_commits(self):
+        """
+        Get the contribution data for the project repository
+        return a json responce containing contribution statistics
+        """
+        path = "/repos/flpymonkey/idb/stats/contributors"
+        commit_data = get_json(path)
+        print(commit_data)
+        commits = {data["author"]["login"]: data["total"] for data in commit_data}
+        return commits
+
+    # Get dynamic data from GITHUB API for the about page
+    def get_user_issues(self):
+        """
+        Get all of the issues and count by user
+        return a dict() of users to the number of issues they created.
+        """
+        path = "/repos/flpymonkey/idb/issues"
+        issues = {}
+        for user in USERS_:
+            response = get_json(path, {"creator": user, "state": "all"})
+            issues[user] = len(response)
+        return issues
+
 ##
 ## Api resource routing here
 ##
@@ -246,13 +292,13 @@ api.add_resource(PhotoList, '/photos')
 api.add_resource(Photo, '/photos/<photo_id>')
 api.add_resource(CameraList, '/cameras')
 api.add_resource(Camera, '/cameras/<camera_name>')
+api.add_resource(About, '/about')
 
 handler = DataHandler(database_creds)
 
 ##
 ## Handle the CORS issues
 ##
-
 @app.after_request
 def after_request(response):
     response.headers.add('Access-Control-Allow-Origin', '*')
