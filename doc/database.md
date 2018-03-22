@@ -32,3 +32,16 @@ table.
 
 The database contains three tables (one for each model) for parks, photos, and cameras.
 The columns of these tables correspond to the model attributes defined in [models](models.md).
+
+
+# Types of database queries used
+
+The database queries used to serve data from our database to the API endpoints are
+performed in [main.py](../natphoto/app/main.py).
+
+Most of the queries performed were relatively simple; such as selecting all photos
+where a given camera was used or selecting all photos taken in a particular national
+park. However, one of the more complicated database queries we used was selecting
+all cameras used in a particular park. We did this by joining the cameras table
+with the photos table on the name of the camera, and then selecting the cameras
+in this joined table which were used to take a photo in the desired national park.
