@@ -9,4 +9,6 @@
 * [Development Tools](doc/tools.md)
 * [Motivation](doc/motivation.md)
 * [Models](doc/models.md)
-* [Self Critique](\doc\self-critique.md)
+* [Database](doc/database.md)
+* [Testing](doc/testing.md)
+* [Self Critique](doc/self-critique.md)
