@@ -53,3 +53,22 @@ Below are the models for cameras, national parks, and photos.
 
 A UML diagram showing the relationship between these models can be seen below:![](/assets/uml_diagram.png)
 
+**Note:** From the models themselves, there is no direct connection between the  
+`park` and `camera` models. In the database, parks and cameras are connected  
+only by the two one to many relationships they have with `photos`. This  
+relationship normalizes out what would be a man-to-many relationship between  
+`park`s and `camera`s, eliminating redundant data within the tables. There is  
+an _implicit_ connection between parks and cameras through the use of filtering  
+with the API.
+
+For example, if I wanted to get all of the parks that a specific camera has  
+taken photos of, I should make the following request:
+
+```
+http://api.natphoto.me/parks?camera=Canon%20EOS%2080D
+```
+
+This request will get all of the parks that are related to the provided camera.   
+Likewise, it is possible get all of the cameras with a specified park, even  
+though this is not specifically linked in the database.
+

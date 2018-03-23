@@ -6,8 +6,8 @@ export default class CameraGrid extends Component {
 	constructor(props){
 		super(props);
     	this.state = {
-      		cameras: []
-		};
+      	cameras: []
+			};
   	}
 
   	componentDidMount() {

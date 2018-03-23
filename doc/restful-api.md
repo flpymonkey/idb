@@ -1,3 +1,8 @@
+# RESTful API
+
+The following are the requests available to the API. These requests will return
+one or more of the models defined in [models](models.md).
+
 # Camera {#camera}
 
 The following information shows how to retrieve data on a camera using
