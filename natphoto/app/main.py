@@ -127,6 +127,9 @@ class CameraList(Resource):
 
 GITHUB_ROOT_ = "https://api.github.com"
 USERS_ = ["flpymonkey", "jhbell", "vargasbri2", "tonydenapoli", "dayannyc"]
+BACKUP_DATA = [{"vargasbri2": 18,"dayannyc": 24,"tonydenapoli": 47,"jhbell": 64,
+            "flpymonkey": 8},{"flpymonkey": 15,"jhbell": 30,"vargasbri2": 8,"tonydenapoli": 10,
+            "dayannyc": 8},233,71]
 
 def get_json(request_path, params = {}):
     """
@@ -140,9 +143,17 @@ def get_json(request_path, params = {}):
 
 class About(Resource):
     def get(self):
-        commits = handler.get_user_commits()
-        issues = handler.get_user_issues()
-        return [commits, issues, sum(commits.values()), sum(issues.values())]
+        try:
+            commits = handler.get_user_commits()
+            issues = handler.get_user_issues()
+            if (len(commits) > 0 and len(issues) > 0):
+                return [commits, issues, sum(commits.values()), sum(issues.values())]
+            else:
+                # If github api fails return hardcoded values
+                return BACKUP_DATA
+        except:
+            # If github api fails return hardcoded values
+            return BACKUP_DATA
 
 
 ##
