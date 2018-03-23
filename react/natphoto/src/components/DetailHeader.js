@@ -12,7 +12,7 @@ export default class DetailHeader extends Component {
 					<h3>{key} </h3>
 				</Col>
 				<Col sm="9" className="descVals">
-					<h3>{this.props.infoAttributes[key+""]}</h3>
+					<h3>{this.props.infoAttributes[key+""] || "N/A"}</h3>
 				</Col>
 			</Row>
 		);

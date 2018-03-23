@@ -33,9 +33,9 @@
 
 .descVals {
   font-size: 50%;
+  word-wrap: break-word;
 }
 
 .infoRow {
 	text-align: left;
 }
-

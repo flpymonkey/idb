@@ -76,7 +76,7 @@ export default class PhotoDetail extends Component {
         <Row id="descriptionRow">
           <Col sm="12">
             <h3>Description</h3>
-            <p>{this.state.description}</p>
+            <p>{this.state.description || "N/A"}</p>
           </Col>
         </Row>
     		<Row id="linksRow">
