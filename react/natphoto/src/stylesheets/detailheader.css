@@ -26,3 +26,16 @@
   color: #EAEAEA;
   font-family: Ahem!, sans-serif;
 }
+
+.descKeys {
+   text-align: right;
+}
+
+.descVals {
+  font-size: 50%;
+}
+
+.infoRow {
+	text-align: left;
+}
+
