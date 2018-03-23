@@ -97,15 +97,9 @@ class TeamStats extends Component {
       				</Col>
     				<Col sm="4" className="data">
       					<h2 className="dataHeader">The Data:<br/></h2>
-      					<p>https://www.nps.gov/subjects/digital/nps-data-api.htm<br/>
-        					https://www.reddit.com/dev/api<br/>
-       						https://www.flickr.com/services/api/<br/>
-        					https://www.instagram.com/developer/<br/>
-       						https://www.digicamdb.com/<br/>
-        					https://aws.amazon.com/documentation/<br/>
-        					https://www.dpreview.com/<br/>
-        					https://developer.yahoo.com/weather/
-      					</p>
+      					<p> We scraped data from <a href = "https://www.nps.gov/subjects/digital/nps-data-api.htm">https://www.nps.gov/subjects/digital/nps-data-api.htm<br/></a> using the RESTful API endpoint to retrieve all national parks. </p>
+                <p>We scraped data from <a href ="https://www.flickr.com/services/api/">https://www.flickr.com/services/api/<br/></a> to retrieve a maximum of 50 photos for each national park</p>
+                <p>We scraped data from <a href = "https://developer.bestbuy.com/">https://developer.bestbuy.com/<br/></a> to retrieve a camera data for each camera associated with each photo we scraped from flickr</p>
     				</Col>
     				<Col sm="4" className="data">
       					<h2 className="dataHeader">Toolbox:</h2>
