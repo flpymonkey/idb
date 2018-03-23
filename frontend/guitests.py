@@ -1,7 +1,11 @@
 import unittest
+from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
 
 class PythonOrgSearch(unittest.TestCase):
 
@@ -31,10 +35,34 @@ class PythonOrgSearch(unittest.TestCase):
     def test_navigation(self) :
         driver = self.driver
         driver.get("http://localhost:3000")
-        driver.find_element_by_id("navAbout").click()
-        assert self.elementExists("class name", "aboutDesc")
+        driver.find_element_by_id("navParks").click()
+        assert self.elementExists("id", "parkGrid")
+        driver.find_element_by_id("navPhotos").click()
+        assert self.elementExists("id", "photoGrid")
+        driver.find_element_by_id("navCameras").click()
+        assert self.elementExists("id", "cameraGrid")
+        driver.find_element_by_id("navHome").click()
+        assert self.elementExists("id", "logo")
 
+    def test_parkgrid_photo(self) :
+        driver = self.driver
+        driver.get("http://localhost:3000")
+        driver.find_element_by_id("navParks").click()
+        assert self.elementExists("id", "parkGrid")
+        time.sleep(10)
+        assert self.elementExists("id", "/parks/Big Bend National Park")
+        driver.find_element_by_id("/parks/Big Bend National Park").click()
+        assert self.elementExists("class name", "parkHeader")
 
+    def test_photogrid_photo(self) :
+        driver = self.driver
+        driver.get("http://localhost:3000")
+        driver.find_element_by_id("navPhotos").click()
+        assert self.elementExists("id", "photoGrid")
+        time.sleep(10)
+        assert self.elementExists("id", "/photos/1")
+        driver.find_element_by_id("/photos/1").click()
+        assert self.elementExists("class name", "headerRow")
 
     def tearDown(self):
         self.driver.close()
