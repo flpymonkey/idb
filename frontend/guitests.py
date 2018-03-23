@@ -21,7 +21,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_home(self):
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         self.assertIn("NatPhoto", driver.title)
         assert self.elementExists("id", "navAbout")
         assert self.elementExists("id", "navHome")
@@ -34,7 +34,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_navigation(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_id("navParks").click()
         assert self.elementExists("id", "parkGrid")
         driver.find_element_by_id("navPhotos").click()
@@ -46,7 +46,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_parkgrid_photo(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_id("navParks").click()
         assert self.elementExists("id", "parkGrid")
         time.sleep(10)
@@ -56,7 +56,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_photogrid_photo(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_id("navPhotos").click()
         assert self.elementExists("id", "photoGrid")
         time.sleep(10)
@@ -66,7 +66,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_cameragrid_photo(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_id("navCameras").click()
         assert self.elementExists("id", "cameraGrid")
         time.sleep(15)
@@ -76,7 +76,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_back(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         assert self.elementExists("class name", "material-icons")
         driver.find_element_by_id("navAbout").click()
         assert self.elementExists("class name", "aboutDesc")
