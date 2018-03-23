@@ -13,6 +13,10 @@ import DetailHeader from '../src/components/DetailHeader.js'
 import CameraGrid from '../src/components/CameraGrid.js'
 import Main from '../src/components/Main.js'
 import CameraDetail from '../src/components/CameraDetailPage.js'
+import ParkDetail from '../src/components/ParkDetailPage.js'
+import ParkGrid from '../src/components/ParkGrid.js'
+import PhotoDetail from '../src/components/PhotoDetailPage.js'
+import PhotoGrid from '../src/components/PhotoGrid.js'
 import ScrollableTable from '../src/components/ScrollableTable.js'
 
 describe("<App/>", function(){
@@ -148,6 +152,70 @@ describe("<CameraDetail/>", function(){
     it("should render", function() {
       shallow(<MemoryRouter>
               <CameraDetail />
+            </MemoryRouter>);
+    });
+});
+
+describe("<ParkGrid/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<MemoryRouter>
+              <ParkGrid />
+            </MemoryRouter>);
+    });
+});
+
+describe("<ParkDetail/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<MemoryRouter>
+              <ParkDetail />
+            </MemoryRouter>);
+    });
+});
+
+describe("<PhotoGrid/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<MemoryRouter>
+              <PhotoGrid />
+            </MemoryRouter>);
+    });
+});
+
+describe("<PhotoDetail/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<MemoryRouter>
+              <PhotoDetail />
             </MemoryRouter>);
     });
 });
