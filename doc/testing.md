@@ -25,4 +25,9 @@ API endpoints.
   given for the specific test request
 
 # Frontend testing
-#TODO
+
+Tools we use for testing:
+
+1. **Mocha** - Software for testing JavaScript and JSX within React
+
+2. **Selenium** - Software for testing GUI of website
