@@ -8,8 +8,8 @@ import '../stylesheets/hover.css';
 export default class ScrollableTable extends Component {
 
 	render() {
-		const elems = this.props.data.map((elem) =>
-      <td>
+		const elems = this.props.data.map((elem, i) =>
+      <td key={i}>
         <Link to={elem.path}>
         <div className="hovereffect">
         <img className = "photoImage" src={elem.img} alt="hi"/>

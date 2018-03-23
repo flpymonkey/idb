@@ -6,8 +6,8 @@ import '../stylesheets/detailheader.css';
 export default class DetailHeader extends Component {
 	render (){
 		var keys = Object.keys(this.props.infoAttributes);
-		const listItems = keys.map((key) =>
-			<Row>
+		const listItems = keys.map((key, i) =>
+			<Row key={i}>
 				<Col sm="3" className="descKeys">
 					<h3>{key} </h3>
 				</Col>
