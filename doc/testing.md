@@ -53,3 +53,4 @@ website, and icons
 * Tests navigation between grids and detail pages by visiting the grid pages
 (parks, cameras, photos) and clicking a card that leads to the detail page of an
 element corresponding to the card clicked
+* Tests that the pages are still reachable when using the back navigation in the browser
