@@ -8,7 +8,7 @@ Tools we use for testing:
 on requests to api.natphoto.me. Postman tests can be found in [Postman.json](../Postman.json).
 
 2. **unittest** - Used to test our Python Flask code which is used to serve the
-API endpoints.
+API endpoints. Run these tests using `python tests.py`.
 
 ## Testing methodology for Postman
 
