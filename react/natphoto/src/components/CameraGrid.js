@@ -33,7 +33,7 @@ export default class CameraGrid extends Component {
 
 	render () {
 		return (
-	  		<Grid data={this.state.cameras} />
+	  		<Grid data={this.state.cameras} id="cameraGrid"/>
 		);
   	}
 }

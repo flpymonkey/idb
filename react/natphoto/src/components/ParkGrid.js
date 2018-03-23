@@ -22,7 +22,7 @@ export default class ParkGrid extends Component {
                 img: elem.image_url,
                 title: elem.name,
                 subtitle: elem.states,
-								info: "", 
+								info: "",
                 detail_url: "/parks/" + elem.name}
             ));
       		this.setState({
@@ -33,7 +33,7 @@ export default class ParkGrid extends Component {
 
 	render () {
 		return (
-	  		<Grid data={this.state.parks} />
+	  		<Grid data={this.state.parks} id="parkGrid"/>
 		);
   	}
 }

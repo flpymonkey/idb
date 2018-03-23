@@ -34,7 +34,7 @@ export default class Grid extends Component {
   		);
 
 		return (
-			<div className="body">
+			<div className="body" id={this.props.id}>
         <Container>
 					<Row>
 						{grid_cards}
@@ -60,7 +60,7 @@ class GridItemCard extends Component {
       return(
         <Col xl="3" lg="3" md="3" sm="3">
           <div className="cardDiv">
-            <Card>
+            <Card id={this.props.data.detail_url}>
               <Link to={this.props.data.detail_url}>
               <CardImg className="imgInCard" src={this.props.data.img} alt="Card image cap" />
               <CardBody>
