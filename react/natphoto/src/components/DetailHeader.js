@@ -12,7 +12,7 @@ export default class DetailHeader extends Component {
 					<h3>{key} </h3>
 				</Col>
 				<Col sm="6">
-					<h3>{this.props.infoAttributes[key+""]}</h3>
+					<h3 className={key.replace(' ', '-')}>{this.props.infoAttributes[key+""]}</h3>
 				</Col>
 			</Row>
 		);
