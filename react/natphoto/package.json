@@ -12,19 +12,33 @@
     "react-dom": "^16.2.0",
     "react-js-pagination": "^3.0.1",
     "react-material-icons": "^1.0.3",
-    "react-paginate": "^5.2.1",
-    "react-popper": "^0.8.2",
+    "react-paginate": "^5.2.2",
+    "react-popper": "^0.8.3",
     "react-responsive-carousel": "^3.1.33",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
-    "reactstrap": "^5.0.0-beta",
     "selenium-webdriver": "^4.0.0-alpha.1",
+    "reactstrap": "^5.0.0-beta.3",
     "underscore": "^1.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha",
+    "test": "mocha --require ignore-styles test/setup.js test/tests.js",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-airbnb": "^2.4.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "es6-promise": "^4.2.4",
+    "ignore-styles": "^5.0.1",
+    "isomorphic-fetch": "^2.2.1",
+    "jsdom": "^11.6.2",
+    "jsdom-global": "^3.0.2",
+    "react-addons-test-utils": "^15.6.2"
   }
 }

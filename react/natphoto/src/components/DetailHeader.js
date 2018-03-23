@@ -11,8 +11,8 @@ export default class DetailHeader extends Component {
 				<Col sm="3" className="descKeys">
 					<h3>{key} </h3>
 				</Col>
-				<Col sm="9" className="descVals">
-					<h3>{this.props.infoAttributes[key+""]}</h3>
+				<Col sm="9">
+					<h3 className={key.replace(' ', '-')}>{this.props.infoAttributes[key+""]}</h3>
 				</Col>
 			</Row>
 		);

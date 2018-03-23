@@ -79,9 +79,8 @@ export default class ParkDetail extends Component {
 			<div className="body">
 				<h1 className="parkHeader"><span>{this.state.name}</span></h1>
 				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={parkLabels}/>
-
 				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos} />
-        		<ScrollableTable tableTitle="Cameras Used" data={this.state.cameras} />
+        <ScrollableTable tableTitle="Cameras Used" data={this.state.cameras} />
 			</div>
 		);
 	}

@@ -6,6 +6,7 @@
   position: relative;
   text-align: center;
   cursor: default;
+  color: #FFF;
 }
 
 .hovereffect .overlay {
@@ -15,7 +16,7 @@
   height: 80%;
   left: 10%;
   top: 10%;
-  border-bottom: 1px solid #FFF;
+  /* border-bottom: 1px solid #FFF; */
   border-top: 1px solid #FFF;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -31,7 +32,7 @@
   -ms-transform: scale(1);
   transform: scale(1);
 	height: 300px;
-	width: auto;
+	/* width: auto; */
 }
 
 .hovereffect img {

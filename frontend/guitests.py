@@ -64,6 +64,17 @@ class PythonOrgSearch(unittest.TestCase):
         driver.find_element_by_id("/photos/1").click()
         assert self.elementExists("class name", "headerRow")
 
+    def test_cameragrid_photo(self) :
+        driver = self.driver
+        driver.get("http://localhost:3000")
+        driver.find_element_by_id("navCameras").click()
+        assert self.elementExists("id", "cameraGrid")
+        time.sleep(10)
+        assert self.elementExists("id", "/cameras/Nikon D610")
+        driver.find_element_by_id("/cameras/Nikon D610").click()
+        assert self.elementExists("class name", "cameraHeader")
+
+
     def tearDown(self):
         self.driver.close()
 

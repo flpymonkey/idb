@@ -1,0 +1,1 @@
+../react/natphoto/test/tests.js

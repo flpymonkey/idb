@@ -103,7 +103,7 @@ class TeamStats extends Component {
     				</Col>
     				<Col sm="4" className="data">
       					<h2 className="dataHeader">Toolbox:</h2>
-     					<span>AWS<br/>Bootstrap<br/>Docker<br/>Flask<br/>Github<br/>Postman</span>
+     					<span><a href="https://aws.amazon.com/ec2/">Amazon EC2</a>: For hosting the <a href="http://api.natphoto.me/parks">API</a><br/><a href="https://aws.amazon.com/s3/">Amazon S3</a>: For hosting the front-end React app<br/><a href="https://reactstrap.github.io/">reactstrap</a>: For styling our React app<br/><a href="https://flask-restful.readthedocs.io/en/latest/">Flask-RESTful</a>: For serving the API endpoints<br/><a href="http://www.sqlalchemy.org/">SQLAlchemy</a>: For querying our database<br/><a href="https://www.postgresql.org/">PostgreSQL</a>: Database engine hosted on Amazon RDS<br/><a href="https://github.com/flpymonkey/idb">Github</a><br/><a href="https://flpymonkey.gitbooks.io/report/content/">GitBook Documentation</a><br/><a href="https://travis-ci.org/flpymonkey/idb">Travis-ci</a><br/><a href="https://www.getpostman.com/collections/16213d651eace5b189b4">Postman</a></span>
     				</Col>
     			</Row>
     		</div>

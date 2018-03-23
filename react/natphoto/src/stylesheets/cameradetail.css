@@ -1,10 +1,8 @@
 .cameraHeader {
-  width: 100%;
-  font-family: Ahem!, sans-serif;
-  color: #EAEAEA;
-  text-align: center;
-  height: 100px;
-  font-size: 75px;
+ overflow: hidden;
+ text-align: center;
+ font-size: 75px;
+ font-family: Ahem!, sans-serif;
 }
 
 .cameraHeader:before,
