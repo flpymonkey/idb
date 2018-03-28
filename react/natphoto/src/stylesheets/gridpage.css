@@ -29,3 +29,12 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
+.spinner {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.hidden {
+  display: none;
+}
