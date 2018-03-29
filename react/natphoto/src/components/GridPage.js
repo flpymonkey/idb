@@ -4,6 +4,7 @@ import { Row, Col, Container} from 'reactstrap';
 import Pagination from 'react-js-pagination';
 import '../stylesheets/gridpage.css';
 import '../stylesheets/general.css';
+import SortDropdown from './SortDropdown.js'
 import { SyncLoader } from 'react-spinners';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap';
@@ -25,28 +26,39 @@ export default class Grid extends Component {
     }
 
 	render() {
-    	let endVal = (this.state.activePage * 16)
-    	let startVal = ((this.state.activePage - 1) * 16)
-        const slice = this.props.data.slice(startVal, endVal);
-		const grid_cards = slice.map((elem) =>
-  			<GridItemCard data={elem} />
-  		);
+    let endVal = (this.state.activePage * 16)
+  	let startVal = ((this.state.activePage - 1) * 16)
+    console.log(this.props.data[0]);
+    const slice = this.props.data.slice(startVal, endVal);
+    const grid_cards = slice.map((elem) =>
+      <GridItemCard data={elem} />
+    );
 
 		return (
 			<div className="body" id={this.props.id}>
         <Container>
+          <Row>
+             <Col sm="4"></Col>
+             <Col className="gridTitle" sm="4"><h1>{this.props.title}</h1></Col>
+             <Col sm="4"></Col>
+          </Row>
+          <Row className="dropDowns">
+             <Col sm="4"></Col>
+             <Col sm="1" className="sortDrop"><SortDropdown dropTitle="Sort by" items={this.props.sortAttributes}/></Col>
+             <Col sm="4"></Col>
+          </Row>
 					<Row>
 						{grid_cards}
 					</Row>
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 					<Pagination
-          				activePage={this.state.activePage}
-          				itemsCountPerPage={16}
-          				totalItemsCount={this.props.data.length}
-          				pageRangeDisplayed={5}
-                        onChange={this.handlePageChange.bind(this)}
-          				className = "pagination"
-        			/>
+    				activePage={this.state.activePage}
+    				itemsCountPerPage={16}
+    				totalItemsCount={this.props.data.length}
+    				pageRangeDisplayed={5}
+            onChange={this.handlePageChange.bind(this)}
+    				className = "pagination"
+        	/>
 
         </Container>
 			</div>
@@ -77,14 +89,14 @@ class GridItemCard extends Component {
           </div>
         </Row>
         <CardImg className="hidden"
-             src={this.props.data.img} 
+             src={this.props.data.img}
              alt="Card image cap" onLoad={this.handleLoad.bind(this)} />
         </div>
       );
     } else {
       return (
         <CardImg className="imgInCard"
-             src={this.props.data.img} 
+             src={this.props.data.img}
              alt="Card image cap" onLoad={this.handleLoad.bind(this)} />
       );
     }
