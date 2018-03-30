@@ -33,7 +33,7 @@ export default class ParkGrid extends Component {
 
 	render () {
 		return (
-	  		<Grid data={this.state.parks} sortAttributes={["State", "Location", "# Photos"]} title="Parks" id="parkGrid"/>
+	  		<Grid data={this.state.parks} sortAttributes={["State", "Distance", "# Photos"]} sortTypes={["alpha", "numerical", "numerical"]} title="Parks" id="parkGrid"/>
 		);
   	}
 }

@@ -24,12 +24,12 @@ export default class SortDropdown extends React.Component {
           {this.props.dropTitle}
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem>Ascending</DropdownItem>
-          <DropdownItem>Descending</DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>{this.props.items[0]}</DropdownItem>
-          <DropdownItem>{this.props.items[1]}</DropdownItem>
-          <DropdownItem>{this.props.items[2]}</DropdownItem>
+          <DropdownItem>{this.props.items[0]}: {this.props.types[0] === "numerical" ? "Low to High" : "(A - Z)"}</DropdownItem>
+          <DropdownItem>{this.props.items[0]}: {this.props.types[0] === "numerical" ? "High to Low" : "(Z - A)"}</DropdownItem>
+          <DropdownItem>{this.props.items[1]}: {this.props.types[1] === "numerical" ? "Low to High" : "(A - Z)"}</DropdownItem>
+          <DropdownItem>{this.props.items[1]}: {this.props.types[1] === "numerical" ? "High to Low" : "(Z - A)"}</DropdownItem>
+          <DropdownItem>{this.props.items[2]}: {this.props.types[2] === "numerical" ? "Low to High" : "(A - Z)"}</DropdownItem>
+          <DropdownItem>{this.props.items[2]}: {this.props.types[2] === "numerical" ? "High to Low" : "(Z - A)"}</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     );
