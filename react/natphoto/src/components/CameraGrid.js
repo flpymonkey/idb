@@ -33,7 +33,7 @@ export default class CameraGrid extends Component {
 
 	render () {
 		return (
-	  		<Grid data={this.state.cameras} sortAttributes={["Price", "Megapixels", "Weight"]} title="Cameras" id="cameraGrid"/>
+	  		<Grid data={this.state.cameras} sortAttributes={["Price", "Megapixels", "Weight"]} sortTypes={["numerical", "numerical", "numerical"]} title="Cameras" id="cameraGrid"/>
 		);
   	}
 }

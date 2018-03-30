@@ -44,7 +44,7 @@ export default class Grid extends Component {
           </Row>
           <Row className="dropDowns">
              <Col sm="4"></Col>
-             <Col sm="1" className="sortDrop"><SortDropdown dropTitle="Sort by" items={this.props.sortAttributes}/></Col>
+             <Col sm="1" className="sortDrop"><SortDropdown dropTitle="Sort by" items={this.props.sortAttributes} types={this.props.sortTypes}/></Col>
              <Col sm="4"></Col>
           </Row>
 					<Row>
