@@ -45,7 +45,10 @@ class ParkList(Resource):
         row = result.fetchone() #use fetchone() because the query returns lots of rows
         results=[]
         while row is not None:
-            results.append(dict(row))
+            park = dict(row)
+            number_of_photos = len([dict(r) for r in handler.get_photos_by_park(park['name'])])
+            park['number_of_photos'] = number_of_photos
+            results.append(park)
             row = result.fetchone()
         return results
 
@@ -125,7 +128,10 @@ class CameraList(Resource):
         row = result.fetchone() #use fetchone() because the query returns lots of rows
         results=[]
         while row is not None:
-            results.append(dict(row))
+            camera = dict(row)
+            number_of_photos = len([dict(r) for r in handler.get_photos_by_camera(camera['name'])])
+            camera['number_of_photos'] = number_of_photos
+            results.append(camera)
             row = result.fetchone()
         return results
 
