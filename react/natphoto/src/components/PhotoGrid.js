@@ -34,7 +34,7 @@ export default class PhotoGrid extends Component {
 
   render () {
 	return (
-	  <Grid data={this.state.photos} id="photoGrid"/>
+	  <Grid data={this.state.photos} sortAttributes={["Likes", "Title", "Date"]} title="Photos" id="photoGrid"/>
 	);
   }
 }
