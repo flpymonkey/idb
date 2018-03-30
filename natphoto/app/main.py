@@ -23,9 +23,11 @@ class Park(Resource):
     """
     def get(self, park_name):
         result = handler.get_park(park_name)
+        number_of_photos = len([dict(r) for r in handler.get_photos_by_park(park_name)])
         response = [dict(r) for r in result]
         if len(response) == 0:
             abort(404)
+        response[0]['number_of_photos'] = number_of_photos
         return response
 
 class ParkList(Resource):
@@ -102,9 +104,11 @@ class Camera(Resource):
     """
     def get(self, camera_name):
         result = handler.get_camera(camera_name)
+        number_of_photos = len([dict(r) for r in handler.get_photos_by_camera(camera_name)])
         response = [dict(r) for r in result]
         if len(response) == 0:
             abort(404)
+        response[0]['number_of_photos'] = number_of_photos
         return response
 
 class CameraList(Resource):
