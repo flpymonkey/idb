@@ -38,3 +38,17 @@
 .hidden {
   display: none;
 }
+
+.gridTitle {
+	text-align: center;
+	color: #EAEAEA;
+}
+
+.sortDrop {
+	border-right: solid white;
+}
+
+.dropDowns {
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
