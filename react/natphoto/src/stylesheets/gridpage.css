@@ -43,10 +43,11 @@
 	text-align: center;
 	color: #EAEAEA;
 }
-
-.sortDrop {
-	border-right: solid white;
+.filterLabel {
+	color: #EAEAEA;
+	font-size: 150%;
 }
+
 
 .dropDowns {
 	margin-top: 1%;

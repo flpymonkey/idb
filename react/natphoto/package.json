@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "create-react-class": "^15.6.3",
     "jquery": "^3.3.1",
     "lodash": "^4.17.5",
     "material-icons-react": "^1.0.0",
@@ -17,6 +18,8 @@
     "react-responsive-carousel": "^3.1.33",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "react-select": "^1.2.1",
+    "react-select-box": "^3.0.1",
     "react-spinners": "^0.2.6",
     "reactstrap": "^5.0.0-beta.3",
     "selenium-webdriver": "^4.0.0-alpha.1",

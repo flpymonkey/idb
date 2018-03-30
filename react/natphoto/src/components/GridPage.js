@@ -4,7 +4,8 @@ import { Row, Col, Container} from 'reactstrap';
 import Pagination from 'react-js-pagination';
 import '../stylesheets/gridpage.css';
 import '../stylesheets/general.css';
-import SortDropdown from './SortDropdown.js'
+import SortDropdown from './SortDropdown.js';
+import FilterDropdown from './FilterDropdown.js'
 import { SyncLoader } from 'react-spinners';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap';
@@ -30,8 +31,8 @@ export default class Grid extends Component {
   	let startVal = ((this.state.activePage - 1) * 16)
     console.log(this.props.data[0]);
     const slice = this.props.data.slice(startVal, endVal);
-    const grid_cards = slice.map((elem) =>
-      <GridItemCard data={elem} />
+    const grid_cards = slice.map((elem, i) =>
+      <GridItemCard key={i} data={elem} />
     );
 
 		return (
@@ -45,7 +46,10 @@ export default class Grid extends Component {
           <Row className="dropDowns">
              <Col sm="4"></Col>
              <Col sm="1" className="sortDrop"><SortDropdown dropTitle="Sort by" items={this.props.sortAttributes} types={this.props.sortTypes}/></Col>
-             <Col sm="4"></Col>
+             <Col sm="1" className="filterLabel">Filter by:</Col>
+             <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[0]} options={["tony", "bri", "dayanny"]} /></Col>
+             <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[1]} options={["tony", "bri", "dayanny"]} /></Col>
+             <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[2]} options={["tony", "bri", "dayanny"]} /></Col>
           </Row>
 					<Row>
 						{grid_cards}
