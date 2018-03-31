@@ -10,6 +10,7 @@
     "material-icons-react": "^1.0.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
+    "react-data-sort": "^0.2.2",
     "react-dom": "^16.2.0",
     "react-js-pagination": "^3.0.1",
     "react-material-icons": "^1.0.3",

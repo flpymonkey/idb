@@ -9,6 +9,7 @@ import FilterDropdown from './FilterDropdown.js'
 import { SyncLoader } from 'react-spinners';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap';
+import Datasort from 'react-data-sort';
 
 
 export default class Grid extends Component {
@@ -26,15 +27,28 @@ export default class Grid extends Component {
         this.setState({activePage: pageNumber});
     }
 
-	render() {
-    let endVal = (this.state.activePage * 16)
-  	let startVal = ((this.state.activePage - 1) * 16)
-    console.log(this.props.data[0]);
-    const slice = this.props.data.slice(startVal, endVal);
-    const grid_cards = slice.map((elem, i) =>
-      <GridItemCard key={i} data={elem} />
-    );
+    datasort () {
+      let endVal = (this.state.activePage * 16)
+      let startVal = ((this.state.activePage - 1) * 16)
+      const slice = this.props.data.slice(startVal, endVal);
+      return (
+        <Datasort
+          data={slice}
+          defaultSortBy="info"
+          render={({
+            data
+          }) => {
+            return (
+              data.map((elem, i) =>
+                <GridItemCard key={i} data={elem} />
+              )
+            );
+          }}
+        />
+      );
+    }
 
+	render() {
 		return (
 			<div className="body" id={this.props.id}>
         <Container>
@@ -52,7 +66,7 @@ export default class Grid extends Component {
              <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[2]} options={["tony", "bri", "dayanny"]} /></Col>
           </Row>
 					<Row>
-						{grid_cards}
+            {this.datasort()}
 					</Row>
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 					<Pagination
@@ -69,6 +83,7 @@ export default class Grid extends Component {
 		);
 	}
 }
+
 
 class GridItemCard extends Component {
 
