@@ -16,37 +16,42 @@ export default class Grid extends Component {
 
  	constructor(props) {
 		super(props);
+    this.setSortBy = this.setSortBy.bind(this);
 		this.state = {
-			activePage: 1
+			activePage: 1,
+      sortBy: "title"
 		}
-
 	}
 
-    handlePageChange(pageNumber) {
-        console.log("Active page is: " + pageNumber);
-        this.setState({activePage: pageNumber});
-    }
+  setSortBy(param) {
+    this.setState({sortBy: param});
+  }
 
-    datasort () {
-      let endVal = (this.state.activePage * 16)
-      let startVal = ((this.state.activePage - 1) * 16)
-      const slice = this.props.data.slice(startVal, endVal);
-      return (
-        <Datasort
-          data={slice}
-          defaultSortBy="info"
-          render={({
-            data
-          }) => {
-            return (
-              data.map((elem, i) =>
-                <GridItemCard key={i} data={elem} />
-              )
-            );
-          }}
-        />
-      );
-    }
+  handlePageChange(pageNumber) {
+      console.log("Active page is: " + pageNumber);
+      this.setState({activePage: pageNumber});
+  }
+
+  datasort () {
+    let endVal = (this.state.activePage * 16)
+    let startVal = ((this.state.activePage - 1) * 16)
+    const slice = this.props.data.slice(startVal, endVal);
+    return (
+      <Datasort
+        data={slice}
+        sortBy={this.state.sortBy}
+        render={({
+          data
+        }) => {
+          return (
+            data.map((elem, i) =>
+              <GridItemCard key={i} data={elem} />
+            )
+          );
+        }}
+      />
+    );
+  }
 
 	render() {
 		return (
@@ -59,7 +64,12 @@ export default class Grid extends Component {
           </Row>
           <Row className="dropDowns">
              <Col sm="4"></Col>
-             <Col sm="1" className="sortDrop"><SortDropdown dropTitle="Sort by" items={this.props.sortAttributes} types={this.props.sortTypes}/></Col>
+             <Col sm="1" className="sortDrop">
+               <SortDropdown dropTitle="Sort by"
+                             items={this.props.sortAttributes}
+                             types={this.props.sortTypes}
+                             func={this.setSortBy}/>
+             </Col>
              <Col sm="1" className="filterLabel">Filter by:</Col>
              <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[0]} options={["tony", "bri", "dayanny"]} /></Col>
              <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[1]} options={["tony", "bri", "dayanny"]} /></Col>
