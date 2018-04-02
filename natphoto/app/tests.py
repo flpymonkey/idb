@@ -91,6 +91,13 @@ class Tests(TestCase):
         self.assertEqual(len(_json_r), 3)
         self.assertEqual(r.status_code, 200)
 
+    def test_all(self):
+        r = self.app.get('/all')
+        _json_r = json.loads(r.data)
+        # This number might change as we update the database contents
+        self.assertEqual(len(_json_r), 840) 
+        self.assertEqual(r.status_code, 200)
+
     def test_individual_photo(self):
         r = self.app.get('/photos/14')
         _json_r = json.loads(r.data)
