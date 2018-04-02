@@ -23,7 +23,10 @@ export default class CameraGrid extends Component {
                 title: elem.name,
                 subtitle: "$" + elem.price,
 								info: elem.effective_megapixels,
-                detail_url: "/cameras/" + elem.name
+                detail_url: "/cameras/" + elem.name,
+								sort1: elem.name,
+								sort2: parseInt(elem.price, 10),
+								sort3: parseInt(elem.total_megapixels, 10)
             }));
       		this.setState({
       			cameras: curr_cameras
@@ -33,7 +36,7 @@ export default class CameraGrid extends Component {
 
 	render () {
 		return (
-	  		<Grid data={this.state.cameras} sortAttributes={["Price", "Megapixels", "Weight"]} sortTypes={["numerical", "numerical", "numerical"]} title="Cameras" id="cameraGrid"/>
+	  		<Grid data={this.state.cameras} sortAttributes={["Name", "Price", "Megapixels"]} sortTypes={["alpha", "numerical", "numerical"]} title="Cameras" id="cameraGrid"/>
 		);
   	}
 }

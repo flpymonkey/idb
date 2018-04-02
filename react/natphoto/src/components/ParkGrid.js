@@ -23,8 +23,11 @@ export default class ParkGrid extends Component {
                 title: elem.name,
                 subtitle: elem.states,
 								info: "",
-                detail_url: "/parks/" + elem.name}
-            ));
+                detail_url: "/parks/" + elem.name,
+								sort1: elem.name,
+								sort2: elem.states,
+								sort3: ""
+            }));
       		this.setState({
       			parks: curr_parks
       		});
@@ -33,7 +36,7 @@ export default class ParkGrid extends Component {
 
 	render () {
 		return (
-	  		<Grid data={this.state.parks} sortAttributes={["State", "Distance", "# Photos"]} sortTypes={["alpha", "numerical", "numerical"]} title="Parks" id="parkGrid"/>
+	  		<Grid data={this.state.parks} sortAttributes={["Name", "State", "# Photos"]} sortTypes={["alpha", "alpha", "numerical"]} title="Parks" id="parkGrid"/>
 		);
   	}
 }

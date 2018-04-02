@@ -17,11 +17,17 @@ export default class Grid extends Component {
  	constructor(props) {
 		super(props);
     this.setSortBy = this.setSortBy.bind(this);
+    this.setDirection= this.setDirection.bind(this);
 		this.state = {
 			activePage: 1,
-      sortBy: "title"
+      sortBy: "sort1",
+      direction: "asc"
 		}
 	}
+
+  setDirection(param) {
+    this.setState({direction: param});
+  }
 
   setSortBy(param) {
     this.setState({sortBy: param});
@@ -40,6 +46,7 @@ export default class Grid extends Component {
       <Datasort
         data={slice}
         sortBy={this.state.sortBy}
+        direction={this.state.direction}
         render={({
           data
         }) => {
@@ -68,7 +75,8 @@ export default class Grid extends Component {
                <SortDropdown dropTitle="Sort by"
                              items={this.props.sortAttributes}
                              types={this.props.sortTypes}
-                             func={this.setSortBy}/>
+                             sortFunc={this.setSortBy}
+                             directionFunc={this.setDirection}/>
              </Col>
              <Col sm="1" className="filterLabel">Filter by:</Col>
              <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[0]} options={["tony", "bri", "dayanny"]} /></Col>
