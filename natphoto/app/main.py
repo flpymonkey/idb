@@ -137,9 +137,19 @@ class CameraList(Resource):
 
         row = result.fetchone() #use fetchone() because the query returns lots of rows
         results=[]
+
+        # Getting counts of photos per camera
+        counts = handler.get_num_photos_by_cameras()
+        counts_dict = dict()
+        for camera in counts:
+            counts_dict[camera[1]] = camera[0]
+
         while row is not None:
             camera = dict(row)
-            number_of_photos = len([dict(r) for r in handler.get_photos_by_camera(camera['name'])])
+            if camera['name'] in counts_dict:
+                number_of_photos = counts_dict[camera['name']]
+            else:
+                number_of_photos = 0
             camera['number_of_photos'] = number_of_photos
             results.append(camera)
             row = result.fetchone()
@@ -310,6 +320,16 @@ class DataHandler (object):
         """
         photos_table = self.metadata.tables['photos']
         q = "select count(photos.id), park from photos group by park"
+        result = self.connection.execute(q)
+        return result
+
+    def get_num_photos_by_cameras(self):
+        """
+        Get a list of camera names matched to number of photos taken with that
+        camera
+        """
+        photos_table = self.metadata.tables['photos']
+        q = "select count(photos.id), camera from photos group by camera"
         result = self.connection.execute(q)
         return result
 
