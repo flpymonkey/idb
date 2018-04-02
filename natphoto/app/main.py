@@ -135,6 +135,35 @@ class CameraList(Resource):
             row = result.fetchone()
         return results
 
+class AllList(Resource):
+    def get(self):
+
+        cameras = handler.get_cameras()
+        parks = handler.get_parks()
+        photos = handler.get_photos()
+
+        results=[]
+
+        row = cameras.fetchone() #use fetchone() because the query returns lots of rows
+        while row is not None:
+            camera = dict(row)
+            results.append(camera)
+            row = cameras.fetchone()
+
+        row = parks.fetchone() #use fetchone() because the query returns lots of rows
+        while row is not None:
+            park = dict(row)
+            results.append(park)
+            row = parks.fetchone()
+
+        row = photos.fetchone() #use fetchone() because the query returns lots of rows
+        while row is not None:
+            photo = dict(row)
+            results.append(photo)
+            row = photos.fetchone()
+
+        return results
+
 GITHUB_ROOT_ = "https://api.github.com"
 USERS_ = ["flpymonkey", "jhbell", "vargasbri2", "tonydenapoli", "dayannyc"]
 BACKUP_DATA = [{"vargasbri2": 18,"dayannyc": 24,"tonydenapoli": 47,"jhbell": 64,
@@ -321,6 +350,7 @@ class DataHandler (object):
 ##
 ## Api resource routing here
 ##
+api.add_resource(AllList, '/all')
 api.add_resource(ParkList, '/parks')
 api.add_resource(Park, '/parks/<park_name>')
 api.add_resource(PhotoList, '/photos')
