@@ -24,7 +24,10 @@ export default class PhotoGrid extends Component {
             title: elem.title,
             subtitle: "by " + elem.photographer,
             info: elem.likes + " likes",
-            detail_url: "/photos/" + elem.id
+            detail_url: "/photos/" + elem.id,
+            sort1: elem.title,
+            sort2: parseInt(elem.likes, 10),
+            sort3: parseInt(elem.date, 10)
         }));
       	this.setState({
       		photos: curr_photos
@@ -34,7 +37,7 @@ export default class PhotoGrid extends Component {
 
   render () {
 	return (
-	  <Grid data={this.state.photos} sortAttributes={["Likes", "Title", "Date"]} sortTypes={["numerical", "alpha", "numerical"]} title="Photos" id="photoGrid"/>
+	  <Grid data={this.state.photos} sortAttributes={["Title", "# Likes", "Date"]} sortTypes={["alpha", "numerical", "numerical"]} title="Photos" id="photoGrid"/>
 	);
   }
 }
