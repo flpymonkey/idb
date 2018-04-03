@@ -37,7 +37,18 @@ export default class PhotoGrid extends Component {
 
   render () {
 	return (
-	  <Grid data={this.state.photos} sortAttributes={["Title", "# Likes", "Date"]} sortTypes={["alpha", "numerical", "numerical"]} title="Photos" id="photoGrid"/>
+	  <Grid
+      data={this.state.photos}
+      sortAttributes={["Title", "# Likes", "Date"]}
+      sortTypes={["alpha", "numerical", "numerical"]}
+      filterOptions1={[]}
+      filterOptions2={["< 10", "11 - 20", "21 - 30 ", "31 - 40", "41 - 50", "51 - 60", "61 - 70", "71 - 80", "81 - 90", "91 - 100", "101 - 200", "201 - 300",
+      "301 - 400", "> 400"]}
+      filterOptions3={["< 2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016",
+      "2017", "2018"]}
+      title="Photos"
+      id="photoGrid"
+    />
 	);
   }
 }

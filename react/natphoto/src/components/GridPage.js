@@ -29,7 +29,6 @@ export default class Grid extends Component {
   }
 
   handlePageChange(pageNumber) {
-      console.log("Active page is: " + pageNumber);
       this.setState({activePage: pageNumber});
   }
 
@@ -55,16 +54,16 @@ export default class Grid extends Component {
           </Row>
           <Row className="dropDowns">
              <Col sm="4"></Col>
-             <Col sm="1" className="sortDrop">
+             <Col sm="1">
                <SortDropdown dropTitle="Sort by"
                              items={this.props.sortAttributes}
                              types={this.props.sortTypes}
                              sortFunc={this.setSortBy}/>
              </Col>
              <Col sm="1" className="filterLabel">Filter by:</Col>
-             <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[0]} options={["tony", "bri", "dayanny"]} /></Col>
-             <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[1]} options={["tony", "bri", "dayanny"]} /></Col>
-             <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[2]} options={["tony", "bri", "dayanny"]} /></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[0]} options={this.props.filterOptions1} /></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[1]} options={this.props.filterOptions2} /></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[2]} options={this.props.filterOptions3} /></Col>
           </Row>
           <Datasort
             data={this.props.data}
