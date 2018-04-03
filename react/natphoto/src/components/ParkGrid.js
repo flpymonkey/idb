@@ -22,11 +22,11 @@ export default class ParkGrid extends Component {
                 img: elem.image_url,
                 title: elem.name,
                 subtitle: elem.states,
-								info: "",
+								info: elem.number_of_photos + " Photos Taken Here",
                 detail_url: "/parks/" + elem.name,
 								sort1: elem.name,
 								sort2: elem.states,
-								sort3: ""
+								sort3: elem.number_of_photos
             }));
       		this.setState({
       			parks: curr_parks

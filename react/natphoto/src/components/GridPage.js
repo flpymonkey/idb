@@ -19,7 +19,7 @@ export default class Grid extends Component {
     this.setSortBy = this.setSortBy.bind(this);
     this.setDirection= this.setDirection.bind(this);
 		this.state = {
-			activePage: 1,
+      activePage: 1,
       sortBy: "sort1",
       direction: "asc"
 		}
@@ -38,29 +38,18 @@ export default class Grid extends Component {
       this.setState({activePage: pageNumber});
   }
 
-  datasort () {
+  getCards(data) {
     let endVal = (this.state.activePage * 16)
     let startVal = ((this.state.activePage - 1) * 16)
-    const slice = this.props.data.slice(startVal, endVal);
-    return (
-      <Datasort
-        data={slice}
-        sortBy={this.state.sortBy}
-        direction={this.state.direction}
-        render={({
-          data
-        }) => {
-          return (
-            data.map((elem, i) =>
-              <GridItemCard key={i} data={elem} />
-            )
-          );
-        }}
-      />
-    );
+    const slice = data.slice(startVal, endVal)
+    return slice.map((elem, i) =>
+      <GridItemCard key={i} data={elem} />
+    )
   }
 
 	render() {
+
+    const {sortBy, direction} = this.state
 		return (
 			<div className="body" id={this.props.id}>
         <Container>
@@ -83,25 +72,38 @@ export default class Grid extends Component {
              <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[1]} options={["tony", "bri", "dayanny"]} /></Col>
              <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[2]} options={["tony", "bri", "dayanny"]} /></Col>
           </Row>
-					<Row>
-            {this.datasort()}
-					</Row>
+          <Datasort
+            data={this.props.data}
+            sortBy={sortBy}
+            direction={direction}
+            render={({
+              data,
+              setSortBy,
+              sortBy,
+              setDirection,
+              direction
+            }) => {
+              return (
+                <Row>
+                    {this.getCards(data)}
+                    <Pagination
+                      activePage={this.state.activePage}
+                      itemsCountPerPage={16}
+                      totalItemsCount={this.props.data.length}
+                      pageRangeDisplayed={5}
+                      onChange={this.handlePageChange.bind(this)}
+                      className = "pagination"
+                    />
+                </Row>
+              );
+            }}
+          />
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-					<Pagination
-    				activePage={this.state.activePage}
-    				itemsCountPerPage={16}
-    				totalItemsCount={this.props.data.length}
-    				pageRangeDisplayed={5}
-            onChange={this.handlePageChange.bind(this)}
-    				className = "pagination"
-        	/>
-
         </Container>
 			</div>
 		);
 	}
 }
-
 
 class GridItemCard extends Component {
 
