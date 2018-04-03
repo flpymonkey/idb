@@ -17,7 +17,6 @@ export default class Grid extends Component {
  	constructor(props) {
 		super(props);
     this.setSortBy = this.setSortBy.bind(this);
-    this.setDirection= this.setDirection.bind(this);
 		this.state = {
       activePage: 1,
       sortBy: "sort1",
@@ -25,12 +24,8 @@ export default class Grid extends Component {
 		}
 	}
 
-  setDirection(param) {
-    this.setState({direction: param});
-  }
-
-  setSortBy(param) {
-    this.setState({sortBy: param});
+  setSortBy(sort, direction) {
+    this.setState({sortBy: sort, direction: direction});
   }
 
   handlePageChange(pageNumber) {
@@ -64,8 +59,7 @@ export default class Grid extends Component {
                <SortDropdown dropTitle="Sort by"
                              items={this.props.sortAttributes}
                              types={this.props.sortTypes}
-                             sortFunc={this.setSortBy}
-                             directionFunc={this.setDirection}/>
+                             sortFunc={this.setSortBy}/>
              </Col>
              <Col sm="1" className="filterLabel">Filter by:</Col>
              <Col sm="1" className="sortDrop"><FilterDropdown dropTitle={this.props.sortAttributes[0]} options={["tony", "bri", "dayanny"]} /></Col>

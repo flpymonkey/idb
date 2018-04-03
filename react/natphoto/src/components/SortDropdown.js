@@ -19,33 +19,27 @@ export default class SortDropdown extends React.Component {
   }
 
   selectSort1Asc() {
-    this.props.sortFunc("sort1");
-    this.props.directionFunc("asc");
+    this.props.sortFunc("sort1", "asc");
   }
 
   selectSort1Desc() {
-    this.props.sortFunc("sort1");
-    this.props.directionFunc("desc");
+    this.props.sortFunc("sort1", "desc");
   }
 
   selectSort2Asc() {
-    this.props.sortFunc("sort2");
-    this.props.directionFunc("asc");
+    this.props.sortFunc("sort2", "asc");
   }
 
   selectSort2Desc() {
-    this.props.sortFunc("sort2");
-    this.props.directionFunc("desc");
+    this.props.sortFunc("sort2", "desc");
   }
 
   selectSort3Asc() {
-    this.props.sortFunc("sort3");
-    this.props.directionFunc("asc");
+    this.props.sortFunc("sort3", "asc");
   }
 
   selectSort3Desc() {
-    this.props.sortFunc("sort3");
-    this.props.directionFunc("desc");
+    this.props.sortFunc("sort3", "desc");
   }
 
   toggle() {

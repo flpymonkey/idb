@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Row, Col, Container} from 'reactstrap';
 
-import * as Fuse from 'fuse.js';
+// import * as Fuse from 'fuse.js';
 
 export default class Search extends Component {
 
