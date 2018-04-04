@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Col, Row, Container } from 'reactstrap';
 import SearchItem from './SearchItem.js'
+import { SyncLoader } from 'react-spinners';
 
 import '../stylesheets/search.css';
 
@@ -12,13 +13,15 @@ export default class Search extends Component {
       super(props);
 
       const queryString = require('query-string');
-
       const parsed = queryString.parse(this.props.location.search);
 
       this.state = {
         search_string: parsed['q'],
-        search_results: []
+        search_results: [],
+        loading: true
       };
+
+      this.renderResults = this.renderResults.bind(this);
     }
 
     componentDidMount() {
@@ -50,10 +53,32 @@ export default class Search extends Component {
             // description: elem.description === undefined ? "" : elem.description
           ))
           this.setState({
-            results: search_results
+            results: search_results,
+            loading: false
           });
         })
     }
+
+    // Render the search results OR a spinner if the results are still loading.
+    renderResults() {
+      if (this.state.loading) {
+        return (
+          <Col className="loader">
+          <SyncLoader color={"#009d00"} size={10} margin={"5px"} />
+          <br />
+          <p>Hang tight! Your search is loading...</p>
+          </Col>
+        );
+      } else {
+        if (this.state.results === undefined || 
+            this.state.results.length === 0) {
+          return ("No results found.");
+        } else {
+          return this.state.results;
+        }
+      }
+    }
+
 
   	render() {
       return (
@@ -63,7 +88,7 @@ export default class Search extends Component {
            <h1 className="searchTitle">Search</h1>
            </Col>
         </Row>
-        {this.state.result === undefined || this.state.result.length === 0 ? "No results found." : this.state.result}
+        {this.renderResults()}
   			</Container>
   			);
     }

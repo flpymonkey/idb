@@ -126,11 +126,12 @@ export default class Grid extends Component {
 
     const {sortBy, direction} = this.state
 
-    if(this.state.filter1 != "filter1") {
+    var filterData = "";
+    if(this.state.filter1 !== "filter1") {
       console.log("in if ");
-      var filterData = this.filter1Data();
+      filterData = this.filter1Data();
     } else {
-      var filterData = this.props.data;
+      filterData = this.props.data;
         console.log("else  ");
     }
 
