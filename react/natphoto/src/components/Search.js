@@ -15,8 +15,6 @@ export default class Search extends Component {
 
       const parsed = queryString.parse(this.props.location.search);
 
-      console.log(parsed);
-
       this.state = {
         search_string: parsed['q'],
         search_results: []
@@ -65,7 +63,7 @@ export default class Search extends Component {
            <h1 className="searchTitle">Search</h1>
            </Col>
         </Row>
-        {this.state.results}
+        {this.state.result === undefined || this.state.result.length === 0 ? "No results found." : this.state.result}
   			</Container>
   			);
     }
