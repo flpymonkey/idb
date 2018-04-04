@@ -150,8 +150,8 @@ export default class Grid extends Component {
                              sortFunc={this.setSortBy}/>
              </Col>
              <Col sm="1" className="filterLabel">Filter by:</Col>
-             <Col sm="1"><FilterDropdown id="filter1" dropTitle={this.props.sortAttributes[0]} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
-             <Col sm="1"><FilterDropdown id="filter2" dropTitle={this.props.sortAttributes[1]} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
+             <Col sm="1"><FilterDropdown id="filter1" dropTitle={this.props.filterAttributes[0]} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
+             <Col sm="1"><FilterDropdown id="filter2" dropTitle={this.props.filterAttributes[1]} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
           </Row>
           <Datasort
             data={filterData}
