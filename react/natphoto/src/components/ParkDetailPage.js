@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import { Row, Col } from 'reactstrap';
 import DetailHeader from './DetailHeader.js';
 import ScrollableTable from './ScrollableTable.js';
 import EmptyPage from './EmptyPage.js'
+import { MapsAPIKey } from '../MapsAPIKey.js'
 import '../stylesheets/general.css';
 import '../stylesheets/parkdetail.css';
 
@@ -39,7 +41,7 @@ export default class ParkDetail extends Component {
         	this.setState({
             valid: true,
             description: data["0"].description,
-            directions : data["0"].directions_url,
+            directions : data["0"].directions,
             image_url: data["0"].image_url,
             latlong: data["0"].latlong,
             name: data["0"].name,
@@ -87,11 +89,29 @@ export default class ParkDetail extends Component {
       return <EmptyPage />
     }
     else {
-      var parkLabels = {'Location:':this.state.latlong, 'Website:':this.state.url, 'Weather:':this.state.weather, 'Directions:':this.state.directions};
+      var parkLabels = {'State:':this.state.states, 'Website:':this.state.url,
+        'Weather:':this.state.weather, 'Directions:':this.state.directions, 'Description:': this.state.description};
   		return(
-  			<div className="body">
+  			<div>
   				<h1 className="parkHeader"><span>{this.state.name}</span></h1>
-  				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={parkLabels}/>
+          <Row>
+  	  				<Col sm="5">
+  							<div className="imgWrapper">
+  	    					<img className="image" src={this.state.image_url} alt={this.state.name}/>
+  							</div>
+  	    			</Col>
+              <Col sm="1"/>
+              <Col sm="5">
+              <iframe
+                title={this.state.name}
+                width="400"
+                height="300"
+                frameborder="0" style={{border:0}}
+                src={"https://www.google.com/maps/embed/v1/place?key=" + MapsAPIKey + "&q=" + this.state.name} allowfullscreen>
+              </iframe>
+  	    			</Col>
+  	  		</Row>
+  				<DetailHeader pic={null} infoAttributes={parkLabels}/>
   				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos} />
           <ScrollableTable tableTitle="Cameras Used" data={this.state.cameras} />
   			</div>

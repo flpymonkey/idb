@@ -24,19 +24,29 @@ export default class DetailHeader extends Component {
 			}
 		}.bind(this));
 
-		return (
-			<Row>
-  				<Col sm="6">
-						<div className="imgWrapper">
-    					<img className="image" src={this.props.pic} alt={this.props.name}/>
-						</div>
-    			</Col>
-					<Col sm="1"></Col>
-
- 		  		<Col sm="5" id="info-text">
-						<div className="infoRow">{listItems}</div>
-      		</Col>
-  		</Row>
-		);
+		if(this.props.pic !== null) {
+			return (
+				<Row>
+	  				<Col sm="7">
+							<div className="imgWrapper">
+	    					<img className="image" src={this.props.pic} alt={this.props.name}/>
+							</div>
+	    			</Col>
+						<Col sm="1"></Col>
+	 		  		<Col sm="5" id="info-text">
+							<div className="infoRow">{listItems}</div>
+	      		</Col>
+	  		</Row>
+			);
+		}
+		else {
+			return (
+				<Row>
+	 		  		<Col sm="11" id="info-text">
+							<div className="infoRow">{listItems}</div>
+	      		</Col>
+	  		</Row>
+			);
+		}
 	}
 }
