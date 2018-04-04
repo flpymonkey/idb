@@ -40,7 +40,8 @@ export default class CameraGrid extends Component {
 		return (
 	  		<Grid
 				 data={this.state.cameras}
-				 sortAttributes={["Price", "Megapixels"]}
+				 sortAttributes={["Name", "Price", "Megapixels"]}
+         filterAttributes={["Price", "Megapixels"]}
 				 sortTypes={["alpha", "numerical", "numerical"]}
 				 filterOptions1={["0 - 1000","1001 - 2000","2001 - 3000","3001 - 4000","4001 - 5000","5001 - 6000"]}
 				 filter1Range={true}
