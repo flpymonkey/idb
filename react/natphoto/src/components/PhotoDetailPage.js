@@ -70,7 +70,7 @@ export default class PhotoDetail extends Component {
   					<h1>{this.state.photographer}</h1>
   					<h3>on</h3>
   					<h2>{this.state.date}</h2>
-  					<h2>{this.state.likes} Favorites</h2>
+  					<h2>{this.state.likes} Likes</h2>
   				</Col>
 				</Row>
         <Row id="descriptionRow">
