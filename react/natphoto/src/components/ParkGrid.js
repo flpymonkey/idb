@@ -41,11 +41,8 @@ export default class ParkGrid extends Component {
 					sortAttributes={["Name", "State", "# Photos"]}
 					sortTypes={["alpha", "alpha", "numerical"]}
 					filterOptions1={[]}
-		      filterOptions2={["AK","AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA","GU","HI","IA","ID", "IL","IN","KS","KY","LA","MA","MD","ME","MH","MI",
-					"MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY", "OH","OK","OR","PA","PR","PW","RI","SC","SD","TN","TX","UT","VA","VI","VT","WA",
-					"WI","WV","WY"]}
-		      filterOptions3={["< 2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016",
-		      "2017", "2018"]}
+		      filterOptions2={["AK","AR","AZ","CA","CO","FL","HI","ID","KY","ME","MI","MN","MO","MT","NC","ND","NM","NV","OH","OR","SC","SD","TN","TX","UT","VA","VI","WA","WY"]}
+		      filterOptions3={["0 - 5", "6 - 10", "11 - 15", "16 - 20", "21 - 25", "26 - 30"]}
 					title="Parks"
 					id="parkGrid"
 				/>

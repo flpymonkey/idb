@@ -39,7 +39,7 @@ export default class PhotoGrid extends Component {
 	return (
 	  <Grid
       data={this.state.photos}
-      sortAttributes={["Title", "# Likes", "Date"]}
+      sortAttributes={["Title", "# Likes", "Year"]}
       sortTypes={["alpha", "numerical", "numerical"]}
       filterOptions1={[]}
       filterOptions2={["< 10", "11 - 20", "21 - 30 ", "31 - 40", "41 - 50", "51 - 60", "61 - 70", "71 - 80", "81 - 90", "91 - 100", "101 - 200", "201 - 300",

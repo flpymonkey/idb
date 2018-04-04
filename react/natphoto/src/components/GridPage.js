@@ -16,16 +16,25 @@ export default class Grid extends Component {
 
  	constructor(props) {
 		super(props);
+    
     this.setSortBy = this.setSortBy.bind(this);
+    this.setFilterBy = this.setFilterBy.bind(this);
+
 		this.state = {
       activePage: 1,
       sortBy: "sort1",
-      direction: "asc"
+      direction: "asc",
+      filterBy: "hello"
 		}
 	}
 
   setSortBy(sort, direction) {
     this.setState({sortBy: sort, direction: direction});
+  }
+
+  setFilterBy(filter) {
+    this.setState({filterBy: filter});
+    console.log("gridpage  " + filter);
   }
 
   handlePageChange(pageNumber) {
@@ -61,9 +70,9 @@ export default class Grid extends Component {
                              sortFunc={this.setSortBy}/>
              </Col>
              <Col sm="1" className="filterLabel">Filter by:</Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[0]} options={this.props.filterOptions1} /></Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[1]} options={this.props.filterOptions2} /></Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[2]} options={this.props.filterOptions3} /></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[0]} options={this.props.filterOptions1} filterFunc={this.setFilterBy}/></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[1]} options={this.props.filterOptions2} filterFunc={this.setFilterBy}/></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[2]} options={this.props.filterOptions3} filterFunc={this.setFilterBy}/></Col>
           </Row>
           <Datasort
             data={this.props.data}
