@@ -16,25 +16,97 @@ export default class Grid extends Component {
 
  	constructor(props) {
 		super(props);
-    
+
     this.setSortBy = this.setSortBy.bind(this);
-    this.setFilterBy = this.setFilterBy.bind(this);
+    this.setFilter1 = this.setFilter1.bind(this);
+    this.setFilter2 = this.setFilter2.bind(this);
+    this.filter1Data = this.filter1Data.bind(this);
+    this.filter1ConditionValue = this.filter1ConditionValue.bind(this);
+    this.filter1ConditionRange = this.filter1ConditionRange.bind(this);
+
 
 		this.state = {
       activePage: 1,
       sortBy: "sort1",
       direction: "asc",
-      filterBy: "hello"
+      filter1: "filter1",
+      filter2: ""
 		}
 	}
 
-  setSortBy(sort, direction) {
-    this.setState({sortBy: sort, direction: direction});
+  filter1ConditionRange(param) {
+    var condition = this.state.filter1.split(' ');
+    if(condition[0] === "<") {
+      return param.filter1 < parseInt(condition[1], 10);
+    } else if(condition[0] === ">") {
+      return param.filter1 > parseInt(condition[1], 10);
+    }
+    var lower = parseInt(condition[0], 10);
+    var upper = parseInt(condition[2], 10);
+    return param.filter1 >= lower && param.filter1 <= upper;
   }
 
-  setFilterBy(filter) {
-    this.setState({filterBy: filter});
-    console.log("gridpage  " + filter);
+  filter1ConditionValue(param) {
+      console.log("filter1ConditionValue  ");
+    var condition = this.state.filter1;
+    if(condition === "< 2000") {
+      condition.split(" ");
+      condition = parseInt(condition[1], 10);
+      var value = parseInt(param.filter1, 10);
+      return value < condition;
+    }
+    return param.filter1 === condition;
+  }
+
+  filter2ConditionRange(param) {
+    var condition = this.state.filter2.split(' ');
+    if(condition[0] === "<") {
+      return param.filter2 < parseInt(condition[1], 10);
+    } else if(condition[0] === ">") {
+      return param.filter2 > parseInt(condition[1], 10);
+    }
+    var lower = parseInt(condition[0], 10);
+    var upper = parseInt(condition[2], 10);
+    //change name eventually
+    return param.filter2 >= lower && param.filter2 <= upper;
+  }
+
+  filter2ConditionValue(param) {
+    var condition = this.state.filter2;
+    return param.filter2 === condition;
+  }
+
+  filter1Data() {
+      console.log("filter1Data  ");
+    if (this.props.filter1Range) {
+      return this.props.data.filter(this.filter1ConditionRange);
+    } else {
+      return this.props.data.filter(this.filter1ConditionValue);
+    }
+  }
+
+  filter2Data() {
+    if (this.props.filter2Range) {
+      return this.props.data.filter(this.filter2ConditionRange);
+    } else {
+      return this.props.data.filter(this.filter2ConditionValue);
+    }
+  }
+
+  setSortBy(sort, direction) {
+    console.log("setSortBy  BEFORE" + this.state.sortBy);
+    this.setState({sortBy: sort, direction: direction});
+    console.log("setSortBy AFTER " + this.state.sortBy);
+  }
+
+  setFilter1(filter) {
+    this.setState({filter1: filter});
+    console.log("filter1  " + this.state.filter1);
+  }
+
+  setFilter2(filter) {
+    this.setState({filter2: filter});
+    console.log("filter2  " + this.state.filter2);
   }
 
   handlePageChange(pageNumber) {
@@ -53,6 +125,15 @@ export default class Grid extends Component {
 	render() {
 
     const {sortBy, direction} = this.state
+
+    if(this.state.filter1 != "filter1") {
+      console.log("in if ");
+      var filterData = this.filter1Data();
+    } else {
+      var filterData = this.props.data;
+        console.log("else  ");
+    }
+
 		return (
 			<div className="body" id={this.props.id}>
         <Container>
@@ -70,12 +151,11 @@ export default class Grid extends Component {
                              sortFunc={this.setSortBy}/>
              </Col>
              <Col sm="1" className="filterLabel">Filter by:</Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[0]} options={this.props.filterOptions1} filterFunc={this.setFilterBy}/></Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[1]} options={this.props.filterOptions2} filterFunc={this.setFilterBy}/></Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.props.sortAttributes[2]} options={this.props.filterOptions3} filterFunc={this.setFilterBy}/></Col>
+             <Col sm="1"><FilterDropdown id="filter1" dropTitle={this.props.sortAttributes[0]} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
+             <Col sm="1"><FilterDropdown id="filter2" dropTitle={this.props.sortAttributes[1]} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
           </Row>
           <Datasort
-            data={this.props.data}
+            data={filterData}
             sortBy={sortBy}
             direction={direction}
             render={({
