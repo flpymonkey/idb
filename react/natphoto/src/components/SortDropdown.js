@@ -14,6 +14,7 @@ export default class SortDropdown extends React.Component {
   }
 
   selectSort(sortBy, direct) {
+        console.log("selectSort  ");
     this.props.sortFunc(sortBy, direct);
   }
 
