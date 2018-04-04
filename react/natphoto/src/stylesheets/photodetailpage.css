@@ -6,6 +6,11 @@
 	color: #EAEAEA;
 }
 
+.photoTitle {
+    margin-bottom: 5%;
+    font-size: 75%;
+}
+
 #title {
 	text-align: center;
 }
@@ -21,6 +26,7 @@
 
 #picture {
 	width: 100%;
+  margin-left: 10%;
 }
 
 .headerRow {

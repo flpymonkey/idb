@@ -63,24 +63,24 @@ export default class PhotoDetail extends Component {
     }
     else {
   		return (
-  			<div className="body">
+  			<div>
   				<Row className="headerRow">
-            			<Col sm="3"/>
+            <Col sm="2"/>
   					<Col sm="6" id="title">
-    						<h3>{this.state.title}</h3>
+    						<h3 className="photoTitle">{this.state.title}</h3>
     					</Col>
 
   				</Row>
   				<Row>
-  					<Col xs="1" sm="3"></Col>
-  					<Col xs="10" sm="7" id="photo">
+  					<Col xs="10" id="photo">
               		<a href={this.state.flickr_url} target="_blank">
   						  <img id="picture" src={this.state.image_url} alt={this.state.title}  />
               		</a>
   					</Col>
   				</Row>
   				<Row>
-  					<Col sm="12" id="title">
+            <Col sm="1"/>
+  					<Col sm="10" id="title">
     				  <h3>by</h3>
     					<h1>{this.state.photographer}</h1>
     					<h3>on</h3>
@@ -89,6 +89,7 @@ export default class PhotoDetail extends Component {
     				</Col>
   				</Row>
           <Row id="descriptionRow">
+
             <Col sm="12">
               <h3>Description</h3>
               <p>{this.state.description || "N/A"}</p>
