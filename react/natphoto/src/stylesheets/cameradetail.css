@@ -1,8 +1,9 @@
 .cameraHeader {
  overflow: hidden;
  text-align: center;
- font-size: 75px;
+ font-size: 400%;
  font-family: Ahem!, sans-serif;
+ margin-bottom: 3%;
 }
 
 .cameraHeader:before,

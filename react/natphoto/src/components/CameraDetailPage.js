@@ -112,7 +112,7 @@ export default class CameraDetail extends Component {
           "Sensor:": this.state.sensor
       }
   		return (
-  			<div className="body">
+  			<div>
   				<h1 className="cameraHeader"><span>{this.state.name}</span></h1>
   				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={cameraLabels}/>
   				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos}/>
