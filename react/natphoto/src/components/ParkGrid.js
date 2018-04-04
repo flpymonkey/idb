@@ -40,7 +40,8 @@ export default class ParkGrid extends Component {
 		return (
 	  		<Grid
 					data={this.state.parks}
-					sortAttributes={["State", "# Photos"]}
+					sortAttributes={["Name", "State", "# Photos"]}
+          filterAttributes={["State", "# Photos"]}
 					sortTypes={["alpha", "alpha", "numerical"]}
 		      filterOptions1={["AK","AR","AZ","CA","CO","FL","HI","ID","KY","ME","MI","MN","MO","MT","NC","ND","NM","NV","OH","OR","SC","SD","TN","TX","UT","VA","VI","WA","WY"]}
 					filter1Range={false}
