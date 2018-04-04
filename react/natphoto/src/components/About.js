@@ -22,7 +22,6 @@ export default class About extends Component {
     	}).then(results => {
     		return results.json();
     	}).then(data => {
-    		console.log(data)
     		var curr_commits = data
       		this.setState({
 				ourCommits: curr_commits['0'],

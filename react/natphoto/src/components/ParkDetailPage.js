@@ -26,14 +26,12 @@ export default class ParkDetail extends Component {
     }
 
   	componentDidMount() {
-      console.log("park detail did mount");
       fetch('http://api.natphoto.me/parks/' + this.props.match.params.park_name, {
       	method: 'GET',
       	dataType: 'json'
       }).then(results => {
       	return results.json();
       }).then(data => {
-        console.log(data)
         if(data[0] === undefined) {
           this.setState({valid: false});
         }
@@ -82,7 +80,6 @@ export default class ParkDetail extends Component {
   	}
 
 	render() {
-    console.log(this.state.valid)
 		if(this.state.valid === "unknown"){
       return <div/>
     }

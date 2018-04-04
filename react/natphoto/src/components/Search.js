@@ -26,7 +26,6 @@ export default class Search extends Component {
       }).then(results => {
         return results.json();
       }).then(data => {
-        console.log(data);
         var fuse = new Fuse(data,
           {
             matchAllTokens: true,

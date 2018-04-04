@@ -81,7 +81,6 @@ export default class CameraDetail extends Component {
     }).then(results => {
       return results.json();
     }).then(data => {
-        console.log(data);
         var curr_parks = data.map((elem) => ({
               img: elem.image_url, path: "/parks/" + elem.name, name: elem.name}
           ));
@@ -92,7 +91,6 @@ export default class CameraDetail extends Component {
   }
 
 	render (){
-    console.log(this.state.valid)
     if(this.state.valid === "unknown"){
       return <div/>
     }

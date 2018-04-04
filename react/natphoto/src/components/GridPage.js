@@ -16,7 +16,7 @@ export default class Grid extends Component {
 
  	constructor(props) {
 		super(props);
-    
+
     this.setSortBy = this.setSortBy.bind(this);
     this.setFilterBy = this.setFilterBy.bind(this);
 
@@ -34,7 +34,6 @@ export default class Grid extends Component {
 
   setFilterBy(filter) {
     this.setState({filterBy: filter});
-    console.log("gridpage  " + filter);
   }
 
   handlePageChange(pageNumber) {
