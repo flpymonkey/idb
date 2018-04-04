@@ -44,7 +44,7 @@ export default class SearchItem extends Component {
       <p>{this.state.park}</p>
       <p>{this.state.camera}</p>
       <p>{this.state.description}</p>
-      <hr/>
+      <hr className="separator"/>
       </Col>
       </Row>
     )
