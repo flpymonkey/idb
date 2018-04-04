@@ -34,14 +34,6 @@ img {
 	display: table-row;
 }
 
-div#myCarousel.carousel.slide {
-	margin-top: 5%;
-	margin-bottom: 5%;
-	margin-left: 2.5%;
-	width: 95%;
-	height: 80%;
-}
-
 #description {
 	font-family: Ahem!, sans-serif;
 	font-size: 130%;
