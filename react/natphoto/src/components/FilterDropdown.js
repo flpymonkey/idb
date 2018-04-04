@@ -21,7 +21,6 @@ export default class FilterDropdown extends React.Component {
 
   setFilterBy(param) {
     this.props.filterFunc(param);
-    console.log("filterDropdown  " + param);
   }
 
   render() {

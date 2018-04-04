@@ -26,7 +26,6 @@ export default class PhotoDetail extends Component {
 	}
 
 	componentDidMount() {
-    console.log("photo did mount")
     fetch('http://api.natphoto.me/photos/' + this.props.match.params.photo_id, {
     	method: 'GET',
     	dataType: 'json'
@@ -56,7 +55,6 @@ export default class PhotoDetail extends Component {
 	}
 
 	render () {
-    console.log(this.state.valid)
     if(this.state.valid === "unknown"){
       return <div/>
     }

@@ -19,7 +19,6 @@ export default class Search extends Component {
       }).then(results => {
         return results.json();
       }).then(data => {
-        console.log(data);
         var fuse = new Fuse(data,
           {
             matchAllTokens: true,
@@ -32,10 +31,6 @@ export default class Search extends Component {
                   {name: 'name', weight: 0.65},
                   {name: 'description', weight: 0.05}]
           })
-        console.log(fuse.search('Canon'));
-        // this.setState({
-        //   parks: curr_parks
-        // });
       })
     }
 
