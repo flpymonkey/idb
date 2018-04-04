@@ -8,8 +8,7 @@ export default class Search extends Component {
     constructor(props){
       super(props);
       this.state = {
-        all_data: [],
-        search_options: {keys: ['title', 'author'],id: 'ISBN'}
+        all_data: []
       };
     }
 
@@ -21,8 +20,19 @@ export default class Search extends Component {
         return results.json();
       }).then(data => {
         console.log(data);
-        //var fuse = new Fuse(data, this.state.options)
-        //console.log(fuse.search('old'));
+        var fuse = new Fuse(data,
+          {
+            matchAllTokens: true,
+            tokenize: true,
+            threshold: 0.1,
+            distance: 100,
+            keys: [{name: 'park', weight: 0.1},
+                  {name: 'camera', weight: 0.1},
+                  {name: 'title', weight: 0.1},
+                  {name: 'name', weight: 0.65},
+                  {name: 'description', weight: 0.05}]
+          })
+        console.log(fuse.search('Canon'));
         // this.setState({
         //   parks: curr_parks
         // });
