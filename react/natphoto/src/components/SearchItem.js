@@ -11,13 +11,14 @@ export default class SearchItem extends Component {
     var park = "";
     var camera = "";
     var description = "";
-    if (this.props.data.title) {
+    if (this.props.data.id) {
       header = "Photo: " + this.props.data.title;
       park = this.props.data.park;
       camera = this.props.data.camera;
       description = this.props.data.description;
       link = "/photos/" + this.props.data.id;
-    } else if (this.props.data.name.indexOf("National Park") !== -1) {
+    } else if (this.props.data.name !== null ||
+        this.props.data.name.indexOf("National Park") !== -1) {
       header = "Park: " + this.props.data.name;
       description = this.props.data.description;
       link = "/parks/" + this.props.data.name;
