@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import { Row, Col, Container} from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
 
-// import * as Fuse from 'fuse.js';
+import * as Fuse from 'fuse.js';
 
 export default class Search extends Component {
 
@@ -43,7 +43,7 @@ export default class Search extends Component {
       return (
   			<Container>
   				<Row className="body">
-
+            <Col> </Col>
   				</Row>
   			</Container>
   			);
