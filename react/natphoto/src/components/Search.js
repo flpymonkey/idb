@@ -7,8 +7,15 @@ export default class Search extends Component {
 
     constructor(props){
       super(props);
+
+      const queryString = require('query-string');
+
+      const parsed = queryString.parse(this.props.location.search);
+
+      console.log(parsed);
+
       this.state = {
-        all_data: []
+        search_string: parsed['q']
       };
     }
 
@@ -32,7 +39,7 @@ export default class Search extends Component {
                   {name: 'name', weight: 0.65},
                   {name: 'description', weight: 0.05}]
           })
-        console.log(fuse.search('Canon'));
+        console.log(fuse.search(this.state.search_string));
         // this.setState({
         //   parks: curr_parks
         // });
