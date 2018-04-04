@@ -17,7 +17,7 @@ export default class SearchItem extends Component {
       camera = this.props.data.camera;
       description = this.props.data.description;
       link = "/photos/" + this.props.data.id;
-    } else if (this.props.data.name !== null ||
+    } else if (this.props.data.name !== null &&
         this.props.data.name.indexOf("National Park") !== -1) {
       header = "Park: " + this.props.data.name;
       description = this.props.data.description;

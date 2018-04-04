@@ -14,7 +14,7 @@ export default class ScrollableTable extends Component {
         <div className="hovereffect">
         <img className = "photoImage" src={elem.img} alt="hi"/>
           <div className="overlay">
-            <h1>{elem.name}</h1>
+            <h1>{elem.name || "Unknown"}</h1>
           </div>
         </div>
         </Link>

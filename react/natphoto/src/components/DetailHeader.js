@@ -27,7 +27,7 @@ export default class DetailHeader extends Component {
 		if(this.props.pic !== null) {
 			return (
 				<Row>
-	  				<Col sm="7">
+	  				<Col sm="6">
 							<div className="imgWrapper">
 	    					<img className="image" src={this.props.pic} alt={this.props.name}/>
 							</div>
