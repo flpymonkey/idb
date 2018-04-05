@@ -45,7 +45,7 @@ export default class CameraGrid extends Component {
 				 sortTypes={["alpha", "numerical", "numerical"]}
 				 filterOptions1={["0 - 1000","1001 - 2000","2001 - 3000","3001 - 4000","4001 - 5000","5001 - 6000"]}
 				 filter1Range={true}
-				 filterOptions2={["10 - 15", "16 - 20", "21 - 25", "26 - 30", "31 - 35", "36 - 40", "41 - 45", "46 - 50", "< 50"]}
+				 filterOptions2={["10 - 15", "16 - 20", "21 - 25", "26 - 30", "31 - 35", "36 - 40", "41 - 45", "46 - 50", "> 50"]}
 				 filter2Range={true}
 				 title="Cameras"
 				 id="cameraGrid"/>
