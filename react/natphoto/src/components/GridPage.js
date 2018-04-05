@@ -23,13 +23,16 @@ export default class Grid extends Component {
     this.filter1Data = this.filter1Data.bind(this);
     this.filter1ConditionValue = this.filter1ConditionValue.bind(this);
     this.filter1ConditionRange = this.filter1ConditionRange.bind(this);
+    this.filter2Data = this.filter2Data.bind(this);
+    this.filter2ConditionValue = this.filter2ConditionValue.bind(this);
+    this.filter2ConditionRange = this.filter2ConditionRange.bind(this);
 
 
 		this.state = {
       activePage: 1,
       sortBy: "sort1",
       direction: "asc",
-      filter1: "filter1",
+      filter1: "",
       filter2: ""
 		}
 	}
@@ -47,7 +50,6 @@ export default class Grid extends Component {
   }
 
   filter1ConditionValue(param) {
-      console.log("filter1ConditionValue  ");
     var condition = this.state.filter1;
     if(condition === "< 2000") {
       condition.split(" ");
@@ -73,11 +75,16 @@ export default class Grid extends Component {
 
   filter2ConditionValue(param) {
     var condition = this.state.filter2;
+    if(condition === "< 2000") {
+      condition.split(" ");
+      condition = parseInt(condition[1], 10);
+      var value = parseInt(param.filter2, 10);
+      return value < condition;
+    }
     return param.filter2 === condition;
   }
 
   filter1Data() {
-      console.log("filter1Data  ");
     if (this.props.filter1Range) {
       return this.props.data.filter(this.filter1ConditionRange);
     } else {
@@ -94,19 +101,15 @@ export default class Grid extends Component {
   }
 
   setSortBy(sort, direction) {
-    console.log("setSortBy  BEFORE" + this.state.sortBy);
     this.setState({sortBy: sort, direction: direction});
-    console.log("setSortBy AFTER " + this.state.sortBy);
   }
 
   setFilter1(filter) {
     this.setState({filter1: filter});
-    console.log("filter1  " + this.state.filter1);
   }
 
   setFilter2(filter) {
     this.setState({filter2: filter});
-    console.log("filter2  " + this.state.filter2);
   }
 
   handlePageChange(pageNumber) {
@@ -127,12 +130,10 @@ export default class Grid extends Component {
     const {sortBy, direction} = this.state
 
     var filterData = "";
-    if(this.state.filter1 !== "filter1") {
-      console.log("in if ");
-      filterData = this.filter1Data();
+    if(this.state.filter2 !== "") {
+      filterData = this.filter2Data();
     } else {
       filterData = this.props.data;
-        console.log("else  ");
     }
 
 		return (
@@ -151,8 +152,8 @@ export default class Grid extends Component {
                              sortFunc={this.setSortBy}/>
              </Col>
              <Col sm="1" className="filterLabel">Filter by:</Col>
-             <Col sm="1"><FilterDropdown id="filter1" dropTitle={this.props.filterAttributes[0]} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
-             <Col sm="1"><FilterDropdown id="filter2" dropTitle={this.props.filterAttributes[1]} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.props.filterAttributes[0]} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.props.filterAttributes[1]} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
           </Row>
           <Datasort
             data={filterData}
@@ -166,17 +167,22 @@ export default class Grid extends Component {
               direction
             }) => {
               return (
+                <div>
                 <Row>
-                    {this.getCards(data)}
-                    <Pagination
-                      activePage={this.state.activePage}
-                      itemsCountPerPage={16}
-                      totalItemsCount={this.props.data.length}
-                      pageRangeDisplayed={5}
-                      onChange={this.handlePageChange.bind(this)}
-                      className = "pagination"
-                    />
+                  {this.getCards(data)}
                 </Row>
+                <Row>
+                  <Pagination
+                    activePage={this.state.activePage}
+                    itemsCountPerPage={16}
+                    totalItemsCount={this.props.data.length}
+                    pageRangeDisplayed={5}
+                    onChange={this.handlePageChange.bind(this)}
+                    className = "pagination"
+                  />
+                </Row>
+                </div>
+
               );
             }}
           />

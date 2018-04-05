@@ -33,8 +33,8 @@ export default class PhotoGrid extends Component {
             sort1: elem.title,
             sort2: parseInt(elem.likes, 10),
             sort3: parseInt(elem.date, 10),
-            filter1: year,
-            filter2: parseInt(elem.likes, 10)
+            filter1: parseInt(elem.likes, 10),
+            filter2: year
         });
       });
 
@@ -48,15 +48,15 @@ export default class PhotoGrid extends Component {
 	return (
 	  <Grid
       data={this.state.photos}
-      sortAttributes={["Title", "Year", "# Likes"]}
-      filterAttributes={["Year", "# Likes"]}
+      sortAttributes={["Title", "# Likes", "Year"]}
+      filterAttributes={["# Likes", "Year"]}
       sortTypes={["alpha", "numerical", "numerical"]}
-      filterOptions1={["< 2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016",
-      "2017", "2018"]}
-      filter1Range={false}
-      filterOptions2={["0 - 10", "11 - 20", "21 - 30 ", "31 - 40", "41 - 50", "51 - 60", "61 - 70", "71 - 80", "81 - 90", "91 - 100", "101 - 200", "201 - 300",
+      filterOptions1={["0 - 10", "11 - 20", "21 - 30 ", "31 - 40", "41 - 50", "51 - 60", "61 - 70", "71 - 80", "81 - 90", "91 - 100", "101 - 200", "201 - 300",
       "301 - 400", "> 400"]}
-      filter2Range={true}
+      filter1Range={true}
+      filterOptions2={["< 2000", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015",
+      "2016", "2017", "2018"]}
+      filter2Range={false}
       title="Photos"
       id="photoGrid"
     />
