@@ -6,3 +6,4 @@ __pycache__
 creds.txt
 node_modules
 natphoto/app/dbinfo.txt
+backend/dbinfo.txt
