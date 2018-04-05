@@ -48,7 +48,7 @@ export default class Search extends Component {
           })
           var search_results = fuse.search(this.state.search_string)
           search_results = search_results.map((elem, i)=>(
-            <SearchItem key={i} data={elem} />
+            <SearchItem key={i} data={elem} searchTerm={this.props.location.search} />
           ))
           this.setState({
             results: search_results,

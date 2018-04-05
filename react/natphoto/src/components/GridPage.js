@@ -77,8 +77,8 @@ export default class Grid extends Component {
       } else if(condition[0] === ">") {
         return param.filter2 > parseFloat(condition[1], 10);
       }
-      var lower = parseFloat(condition[0], 10);
-      var upper = parseFloat(condition[2], 10) + 1;
+      lower = parseFloat(condition[0], 10);
+      upper = parseFloat(condition[2], 10) + 1;
     }
 
     //change name eventually

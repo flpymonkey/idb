@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import Highlighter from "react-highlight-words";
 
 export default class SearchItem extends Component {
   constructor(props){
@@ -33,18 +34,52 @@ export default class SearchItem extends Component {
       link: link,
       img_url: this.props.data.image_url
     }
+    console.log("CHECKPOINT: ")
+    console.log(this.state)
   }
 
   render(){
+    const queryString = require('query-string');
+    var parsed = queryString.parse(this.props.searchTerm);
+    console.log(this.state)
+    if(parsed)
+    var highlightWords = [];
+    if(parsed['q'] !== undefined) {
+      highlightWords = parsed['q'].split(" ");
+    }
     return (
       <Row className="singleResult">
         <Col sm="6">
-          <Link to={this.state.link}>
-          <h2>{this.state.header}</h2>
+          <Link to={this.state.link} className="searchResults">
+          <h2>
+          <Highlighter
+            highlightClassName="highlighted"
+            searchWords={highlightWords}
+            autoEscape={true}
+            textToHighlight={this.state.header}
+          />
+          </h2>
           </Link>
-          <p>{this.state.park}</p>
-          <p>{this.state.camera}</p>
-          <p>{this.state.description}</p>
+          <Highlighter
+            highlightClassName="highlighted"
+            searchWords={highlightWords}
+            autoEscape={true}
+            textToHighlight={this.state.park}
+          />
+          <br/>
+          <Highlighter
+            highlightClassName="highlighted"
+            searchWords={highlightWords}
+            autoEscape={true}
+            textToHighlight={this.state.camera}
+          />
+          <br/>
+          <Highlighter
+            highlightClassName="highlighted"
+            searchWords={highlightWords}
+            autoEscape={true}
+            textToHighlight={this.state.description}
+          />
         </Col>
         <Col sm="6">
           <div className="imgWrapper">
