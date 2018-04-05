@@ -18,7 +18,8 @@ export default class Search extends Component {
       this.state = {
         search_string: parsed['q'],
         search_results: [],
-        loading: true
+        loading: true,
+        numResults: 0
       };
 
       this.renderResults = this.renderResults.bind(this);
@@ -54,7 +55,8 @@ export default class Search extends Component {
           ))
           this.setState({
             results: search_results,
-            loading: false
+            loading: false,
+            numResults: search_results.length
           });
         })
     }
@@ -70,11 +72,20 @@ export default class Search extends Component {
           </Col>
         );
       } else {
-        if (this.state.results === undefined || 
+        if (this.state.results === undefined ||
             this.state.results.length === 0) {
           return ("No results found.");
         } else {
-          return this.state.results;
+          return (
+            <div>
+              <Row>
+                <Col>
+                  <h2>{this.state.numResults} results found for "{this.state.search_string}"</h2>
+                </Col>
+              </Row>
+              <div>{this.state.results}</div>
+            </div>
+          )
         }
       }
     }
@@ -85,7 +96,7 @@ export default class Search extends Component {
   			<Container fluid>
         <Row>
            <Col>
-           <h1 className="searchTitle">Search</h1>
+            <h1 className="searchTitle">Search</h1>
            </Col>
         </Row>
         {this.renderResults()}
