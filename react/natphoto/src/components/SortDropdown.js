@@ -13,9 +13,8 @@ export default class SortDropdown extends React.Component {
     };
   }
 
-  selectSort(sortBy, direct) {
-        console.log("selectSort  ");
-    this.props.sortFunc(sortBy, direct);
+  selectSort(sortBy, direct, label) {
+    this.props.sortFunc(sortBy, direct, label);
   }
 
   toggle() {
@@ -32,33 +31,33 @@ export default class SortDropdown extends React.Component {
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem>
-            <div onClick={() => this.selectSort("sort1", "asc")}>
-              {this.props.items[0]}: {this.props.types[0] === "numerical" ? "Low to High" : "(A - Z)"}
+            <div onClick={() => this.selectSort("sort1", "asc", this.props.items[0] + ": " + this.props.types[0])}>
+              {this.props.items[0]}: {this.props.types[0]}
             </div>
           </DropdownItem>
           <DropdownItem>
-            <div onClick={() => this.selectSort("sort1", "desc")}>
-              {this.props.items[0]}: {this.props.types[0] === "numerical" ? "High to Low" : "(Z - A)"}
+            <div onClick={() => this.selectSort("sort1", "desc", this.props.items[0] + ": " + this.props.types[1])}>
+              {this.props.items[0]}: {this.props.types[1]}
             </div>
           </DropdownItem>
           <DropdownItem>
-            <div onClick={() => this.selectSort("sort2", "asc")}>
-              {this.props.items[1]}: {this.props.types[1] === "numerical" ? "Low to High" : "(A - Z)"}
+            <div onClick={() => this.selectSort("sort2", "asc", this.props.items[1] + ": " + this.props.types[2])}>
+              {this.props.items[1]}: {this.props.types[2]}
             </div>
           </DropdownItem>
           <DropdownItem>
-            <div onClick={() => this.selectSort("sort2", "desc")}>
-              {this.props.items[1]}: {this.props.types[1] === "numerical" ? "High to Low" : "(Z - A)"}
+            <div onClick={() => this.selectSort("sort2", "desc", this.props.items[1] + ": " + this.props.types[3])}>
+              {this.props.items[1]}: {this.props.types[3]}
             </div>
           </DropdownItem>
           <DropdownItem>
-            <div onClick={() => this.selectSort("sort3", "asc")}>
-              {this.props.items[2]}: {this.props.types[2] === "numerical" ? "Low to High" : "(A - Z)"}
+            <div onClick={() => this.selectSort("sort3", "asc", this.props.items[2] + ": " +this.props.types[4])}>
+              {this.props.items[2]}: {this.props.types[4]}
             </div>
           </DropdownItem>
           <DropdownItem>
-            <div onClick={() => this.selectSort("sort3", "desc")}>
-              {this.props.items[2]}: {this.props.types[2] === "numerical" ? "High to Low" : "(Z - A)"}
+            <div onClick={() => this.selectSort("sort3", "desc", this.props.items[2] + ": " + this.props.types[5])}>
+              {this.props.items[2]}: {this.props.types[5]}
             </div>
           </DropdownItem>
         </DropdownMenu>

@@ -52,7 +52,8 @@ export default class PhotoGrid extends Component {
       data={this.state.photos}
       sortAttributes={["Title", "# Likes", "Date"]}
       filterAttributes={["# Likes", "Year"]}
-      sortTypes={["alpha", "numerical", "numerical"]}
+      sortTypes2={["alpha", "numerical", "numerical"]}
+      sortTypes={["(A - Z)", "(Z - A)", "Low to High", "High to Low", "Low to High", "High to Low"]}
       filterOptions1={["0 - 10", "11 - 20", "21 - 30 ", "31 - 40", "41 - 50", "51 - 60", "61 - 70", "71 - 80", "81 - 90", "91 - 100", "101 - 200", "201 - 300",
       "301 - 400", "> 400"]}
       filter1Range={true}
