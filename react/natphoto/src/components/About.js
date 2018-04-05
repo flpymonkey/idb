@@ -45,11 +45,11 @@ export default class About extends Component {
  		 		</Row>
  		 		<Row className="bottomProfiles">
  		 			<Col sm="1"></Col>
- 		 			<GroupMember name="Ben Johnson" unitTests="68" issues={this.state.ourIssues['flpymonkey']} commits={this.state.ourCommits['flpymonkey']} devtype="Backend" pic="ben.png" bio="I am a third-year computer science major who also is interested in film-making and traveling. I plan to graduate and move to a small village in South Africa."/>
+ 		 			<GroupMember name="Ben Johnson" unitTests="88" issues={this.state.ourIssues['flpymonkey']} commits={this.state.ourCommits['flpymonkey']} devtype="Backend" pic="ben.png" bio="I am a third-year computer science major who also is interested in film-making and traveling. I plan to graduate and move to a small village in South Africa."/>
  		 			<Col sm="2"></Col>
  		 			<GroupMember name="Bri Vargas" unitTests="3" issues={this.state.ourIssues['vargasbri2']} commits={this.state.ourCommits['vargasbri2']} devtype="Frontend" pic="bri.png" bio="I am a third-year computer science major interested in full-stack web development. In my free time I enjoy playing soccer, watching movies, and hanging out with family."/>
  		 		</Row>
- 		 		<TeamStats totalCommits={this.state.totalCommits} totalIssues={this.state.totalIssues} totalUnitTests="88"/>
+ 		 		<TeamStats totalCommits={this.state.totalCommits} totalIssues={this.state.totalIssues} totalUnitTests="108"/>
 
  		 	</div>
 		);
@@ -97,8 +97,8 @@ class TeamStats extends Component {
     				<Col sm="4" className="data">
       					<h2 className="dataHeader">The Data:<br/></h2>
       					<p> We scraped data from <a href = "https://www.nps.gov/subjects/digital/nps-data-api.htm">https://www.nps.gov/subjects/digital/nps-data-api.htm<br/></a> using the RESTful API endpoint to retrieve all national parks. </p>
-                <p>We scraped data from <a href ="https://www.flickr.com/services/api/">https://www.flickr.com/services/api/<br/></a> to retrieve a maximum of 50 photos for each national park</p>
-                <p>We scraped data from <a href = "https://developer.bestbuy.com/">https://developer.bestbuy.com/<br/></a> to retrieve a camera data for each camera associated with each photo we scraped from flickr</p>
+                <p>We scraped data from <a href ="https://www.flickr.com/services/api/">https://www.flickr.com/services/api/<br/></a> to retrieve a maximum of 50 photos for each national park.</p>
+                <p>We scraped data from <a href = "https://developer.bestbuy.com/">https://developer.bestbuy.com/<br/></a> to retrieve a camera data for each camera associated with each photo we scraped from flickr.</p>
     				</Col>
     				<Col sm="4" className="data">
       					<h2 className="dataHeader">Toolbox:</h2>

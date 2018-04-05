@@ -8,9 +8,9 @@ one or more of the models defined in [models](models.md).
 The following information shows how to retrieve data on a camera using
 the natphoto.me API.
 
-## Requests 
+## Requests
 
-The following requests can be made 
+The following requests can be made
 
 **GET** `/cameras`
 * Returns a list of all cameras
@@ -139,3 +139,26 @@ Get the details for a specific photo
 http://api.natphoto.me/photos/123
 ```
 
+# All {#all}
+
+The following information shows how to retrieve data from the `api.natphoto.me/all`
+endpoint in our API.
+
+## Request
+
+The following request can be made
+
+**GET** `/all`
+* Returns a list of all model instances in our database (all photos, cameras, and
+  parks)
+* Additional Parameters:
+  * None
+* Return Content-Type: application/json
+
+## Usage Examples
+
+Get a list of all model instances in our database
+
+```
+http://api.natphoto.me/all
+```
