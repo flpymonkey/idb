@@ -68,8 +68,7 @@ export default class PhotoDetail extends Component {
             <Col sm="2"/>
   					<Col sm="6" id="title">
     						<h3 className="photoTitle">{this.state.title}</h3>
-    					</Col>
-
+    				</Col>
   				</Row>
   				<Row>
   					<Col xs="10" id="photo">
@@ -93,6 +92,9 @@ export default class PhotoDetail extends Component {
             <Col sm="12">
               <h3>Description</h3>
               <p>{this.state.description || "N/A"}</p>
+              <a href={this.state.flickr_url}>
+                <p>Check out this photo on flickr!</p>
+              </a>
             </Col>
           </Row>
       		<Row id="linksRow">

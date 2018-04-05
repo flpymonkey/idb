@@ -42,6 +42,14 @@
   margin-right: auto;
 }
 
+.amazonHeader {
+ overflow: hidden;
+ text-align: center;
+ font-size: 200%;
+ font-family: Ahem!, sans-serif;
+ margin-top: 3%;
+}
+
 #photos {
   color: #EAEAEA;
   font-size: 50px;

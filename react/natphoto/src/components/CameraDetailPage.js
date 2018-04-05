@@ -25,6 +25,7 @@ export default class CameraDetail extends Component {
       video_resolution: "",
       water_resistant: "",
       weight: "",
+      amazon_url: "",
       photos: [],
       parks: []
     }
@@ -55,7 +56,8 @@ export default class CameraDetail extends Component {
           type: data['0'].type,
           video_resolution: data['0'].video_resolution,
           water_resistant: data['0'].water_resistant,
-          weight: data['0'].weight
+          weight: data['0'].weight,
+          amazon_url: "https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=" + data['0'].name,
         });
       }
     });
@@ -115,6 +117,9 @@ export default class CameraDetail extends Component {
   			<div>
   				<h1 className="cameraHeader"><span>{this.state.name}</span></h1>
   				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={cameraLabels}/>
+          <a href={this.state.amazon_url}>
+          <h1 className="amazonHeader">Find it on Amazon!</h1>
+          </a>
   				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos}/>
           <ScrollableTable tableTitle="Parks" data={this.state.parks}/>
   			</div>
