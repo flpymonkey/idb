@@ -34,18 +34,15 @@ export default class SearchItem extends Component {
       link: link,
       img_url: this.props.data.image_url
     }
-    console.log("CHECKPOINT: ")
-    console.log(this.state)
   }
 
   render(){
-    const queryString = require('query-string');
+    var queryString = require('qs');
     var parsed = queryString.parse(this.props.searchTerm);
-    console.log(this.state)
     if(parsed)
     var highlightWords = [];
-    if(parsed['q'] !== undefined) {
-      highlightWords = parsed['q'].split(" ");
+    if(parsed['?q'] !== undefined) {
+      highlightWords = parsed['?q'].split(" ");
     }
     return (
       <Row className="singleResult">
