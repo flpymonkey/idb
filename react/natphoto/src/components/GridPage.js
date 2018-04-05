@@ -62,13 +62,25 @@ export default class Grid extends Component {
 
   filter2ConditionRange(param) {
     var condition = this.state.filter2.split(' ');
-    if(condition[0] === "<") {
-      return param.filter2 < parseInt(condition[1], 10);
-    } else if(condition[0] === ">") {
-      return param.filter2 > parseInt(condition[1], 10);
+
+    if (Number.isInteger(param.filter2)) {
+      if(condition[0] === "<") {
+        return param.filter2 < parseInt(condition[1], 10);
+      } else if(condition[0] === ">") {
+        return param.filter2 > parseInt(condition[1], 10);
+      }
+      var lower = parseInt(condition[0], 10);
+      var upper = parseInt(condition[2], 10);
+    } else {
+      if(condition[0] === "<") {
+        return param.filter2 < parseFloat(condition[1], 10);
+      } else if(condition[0] === ">") {
+        return param.filter2 > parseFloat(condition[1], 10);
+      }
+      var lower = parseFloat(condition[0], 10);
+      var upper = parseFloat(condition[2], 10) + 1;
     }
-    var lower = parseInt(condition[0], 10);
-    var upper = parseInt(condition[2], 10);
+
     //change name eventually
     return param.filter2 >= lower && param.filter2 <= upper;
   }
@@ -76,7 +88,7 @@ export default class Grid extends Component {
   filter2ConditionValue(param) {
     var condition = this.state.filter2;
     if(condition === "< 2000") {
-      condition.split(" ");
+      condition = condition.split(' ');
       condition = parseInt(condition[1], 10);
       var value = parseInt(param.filter2, 10);
       return value < condition;
@@ -84,19 +96,19 @@ export default class Grid extends Component {
     return param.filter2 === condition;
   }
 
-  filter1Data() {
+  filter1Data(data) {
     if (this.props.filter1Range) {
-      return this.props.data.filter(this.filter1ConditionRange);
+      return data.filter(this.filter1ConditionRange);
     } else {
-      return this.props.data.filter(this.filter1ConditionValue);
+      return data.filter(this.filter1ConditionValue);
     }
   }
 
-  filter2Data() {
+  filter2Data(data) {
     if (this.props.filter2Range) {
-      return this.props.data.filter(this.filter2ConditionRange);
+      return data.filter(this.filter2ConditionRange);
     } else {
-      return this.props.data.filter(this.filter2ConditionValue);
+      return data.filter(this.filter2ConditionValue);
     }
   }
 
@@ -126,14 +138,14 @@ export default class Grid extends Component {
   }
 
 	render() {
-
     const {sortBy, direction} = this.state
+    var data = this.props.data;
 
-    var filterData = "";
+    if(this.state.filter1 !== "") {
+      data = this.filter1Data(data);
+    }
     if(this.state.filter2 !== "") {
-      filterData = this.filter2Data();
-    } else {
-      filterData = this.props.data;
+      data = this.filter2Data(data);
     }
 
 		return (
@@ -156,7 +168,7 @@ export default class Grid extends Component {
              <Col sm="1"><FilterDropdown dropTitle={this.props.filterAttributes[1]} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
           </Row>
           <Datasort
-            data={filterData}
+            data={data}
             sortBy={sortBy}
             direction={direction}
             render={({
@@ -175,7 +187,7 @@ export default class Grid extends Component {
                   <Pagination
                     activePage={this.state.activePage}
                     itemsCountPerPage={16}
-                    totalItemsCount={this.props.data.length}
+                    totalItemsCount={data.length}
                     pageRangeDisplayed={5}
                     onChange={this.handlePageChange.bind(this)}
                     className = "pagination"
