@@ -25,6 +25,14 @@
  margin-right: -50%;
 }
 
+.npsHeader {
+ overflow: hidden;
+ text-align: center;
+ font-size: 200%;
+ font-family: Ahem!, sans-serif;
+ margin-top: 4%;
+}
+
 .photoImage, .camImage {
   width: 300px;
 }

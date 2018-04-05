@@ -89,8 +89,8 @@ export default class ParkDetail extends Component {
       return <EmptyPage />
     }
     else {
-      var parkLabels = {'State:':this.state.states, 'Website:':this.state.url,
-        'Weather:':this.state.weather, 'Directions:':this.state.directions, 'Description:': this.state.description};
+      var parkLabels = {'State:':this.state.states, 'Weather:':this.state.weather,
+        'Directions:':this.state.directions, 'Description:': this.state.description};
   		return(
   			<div>
   				<h1 className="parkHeader"><span>{this.state.name}</span></h1>
@@ -112,6 +112,9 @@ export default class ParkDetail extends Component {
   	    			</Col>
   	  		</Row>
   				<DetailHeader pic={null} infoAttributes={parkLabels}/>
+          <a href={this.state.url}>
+          <h1 className="npsHeader">Get more information from the National Park Service!</h1>
+          </a>
   				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos} />
           <ScrollableTable tableTitle="Cameras Used" data={this.state.cameras} />
   			</div>
