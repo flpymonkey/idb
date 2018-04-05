@@ -15,3 +15,35 @@
 .searchResults {
   color: #EAEAEA;
 }
+
+.singleResult {
+  background-color: #3A3A3A;
+  margin-bottom: 5%;
+  padding: 20px 10px 20px 40px;
+}
+
+.img-fluid {
+  height: auto;
+  width: auto;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.imgWrapper {
+  text-align: center;
+  float: none;
+  padding-right: 0;
+}
+
+.paginationCol {
+  text-align: center;
+  align-content: center;
+}
+
+p {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  max-height: 100%;
+}
