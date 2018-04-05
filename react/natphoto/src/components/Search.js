@@ -21,7 +21,7 @@ export default class Search extends Component {
         search_results: [],
         loading: true,
         numResults: 0,
-        activePage: 0
+        activePage: 1
       };
 
       this.renderResults = this.renderResults.bind(this);
@@ -48,12 +48,7 @@ export default class Search extends Component {
           })
           var search_results = fuse.search(this.state.search_string)
           search_results = search_results.map((elem, i)=>(
-            <SearchItem key={i} data={elem} />
-            // title: elem.title === undefined ? "" : elem.title,
-            // park: elem.park === undefined ? "" : elem.park,
-            // camera: elem.camera === undefined ? "" : elem.camera,
-            // name: elem.name === undefined ? "" : elem.name,
-            // description: elem.description === undefined ? "" : elem.description
+            <SearchItem key={i} data={elem} searchTerm={this.props.location.search} />
           ))
           this.setState({
             results: search_results,
@@ -92,14 +87,18 @@ export default class Search extends Component {
                 </Col>
               </Row>
               <div>{this.state.results.slice(startVal, endVal)}</div>
-              <Pagination
-                activePage={this.state.activePage}
-                itemsCountPerPage={5}
-                totalItemsCount={this.state.numResults}
-                pageRangeDisplayed={5}
-                onChange={this.handlePageChange.bind(this)}
-                className = "pagination"
-              />
+              <Row>
+                <Col className="paginationCol">
+                <Pagination
+                  activePage={this.state.activePage}
+                  itemsCountPerPage={5}
+                  totalItemsCount={this.state.numResults}
+                  pageRangeDisplayed={5}
+                  onChange={this.handlePageChange.bind(this)}
+                  className = "pagination"
+                />
+                </Col>
+              </Row>
               <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
             </div>
           )

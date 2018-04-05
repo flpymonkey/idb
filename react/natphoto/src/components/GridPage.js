@@ -5,7 +5,8 @@ import Pagination from 'react-js-pagination';
 import '../stylesheets/gridpage.css';
 import '../stylesheets/general.css';
 import SortDropdown from './SortDropdown.js';
-import FilterDropdown from './FilterDropdown.js'
+import FilterDropdown from './FilterDropdown.js';
+import ResetDropdown from './ResetDropdown.js';
 import { SyncLoader } from 'react-spinners';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap';
@@ -26,14 +27,18 @@ export default class Grid extends Component {
     this.filter2Data = this.filter2Data.bind(this);
     this.filter2ConditionValue = this.filter2ConditionValue.bind(this);
     this.filter2ConditionRange = this.filter2ConditionRange.bind(this);
+    this.clearFilter = this.clearFilter.bind(this);
 
 
 		this.state = {
       activePage: 1,
       sortBy: "sort1",
+      sortTitle: "Sort by",
       direction: "asc",
       filter1: "",
-      filter2: ""
+      filter2: "",
+      filter1Title: this.props.filterAttributes[0],
+      filter2Title: this.props.filterAttributes[1]
 		}
 	}
 
@@ -62,13 +67,25 @@ export default class Grid extends Component {
 
   filter2ConditionRange(param) {
     var condition = this.state.filter2.split(' ');
-    if(condition[0] === "<") {
-      return param.filter2 < parseInt(condition[1], 10);
-    } else if(condition[0] === ">") {
-      return param.filter2 > parseInt(condition[1], 10);
+
+    if (Number.isInteger(param.filter2)) {
+      if(condition[0] === "<") {
+        return param.filter2 < parseInt(condition[1], 10);
+      } else if(condition[0] === ">") {
+        return param.filter2 > parseInt(condition[1], 10);
+      }
+      var lower = parseInt(condition[0], 10);
+      var upper = parseInt(condition[2], 10);
+    } else {
+      if(condition[0] === "<") {
+        return param.filter2 < parseFloat(condition[1], 10);
+      } else if(condition[0] === ">") {
+        return param.filter2 > parseFloat(condition[1], 10);
+      }
+      lower = parseFloat(condition[0], 10);
+      upper = parseFloat(condition[2], 10) + 1;
     }
-    var lower = parseInt(condition[0], 10);
-    var upper = parseInt(condition[2], 10);
+
     //change name eventually
     return param.filter2 >= lower && param.filter2 <= upper;
   }
@@ -76,7 +93,7 @@ export default class Grid extends Component {
   filter2ConditionValue(param) {
     var condition = this.state.filter2;
     if(condition === "< 2000") {
-      condition.split(" ");
+      condition = condition.split(' ');
       condition = parseInt(condition[1], 10);
       var value = parseInt(param.filter2, 10);
       return value < condition;
@@ -84,32 +101,40 @@ export default class Grid extends Component {
     return param.filter2 === condition;
   }
 
-  filter1Data() {
+  filter1Data(data) {
     if (this.props.filter1Range) {
-      return this.props.data.filter(this.filter1ConditionRange);
+      return data.filter(this.filter1ConditionRange);
     } else {
-      return this.props.data.filter(this.filter1ConditionValue);
+      return data.filter(this.filter1ConditionValue);
     }
   }
 
-  filter2Data() {
+  filter2Data(data) {
     if (this.props.filter2Range) {
-      return this.props.data.filter(this.filter2ConditionRange);
+      return data.filter(this.filter2ConditionRange);
     } else {
-      return this.props.data.filter(this.filter2ConditionValue);
+      return data.filter(this.filter2ConditionValue);
     }
   }
 
-  setSortBy(sort, direction) {
-    this.setState({sortBy: sort, direction: direction});
+  setSortBy(sort, direction, label) {
+    this.setState({sortBy: sort, direction: direction, sortTitle: label, activePage: 1});
   }
 
   setFilter1(filter) {
-    this.setState({filter1: filter});
+    this.setState({filter1: filter, filter1Title: filter, activePage: 1});
   }
 
   setFilter2(filter) {
-    this.setState({filter2: filter});
+    this.setState({filter2: filter, filter2Title: filter, activePage: 1});
+  }
+
+  clearFilter(filter) {
+    if (filter === "filter1") {
+      this.setState({filter1: "", filter1Title: this.props.filterAttributes[0], activePage: 1})
+    } else {
+      this.setState({filter2: "", filter2Title: this.props.filterAttributes[1], activePage: 1})
+    }
   }
 
   handlePageChange(pageNumber) {
@@ -126,17 +151,18 @@ export default class Grid extends Component {
   }
 
 	render() {
-
     const {sortBy, direction} = this.state
+    var data = this.props.data;
 
-    var filterData = "";
+    if(this.state.filter1 !== "") {
+      data = this.filter1Data(data);
+    }
     if(this.state.filter2 !== "") {
-      filterData = this.filter2Data();
-    } else {
-      filterData = this.props.data;
+      data = this.filter2Data(data);
     }
 
-		return (
+    if (data.length === 0 && (this.state.filter1 !== "" || this.state.filter2 !== "")) {
+      return (
         <Container>
           <Row>
              <Col sm="4"></Col>
@@ -144,51 +170,88 @@ export default class Grid extends Component {
              <Col sm="4"></Col>
           </Row>
           <Row className="dropDowns">
-             <Col sm="4"></Col>
-             <Col sm="1">
-               <SortDropdown dropTitle="Sort by"
+             <Col sm="2"></Col>
+             <Col sm="2">
+               <SortDropdown dropTitle={this.state.sortTitle}
                              items={this.props.sortAttributes}
                              types={this.props.sortTypes}
                              sortFunc={this.setSortBy}/>
              </Col>
              <Col sm="1" className="filterLabel">Filter by:</Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.props.filterAttributes[0]} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.props.filterAttributes[1]} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
+             <Col sm="1"><FilterDropdown dropTitle={this.state.filter2Title} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
+             <Col sm="1"><ResetDropdown types={this.props.filterAttributes} clearFunc={this.clearFilter}/></Col>
           </Row>
-          <Datasort
-            data={filterData}
-            sortBy={sortBy}
-            direction={direction}
-            render={({
-              data,
-              setSortBy,
-              sortBy,
-              setDirection,
-              direction
-            }) => {
-              return (
-                <div>
-                <Row>
-                  {this.getCards(data)}
-                </Row>
-                <Row>
-                  <Pagination
-                    activePage={this.state.activePage}
-                    itemsCountPerPage={16}
-                    totalItemsCount={this.props.data.length}
-                    pageRangeDisplayed={5}
-                    onChange={this.handlePageChange.bind(this)}
-                    className = "pagination"
-                  />
-                </Row>
-                </div>
-
-              );
-            }}
-          />
-					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+          <Row>
+  					<Col sm="4"/>
+  					<Col sm="4">
+  						<div className="emptyMessageSorry">Sorry!</div>
+  					</Col>
+  				</Row>
+  				<Row>
+  					<Col sm="3"/>
+  					<Col sm="6">
+  						<div className="emptyMessageText">There is no data that fits your filters, please choose other filters</div>
+  					</Col>
+  				</Row>
         </Container>
-		);
+      );
+    }else {
+      return (
+          <Container>
+            <Row>
+               <Col sm="4"></Col>
+               <Col className="gridTitle" sm="4"><h1>{this.props.title}</h1></Col>
+               <Col sm="4"></Col>
+            </Row>
+            <Row className="dropDowns">
+               <Col sm="2"></Col>
+               <Col sm="2">
+                 <SortDropdown dropTitle={this.state.sortTitle}
+                               items={this.props.sortAttributes}
+                               types={this.props.sortTypes}
+                               sortFunc={this.setSortBy}/>
+               </Col>
+               <Col sm="1" className="filterLabel">Filter by:</Col>
+               <Col sm="1"><FilterDropdown dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
+               <Col sm="1"><FilterDropdown dropTitle={this.state.filter2Title} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
+               <Col sm="1"><ResetDropdown types={this.props.filterAttributes} clearFunc={this.clearFilter}/></Col>
+            </Row>
+            <Datasort
+              data={data}
+              sortBy={sortBy}
+              direction={direction}
+              render={({
+                data,
+                setSortBy,
+                sortBy,
+                setDirection,
+                direction
+              }) => {
+                return (
+                  <div>
+                  <Row>
+                    {this.getCards(data)}
+                  </Row>
+                  <Row>
+                    <Pagination
+                      activePage={this.state.activePage}
+                      itemsCountPerPage={16}
+                      totalItemsCount={data.length}
+                      pageRangeDisplayed={5}
+                      onChange={this.handlePageChange.bind(this)}
+                      className = "pagination"
+                    />
+                  </Row>
+                  </div>
+
+                );
+              }}
+            />
+  					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+          </Container>
+  		);
+    }
 	}
 }
 
