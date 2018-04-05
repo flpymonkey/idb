@@ -42,7 +42,8 @@ export default class CameraGrid extends Component {
 				 data={this.state.cameras}
 				 sortAttributes={["Name", "Price", "Megapixels"]}
          filterAttributes={["Price", "Megapixels"]}
-				 sortTypes={["alpha", "numerical", "numerical"]}
+				 sortTypes2={["alpha", "numerical", "numerical"]}
+				 sortTypes={["(A - Z)", "(Z - A)", "Low to High", "High to Low", "Low to High", "High to Low"]}
 				 filterOptions1={["0 - 1000","1001 - 2000","2001 - 3000","3001 - 4000","4001 - 5000","5001 - 6000"]}
 				 filter1Range={true}
 				 filterOptions2={["10 - 15", "16 - 20", "21 - 25", "26 - 30", "31 - 35", "36 - 40", "41 - 45", "46 - 50", "> 50"]}

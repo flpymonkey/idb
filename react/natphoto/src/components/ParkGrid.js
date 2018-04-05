@@ -42,7 +42,8 @@ export default class ParkGrid extends Component {
 					data={this.state.parks}
 					sortAttributes={["Name", "State", "# Photos"]}
           filterAttributes={["State", "# Photos"]}
-					sortTypes={["alpha", "alpha", "numerical"]}
+					sortTypes2={["alpha", "alpha", "numerical"]}
+					sortTypes={["(A - Z)", "(Z - A)", "(A - Z)", "(Z - A)", "Low to High", "High to Low"]}
 		      filterOptions1={["AK","AR","AZ","CA","CO","FL","HI","ID","KY","ME","MI","MN","MO","MT","NC","ND","NM","NV","OH","OR","SC","SD","TN","TX","UT","VA","VI","WA","WY"]}
 					filter1Range={false}
 		      filterOptions2={["0 - 5", "6 - 10", "11 - 15", "16 - 20", "21 - 25", "26 - 30"]}
