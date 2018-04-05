@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-//import { Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -31,22 +30,27 @@ export default class SearchItem extends Component {
       park: park,
       camera: camera,
       description: description,
-      link: link
+      link: link,
+      img_url: this.props.data.image_url
     }
   }
 
   render(){
     return (
-      <Row>
-      <Col>
-      <Link to={this.state.link}>
-      <h2>{this.state.header}</h2>
-      </Link>
-      <p>{this.state.park}</p>
-      <p>{this.state.camera}</p>
-      <p>{this.state.description}</p>
-      <hr className="separator"/>
-      </Col>
+      <Row className="singleResult">
+        <Col sm="6">
+          <Link to={this.state.link}>
+          <h2>{this.state.header}</h2>
+          </Link>
+          <p>{this.state.park}</p>
+          <p>{this.state.camera}</p>
+          <p>{this.state.description}</p>
+        </Col>
+        <Col sm="6">
+          <div className="imgWrapper">
+            <img src={this.state.img_url} className="img-fluid" alt={this.state.header}/>
+          </div>
+        </Col>
       </Row>
     )
   }
