@@ -118,22 +118,22 @@ export default class Grid extends Component {
   }
 
   setSortBy(sort, direction, label) {
-    this.setState({sortBy: sort, direction: direction, sortTitle: label});
+    this.setState({sortBy: sort, direction: direction, sortTitle: label, activePage: 1});
   }
 
   setFilter1(filter) {
-    this.setState({filter1: filter, filter1Title: filter});
+    this.setState({filter1: filter, filter1Title: filter, activePage: 1});
   }
 
   setFilter2(filter) {
-    this.setState({filter2: filter, filter2Title: filter});
+    this.setState({filter2: filter, filter2Title: filter, activePage: 1});
   }
 
   clearFilter(filter) {
     if (filter === "filter1") {
-      this.setState({filter1: "", filter1Title: this.props.filterAttributes[0]})
+      this.setState({filter1: "", filter1Title: this.props.filterAttributes[0], activePage: 1})
     } else {
-      this.setState({filter2: "", filter2Title: this.props.filterAttributes[1]})
+      this.setState({filter2: "", filter2Title: this.props.filterAttributes[1], activePage: 1})
     }
   }
 
