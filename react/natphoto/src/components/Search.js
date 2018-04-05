@@ -13,11 +13,12 @@ export default class Search extends Component {
     constructor(props){
       super(props);
 
-      const queryString = require('query-string');
-      const parsed = queryString.parse(this.props.location.search);
+      var queryString = require('qs');
+      var parsed = queryString.parse(this.props.location.search);
+      console.log(parsed);
 
       this.state = {
-        search_string: parsed['q'],
+        search_string: parsed['?q'],
         search_results: [],
         loading: true,
         numResults: 0,
@@ -89,14 +90,14 @@ export default class Search extends Component {
               <div>{this.state.results.slice(startVal, endVal)}</div>
               <Row>
                 <Col className="paginationCol">
-                <Pagination
-                  activePage={this.state.activePage}
-                  itemsCountPerPage={5}
-                  totalItemsCount={this.state.numResults}
-                  pageRangeDisplayed={5}
-                  onChange={this.handlePageChange.bind(this)}
-                  className = "pagination"
-                />
+                  <Pagination
+                    activePage={this.state.activePage}
+                    itemsCountPerPage={5}
+                    totalItemsCount={this.state.numResults}
+                    pageRangeDisplayed={5}
+                    onChange={this.handlePageChange.bind(this)}
+                    className = "pagination"
+                  />
                 </Col>
               </Row>
               <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>

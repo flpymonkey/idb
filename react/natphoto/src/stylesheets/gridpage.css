@@ -43,9 +43,10 @@
 	text-align: center;
 	color: #EAEAEA;
 }
-.filterLabel {
+.dropdownLabel {
 	color: #EAEAEA;
 	font-size: 150%;
+	text-align: center;
 }
 
 
@@ -54,6 +55,18 @@
 	margin-bottom: 2%;
 }
 
-.ourPagination {
-	padding-left: 35%;
+.paginationCol {
+  text-align: center;
+  align-content: center;
+}
+
+.emptyFilterTitle {
+  margin-top: 30%;
+  text-align: center;
+  font-size: 250%;
+}
+
+.emptyFilterMessage {
+  text-align: center;
+  font-size: 200%;
 }

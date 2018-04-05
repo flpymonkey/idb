@@ -33,7 +33,7 @@ export default class Grid extends Component {
 		this.state = {
       activePage: 1,
       sortBy: "sort1",
-      sortTitle: "Sort by",
+      sortTitle: this.props.sortAttributes[0] + ": " + this.props.sortTypes[0],
       direction: "asc",
       filter1: "",
       filter2: "",
@@ -62,7 +62,7 @@ export default class Grid extends Component {
       var value = parseInt(param.filter1, 10);
       return value < condition;
     }
-    return param.filter1 === condition;
+    return param.filter1.includes(condition);
   }
 
   filter2ConditionRange(param) {
@@ -163,59 +163,59 @@ export default class Grid extends Component {
 
     if (data.length === 0 && (this.state.filter1 !== "" || this.state.filter2 !== "")) {
       return (
-        <Container>
+        <Container fluid>
           <Row>
              <Col sm="4"></Col>
              <Col className="gridTitle" sm="4"><h1>{this.props.title}</h1></Col>
              <Col sm="4"></Col>
           </Row>
           <Row className="dropDowns">
-             <Col sm="2"></Col>
+             <Col sm="2" className="dropdownLabel">Sort by:</Col>
              <Col sm="2">
                <SortDropdown dropTitle={this.state.sortTitle}
                              items={this.props.sortAttributes}
                              types={this.props.sortTypes}
                              sortFunc={this.setSortBy}/>
              </Col>
-             <Col sm="1" className="filterLabel">Filter by:</Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
-             <Col sm="1"><FilterDropdown dropTitle={this.state.filter2Title} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
-             <Col sm="1"><ResetDropdown types={this.props.filterAttributes} clearFunc={this.clearFilter}/></Col>
+             <Col sm="2" className="dropdownLabel">Filter by:</Col>
+             <Col sm="2"><FilterDropdown dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
+             <Col sm="2"><FilterDropdown dropTitle={this.state.filter2Title} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
+             <Col sm="2"><ResetDropdown types={this.props.filterAttributes} clearFunc={this.clearFilter}/></Col>
           </Row>
           <Row>
   					<Col sm="4"/>
   					<Col sm="4">
-  						<div className="emptyMessageSorry">Sorry!</div>
+  						<div className="emptyFilterTitle">Sorry!</div>
   					</Col>
   				</Row>
   				<Row>
   					<Col sm="3"/>
   					<Col sm="6">
-  						<div className="emptyMessageText">There is no data that fits your filters, please choose other filters</div>
+  						<div className="emptyFilterMessage">There is no data that fits your filters, please choose other filters</div>
   					</Col>
   				</Row>
         </Container>
       );
     }else {
       return (
-          <Container>
+          <Container fluid>
             <Row>
                <Col sm="4"></Col>
                <Col className="gridTitle" sm="4"><h1>{this.props.title}</h1></Col>
                <Col sm="4"></Col>
             </Row>
             <Row className="dropDowns">
-               <Col sm="2"></Col>
+               <Col sm="2" className="dropdownLabel">Sort by:</Col>
                <Col sm="2">
                  <SortDropdown dropTitle={this.state.sortTitle}
                                items={this.props.sortAttributes}
                                types={this.props.sortTypes}
                                sortFunc={this.setSortBy}/>
                </Col>
-               <Col sm="1" className="filterLabel">Filter by:</Col>
-               <Col sm="1"><FilterDropdown dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
-               <Col sm="1"><FilterDropdown dropTitle={this.state.filter2Title} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
-               <Col sm="1"><ResetDropdown types={this.props.filterAttributes} clearFunc={this.clearFilter}/></Col>
+               <Col sm="2" className="dropdownLabel">Filter by:</Col>
+               <Col sm="2"><FilterDropdown dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
+               <Col sm="2"><FilterDropdown dropTitle={this.state.filter2Title} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
+               <Col sm="2"><ResetDropdown types={this.props.filterAttributes} clearFunc={this.clearFilter}/></Col>
             </Row>
             <Datasort
               data={data}
@@ -234,14 +234,15 @@ export default class Grid extends Component {
                     {this.getCards(data)}
                   </Row>
                   <Row>
-                    <Pagination
-                      activePage={this.state.activePage}
-                      itemsCountPerPage={16}
-                      totalItemsCount={data.length}
-                      pageRangeDisplayed={5}
-                      onChange={this.handlePageChange.bind(this)}
-                      className = "pagination"
-                    />
+                    <Col className="paginationCol">
+                      <Pagination
+                        activePage={this.state.activePage}
+                        itemsCountPerPage={16}
+                        totalItemsCount={data.length}
+                        pageRangeDisplayed={5}
+                        onChange={this.handlePageChange.bind(this)}
+                      />
+                    </Col>
                   </Row>
                   </div>
 
