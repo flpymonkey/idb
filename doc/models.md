@@ -18,7 +18,9 @@ Below are the models for cameras, national parks, and photos.
 | `video_resolution` | The video resolution for the camera \(if available\) | "1920 x 1080" |
 | `image_resoultion` | The image resolution for the camera | "6000 x 4000" |
 | `sensor` | The sensor for the camera | "CMOS" |
-| `image_url` | A link to an image of the camera | "[http://via.placeholder.com/350x150](http://via.placeholder.com/350x150)" |
+| `image_url` | A link to an image of the camera |
+| `number_of_photos` | The integer count of photos in our database taken with this camera | 12 |
+"[http://via.placeholder.com/350x150](http://via.placeholder.com/350x150)" |
 
 ## National Park {#park}
 
@@ -32,7 +34,9 @@ Below are the models for cameras, national parks, and photos.
 | `url` | A link to the nps.gov website for the park | "[https://www.nps.gov/yell/index.htm](https://www.nps.gov/yell/index.htm)" |
 | `weather` | A description of the weather at the park | "Yellowstone's weather can vary quite a bit, even in a single day. In the summer..." |
 | `directions_url` | A link to directions to the park | "[http://www.nps.gov/yell/planyourvisit/directions.htm](http://www.nps.gov/yell/planyourvisit/directions.htm)" |
-| `image_url` | A link to an image of the park provided by nps.gov | "[https://www.nps.gov/common/uploads/structured\_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg](https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg)" |
+| `image_url` | A link to an image of the park provided by nps.gov |
+| `number_of_photos` | The integer count of photos in our database taken in this park | 32 |
+"[https://www.nps.gov/common/uploads/structured\_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg](https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg)" |
 
 ## Photo {#photo}
 
@@ -71,4 +75,3 @@ http://api.natphoto.me/parks?camera=Canon%20EOS%2080D
 This request will get all of the parks that are related to the provided camera.   
 Likewise, it is possible get all of the cameras with a specified park, even  
 though this is not specifically linked in the database.
-
