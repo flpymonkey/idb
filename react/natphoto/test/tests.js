@@ -18,6 +18,13 @@ import ParkGrid from '../src/components/ParkGrid.js'
 import PhotoDetail from '../src/components/PhotoDetailPage.js'
 import PhotoGrid from '../src/components/PhotoGrid.js'
 import ScrollableTable from '../src/components/ScrollableTable.js'
+import SortDropdown from '../src/components/SortDropdown.js'
+import FilterDropdown from '../src/components/FilterDropdown.js'
+import ResetDropdown from '../src/components/ResetDropdown.js'
+import EmptyPage from '../src/components/EmptyPage.js'
+import SearchBar from '../src/components/SearchBar.js'
+import SearchItem from '../src/components/SearchItem.js'
+import Search from '../src/components/Search.js'
 
 describe("<App/>", function(){
   	before(function () {
@@ -89,8 +96,8 @@ describe("<DetailHeader/>", function(){
     it("should pass props correctly", function() {
       var data = {name: "Cannon", megapixels: "5"}
       var test = shallow(<DetailHeader infoAttributes={data}/>);
-      expect(test.find('.name').render().text()).to.be.equal("Cannon")
-      expect(test.find('.megapixels').render().text()).to.be.equal("5")
+      expect(test.html()).to.contain('Cannon');
+      expect(test.html()).to.contain('5');
     });
 });
 
@@ -217,5 +224,180 @@ describe("<PhotoDetail/>", function(){
       shallow(<MemoryRouter>
               <PhotoDetail />
             </MemoryRouter>);
+    });
+});
+
+describe("<SortDropdown/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("pass props correctly", function() {
+       var wrapper = shallow(<SortDropdown
+                dropTitle="Title"
+                items={["firstSort", "secondSort", "thirdSort"]}
+                types={["a-z","a-z","a-z","a-z","a-z","a-z"]}
+                />
+      );
+      expect(wrapper.html()).to.contain('Title');
+      expect(wrapper.html()).to.contain('firstSort');
+      expect(wrapper.html()).to.contain('a-z');
+    });
+});
+
+describe("<SortDropdown/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<SortDropdown
+                dropTitle={"Title"}
+                items={"firstSort", "secondSort", "thirdSort"}
+                types={["a-z","a-z","a-z","a-z","a-z","a-z"]}
+                />
+      );
+    });
+});
+
+describe("<FilterDropdown/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<FilterDropdown
+                dropTitle={"Title"}
+                options={["filter1", "filter2", "filter3"]}
+                />
+      );
+    });
+});
+
+describe("<FilterDropdown/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("pass props correctly", function() {
+       var wrapper = shallow(<FilterDropdown
+                dropTitle="Title"
+                options={["firstSort", "secondSort", "thirdSort"]}
+                />
+      );
+      expect(wrapper.html()).to.contain('Title');
+      expect(wrapper.html()).to.contain('firstSort');
+      expect(wrapper.html()).to.contain('secondSort');
+    });
+});
+
+describe("<ResetDropdown/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<ResetDropdown types={["clear1", "clear2"]}/>
+      );
+    });
+});
+
+describe("<ResetDropdown/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("pass props correctly", function() {
+       var wrapper = shallow(<ResetDropdown types={["clear1", "clear2"]}/>
+      );
+      expect(wrapper.html()).to.contain('clear1');
+      expect(wrapper.html()).to.contain('clear2');
+    });
+});
+
+describe("<EmptyPage/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<EmptyPage/>
+      );
+    });
+});
+
+describe("<SearchBar/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<SearchBar/>
+      );
+    });
+});
+
+describe("<SearchItem/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(<SearchItem data={{id: false, name: null}}/>
+      );
+    });
+});
+
+describe("<Search/>", function(){
+  	before(function () {
+  		this.jsdom = require('jsdom-global')()
+  	})
+
+  	after(function () {
+  		this.jsdom()
+  	})
+
+    it("should render", function() {
+      shallow(
+        <MemoryRouter>
+          <Search location={{search: "hello"}}/>
+        </MemoryRouter>
+      );
     });
 });
