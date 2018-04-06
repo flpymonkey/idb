@@ -7,6 +7,7 @@
     * [Cameras](doc/restful-api.md#camera)
     * [Parks](doc/restful-api.md#park)
     * [Photos](doc/restful-api.md#photo)
+    * [All](doc/restful-api.md#all)
 * [Models](doc/models.md)
     * [Camera](doc/models.md#camera)
     * [Park](doc/models.md#park)
