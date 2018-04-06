@@ -30,12 +30,12 @@ export default class ResetDropdown extends React.Component {
           Reset
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem>
+          <DropdownItem id="reset1">
             <div onClick={() => this.clearFilter("filter1")}>
               {this.props.types[0]}
             </div>
           </DropdownItem>
-          <DropdownItem>
+          <DropdownItem id="reset2">
             <div onClick={() => this.clearFilter("filter2")}>
               {this.props.types[1]}
             </div>
