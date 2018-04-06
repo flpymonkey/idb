@@ -43,9 +43,23 @@ export default class Search extends Component {
             distance: 100,
             keys: [{name: 'park', weight: 0.1},
             {name: 'camera', weight: 0.1},
-            {name: 'title', weight: 0.1},
-            {name: 'name', weight: 0.65},
-            {name: 'description', weight: 0.05}]
+            {name: 'title', weight: 0.05},
+            {name: 'name', weight: 0.4},
+            {name: 'description', weight: 0.01},
+            {name: 'state', weight: 0.01},
+            {name: 'directions', weight: 0.01},
+            {name: 'photographer', weight: 0.3},
+            {name: 'date', weight: 0.01},
+            {name: 'likes', weight: 0.01},
+            {name: 'price', weight: 0.01},
+            {name: 'weight', weight: 0.01},
+            {name: 'effective_megapixels', weight: 0.01},
+            {name: 'total_megapixels', weight: 0.01},
+            {name: 'shutter_speeds', weight: 0.01},
+            {name: 'iso', weight: 0.01},
+            {name: 'water_resistant', weight: 0.01},
+            {name: 'sensor', weight: 0.01}
+            ]
           })
           var search_results = fuse.search(this.state.search_string)
           search_results = search_results.map((elem, i)=>(
