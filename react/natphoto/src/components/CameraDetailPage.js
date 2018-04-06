@@ -117,7 +117,7 @@ export default class CameraDetail extends Component {
   			<div>
   				<h1 className="cameraHeader"><span>{this.state.name}</span></h1>
   				<DetailHeader pic={this.state.image_url} name={this.state.name} infoAttributes={cameraLabels}/>
-          <a href={this.state.amazon_url}>
+          <a href={this.state.amazon_url} target="_blank">
           <h1 className="amazonHeader">Find it on Amazon!</h1>
           </a>
   				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos}/>

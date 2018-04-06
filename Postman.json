@@ -70,7 +70,7 @@
 			},
 			"response": [
 				{
-					"id": "ec733755-4677-4f24-9041-8a13b26de045",
+					"id": "f6a2e3c1-67e0-4977-ae86-2b43a55938ed",
 					"name": "Get all cameras",
 					"originalRequest": {
 						"method": "GET",
@@ -156,7 +156,7 @@
 					"body": "[{\"name\": \"Panasonic DMC-FZ200\", \"price\": \"599.99\", \"weight\": \"2.5 pounds\", \"type\": \"Mirrorless Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"18.3 megapixels\", \"effective_megapixels\": \"16.1 megapixels\", \"iso\": \"Auto, intelligent ISO, 160, 200, 400, 800, 1600, 3200, 6400, 12,800\", \"shutter_speeds\": \"Still image: 1/4000 - 60 sec., bulb; Motion image: 1/16,000 - 1/30 sec.\", \"video_resolution\": null, \"image_resolution\": \"4608 x 3456\", \"sensor\": \"Live MOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/4032/4032159_ra.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 6D\", \"price\": \"1399.99\", \"weight\": \"1.5 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"20.6 megapixels\", \"effective_megapixels\": \"20.2 megapixels\", \"iso\": \"Manual setting range of ISO 100-25600 (expansion possible to ISO 50, ISO 51200 and 102400) in 1/3-stop or whole-stop increments\", \"shutter_speeds\": \"1/4000 to 30 sec., X-sync at 1/180 sec. (Total shutter speed range. Available range varies by shooting mode.)\", \"video_resolution\": null, \"image_resolution\": \"5472 x 3648\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/6776/6776221_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Sony ILCE-7SM2\", \"price\": \"4499.99\", \"weight\": \"1.293 pounds\", \"type\": \"Mirrorless Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"28.3 megapixels\", \"effective_megapixels\": \"24.2 megapixels\", \"iso\": \"Still images: ISO 50-25600 (electronic shutter), ISO 50-204800 (mechanical shutter); Movies: ISO 100-102400; Auto mode: ISO 100-6400\", \"shutter_speeds\": \"Single shot, mechanical shutter: 1/8000 to 30 sec, Bulb; Auto: 1/32000 to 30 sec, Bulb; Electronic Shutter: 1/32000 to 30 sec; Continuous shooting, mechanical shutter: 1/8000 to 30 sec, Auto: 1/32000\", \"video_resolution\": \"3840 x 2160\", \"image_resolution\": \"6000 x 4000\", \"sensor\": \"Exmor CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/5865/5865600_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark III\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 5DS R\", \"price\": \"3699.99\", \"weight\": \"32.8 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"53.0 megapixels\", \"effective_megapixels\": \"50.6 megapixels\", \"iso\": \"Auto, 100-6400, L (50), H (12,800)\", \"shutter_speeds\": \"1/8000 - 30 sec.\", \"video_resolution\": null, \"image_resolution\": null, \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/3779/3779204_sa.jpg\"}, {\"name\": \"samsung SM-G955U\", \"price\": \"840.0\", \"weight\": null, \"type\": null, \"water_resistant\": \"Yes\", \"total_megapixels\": null, \"effective_megapixels\": null, \"iso\": null, \"shutter_speeds\": null, \"video_resolution\": null, \"image_resolution\": null, \"sensor\": null, \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/5789/5789010_sa.jpg\"}, {\"name\": \"Canon EOS 6D\", \"price\": \"1399.99\", \"weight\": \"1.5 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"20.6 megapixels\", \"effective_megapixels\": \"20.2 megapixels\", \"iso\": \"Manual setting range of ISO 100-25600 (expansion possible to ISO 50, ISO 51200 and 102400) in 1/3-stop or whole-stop increments\", \"shutter_speeds\": \"1/4000 to 30 sec., X-sync at 1/180 sec. (Total shutter speed range. Available range varies by shooting mode.)\", \"video_resolution\": null, \"image_resolution\": \"5472 x 3648\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/6776/6776221_sa.jpg\"}]\n"
 				},
 				{
-					"id": "22a65efd-a4ba-43ab-ab50-0c12e523c0f5",
+					"id": "44265968-b6f3-4fca-ba51-0dab62edef41",
 					"name": "Filter by park",
 					"originalRequest": {
 						"method": "GET",
@@ -198,7 +198,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b22516a6-ee50-4967-b198-dc7b1a9d0a9a",
+						"id": "aec250af-ee30-4fdb-a273-fae3aa10fafd",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is okay\", function(){",
@@ -222,6 +222,12 @@
 							"pm.test(\"Body contains string camera 2\", function () ",
 							"{",
 							"    pm.expect(pm.response.text()).to.include(\"samsung SM-G955U\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains number of photos\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"number_of_photos\");",
 							"});"
 						]
 					}
@@ -249,7 +255,7 @@
 			},
 			"response": [
 				{
-					"id": "c4d7880a-b98d-4099-a9ab-267f9b7aba55",
+					"id": "040aa2ce-e2f4-4043-96cc-2b7fdded88bd",
 					"name": "Get all cameras",
 					"originalRequest": {
 						"method": "GET",
@@ -335,7 +341,7 @@
 					"body": "[{\"name\": \"Panasonic DMC-FZ200\", \"price\": \"599.99\", \"weight\": \"2.5 pounds\", \"type\": \"Mirrorless Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"18.3 megapixels\", \"effective_megapixels\": \"16.1 megapixels\", \"iso\": \"Auto, intelligent ISO, 160, 200, 400, 800, 1600, 3200, 6400, 12,800\", \"shutter_speeds\": \"Still image: 1/4000 - 60 sec., bulb; Motion image: 1/16,000 - 1/30 sec.\", \"video_resolution\": null, \"image_resolution\": \"4608 x 3456\", \"sensor\": \"Live MOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/4032/4032159_ra.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 6D\", \"price\": \"1399.99\", \"weight\": \"1.5 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"20.6 megapixels\", \"effective_megapixels\": \"20.2 megapixels\", \"iso\": \"Manual setting range of ISO 100-25600 (expansion possible to ISO 50, ISO 51200 and 102400) in 1/3-stop or whole-stop increments\", \"shutter_speeds\": \"1/4000 to 30 sec., X-sync at 1/180 sec. (Total shutter speed range. Available range varies by shooting mode.)\", \"video_resolution\": null, \"image_resolution\": \"5472 x 3648\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/6776/6776221_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Sony ILCE-7SM2\", \"price\": \"4499.99\", \"weight\": \"1.293 pounds\", \"type\": \"Mirrorless Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"28.3 megapixels\", \"effective_megapixels\": \"24.2 megapixels\", \"iso\": \"Still images: ISO 50-25600 (electronic shutter), ISO 50-204800 (mechanical shutter); Movies: ISO 100-102400; Auto mode: ISO 100-6400\", \"shutter_speeds\": \"Single shot, mechanical shutter: 1/8000 to 30 sec, Bulb; Auto: 1/32000 to 30 sec, Bulb; Electronic Shutter: 1/32000 to 30 sec; Continuous shooting, mechanical shutter: 1/8000 to 30 sec, Auto: 1/32000\", \"video_resolution\": \"3840 x 2160\", \"image_resolution\": \"6000 x 4000\", \"sensor\": \"Exmor CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/5865/5865600_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark II\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 5D Mark III\", \"price\": \"3049.99\", \"weight\": \"30.4 pounds\", \"type\": \"DSLR Camera with Lens\", \"water_resistant\": \"No\", \"total_megapixels\": \"23.4 megapixels\", \"effective_megapixels\": \"22.3 megapixels\", \"iso\": \"100 - 25,600\", \"shutter_speeds\": \"1/30 - 1/4000 sec.\", \"video_resolution\": null, \"image_resolution\": \"5784 x 3861\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/2800/2800242_sa.jpg\"}, {\"name\": \"Canon EOS 5DS R\", \"price\": \"3699.99\", \"weight\": \"32.8 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"53.0 megapixels\", \"effective_megapixels\": \"50.6 megapixels\", \"iso\": \"Auto, 100-6400, L (50), H (12,800)\", \"shutter_speeds\": \"1/8000 - 30 sec.\", \"video_resolution\": null, \"image_resolution\": null, \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/3779/3779204_sa.jpg\"}, {\"name\": \"samsung SM-G955U\", \"price\": \"840.0\", \"weight\": null, \"type\": null, \"water_resistant\": \"Yes\", \"total_megapixels\": null, \"effective_megapixels\": null, \"iso\": null, \"shutter_speeds\": null, \"video_resolution\": null, \"image_resolution\": null, \"sensor\": null, \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/5789/5789010_sa.jpg\"}, {\"name\": \"Canon EOS 6D\", \"price\": \"1399.99\", \"weight\": \"1.5 pounds\", \"type\": \"DSLR Camera Body Only\", \"water_resistant\": \"No\", \"total_megapixels\": \"20.6 megapixels\", \"effective_megapixels\": \"20.2 megapixels\", \"iso\": \"Manual setting range of ISO 100-25600 (expansion possible to ISO 50, ISO 51200 and 102400) in 1/3-stop or whole-stop increments\", \"shutter_speeds\": \"1/4000 to 30 sec., X-sync at 1/180 sec. (Total shutter speed range. Available range varies by shooting mode.)\", \"video_resolution\": null, \"image_resolution\": \"5472 x 3648\", \"sensor\": \"CMOS\", \"image_url\": \"https://img.bbystatic.com/BestBuy_US/images/products/6776/6776221_sa.jpg\"}]\n"
 				},
 				{
-					"id": "2a94d55f-5481-4c03-82e8-6a23d6f7c890",
+					"id": "3be0ff79-05ea-4c73-b341-f29a9cda5415",
 					"name": "Filter by park",
 					"originalRequest": {
 						"method": "GET",
@@ -377,7 +383,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0584a7f1-ce23-40b2-aeba-8a66a170b8ae",
+						"id": "6b164791-6eef-4ce1-95dc-45269d0419bd",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is okay\", function(){",
@@ -401,6 +407,18 @@
 							"pm.test(\"Body contains string megapixels\", function () ",
 							"{",
 							"    pm.expect(pm.response.text()).to.include(\"24.2 megapixels\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains number of photos\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"number_of_photos\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains correct count for number of photos\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\": 3\");",
 							"});"
 						]
 					}
@@ -429,7 +447,7 @@
 			},
 			"response": [
 				{
-					"id": "62d52a6e-5978-415e-bd06-60ed023baadb",
+					"id": "0161b165-b009-40d0-a182-f100c52d4c6d",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -498,7 +516,7 @@
 			},
 			"response": [
 				{
-					"id": "6973c5fb-e1ec-4b91-8094-b55f754a9baf",
+					"id": "63abc89a-94dc-47ab-8eae-70143420a38d",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -592,7 +610,7 @@
 			},
 			"response": [
 				{
-					"id": "92e004c5-8698-4f3e-9f34-4e6e36fcbe3d",
+					"id": "efc89590-44bb-4099-857f-c3c447bfbd1b",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -627,7 +645,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "07ea1e29-38cd-4e93-a34b-0cc207325145",
+						"id": "6725dc81-99cb-465d-af64-4e9bf95fe9ca",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is okay\", function(){",
@@ -651,6 +669,12 @@
 							"pm.test(\"Body contains string park 2\", function () ",
 							"{",
 							"    pm.expect(pm.response.text()).to.include(\"Yellowstone National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains number of photos\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"number_of_photos\");",
 							"});"
 						]
 					}
@@ -678,7 +702,7 @@
 			},
 			"response": [
 				{
-					"id": "b56e06e9-d2a5-4c9f-8630-761a169aac24",
+					"id": "c848839f-6e0e-49fb-9110-57b90bbdab7a",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -713,7 +737,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "84db68f1-263e-40e8-a6db-005fe6390c95",
+						"id": "e8fe4343-3063-4444-973b-a5eb2510f7e5",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is okay\", function(){",
@@ -737,6 +761,18 @@
 							"pm.test(\"Body contains string lat/long\", function () ",
 							"{",
 							"    pm.expect(pm.response.text()).to.include(\"lat:29.29817767, long:-103.2297897\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains number of photos\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\"number_of_photos\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains correct count for number of photos\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.include(\": 27\");",
 							"});"
 						]
 					}
@@ -765,7 +801,7 @@
 			},
 			"response": [
 				{
-					"id": "581378a3-e75e-4883-937b-843a31e8b357",
+					"id": "3347bcdd-ec46-4c44-aa00-983a70c1efd2",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -834,7 +870,7 @@
 			},
 			"response": [
 				{
-					"id": "2b270a22-8d14-4db3-b249-0ebda167d0e6",
+					"id": "d760d677-bb69-4ff0-9390-8b91a037831e",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -945,7 +981,7 @@
 			},
 			"response": [
 				{
-					"id": "ad4692e0-6c64-493f-a187-c29435fa7f87",
+					"id": "bf2cf771-280d-49a8-914e-1d9a8b33b58b",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -1043,7 +1079,7 @@
 			},
 			"response": [
 				{
-					"id": "2b0a5ffd-79af-4ce0-bfe8-83fadf43b385",
+					"id": "7db3f480-cc47-4b31-a7aa-1853b08fb146",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -1136,7 +1172,7 @@
 			},
 			"response": [
 				{
-					"id": "ec67c524-4c68-483d-a57d-f357992d1ac3",
+					"id": "df83f810-909c-43d9-88b3-17bc532dc2dc",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -1205,7 +1241,7 @@
 			},
 			"response": [
 				{
-					"id": "9eb095f8-513c-4274-a3cb-87ddcdca53c2",
+					"id": "13955e99-49c7-4d09-b146-f9d0f61de6e9",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -1224,6 +1260,110 @@
 							"path": [
 								"photo",
 								"photoID"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "api.natphoto.me/all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f090049-67ac-4e50-b68d-1f4216d3d510",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is okay\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function() {",
+							"    pm.response.to.not.be.error;",
+							"    pm.response.to.have.jsonBody(\"\");",
+							"    pm.response.to.not.have.jsonBody(\"error\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string park\", function() {",
+							"    pm.expect(pm.response.text()).to.include(\"Bryce Canyon National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string camera\", function() {",
+							"    pm.expect(pm.response.text()).to.include(\"Panasonic DMC-FZ200\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string park 2\", function() {",
+							"    pm.expect(pm.response.text()).to.include(\"Yellowstone National Park\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string camera 2\", function() {",
+							"    pm.expect(pm.response.text()).to.include(\"Canon EOS 5D Mark II\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string photo\", function() {",
+							"    pm.expect(pm.response.text()).to.include(\"Capitol Reef Road\");",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"Body contains string photo 2\", function() {",
+							"    pm.expect(pm.response.text()).to.include(\"https://www.flickr.com/photos/flyusanywhere/38598252375/\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.natphoto.me/all",
+					"host": [
+						"api",
+						"natphoto",
+						"me"
+					],
+					"path": [
+						"all"
+					]
+				},
+				"description": "Returns a list of all photos stored in our database"
+			},
+			"response": [
+				{
+					"id": "33bdf522-c6e7-4a72-b7b0-d260cfb819e2",
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "api.natphoto.me/photos",
+							"host": [
+								"api",
+								"natphoto",
+								"me"
+							],
+							"path": [
+								"photos"
 							]
 						}
 					},

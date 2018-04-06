@@ -92,7 +92,7 @@ export default class PhotoDetail extends Component {
             <Col sm="12">
               <h3>Description</h3>
               <p>{this.state.description || "N/A"}</p>
-              <a href={this.state.flickr_url}>
+              <a href={this.state.flickr_url} target="_blank">
                 <p>Check out this photo on flickr!</p>
               </a>
             </Col>

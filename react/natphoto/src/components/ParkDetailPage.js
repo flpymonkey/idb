@@ -112,7 +112,7 @@ export default class ParkDetail extends Component {
   	    			</Col>
   	  		</Row>
   				<DetailHeader pic={null} infoAttributes={parkLabels}/>
-          <a href={this.state.url}>
+          <a href={this.state.url} target="_blank">
           <h1 className="npsHeader">Get more information from the National Park Service!</h1>
           </a>
   				<ScrollableTable tableTitle="Photos Taken" data={this.state.photos} />

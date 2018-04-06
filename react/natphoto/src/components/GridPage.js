@@ -49,8 +49,15 @@ export default class Grid extends Component {
     } else if(condition[0] === ">") {
       return param.filter1 > parseInt(condition[1], 10);
     }
-    var lower = parseInt(condition[0], 10);
-    var upper = parseInt(condition[2], 10);
+    if(condition[0].charAt(0) === '$') {
+      var lower = condition[0].substring(1);
+      lower = parseInt(lower, 10);
+      var upper = condition[2].substring(1);
+      upper = parseInt(upper, 10);
+    } else {
+      lower = parseInt(condition[0], 10);
+      upper = parseInt(condition[2], 10);
+    }
     return param.filter1 >= lower && param.filter1 <= upper;
   }
 
@@ -178,7 +185,7 @@ export default class Grid extends Component {
                              sortFunc={this.setSortBy}/>
              </Col>
              <Col sm="2" className="dropdownLabel">Filter by:</Col>
-             <Col sm="2"><FilterDropdown dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
+             <Col sm="2"><FilterDropdown style={{zIndex: 1000}} dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
              <Col sm="2"><FilterDropdown dropTitle={this.state.filter2Title} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
              <Col sm="2"><ResetDropdown types={this.props.filterAttributes} clearFunc={this.clearFilter}/></Col>
           </Row>

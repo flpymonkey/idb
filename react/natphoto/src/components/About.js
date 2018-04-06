@@ -40,16 +40,16 @@ export default class About extends Component {
  		 		<h1 className="aboutHeader" id="aboutTitle"><span>Meet the SWEet Tea Team</span></h1>
  		 		<Row className="topProfiles">
 					<GroupMember name="Jeff Bell" unitTests="4" issues={this.state.ourIssues['jhbell']} commits={this.state.ourCommits['jhbell']} devtype="Backend" pic="jeff.png" bio="I am a fourth-year computer science major and the Drum Major of Longhorn Band. I am graduating in May 2018 and am looking forward to starting my career with my first job right here in Austin."/>
-					<GroupMember name="Dayanny Caballero" unitTests="3" issues={this.state.ourIssues['dayannyc']} commits={this.state.ourCommits['dayannyc']} devtype="Frontend" pic="dayanny.png" bio= "I am a third-year computer science major interested in IOS mobile development. I enjoy being a TA for the freshman class and watching Netflix in my free time."/>
-					<GroupMember name="Tony DeNapoli" unitTests="13" issues={this.state.ourIssues['tonydenapoli']} commits={this.state.ourCommits['tonydenapoli']} devtype="Frontend" pic="tony.png" bio="I am a fourth year computer science major at UT. I have experience working with Android and iOS and my main interest is in mobile computing. I enjoy playing drums, playing video games, skating, and music!"/>
+					<GroupMember name="Dayanny Caballero" unitTests="7" issues={this.state.ourIssues['dayannyc']} commits={this.state.ourCommits['dayannyc']} devtype="Frontend" pic="dayanny.png" bio= "I am a third-year computer science major interested in IOS mobile development. I enjoy being a TA for the freshman class and watching Netflix in my free time."/>
+					<GroupMember name="Tony DeNapoli" unitTests="23" issues={this.state.ourIssues['tonydenapoli']} commits={this.state.ourCommits['tonydenapoli']} devtype="Frontend" pic="tony.png" bio="I am a fourth year computer science major at UT. I have experience working with Android and iOS and my main interest is in mobile computing. I enjoy playing drums, playing video games, skating, and music!"/>
  		 		</Row>
  		 		<Row className="bottomProfiles">
  		 			<Col sm="1"></Col>
- 		 			<GroupMember name="Ben Johnson" unitTests="68" issues={this.state.ourIssues['flpymonkey']} commits={this.state.ourCommits['flpymonkey']} devtype="Backend" pic="ben.png" bio="I am a third-year computer science major who also is interested in film-making and traveling. I plan to graduate and move to a small village in South Africa."/>
+ 		 			<GroupMember name="Ben Johnson" unitTests="88" issues={this.state.ourIssues['flpymonkey']} commits={this.state.ourCommits['flpymonkey']} devtype="Backend" pic="ben.png" bio="I am a third-year computer science major who also is interested in film-making and traveling. I plan to graduate and move to a small village in South Africa."/>
  		 			<Col sm="2"></Col>
  		 			<GroupMember name="Bri Vargas" unitTests="3" issues={this.state.ourIssues['vargasbri2']} commits={this.state.ourCommits['vargasbri2']} devtype="Frontend" pic="bri.png" bio="I am a third-year computer science major interested in full-stack web development. In my free time I enjoy playing soccer, watching movies, and hanging out with family."/>
  		 		</Row>
- 		 		<TeamStats totalCommits={this.state.totalCommits} totalIssues={this.state.totalIssues} totalUnitTests="88"/>
+ 		 		<TeamStats totalCommits={this.state.totalCommits} totalIssues={this.state.totalIssues} totalUnitTests="125"/>
 
  		 	</div>
 		);
@@ -97,8 +97,8 @@ class TeamStats extends Component {
     				<Col sm="4" className="data">
       					<h2 className="dataHeader">The Data:<br/></h2>
       					<p> We scraped data from <a href = "https://www.nps.gov/subjects/digital/nps-data-api.htm">https://www.nps.gov/subjects/digital/nps-data-api.htm<br/></a> using the RESTful API endpoint to retrieve all national parks. </p>
-                <p>We scraped data from <a href ="https://www.flickr.com/services/api/">https://www.flickr.com/services/api/<br/></a> to retrieve a maximum of 50 photos for each national park</p>
-                <p>We scraped data from <a href = "https://developer.bestbuy.com/">https://developer.bestbuy.com/<br/></a> to retrieve a camera data for each camera associated with each photo we scraped from flickr</p>
+                <p>We scraped data from <a href ="https://www.flickr.com/services/api/">https://www.flickr.com/services/api/<br/></a> to retrieve a maximum of 50 photos for each national park.</p>
+                <p>We scraped data from <a href = "https://developer.bestbuy.com/">https://developer.bestbuy.com/<br/></a> to retrieve a camera data for each camera associated with each photo we scraped from flickr.</p>
     				</Col>
     				<Col sm="4" className="data">
       					<h2 className="dataHeader">Toolbox:</h2>
