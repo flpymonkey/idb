@@ -40,8 +40,8 @@ export default class About extends Component {
  		 		<h1 className="aboutHeader" id="aboutTitle"><span>Meet the SWEet Tea Team</span></h1>
  		 		<Row className="topProfiles">
 					<GroupMember name="Jeff Bell" unitTests="4" issues={this.state.ourIssues['jhbell']} commits={this.state.ourCommits['jhbell']} devtype="Backend" pic="jeff.png" bio="I am a fourth-year computer science major and the Drum Major of Longhorn Band. I am graduating in May 2018 and am looking forward to starting my career with my first job right here in Austin."/>
-					<GroupMember name="Dayanny Caballero" unitTests="3" issues={this.state.ourIssues['dayannyc']} commits={this.state.ourCommits['dayannyc']} devtype="Frontend" pic="dayanny.png" bio= "I am a third-year computer science major interested in IOS mobile development. I enjoy being a TA for the freshman class and watching Netflix in my free time."/>
-					<GroupMember name="Tony DeNapoli" unitTests="13" issues={this.state.ourIssues['tonydenapoli']} commits={this.state.ourCommits['tonydenapoli']} devtype="Frontend" pic="tony.png" bio="I am a fourth year computer science major at UT. I have experience working with Android and iOS and my main interest is in mobile computing. I enjoy playing drums, playing video games, skating, and music!"/>
+					<GroupMember name="Dayanny Caballero" unitTests="7" issues={this.state.ourIssues['dayannyc']} commits={this.state.ourCommits['dayannyc']} devtype="Frontend" pic="dayanny.png" bio= "I am a third-year computer science major interested in IOS mobile development. I enjoy being a TA for the freshman class and watching Netflix in my free time."/>
+					<GroupMember name="Tony DeNapoli" unitTests="23" issues={this.state.ourIssues['tonydenapoli']} commits={this.state.ourCommits['tonydenapoli']} devtype="Frontend" pic="tony.png" bio="I am a fourth year computer science major at UT. I have experience working with Android and iOS and my main interest is in mobile computing. I enjoy playing drums, playing video games, skating, and music!"/>
  		 		</Row>
  		 		<Row className="bottomProfiles">
  		 			<Col sm="1"></Col>
@@ -49,7 +49,7 @@ export default class About extends Component {
  		 			<Col sm="2"></Col>
  		 			<GroupMember name="Bri Vargas" unitTests="3" issues={this.state.ourIssues['vargasbri2']} commits={this.state.ourCommits['vargasbri2']} devtype="Frontend" pic="bri.png" bio="I am a third-year computer science major interested in full-stack web development. In my free time I enjoy playing soccer, watching movies, and hanging out with family."/>
  		 		</Row>
- 		 		<TeamStats totalCommits={this.state.totalCommits} totalIssues={this.state.totalIssues} totalUnitTests="108"/>
+ 		 		<TeamStats totalCommits={this.state.totalCommits} totalIssues={this.state.totalIssues} totalUnitTests="125"/>
 
  		 	</div>
 		);
