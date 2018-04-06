@@ -186,9 +186,9 @@ class AllList(Resource):
 
 GITHUB_ROOT_ = "https://api.github.com"
 USERS_ = ["flpymonkey", "jhbell", "vargasbri2", "tonydenapoli", "dayannyc"]
-BACKUP_DATA = [{"vargasbri2": 18,"dayannyc": 24,"tonydenapoli": 47,"jhbell": 64,
-            "flpymonkey": 8},{"flpymonkey": 15,"jhbell": 30,"vargasbri2": 8,"tonydenapoli": 10,
-            "dayannyc": 8},233,71]
+BACKUP_DATA = [{"vargasbri2": 18,"dayannyc": 37,"tonydenapoli": 67,"jhbell": 87,
+            "flpymonkey": 101},{"flpymonkey": 16,"jhbell": 30,"vargasbri2": 9,"tonydenapoli": 12,
+            "dayannyc": 9},419,113]
 
 def get_json(request_path, params = {}):
     """
