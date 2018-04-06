@@ -2,30 +2,33 @@
 
 ## What did they do well?
 
-* They were very creative with their use of tacos for the logos and rating systems
-* They display a good amount of data for filtering their grid pages in the future.
-* They have really well designed gird pages. These grid pages look like something
-I would expect on a professional website.
-* They have a nice simple design. I love how minimalist the website is!
+* Their site was very clean and intuitive.
+* They had a great frontend design and layout. There website is very quirky, but
+highly functional.
+* There search page returned results in a very clean and reasonable manor.
 
 ## What did we learn from their api / website?
 
-* We learned a better way to format our grid pages so that we can show more data
-with each grid element. We were concerned that showing too many details on the grid
-page would introduce clutter, but after seeing this team's design we have a better
-idea of how to add more detail without adding clutter.
-* We also learned some better front-end design ideas that make the website look
-better.
+* We decided to restructure our about page to look a bit more like theirs, but ours
+shows more data.
+* We tried to make our website detail pages a bit more simplistic like theirs.
+* We used the google map component for our national park location like they showed
+us.
 
 ## What can they do better?
 
-* They were not finished with their rating system in their presentation, they need
-to finish this so their site has the promised functionality.
-* Their detail pages seemed to have some formatting issues that need to be fixed.
+* They were not showing enough relevant information on their search page.
+* Their about page had some formatting issues.
+* They needed to show more information but also balance that with their clean and
+simplistic design.
 
 ## What puzzles us about their api / website?
 
-* I do not know what their website has to do with tacos. But the taco's are cool.
+* I do not know what their website has to do with tacos. But the tacos are cool.
 * We did not go much into detail about their API so I do not know much about it,
 but they seemed to be returning a lot of data in their JSON responses which might
 be able to be minimized to less data.
+* I find it interesting that they handled all of their searching and filtering on
+the backend. We stayed away from this because we thought it might slow down the
+website a bit. With how little data we have, it seems more efficient to cache the
+data on the frontend and search, sort, and filter as needed.
