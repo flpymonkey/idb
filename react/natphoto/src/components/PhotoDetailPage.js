@@ -66,20 +66,20 @@ export default class PhotoDetail extends Component {
   			<div>
   				<Row className="headerRow">
             <Col sm="2"/>
-  					<Col sm="6" id="title">
+  					<Col sm="8" id="photoDetailTitle">
     						<h3 className="photoTitle">{this.state.title}</h3>
     				</Col>
   				</Row>
   				<Row>
-  					<Col xs="10" id="photo">
+            <Col sm="12" md={{ size: 8, offset: 2 }} id="photo">
               		<a href={this.state.flickr_url} target="_blank">
   						  <img id="picture" src={this.state.image_url} alt={this.state.title}  />
               		</a>
   					</Col>
   				</Row>
   				<Row>
-            <Col sm="1"/>
-  					<Col sm="10" id="title">
+            <Col sm="2"/>
+  					<Col sm="8" id="photoDetailTitle">
     				  <h3>by</h3>
     					<h1>{this.state.photographer}</h1>
     					<h3>on</h3>
