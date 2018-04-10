@@ -28,6 +28,7 @@ export default class Grid extends Component {
     this.filter2ConditionValue = this.filter2ConditionValue.bind(this);
     this.filter2ConditionRange = this.filter2ConditionRange.bind(this);
     this.clearFilter = this.clearFilter.bind(this);
+    this.generalFilter = this.generalFilter.bind(this);
 
 
 		this.state = {
@@ -62,14 +63,24 @@ export default class Grid extends Component {
   }
 
   filter1ConditionValue(param) {
-    var condition = this.state.filter1;
+    return this.generalFilter(param.filter1, this.state.filter1);
+  }
+
+  filter2ConditionValue(param) {
+    return this.generalFilter(param.filter2, this.state.filter2);
+  }
+
+  generalFilter(item, condition) {
     if(condition === "< 2000") {
-      condition.split(" ");
+      condition = condition.split(' ');
       condition = parseInt(condition[1], 10);
-      var value = parseInt(param.filter1, 10);
+      var value = parseInt(item, 10);
       return value < condition;
     }
-    return param.filter1.includes(condition);
+    if(item instanceof Date) {
+      return item === condition;
+    }
+    return item.includes(condition);
   }
 
   filter2ConditionRange(param) {
@@ -97,16 +108,7 @@ export default class Grid extends Component {
     return param.filter2 >= lower && param.filter2 <= upper;
   }
 
-  filter2ConditionValue(param) {
-    var condition = this.state.filter2;
-    if(condition === "< 2000") {
-      condition = condition.split(' ');
-      condition = parseInt(condition[1], 10);
-      var value = parseInt(param.filter2, 10);
-      return value < condition;
-    }
-    return param.filter2 === condition;
-  }
+
 
   filter1Data(data) {
     if (this.props.filter1Range) {
