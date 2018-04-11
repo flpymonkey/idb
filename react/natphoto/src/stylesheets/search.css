@@ -53,7 +53,8 @@ p {
 }
 
 .highlighted {
-  color: #EAEAEA;
-  background-color: #262626;
+  color: #009D00;
+  background-color: inherit;
   font-weight: bold;
+  padding: 0;
 }
