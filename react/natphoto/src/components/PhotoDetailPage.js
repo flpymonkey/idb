@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import EmptyPage from './EmptyPage.js'
+import EmptyPage from './EmptyPage.js';
+import Parser from 'html-react-parser';
 import '../stylesheets/photodetailpage.css';
 import '../stylesheets/general.css';
 
@@ -91,7 +92,7 @@ export default class PhotoDetail extends Component {
 
             <Col sm="12">
               <h3>Description</h3>
-              <p>{this.state.description || "N/A"}</p>
+              <p>{Parser(this.state.description) || "N/A"}</p>
               <a href={this.state.flickr_url} target="_blank">
                 <p>Check out this photo on flickr!</p>
               </a>
