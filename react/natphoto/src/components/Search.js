@@ -61,10 +61,18 @@ export default class Search extends Component {
             {name: 'sensor', weight: 0.01}
             ]
           })
+          var search_string = this.state.search_string;
+          if (search_string !== undefined){
+            search_string = search_string.trim();
+          }
           var search_results = fuse.search(this.state.search_string)
-          search_results = search_results.map((elem, i)=>(
-            <SearchItem key={i} data={elem} searchTerm={this.props.location.search} />
-          ))
+          if (search_string !== "" && search_string !== undefined){
+            search_results = search_results.map((elem, i)=>(
+              <SearchItem key={i} data={elem} searchTerm={this.props.location.search} />
+            ))
+          } else {
+            search_results = []
+          }
           this.setState({
             results: search_results,
             loading: false,
@@ -90,9 +98,11 @@ export default class Search extends Component {
           </Col>
         );
       } else {
-        if (this.state.results === undefined ||
-            this.state.results.length === 0) {
-          return ("No results found.");
+        if (this.state.results.length === 0) {
+          if (this.state.search_string === undefined){
+            return ("Type in a search term in the search bar above!");
+          }
+          return ("No results found for \"" + this.state.search_string + "\".");
         } else {
           return (
             <div className="searchResults">
