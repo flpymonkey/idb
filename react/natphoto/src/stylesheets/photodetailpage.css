@@ -11,8 +11,10 @@
     font-size: 75%;
 }
 
-#title {
+#photoDetailTitle {
 	text-align: center;
+  font-family: Ahem!, sans-serif;
+  font-size: 300%;
 }
 
 #linksRow {
@@ -26,7 +28,11 @@
 
 #picture {
 	width: 100%;
-  margin-left: 10%;
+  padding-bottom: 5%
+}
+
+#photo {
+
 }
 
 .headerRow {

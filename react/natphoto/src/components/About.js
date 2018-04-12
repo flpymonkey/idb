@@ -79,20 +79,33 @@ class TeamStats extends Component {
 			<div className="body">
 				<h2 className="aboutHeader" id="teamStats">Team Stats:</h2>
  				<Row className="teamStatsWrapper">
-    				<Col sm="1"></Col>
     				<Col sm="3">
       					<Row id="teamStatsBox">
        						<Col sm="7">
           						<span className="teamStatsInfo">Total Commits:<br/></span>
-          						<span className="teamStatsInfo">Total Issues:<br/></span>
-         						<span className="teamStatsInfo">Total Unit Tests:</span>
         					</Col>
         					<Col sm="5">
           						<span className="teamStatsInfo">{this.props.totalCommits}<br/></span>
-          						<span className="teamStatsInfo">{this.props.totalIssues}<br/></span>
-         						<span className="teamStatsInfo">{this.props.totalUnitTests}</span>
         					</Col>
       					</Row>
+								<br/>
+								<Row>
+									<Col sm="7">
+									<span className="teamStatsInfo">Total Issues:</span>
+									</Col>
+									<Col sm="5">
+									<span className="teamStatsInfo">{this.props.totalIssues}<br/></span>
+									</Col>
+								</Row>
+								<br/>
+								<Row>
+									<Col sm="7">
+									<span className="teamStatsInfo">Total Unit Tests:</span>
+									</Col>
+									<Col sm="5">
+									<span className="teamStatsInfo">{this.props.totalUnitTests}</span>
+									</Col>
+								</Row>
       				</Col>
     				<Col sm="4" className="data">
       					<h2 className="dataHeader">The Data:<br/></h2>

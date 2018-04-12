@@ -29,7 +29,6 @@ export default class Grid extends Component {
     this.filter2ConditionRange = this.filter2ConditionRange.bind(this);
     this.clearFilter = this.clearFilter.bind(this);
 
-
 		this.state = {
       activePage: 1,
       sortBy: "sort1",
@@ -43,69 +42,52 @@ export default class Grid extends Component {
 	}
 
   filter1ConditionRange(param) {
-    var condition = this.state.filter1.split(' ');
-    if(condition[0] === "<") {
-      return param.filter1 < parseInt(condition[1], 10);
-    } else if(condition[0] === ">") {
-      return param.filter1 > parseInt(condition[1], 10);
-    }
-    if(condition[0].charAt(0) === '$') {
-      var lower = condition[0].substring(1);
-      lower = parseInt(lower, 10);
-      var upper = condition[2].substring(1);
-      upper = parseInt(upper, 10);
-    } else {
-      lower = parseInt(condition[0], 10);
-      upper = parseInt(condition[2], 10);
-    }
-    return param.filter1 >= lower && param.filter1 <= upper;
-  }
-
-  filter1ConditionValue(param) {
-    var condition = this.state.filter1;
-    if(condition === "< 2000") {
-      condition.split(" ");
-      condition = parseInt(condition[1], 10);
-      var value = parseInt(param.filter1, 10);
-      return value < condition;
-    }
-    return param.filter1.includes(condition);
+    return this.generalRangeFilter(param.filter1, this.state.filter1);
   }
 
   filter2ConditionRange(param) {
-    var condition = this.state.filter2.split(' ');
+    return this.generalRangeFilter(param.filter2, this.state.filter2);
+  }
 
-    if (Number.isInteger(param.filter2)) {
-      if(condition[0] === "<") {
-        return param.filter2 < parseInt(condition[1], 10);
-      } else if(condition[0] === ">") {
-        return param.filter2 > parseInt(condition[1], 10);
-      }
-      var lower = parseInt(condition[0], 10);
-      var upper = parseInt(condition[2], 10);
-    } else {
-      if(condition[0] === "<") {
-        return param.filter2 < parseFloat(condition[1], 10);
-      } else if(condition[0] === ">") {
-        return param.filter2 > parseFloat(condition[1], 10);
-      }
-      lower = parseFloat(condition[0], 10);
-      upper = parseFloat(condition[2], 10) + 1;
+  generalRangeFilter(item, condition) {
+    var newCond = condition.split(' ');
+    if(newCond[0].charAt(0) === '$') {
+      var lower = newCond[0].substring(1);
+      var upper = newCond[2].substring(1);
+      return this.checkingCondition(item, parseInt(lower, 10), parseFloat(newCond[1], 10), parseInt(upper, 10), newCond[0]);
+    } else if (Number.isInteger(item)) {
+        return this.checkingCondition(item, parseInt(newCond[0], 10), parseInt(newCond[1], 10), parseInt(newCond[2], 10), newCond[0]);
+    } else { // special case for megapixels
+      return this.checkingCondition(item, parseFloat(newCond[0], 10), parseFloat(newCond[1], 10), parseFloat(newCond[2], 10)+1, newCond[0]);
     }
+  }
 
-    //change name eventually
-    return param.filter2 >= lower && param.filter2 <= upper;
+  checkingCondition(item, lower, condVal, upper, condition) {
+    if(condition === "<") {
+      return item < condVal;
+    } else if(condition === ">") {
+      return item > condVal;
+    }
+    return item >= lower && item <= upper;
+  }
+
+  filter1ConditionValue(param) {
+    return this.generalValFilter(param.filter1, this.state.filter1);
   }
 
   filter2ConditionValue(param) {
-    var condition = this.state.filter2;
+    return this.generalValFilter(param.filter2, this.state.filter2);
+  }
+
+  generalValFilter(item, condition) {
     if(condition === "< 2000") {
       condition = condition.split(' ');
-      condition = parseInt(condition[1], 10);
-      var value = parseInt(param.filter2, 10);
-      return value < condition;
+      return this.checkingCondition(item, 0, parseInt(condition[1], 10), 0, condition)
     }
-    return param.filter2 === condition;
+    if(item instanceof Date) {
+      return item === condition;
+    }
+    return item.includes(condition);
   }
 
   filter1Data(data) {

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import EmptyPage from './EmptyPage.js'
+import EmptyPage from './EmptyPage.js';
+import Parser from 'html-react-parser';
 import '../stylesheets/photodetailpage.css';
 import '../stylesheets/general.css';
 
@@ -64,22 +65,22 @@ export default class PhotoDetail extends Component {
     else {
   		return (
   			<div>
-  				<Row className="headerRow">
-            <Col sm="2"/>
-  					<Col sm="6" id="title">
-    						<h3 className="photoTitle">{this.state.title}</h3>
-    				</Col>
-  				</Row>
   				<Row>
-  					<Col xs="10" id="photo">
+            <Col sm="12" md={{ size: 8, offset: 2 }} id="photo">
               		<a href={this.state.flickr_url} target="_blank">
   						  <img id="picture" src={this.state.image_url} alt={this.state.title}  />
               		</a>
   					</Col>
   				</Row>
+          <Row className="headerRow">
+            <Col sm="2"/>
+            <Col sm="8" id="photoDetailTitle">
+                <h3 className="photoTitle">{this.state.title}</h3>
+            </Col>
+          </Row>
   				<Row>
-            <Col sm="1"/>
-  					<Col sm="10" id="title">
+            <Col sm="2"/>
+  					<Col sm="8" id="photoDetailTitle">
     				  <h3>by</h3>
     					<h1>{this.state.photographer}</h1>
     					<h3>on</h3>
@@ -91,7 +92,7 @@ export default class PhotoDetail extends Component {
 
             <Col sm="12">
               <h3>Description</h3>
-              <p>{this.state.description || "N/A"}</p>
+              <p>{Parser(this.state.description) || "N/A"}</p>
               <a href={this.state.flickr_url} target="_blank">
                 <p>Check out this photo on flickr!</p>
               </a>
