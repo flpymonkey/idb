@@ -65,12 +65,6 @@ export default class PhotoDetail extends Component {
     else {
   		return (
   			<div>
-  				<Row className="headerRow">
-            <Col sm="2"/>
-  					<Col sm="8" id="photoDetailTitle">
-    						<h3 className="photoTitle">{this.state.title}</h3>
-    				</Col>
-  				</Row>
   				<Row>
             <Col sm="12" md={{ size: 8, offset: 2 }} id="photo">
               		<a href={this.state.flickr_url} target="_blank">
@@ -78,6 +72,12 @@ export default class PhotoDetail extends Component {
               		</a>
   					</Col>
   				</Row>
+          <Row className="headerRow">
+            <Col sm="2"/>
+            <Col sm="8" id="photoDetailTitle">
+                <h3 className="photoTitle">{this.state.title}</h3>
+            </Col>
+          </Row>
   				<Row>
             <Col sm="2"/>
   					<Col sm="8" id="photoDetailTitle">

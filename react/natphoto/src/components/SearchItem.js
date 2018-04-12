@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-import ReactDOMServer from 'react-dom/server';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Parser from 'html-react-parser';
 import Highlighter from "react-highlight-words";
 
 export default class SearchItem extends Component {
