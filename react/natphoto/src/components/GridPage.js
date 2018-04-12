@@ -153,24 +153,7 @@ export default class Grid extends Component {
     if (data.length === 0 && (this.state.filter1 !== "" || this.state.filter2 !== "")) {
       return (
         <Container fluid>
-          <Row>
-             <Col sm="4"></Col>
-             <Col className="gridTitle" sm="4"><h1>{this.props.title}</h1></Col>
-             <Col sm="4"></Col>
-          </Row>
-          <Row className="dropDowns">
-             <Col sm="2" className="dropdownLabel">Sort by:</Col>
-             <Col sm="2">
-               <SortDropdown dropTitle={this.state.sortTitle}
-                             items={this.props.sortAttributes}
-                             types={this.props.sortTypes}
-                             sortFunc={this.setSortBy}/>
-             </Col>
-             <Col sm="2" className="dropdownLabel">Filter by:</Col>
-             <Col sm="2"><FilterDropdown style={{zIndex: 1000}} dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
-             <Col sm="2"><FilterDropdown dropTitle={this.state.filter2Title} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
-             <Col sm="2"><ResetDropdown types={this.props.filterAttributes} clearFunc={this.clearFilter}/></Col>
-          </Row>
+          <GridHeader data={this.props} state={this.state} sortFunc={this.setSortBy} filterFunc1={this.setFilter1} filterFunc2={this.setFilter2} clearFunc={this.clearFilter} />
           <Row>
   					<Col sm="4"/>
   					<Col sm="4">
@@ -188,24 +171,7 @@ export default class Grid extends Component {
     }else {
       return (
           <Container fluid>
-            <Row>
-               <Col sm="4"></Col>
-               <Col className="gridTitle" sm="4"><h1>{this.props.title}</h1></Col>
-               <Col sm="4"></Col>
-            </Row>
-            <Row className="dropDowns">
-               <Col sm="2" className="dropdownLabel">Sort by:</Col>
-               <Col sm="2">
-                 <SortDropdown dropTitle={this.state.sortTitle}
-                               items={this.props.sortAttributes}
-                               types={this.props.sortTypes}
-                               sortFunc={this.setSortBy}/>
-               </Col>
-               <Col sm="2" className="dropdownLabel">Filter by:</Col>
-               <Col sm="2"><FilterDropdown dropTitle={this.state.filter1Title} options={this.props.filterOptions1} filterFunc={this.setFilter1}/></Col>
-               <Col sm="2"><FilterDropdown dropTitle={this.state.filter2Title} options={this.props.filterOptions2} filterFunc={this.setFilter2}/></Col>
-               <Col sm="2"><ResetDropdown types={this.props.filterAttributes} clearFunc={this.clearFilter}/></Col>
-            </Row>
+            <GridHeader data={this.props} state={this.state} sortFunc={this.setSortBy} filterFunc1={this.setFilter1} filterFunc2={this.setFilter2} clearFunc={this.clearFilter} />
             <Datasort
               data={data}
               sortBy={sortBy}
@@ -274,7 +240,7 @@ class GridItemCard extends Component {
       );
     } else {
       return (
-        <CardImg className="imgInCard"
+        <CardImg
              src={this.props.data.img}
              alt="Card image cap" onLoad={this.handleLoad.bind(this)} />
       );
@@ -298,5 +264,33 @@ class GridItemCard extends Component {
           </div>
         </Col>
       );
+  }
+}
+
+
+class GridHeader extends Component {
+  render() {
+    return (
+      <div>
+        <Row>
+           <Col sm="4"></Col>
+           <Col className="gridTitle" sm="4"><h1>{this.props.data.title}</h1></Col>
+           <Col sm="4"></Col>
+        </Row>
+        <Row className="dropDowns">
+           <Col sm="2" className="dropdownLabel">Sort by:</Col>
+           <Col sm="2">
+             <SortDropdown dropTitle={this.props.state.sortTitle}
+                           items={this.props.data.sortAttributes}
+                           types={this.props.data.sortTypes}
+                           sortFunc={this.props.sortFunc}/>
+           </Col>
+           <Col sm="2" className="dropdownLabel">Filter by:</Col>
+           <Col sm="2"><FilterDropdown style={{zIndex: 1000}} dropTitle={this.props.state.filter1Title} options={this.props.data.filterOptions1} filterFunc={this.props.filterFunc1}/></Col>
+           <Col sm="2"><FilterDropdown dropTitle={this.props.state.filter2Title} options={this.props.data.filterOptions2} filterFunc={this.props.filterFunc2}/></Col>
+           <Col sm="2"><ResetDropdown types={this.props.data.filterAttributes} clearFunc={this.props.clearFunc}/></Col>
+        </Row>
+      </div>
+    );
   }
 }
