@@ -116,9 +116,9 @@ export default class SearchItem extends Component {
       highlightWords = parsed['?q'].split(" ");
     }
     return (
+      <Link to={this.state.link} className="searchResults">
       <Row className="singleResult">
-        <Col sm="6">
-          <Link to={this.state.link} className="searchResults">
+        <Col className="searchResultDetails" sm="6">
           <h2>
           <Highlighter
             highlightClassName="highlighted"
@@ -127,7 +127,6 @@ export default class SearchItem extends Component {
             textToHighlight={this.state.header}
           />
           </h2>
-          </Link>
           <div>{this.getModelAttributes(highlightWords)}</div>
         </Col>
         <Col sm="6">
@@ -136,6 +135,7 @@ export default class SearchItem extends Component {
           </div>
         </Col>
       </Row>
+      </Link>
     )
   }
 

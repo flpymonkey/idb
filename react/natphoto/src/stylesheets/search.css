@@ -17,6 +17,7 @@
 }
 
 .searchResults:hover {
+  text-decoration: none;
   color: #EAEAEA;
 }
 
@@ -24,6 +25,10 @@
   background-color: #3A3A3A;
   margin-bottom: 5%;
   padding: 20px 10px 20px 40px;
+}
+
+.singleResult:hover {
+  border: solid 1px white;
 }
 
 .img-fluid {
