@@ -82,9 +82,7 @@ export default class Grid extends Component {
   generalValFilter(item, condition) {
     if(condition === "< 2000") {
       condition = condition.split(' ');
-      condition = parseInt(condition[1], 10);
-      var value = parseInt(item, 10);
-      return value < condition;
+      return this.checkingCondition(item, 0, parseInt(condition[1], 10), 0, condition)
     }
     if(item instanceof Date) {
       return item === condition;
