@@ -3,6 +3,8 @@ import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Highlighter from "react-highlight-words";
 
+const SEARCH_RANGE = 100;
+
 export default class SearchItem extends Component {
   constructor(props){
     super(props);
@@ -83,13 +85,29 @@ export default class SearchItem extends Component {
     }
   }
 
+  truncate(searchTerm, val) {
+    if(val.length <= SEARCH_RANGE * 2) {
+      return val;
+    }
+    var indexOfTerm = val.toLowerCase().indexOf(searchTerm.toLowerCase());
+    var result = "";
+    if(indexOfTerm > SEARCH_RANGE) {
+      result += "...";
+    }
+    result += val.substring(Math.max(0, indexOfTerm - SEARCH_RANGE), Math.min(val.length, indexOfTerm + SEARCH_RANGE));
+    if(indexOfTerm + searchTerm.length + SEARCH_RANGE < val.length) {
+      result += "...";
+    }
+    return result;
+  }
+
   getModelAttributes(highlightWords){
     return this.state.headers.map(function(elem, i) {
       for (let word of highlightWords){
-        console.log(word);
-        if (this.state[elem].indexOf(word) !== -1){
-          if(this.state[elem] !== "") {
-            var htmlFreeString = this.state[elem].replace(/<.*?>/g, "");
+        var indexOfWord = this.state[elem].toLowerCase().indexOf(word.toLowerCase());
+        if (indexOfWord !== -1){
+            let truncatedTerm = this.truncate(word, this.state[elem])
+            var htmlFreeString = truncatedTerm.replace(/<.*?>/g, "");
             return (
               <div key={i}>
               <br/>
@@ -102,7 +120,6 @@ export default class SearchItem extends Component {
               />
               </div>
             )
-          }
         }
       }
       return ;
