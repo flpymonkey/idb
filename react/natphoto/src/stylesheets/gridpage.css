@@ -4,7 +4,11 @@
 
 .card-img {
 	top width: 100px;
-	height: 200px;
+	max-height: 200px;
+	max-width: 100%;
+	margin: 0 auto;
+	display: block;
+	width: auto;
 }
 
 .CardBody {
