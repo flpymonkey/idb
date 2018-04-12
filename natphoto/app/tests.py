@@ -35,7 +35,7 @@ class Tests(TestCase):
     def test_parks(self):
         r = self.app.get('/parks')
         _json_r = json.loads(r.data)
-        self.assertEqual(len(_json_r), 49)
+        self.assertEqual(len(_json_r), 48)
         self.assertEqual(r.status_code, 200)
 
     def test_parks_by_camera(self):
@@ -95,7 +95,7 @@ class Tests(TestCase):
         r = self.app.get('/all')
         _json_r = json.loads(r.data)
         # This number might change as we update the database contents
-        self.assertEqual(len(_json_r), 803) 
+        self.assertEqual(len(_json_r), 803)
         self.assertEqual(r.status_code, 200)
 
     def test_individual_photo(self):
