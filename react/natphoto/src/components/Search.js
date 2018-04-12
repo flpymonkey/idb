@@ -98,7 +98,7 @@ export default class Search extends Component {
       } else {
         if (this.state.results === undefined ||
             this.state.results.length === 0) {
-          return ("No results found.");
+          return ("No results found for \"" + this.state.search_string + "\".");
         } else {
           return (
             <div className="searchResults">
