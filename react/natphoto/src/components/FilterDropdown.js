@@ -25,10 +25,10 @@ export default class FilterDropdown extends React.Component {
 
   render() {
     var dropdownOpts = this.props.options.map((opt, i) =>
-      <div onClick={() => this.setFilterBy(opt)}>
-      <DropdownItem id={"filter"+i}
-          key={i}>{opt}
-      </DropdownItem>
+      <div key={i} onClick={() => this.setFilterBy(opt)}>
+        <DropdownItem key={i} id={"filter"+i} >
+          {opt}
+        </DropdownItem>
       </div>
 
   )

@@ -120,8 +120,10 @@ export default class Grid extends Component {
 
   clearFilter(filter) {
     if (filter === "filter1") {
+      console.log(1)
       this.setState({filter1: "", filter1Title: this.props.filterAttributes[0], activePage: 1})
     } else {
+      console.log(2)
       this.setState({filter2: "", filter2Title: this.props.filterAttributes[1], activePage: 1})
     }
   }
@@ -140,6 +142,7 @@ export default class Grid extends Component {
   }
 
 	render() {
+    console.log("render is being called");
     const {sortBy, direction} = this.state
     var data = this.props.data;
 
@@ -240,7 +243,7 @@ class GridItemCard extends Component {
       );
     } else {
       return (
-        <CardImg
+        <CardImg className="card-img"
              src={this.props.data.img}
              alt="Card image cap" onLoad={this.handleLoad.bind(this)} />
       );
@@ -253,7 +256,9 @@ class GridItemCard extends Component {
           <div className="cardDiv">
             <Card id={this.props.data.detail_url}>
               <Link to={this.props.data.detail_url}>
-              {this.renderImage()}
+              <div className="imageContainer">
+                {this.renderImage()}
+              </div>
               <CardBody>
                 <CardTitle>{this.props.data.title}</CardTitle>
                 <CardSubtitle>{this.props.data.subtitle}</CardSubtitle>

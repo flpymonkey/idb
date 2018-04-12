@@ -11,6 +11,10 @@
 	width: auto;
 }
 
+.imageContainer {
+	height: 200px;
+}
+
 .CardBody {
 	flex: 1 1 auto;
 }
