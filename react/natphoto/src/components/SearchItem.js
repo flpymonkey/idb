@@ -85,24 +85,27 @@ export default class SearchItem extends Component {
 
   getModelAttributes(highlightWords){
     return this.state.headers.map(function(elem, i) {
-      if(this.state[elem] !== "") {
-        var htmlFreeString = this.state[elem].replace(/<.*?>/g, "");
-        return (
-          <div key={i}>
-          <br/>
-          <h3> {elem.toUpperCase()} </h3>
-          <Highlighter
-          highlightClassName="highlighted"
-          searchWords={highlightWords}
-          autoEscape={true}
-          textToHighlight={htmlFreeString}
-          />
-          </div>
-        )
+      for (let word of highlightWords){
+        console.log(word);
+        if (this.state[elem].indexOf(word) !== -1){
+          if(this.state[elem] !== "") {
+            var htmlFreeString = this.state[elem].replace(/<.*?>/g, "");
+            return (
+              <div key={i}>
+              <br/>
+              <h3> {elem.toUpperCase()} </h3>
+              <Highlighter
+              highlightClassName="highlighted"
+              searchWords={highlightWords}
+              autoEscape={true}
+              textToHighlight={htmlFreeString}
+              />
+              </div>
+            )
+          }
+        }
       }
-      else {
-        return ;
-      }
+      return ;
     }.bind(this)
   )
 }
