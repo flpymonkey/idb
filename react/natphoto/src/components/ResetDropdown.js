@@ -14,6 +14,7 @@ export default class ResetDropdown extends React.Component {
   }
 
   clearFilter(param) {
+    console.log(3)
     this.props.clearFunc(param);
   }
 
@@ -30,16 +31,8 @@ export default class ResetDropdown extends React.Component {
           Reset
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem id="reset1">
-            <div onClick={() => this.clearFilter("filter1")}>
-              {this.props.types[0]}
-            </div>
-          </DropdownItem>
-          <DropdownItem id="reset2">
-            <div onClick={() => this.clearFilter("filter2")}>
-              {this.props.types[1]}
-            </div>
-          </DropdownItem>
+            <DropdownItem id="reset1" onClick={() => this.clearFilter("filter1")}>{this.props.types[0]}</DropdownItem>
+            <DropdownItem id="reset2" onClick={() => this.clearFilter("filter2")}>{this.props.types[1]}</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     );
