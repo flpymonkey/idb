@@ -103,11 +103,11 @@ export default class SearchItem extends Component {
 
   getModelAttributes(highlightWords){
     return this.state.headers.map(function(elem, i) {
+      var searchPhrase = this.state[elem].toLowerCase().replace(/<.*?>/g, "");
       for (let word of highlightWords){
-        var indexOfWord = this.state[elem].toLowerCase().indexOf(word.toLowerCase());
+        var indexOfWord = searchPhrase.toLowerCase().indexOf(word.toLowerCase());
         if (indexOfWord !== -1){
-            let truncatedTerm = this.truncate(word, this.state[elem])
-            var htmlFreeString = truncatedTerm.replace(/<.*?>/g, "");
+            let truncatedTerm = this.truncate(word, searchPhrase)
             return (
               <div key={i}>
               <br/>
@@ -116,7 +116,7 @@ export default class SearchItem extends Component {
               highlightClassName="highlighted"
               searchWords={highlightWords}
               autoEscape={true}
-              textToHighlight={htmlFreeString}
+              textToHighlight={truncatedTerm}
               />
               </div>
             )

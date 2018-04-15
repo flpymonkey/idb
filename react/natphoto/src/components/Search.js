@@ -15,7 +15,6 @@ export default class Search extends Component {
 
       var queryString = require('qs');
       var parsed = queryString.parse(this.props.location.search);
-      console.log(parsed);
 
       this.state = {
         search_string: parsed['?q'],
