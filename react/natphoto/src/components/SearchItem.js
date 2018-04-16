@@ -103,7 +103,7 @@ export default class SearchItem extends Component {
 
   getModelAttributes(highlightWords){
     return this.state.headers.map(function(elem, i) {
-      var searchPhrase = this.state[elem].toLowerCase().replace(/<.*?>/g, "");
+      var searchPhrase = this.state[elem].replace(/<.*?>/g, "");
       for (let word of highlightWords){
         var indexOfWord = searchPhrase.toLowerCase().indexOf(word.toLowerCase());
         if (indexOfWord !== -1){
