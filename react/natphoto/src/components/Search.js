@@ -64,7 +64,7 @@ export default class Search extends Component {
           if (search_string !== undefined){
             search_string = search_string.trim();
           }
-          var search_results = fuse.search(this.state.search_string)
+          var search_results = fuse.search(this.state.search_string);
           if (search_string !== "" && search_string !== undefined){
             search_results = search_results.map((elem, i)=>(
               <SearchItem key={i} data={elem} searchTerm={this.props.location.search} />

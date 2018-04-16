@@ -2,7 +2,6 @@ import React, {Component} from "react"
 import { MyCarousel } from './Carousel.js'
 import { Row, Col, Container } from 'reactstrap';
 import '../stylesheets/Home.css'
-import '../stylesheets/navbar.css'
 import '../stylesheets/general.css';
 
 export default class Home extends Component {
