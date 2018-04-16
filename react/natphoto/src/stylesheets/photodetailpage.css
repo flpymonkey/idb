@@ -17,9 +17,9 @@
   font-size: 300%;
 }
 
-#linksRow {
+.links {
 	text-align: center;
-	font-size: x-large;
+	font-size: xx-large;
 }
 
 #descriptionRow {
@@ -29,10 +29,6 @@
 #picture {
 	width: 100%;
   padding-bottom: 5%
-}
-
-#photo {
-
 }
 
 .headerRow {

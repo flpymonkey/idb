@@ -80,36 +80,39 @@ export default class PhotoDetail extends Component {
           </Row>
   				<Row>
             <Col sm="2"/>
-  					<Col sm="8" id="photoDetailTitle">
+  					<Col sm="4" id="photoDetailTitle">
     				  <h3>by</h3>
     					<h1>{this.state.photographer}</h1>
     					<h3>on</h3>
     					<h2>{this.state.date}</h2>
     					<h2>{this.state.likes} Likes</h2>
     				</Col>
+            <Col sm="5" className="links">
+              <div>
+                <Link to={this.state.camera_url}>
+                  <i className="material-icons">photo_camera</i>{this.state.camera}
+                </Link>
+              </div>
+              <br />
+              <div>
+                <Link to={this.state.park_url}>
+                  <i className="material-icons">landscape</i>{this.state.park}
+                </Link>
+              </div>
+              <br />
+              <div>
+                <a href={this.state.flickr_url} target="_blank">
+                  <i className="material-icons">insert_photo</i>{"Check out this photo on flickr!"}
+                </a>
+              </div>
+            </Col>
   				</Row>
           <Row id="descriptionRow">
-
             <Col sm="12">
               <h3>Description</h3>
               <p>{Parser(this.state.description) || "N/A"}</p>
-              <a href={this.state.flickr_url} target="_blank">
-                <p>Check out this photo on flickr!</p>
-              </a>
             </Col>
           </Row>
-      		<Row id="linksRow">
-     				<Col sm="6" id="cameraLink">
-              <Link to={this.state.camera_url}>
-                {this.state.camera}<i className="material-icons">photo_camera</i>
-              </Link>
-            </Col>
-     				<Col sm="6" id="parkLink">
-              <Link to={this.state.park_url}>
-                {this.state.park}<i className="material-icons">landscape</i>
-              </Link>
-            </Col>
-   				</Row>
           <br />
    		 	</div>
   		);
