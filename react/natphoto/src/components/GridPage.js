@@ -262,16 +262,20 @@ class GridItemCard extends Component {
             <SyncLoader color={"#009d00"} size={10} margin={"5px"} />
           </div>
         </Row>
+        <div className="imageContainer">
         <CardImg className="hidden"
              src={this.props.data.img}
              alt="Card image cap" onLoad={this.handleLoad.bind(this)} />
         </div>
+        </div>
       );
     } else {
       return (
+        <div className="imageContainer">
         <CardImg className="card-img"
              src={this.props.data.img}
              alt="Card image cap" onLoad={this.handleLoad.bind(this)} />
+        </div>
       );
     }
   }
@@ -282,9 +286,7 @@ class GridItemCard extends Component {
           <div className="cardDiv">
             <Card id={this.props.data.detail_url}>
               <Link to={this.props.data.detail_url}>
-              <div className="imageContainer">
                 {this.renderImage()}
-              </div>
               <CardBody>
                 <CardTitle>{this.props.data.title}</CardTitle>
                 <CardSubtitle>{this.props.data.subtitle}</CardSubtitle>
