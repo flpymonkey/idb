@@ -29,11 +29,11 @@ constructor(props) {
   }
   render() {
     return (
-      <div>
+      <div className="nav-div">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">
-            <span>NatPhoto</span>
-            <i className="material-icons">landscape</i>
+            NatPhoto<i className="material-icons" id="logo">landscape</i>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -51,7 +51,7 @@ constructor(props) {
                 <NavLink href="/about">About</NavLink>
               </NavItem>
               <NavItem>
-                <span className="navList"><SearchBar /></span>
+                <span className="searchBar"><SearchBar /></span>
               </NavItem>
             </Nav>
           </Collapse>
@@ -60,19 +60,3 @@ constructor(props) {
     );
   }
 }
-
-
-
-// const NavBar = () => (
-// 	<div>
-// 		<ul className = "customNavbar">
-//             <span className="navList"><SearchBar /></span>
-// 			<Link to="/about" className="navList" id="navAbout">About</Link>
-// 			<Link to="/cameras" className="navList" id="navCameras">Cameras</Link>
-// 			<Link to="/parks" className="navList" id="navParks">Parks</Link>
-// 			<Link to="/photos" className="navList" id="navPhotos">Photos</Link>
-// 			<Link to="/" className="navList" id="navHome">Home</Link>
-// 			<Link to="/" id="logo"><span>NatPhoto</span><i className="material-icons">landscape</i></Link>
-// 		</ul>
-// 	</div>
-// );

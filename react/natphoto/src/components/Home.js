@@ -9,7 +9,6 @@ export default class Home extends Component {
 		return (
 			<Container>
 				<Row className="body">
-						<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
 						<Col sm="12" md="8">
 							<MyCarousel/>
 						</Col>
