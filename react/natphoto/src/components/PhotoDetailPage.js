@@ -78,32 +78,29 @@ export default class PhotoDetail extends Component {
   				</Row>
           <Row className="headerRow">
             <Col sm="2"/>
-            <Col sm="8" id="photoDetailTitle">
+            <Col sm="8" id="title">
                 <h3 className="photoTitle">{this.state.title}</h3>
             </Col>
           </Row>
   				<Row>
-            <Col sm="2"/>
-  					<Col sm="4" id="photoDetailTitle">
-    				  <h3>by</h3>
-    					<h1>{this.state.photographer}</h1>
-    					<h3>on</h3>
-    					<h2>{this.state.date}</h2>
-    					<h2>{this.state.likes} Likes</h2>
+  					<Col sm="6" id="photoDetailTitle">
+    					<div>by {this.state.photographer}</div>
+    					<div>taken on {this.state.date}</div>
+    					<div>{this.state.likes} Likes</div>
     				</Col>
-            <Col sm="5" className="links">
+            <Col sm="6" className="links">
               <div>
                 <Link to={this.state.camera_url}>
                   <i className="material-icons">photo_camera</i>{this.state.camera}
                 </Link>
               </div>
-              <br />
+
               <div>
                 <Link to={this.state.park_url}>
                   <i className="material-icons">landscape</i>{this.state.park}
                 </Link>
               </div>
-              <br />
+
               <div>
                 <a href={this.state.flickr_url} target="_blank">
                   <i className="material-icons">insert_photo</i>{"Check out this photo on flickr!"}

@@ -14,7 +14,7 @@
 #photoDetailTitle {
 	text-align: center;
   font-family: Ahem!, sans-serif;
-  font-size: 300%;
+  font-size: xx-large;
 }
 
 .links {
@@ -27,7 +27,10 @@
 }
 
 #picture {
-	width: 100%;
+	width: auto;
+  align-items: center;
+  display: block;
+  height: 500px;
   padding-bottom: 5%
 }
 
