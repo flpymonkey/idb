@@ -63,10 +63,9 @@ export default class PhotoDetail extends Component {
       return <EmptyPage />
     }
     else {
+      var description = "N/A";
       if (this.state.description.length) {
-        var description = this.state.description;
-      } else {
-        var description = "N/A";
+        description = this.state.description;
       }
   		return (
   			<div>
@@ -115,7 +114,7 @@ export default class PhotoDetail extends Component {
           <Row id="descriptionRow">
             <Col sm="12">
               <h3>Description</h3>
-              <p>{description}</p>
+              <p>{Parser(description) || "N/A"}</p>
             </Col>
           </Row>
           <br />

@@ -34,7 +34,7 @@
 
 .img-fluid {
   height: auto;
-  width: auto;
+  width: 100%;
   max-width: 400px;
   max-height: 400px;
 }

@@ -11,23 +11,23 @@
   font-family: Ahem!, sans-serif;
 }
 
-.navbar-light .navbar-toggler {
-  background-color: #EAEAEA;
+.navbar-dark .navbar-toggler {
+  border-color: grey !important;
 }
 
-nav.navbar.navbar-expand-md.navbar-light.bg-light {
+nav.navbar.navbar-expand-md.navbar-dark.bg-dark {
   background-color: black !important;
 }
 
-.navbar-light .navbar-nav .nav-link {
+.navbar-dark .navbar-nav .nav-link {
   color: #EAEAEA !important;
 }
 
-.navbar-light .navbar-brand {
+.navbar-dark .navbar-brand {
   color: #EAEAEA !important;
 }
 
-.navbar-light .navbar-brand {
+.navbar-dark .navbar-brand {
   padding: 7px 5px 15px 5px;
   font-size: 20px;
   height:100%;
