@@ -52,6 +52,9 @@ class PythonOrgSearch(unittest.TestCase):
         assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
         driver.find_element_by_class_name("navbar-brand").click()
         assert (driver.find_element_by_class_name("title").text == "NatPhoto")
+        driver.find_element_by_link_text('About').click()
+        assert driver.find_element_by_id("aboutTitle")
+
 
     def test_parkgrid_photo(self) :
         driver = self.driver
