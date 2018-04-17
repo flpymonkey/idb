@@ -132,13 +132,40 @@ export default class Grid extends Component {
       this.setState({activePage: pageNumber});
   }
 
+  getRow(data, index, numItems) {
+    let count = 0;
+    let cards = [];
+    while (count < numItems) {
+      cards.push(
+        <GridItemCard key={count + index} data={data[count + index]} />
+      )
+      count++;
+    }
+    return cards;
+  }
+
   getCards(data) {
     let endVal = (this.state.activePage * 16)
     let startVal = ((this.state.activePage - 1) * 16)
     const slice = data.slice(startVal, endVal)
-    return slice.map((elem, i) =>
-      <GridItemCard key={i} data={elem} />
-    )
+    let count = 0;
+    let rows = [];
+    while (slice.length - count >= 4) {
+      rows.push(
+        <Row className="cardRow" key={count}>
+          {this.getRow(slice, count, 4)}
+        </Row>
+      )
+      count += 4;
+    }
+    if (count < slice.length) {
+      rows.push(
+        <Row className="cardRow">
+          {this.getRow(slice, count, slice.length - count)}
+        </Row>
+      )
+    }
+    return rows;
   }
 
 	render() {
@@ -188,9 +215,7 @@ export default class Grid extends Component {
               }) => {
                 return (
                   <div>
-                  <Row>
                     {this.getCards(data)}
-                  </Row>
                   <Row>
                     <Col className="paginationCol">
                       <Pagination
@@ -253,7 +278,7 @@ class GridItemCard extends Component {
 
   render() {
       return(
-        <Col xl="3" lg="3" md="3" sm="3">
+        <Col xl="3" lg="3" md="6" sm="12">
           <div className="cardDiv">
             <Card id={this.props.data.detail_url}>
               <Link to={this.props.data.detail_url}>
