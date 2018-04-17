@@ -19,7 +19,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome("./chromedriver")
-        self.driver.implicitly_wait(20)
+        self.driver.implicitly_wait(25)
 
     def elementExists(self, byThis, val) :
         try:
@@ -277,6 +277,39 @@ class PythonOrgSearch(unittest.TestCase):
         assert (wantedCard.get_attribute("id") == "/cameras/Olympus TG-820")
         wantedCard = cards[9]
         assert (wantedCard.get_attribute("id") == "/cameras/samsung SM-G950U")
+
+    def test_photos_pagination(self) :
+        driver = self.driver
+        driver.get("http://natphoto.me")
+        driver.find_element_by_id("navPhotos").click()
+        assert (driver.find_element_by_class_name("gridTitle").text == "Photos")
+        pagination = driver.find_element_by_link_text('4')
+        pagination.click()
+        assert driver.find_element_by_id("/photos/344")
+        assert driver.find_element_by_id("/photos/90")
+        assert driver.find_element_by_id("/photos/406")
+
+    def test_parks_pagination(self) :
+        driver = self.driver
+        driver.get("http://natphoto.me")
+        driver.find_element_by_id("navParks").click()
+        assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
+        pagination = driver.find_element_by_link_text('3')
+        pagination.click()
+        assert driver.find_element_by_id("/parks/Wind Cave National Park")
+
+    def test_cameras_pagination(self) :
+        driver = self.driver
+        driver.get("http://natphoto.me")
+        driver.find_element_by_id("navCameras").click()
+        assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
+        pagination = driver.find_element_by_link_text('4')
+        pagination.click()
+        pagination = driver.find_element_by_link_text('6')
+        pagination.click()
+        assert driver.find_element_by_id("/cameras/samsung SM-G935V")
+
+
 
     def tearDown(self):
         self.driver.close()
