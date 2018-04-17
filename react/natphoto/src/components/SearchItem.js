@@ -28,6 +28,7 @@ export default class SearchItem extends Component {
     var iso = "";
     var water_resistant = "";
     var sensor = "";
+    var type = "";
     if (this.props.data.id) {
       header = "Photo: " + this.props.data.title;
       park = this.props.data.park;
@@ -49,6 +50,7 @@ export default class SearchItem extends Component {
       header = "Camera: " + this.props.data.name;
       link = "/cameras/" + this.props.data.name;
       price = this.props.data.price;
+      type = this.props.data.type;
       weight = this.props.data.weight;
       effective_megapixels = this.props.data.effective_megapixels;
       total_megapixels = this.props.data.total_megapixels;
@@ -69,6 +71,7 @@ export default class SearchItem extends Component {
       directions: directions,
       photographer: photographer,
       date: date,
+      type: type,
       likes: likes,
       price: price,
       weight: weight,
@@ -78,7 +81,7 @@ export default class SearchItem extends Component {
       iso: iso,
       water_resistant: water_resistant,
       sensor: sensor,
-      headers: ["park", "camera", "description", "weather", "states", "directions",
+      headers: ["park", "camera", "description", "weather", "type", "states", "directions",
                 "photographer", "date", "likes", "price", "weight",
                 "effective_megapixels", "total_megapixels", "shutter_speeds",
                 "iso", "water_resistant", "sensor"]
@@ -111,7 +114,7 @@ export default class SearchItem extends Component {
             return (
               <div key={i}>
               <br/>
-              <h3> {elem.toUpperCase()} </h3>
+              <h3> {elem.toUpperCase().replace("_", " ")} </h3>
               <Highlighter
               highlightClassName="highlighted"
               searchWords={highlightWords}
