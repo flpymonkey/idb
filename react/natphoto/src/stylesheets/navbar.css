@@ -11,12 +11,12 @@
   font-family: Ahem!, sans-serif;
 }
 
-.navbar-dark .navbar-toggler {
-  border-color: grey !important;
+.navbar {
+	background-color: black;
 }
 
-nav.navbar.navbar-expand-md.navbar-dark.bg-dark {
-  background-color: black !important;
+.navbar-dark .navbar-toggler {
+  border-color: grey !important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -43,26 +43,6 @@ ul.ml-auto.navbar-nav {
   height: 100%;
   padding-left: 2%;
 }
-
-/* .nav-item, #logo {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-	font-family: Ahem!, sans-serif;
-	font-size: large;
-}
-
-#logo {
-  float:left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-	font-family: Ahem!, sans-serif;
-	font-size: large;
-} */
 
 .nav-item:hover {
 	color: #009D00;
