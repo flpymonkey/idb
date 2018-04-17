@@ -31,7 +31,7 @@ constructor(props) {
     return (
       <div className="nav-div">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        <Navbar color="dark" dark expand="md">
+        <Navbar color="dark" dark expand="sm">
           <NavbarBrand href="/">
             NatPhoto<i className="material-icons" id="logo">landscape</i>
           </NavbarBrand>
