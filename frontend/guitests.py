@@ -163,7 +163,18 @@ class PythonOrgSearch(unittest.TestCase):
         driver.find_element_by_id("filter5").click()
         assert driver.find_element_by_id("/cameras/Canon EOS-1D X")
 
-    def test_reset_button(self) :
+    def test_park_filter(self) :
+        driver = self.driver
+        driver.get("http://natphoto.me")
+        driver.find_element_by_id("navParks").click()
+        assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
+        filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
+        wantedButton = filterButtons[1]
+        wantedButton.click()
+        driver.find_element_by_id("filter3").click()
+        assert driver.find_element_by_id("/parks/Channel Islands National Park")
+
+    def test_photos_reset_button(self) :
         driver = self.driver
         driver.get("http://natphoto.me")
         driver.find_element_by_id("navPhotos").click()
@@ -176,6 +187,100 @@ class PythonOrgSearch(unittest.TestCase):
         wantedButton.click()
         driver.find_element_by_id("reset1").click()
         assert driver.find_element_by_id("/photos/324")
+
+    def test_parks_reset_button(self) :
+        driver = self.driver
+        driver.get("http://natphoto.me")
+        driver.find_element_by_id("navParks").click()
+        assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
+        filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
+        wantedButton = filterButtons[1]
+        wantedButton.click()
+        driver.find_element_by_id("filter5").click()
+        assert driver.find_element_by_id("/parks/Dry Tortugas National Park")
+        wantedButton = filterButtons[3]
+        wantedButton.click()
+        driver.find_element_by_id("reset1").click()
+        assert driver.find_element_by_id("/parks/Badlands National Park")
+
+    def test_cameras_reset_button(self) :
+        driver = self.driver
+        driver.get("http://natphoto.me")
+        driver.find_element_by_id("navCameras").click()
+        assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
+        filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
+        wantedButton = filterButtons[2]
+        wantedButton.click()
+        driver.find_element_by_id("filter9").click()
+        assert driver.find_element_by_id("/cameras/Canon EOS 5DS")
+        wantedButton = filterButtons[3]
+        wantedButton.click()
+        driver.find_element_by_id("reset2").click()
+        assert driver.find_element_by_id("/cameras/Apple iPhone 7 Plus")
+
+    def test_photos_filter_sort(self) :
+        driver = self.driver
+        driver.get("http://natphoto.me")
+        driver.find_element_by_id("navPhotos").click()
+        assert (driver.find_element_by_class_name("gridTitle").text == "Photos")
+        filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
+        wantedButton = filterButtons[2]
+        wantedButton.click()
+        filterItems = driver.find_elements_by_class_name(("dropdown-item"))
+        wantedItem = filterItems[28]
+        wantedItem.click()
+        cards = driver.find_elements_by_class_name(("card"))
+        assert len(cards) == 7
+        driver.find_element_by_id("sortButton").click()
+        driver.find_element_by_id("sort6").click()
+        wantedCard = cards[0]
+        assert (wantedCard.get_attribute("id") == "/photos/486")
+        wantedCard = cards[6]
+        assert (wantedCard.get_attribute("id") == "/photos/567")
+
+    def test_parks_filter_sort(self) :
+        driver = self.driver
+        driver.get("http://natphoto.me")
+        driver.find_element_by_id("navParks").click()
+        assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
+        filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
+        wantedButton = filterButtons[2]
+        wantedButton.click()
+        filterItems = driver.find_elements_by_class_name(("dropdown-item"))
+        wantedItem = filterItems[39]
+        wantedItem.click()
+        cards = driver.find_elements_by_class_name(("card"))
+        assert len(cards) == 8
+        driver.find_element_by_id("sortButton").click()
+        driver.find_element_by_id("sort5").click()
+        wantedCard = cards[0]
+        assert (wantedCard.get_attribute("id") == "/parks/Mount Rainier National Park")
+        wantedCard = cards[7]
+        assert (wantedCard.get_attribute("id") == "/parks/Glacier National Park")
+
+    def test_cameras_filter_sort(self) :
+        driver = self.driver
+        driver.get("http://natphoto.me")
+        driver.find_element_by_id("navCameras").click()
+        assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
+        filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
+        wantedButton = filterButtons[2]
+        wantedButton.click()
+        filterItems = driver.find_elements_by_class_name(("dropdown-item"))
+        wantedItem = filterItems[13]
+        wantedItem.click()
+        cards = driver.find_elements_by_class_name(("card"))
+        assert len(cards) == 10
+        driver.find_element_by_id("sortButton").click()
+        driver.find_element_by_id("sort5").click()
+        wantedCard = cards[0]
+        assert (wantedCard.get_attribute("id") == "/cameras/Olympus TG-820")
+        wantedCard = cards[9]
+        assert (wantedCard.get_attribute("id") == "/cameras/samsung SM-G950U")
+
+    def tearDown(self):
+        self.driver.close()
+
 
 
 if __name__ == "__main__":
