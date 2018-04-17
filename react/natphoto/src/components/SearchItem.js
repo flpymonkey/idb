@@ -141,7 +141,7 @@ export default class SearchItem extends Component {
     return (
       <Link to={this.state.link} className="searchResults">
       <Row className="singleResult">
-        <Col className="searchResultDetails" sm="6">
+        <Col className="searchResultDetails" md="6">
           <h2>
           <Highlighter
             highlightClassName="highlighted"
@@ -152,7 +152,7 @@ export default class SearchItem extends Component {
           </h2>
           <div>{this.getModelAttributes(highlightWords)}</div>
         </Col>
-        <Col sm="6">
+        <Col md="6">
           <div className="imgWrapper">
             <img src={this.state.img_url} className="img-fluid" alt={this.state.header}/>
           </div>
