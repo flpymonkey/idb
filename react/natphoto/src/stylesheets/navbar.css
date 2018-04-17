@@ -1,4 +1,4 @@
-.customNavbar {
+.Navbar {
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -11,11 +11,11 @@
 
 }
 
-.navList {
+.navItem {
   float: right;
 }
 
-.navList, #logo {
+.navItem, #logo {
   display: block;
   color: white;
   text-align: center;
@@ -35,7 +35,7 @@
 	font-size: large;
 }
 
-.navList:hover {
+.navItem:hover {
 	color: #009D00;
 	text-decoration: none;
 }
