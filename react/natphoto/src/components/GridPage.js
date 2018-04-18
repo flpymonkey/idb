@@ -53,16 +53,20 @@ export default class Grid extends Component {
   generalRangeFilter(item, condition) {
     var newCond = condition.split(' ');
     if(newCond[0].charAt(0) === '$') {
+      // remove $ from the first and second integer of range
       var lower = newCond[0].substring(1);
       var upper = newCond[2].substring(1);
       return this.checkingCondition(item, parseInt(lower, 10), parseFloat(newCond[1], 10), parseInt(upper, 10), newCond[0]);
     } else if (Number.isInteger(item)) {
+        // filter option doesn't contain $ and the filter data of current card is integer
         return this.checkingCondition(item, parseInt(newCond[0], 10), parseInt(newCond[1], 10), parseInt(newCond[2], 10), newCond[0]);
-    } else { // special case for megapixels
+    } else {
+      // special case for megapixels, since they are in floats
       return this.checkingCondition(item, parseFloat(newCond[0], 10), parseFloat(newCond[1], 10), parseFloat(newCond[2], 10)+1, newCond[0]);
     }
   }
 
+  // check if current card data should be included when filtering by this condition or not
   checkingCondition(item, lower, condVal, upper, condition) {
     if(condition === "<") {
       return item < condVal;
@@ -82,6 +86,7 @@ export default class Grid extends Component {
 
   generalValFilter(item, condition) {
     if(condition === "< 2000") {
+       // special case for filter condition that contains <
       condition = condition.split(' ');
       return this.checkingCondition(item, 0, parseInt(condition[1], 10), 0, condition)
     }
@@ -91,6 +96,7 @@ export default class Grid extends Component {
     return item.includes(condition);
   }
 
+  // check if filter1 option has ranges or just one value, send correct function to filter by
   filter1Data(data) {
     if (this.props.filter1Range) {
       return data.filter(this.filter1ConditionRange);
@@ -99,6 +105,7 @@ export default class Grid extends Component {
     }
   }
 
+  // check if filter2 option has ranges or just one value, send correct function to filter by
   filter2Data(data) {
     if (this.props.filter2Range) {
       return data.filter(this.filter2ConditionRange);
@@ -111,14 +118,17 @@ export default class Grid extends Component {
     this.setState({sortBy: sort, direction: direction, sortTitle: label, activePage: 1});
   }
 
+  // correctly set filter1 state to filter option chosen
   setFilter1(filter) {
     this.setState({filter1: filter, filter1Title: filter, activePage: 1});
   }
 
+  // correctly set filter2 state to filter option chosen
   setFilter2(filter) {
     this.setState({filter2: filter, filter2Title: filter, activePage: 1});
   }
 
+  // check if filter chosen to reset was either filter1 or filter2, reset the correct one
   clearFilter(filter) {
     if (filter === "filter1") {
       this.setState({filter1: "", filter1Title: this.props.filterAttributes[0], activePage: 1})
@@ -171,6 +181,7 @@ export default class Grid extends Component {
     const {sortBy, direction} = this.state
     var data = this.props.data;
 
+    // filter data by filter1 or filter2 if either one was chosen
     if(this.state.filter1 !== "") {
       data = this.filter1Data(data);
     }
@@ -179,7 +190,9 @@ export default class Grid extends Component {
     }
 
     if (data.length === 0 && (this.state.filter1 !== "" || this.state.filter2 !== "")) {
+      // either filter1 or filter2 was chosen and there's no data under that filter
       return (
+        // no data found that fits filter chosen
         <Container fluid>
           <GridHeader data={this.props} state={this.state} sortFunc={this.setSortBy} filterFunc1={this.setFilter1} filterFunc2={this.setFilter2} clearFunc={this.clearFilter} />
           <Row>
@@ -196,7 +209,7 @@ export default class Grid extends Component {
   				</Row>
         </Container>
       );
-    }else {
+    } else {
       return (
           <Container fluid>
             <GridHeader data={this.props} state={this.state} sortFunc={this.setSortBy} filterFunc1={this.setFilter1} filterFunc2={this.setFilter2} clearFunc={this.clearFilter} />
@@ -258,7 +271,6 @@ class GridItemCard extends Component {
       );
   }
 }
-
 
 class GridHeader extends Component {
   render() {
