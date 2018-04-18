@@ -12,14 +12,14 @@
 }
 
 #photoDetailTitle {
-	text-align: center;
   font-family: Ahem!, sans-serif;
   font-size: large;
+  text-align: left;
 }
 
 .links {
-	text-align: center;
 	font-size: large;
+  text-align: left;
 }
 
 #descriptionRow {

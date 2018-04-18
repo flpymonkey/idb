@@ -254,16 +254,16 @@ class GridItemCard extends Component {
     if (this.state.loading) {
       return (
         <div>
-        <Row>
-          <div className="col-xs-6 col-xs-offset-3 spinner">
-            <SyncLoader color={"#009d00"} size={10} margin={"5px"} />
+          <Row>
+            <div className="col-xs-6 col-xs-offset-3 spinner">
+              <SyncLoader color={"#009d00"} size={10} margin={"5px"} />
+            </div>
+          </Row>
+          <div className="imageContainer">
+            <CardImg className="hidden"
+               src={this.props.data.img}
+               alt="Card image cap" onLoad={this.handleLoad.bind(this)} />
           </div>
-        </Row>
-        <div className="imageContainer">
-        <CardImg className="hidden"
-             src={this.props.data.img}
-             alt="Card image cap" onLoad={this.handleLoad.bind(this)} />
-        </div>
         </div>
       );
     } else {
