@@ -34,6 +34,7 @@
 }
 
 #photoContainer {
+  margin-top: 2em;
   height: 40em;
   justify-content: center;
   align-items: center;
