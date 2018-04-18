@@ -5,6 +5,11 @@ import EmptyPage from './EmptyPage.js'
 import '../stylesheets/general.css';
 import '../stylesheets/cameradetail.css';
 
+/*
+ * Renders page that represents a camera model including details like
+ * a picture of the camera, its price, name, megapixels, etc.
+ * Links to related parks and photos.
+ */
 export default class CameraDetail extends Component {
 
   constructor(props) {
@@ -31,12 +36,18 @@ export default class CameraDetail extends Component {
     }
   }
 
+  /*
+   * Fetches all data on the given camera
+   */
   componentDidMount() {
     this.getCameraInfo();
     this.getPhotosForCamera();
     this.getParksForCamera();
   }
 
+  /*
+   * Fetches camera info from our API
+   */
   getCameraInfo() {
     fetch('http://api.natphoto.me/cameras/' + this.props.match.params.camera_name, {
       method: 'GET',
@@ -69,6 +80,9 @@ export default class CameraDetail extends Component {
     });
   }
 
+  /*
+   * Fetches list of photos taken with this camera from our API
+   */
   getPhotosForCamera() {
     fetch('http://api.natphoto.me/photos?camera=' + this.props.match.params.camera_name, {
       method: 'GET',
@@ -85,6 +99,9 @@ export default class CameraDetail extends Component {
     });
   }
 
+  /*
+   * Fetches parks at which this camera was used from our API
+   */
   getParksForCamera() {
     fetch('http://api.natphoto.me/parks?camera=' + this.props.match.params.camera_name, {
       method: 'GET',
@@ -101,6 +118,9 @@ export default class CameraDetail extends Component {
     });
   }
 
+  /*
+   * Creates and returns CameraLabels object with info to display based on API data saved in the state
+   */
   getCameraLabels() {
     return {
         "Price:": this.state.price,
@@ -117,7 +137,11 @@ export default class CameraDetail extends Component {
     };
   }
 
-	render (){
+/*
+ * If this component was rendered by an invalid URL, display EmptyPage.
+ * Otherwise, display Camera details.
+ */
+render (){
     if(this.state.valid === "unknown"){
       return <div/>
     }
