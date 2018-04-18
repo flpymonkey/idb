@@ -32,6 +32,12 @@ export default class CameraDetail extends Component {
   }
 
   componentDidMount() {
+    this.getCameraInfo();
+    this.getPhotosForCamera();
+    this.getParksForCamera();
+  }
+
+  getCameraInfo() {
     fetch('http://api.natphoto.me/cameras/' + this.props.match.params.camera_name, {
       method: 'GET',
       dataType: 'json',
@@ -61,8 +67,9 @@ export default class CameraDetail extends Component {
         });
       }
     });
+  }
 
-    // Get photos for this camera
+  getPhotosForCamera() {
     fetch('http://api.natphoto.me/photos?camera=' + this.props.match.params.camera_name, {
       method: 'GET',
       dataType: 'json',
@@ -76,7 +83,9 @@ export default class CameraDetail extends Component {
           photos: curr_photos
         });
     });
+  }
 
+  getParksForCamera() {
     fetch('http://api.natphoto.me/parks?camera=' + this.props.match.params.camera_name, {
       method: 'GET',
       dataType: 'json',
@@ -92,6 +101,22 @@ export default class CameraDetail extends Component {
     });
   }
 
+  getCameraLabels() {
+    return {
+        "Price:": this.state.price,
+        "Camera Type:": this.state.type,
+        "Effective Megapixels:": this.state.effective_megapixels,
+        "Total Megapixels:": this.state.total_megapixels,
+        "Image Resolution:": this.state.image_resolution,
+        "Video Resolution:": this.state.video_resolution,
+        "Shutter Speeds:": this.state.shutter_speeds,
+        "ISO:": this.state.iso,
+        "Water Resistant:": this.state.water_resistant,
+        "Weight:": this.state.weight,
+        "Sensor:": this.state.sensor
+    };
+  }
+
 	render (){
     if(this.state.valid === "unknown"){
       return <div/>
@@ -100,19 +125,7 @@ export default class CameraDetail extends Component {
       return <EmptyPage />
     }
     else {
-  		var cameraLabels = {
-          "Price:": this.state.price,
-          "Camera Type:": this.state.type,
-          "Effective Megapixels:": this.state.effective_megapixels,
-          "Total Megapixels:": this.state.total_megapixels,
-          "Image Resolution:": this.state.image_resolution,
-          "Video Resolution:": this.state.video_resolution,
-          "Shutter Speeds:": this.state.shutter_speeds,
-          "ISO:": this.state.iso,
-          "Water Resistant:": this.state.water_resistant,
-          "Weight:": this.state.weight,
-          "Sensor:": this.state.sensor
-      }
+  		var cameraLabels = this.getCameraLabels();
   		return (
   			<div>
   				<h1 className="cameraHeader"><span>{this.state.name}</span></h1>
