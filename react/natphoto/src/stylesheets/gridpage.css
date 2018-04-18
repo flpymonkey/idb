@@ -34,10 +34,6 @@
 	height: inherit;
 }
 
-.cardRow {
-
-}
-
 .card-title {
   max-width: 40ch;
   text-overflow: ellipsis;

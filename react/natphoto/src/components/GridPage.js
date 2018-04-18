@@ -158,7 +158,7 @@ export default class Grid extends Component {
     }
     if (count < slice.length) {
       rows.push(
-        <Row className="cardRow">
+        <Row className="cardRow" key={count}>
           {this.getRow(slice, count, slice.length - count)}
         </Row>
       )
