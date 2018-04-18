@@ -7,31 +7,49 @@
 }
 
 .photoTitle {
-    margin-bottom: 5%;
-    font-size: 75%;
+  margin-bottom: 5%;
+  font-size: 75%;
 }
 
 #photoDetailTitle {
 	text-align: center;
   font-family: Ahem!, sans-serif;
-  font-size: xx-large;
+  font-size: large;
 }
 
 .links {
 	text-align: center;
-	font-size: xx-large;
+	font-size: large;
 }
 
 #descriptionRow {
   padding: 2em;
 }
 
-#picture {
-	width: auto;
+#photoTitleColumn {
+  justify-content: center;
   align-items: center;
-  display: block;
-  height: 500px;
-  padding-bottom: 5%
+  display: flex;
+  font-size: x-large;
+}
+
+#photoContainer {
+  height: 40em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#picture {
+  max-height: 40em;
+	max-width: 100%;
+	margin: auto;
+	display: block;
+	width: auto;
+}
+
+.imageRow {
+  height: 100%;
 }
 
 .headerRow {
