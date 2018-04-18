@@ -39,7 +39,7 @@ export default class About extends Component {
         <Row>
           <Col>
             <p className="aboutDesc">Natphoto allows photographers to compare cameras, photos, and the locations where photos are taken so they can improve their overall trip and photography. This site allows photographers to compare specific cameras details by showing pictures taken with cameras in specific locations. Additionally, this site pulls data about national parks from NPS.gov so that people can get a better idea of weather conditions, park hours, and park alerts before they travel. This website is a one-stop-shop for picking the right camera for the best possible photos in the best national parks in the United States!</p>
-             <h1 className="aboutHeader" id="aboutTitle"><span>Meet the SWEet Tea Team</span></h1>
+             <div className="aboutHeader" id="aboutTitle"><span>Meet the SWEet Tea Team</span></div>
           </Col>
         </Row>
           <Row className="topProfiles">
@@ -84,7 +84,7 @@ class TeamStats extends Component {
       <div className="body">
         <h2 className="aboutHeader" id="teamStats">Team Stats:</h2>
          <Row className="teamStatsWrapper">
-            <Col sm="3">
+            <Col className="totalsCol" sm="3">
                 <Row id="teamStatsBox">
                    <Col sm="7">
                       <span className="teamStatsInfo">Total Commits:<br/></span>
@@ -114,10 +114,12 @@ class TeamStats extends Component {
               </Col>
             <Col sm="4" className="data">
                 <h2 className="dataHeader">The Data:<br/></h2>
-                <p> We scraped data from <a href = "https://www.nps.gov/subjects/digital/nps-data-api.htm">https://www.nps.gov/subjects/digital/nps-data-api.htm<br/></a> using the RESTful API endpoint to retrieve all national parks. </p>
-                <p>We scraped data from <a href ="https://www.flickr.com/services/api/">https://www.flickr.com/services/api/<br/></a> to retrieve a maximum of 50 photos for each national park.</p>
-                <p>We scraped data from <a href = "https://developer.bestbuy.com/">https://developer.bestbuy.com/<br/></a> to retrieve a camera data for each camera associated with each photo we scraped from flickr.</p>
-            </Col>
+                <div className="dataWrapper">
+                  <p> We scraped data from <a href = "https://www.nps.gov/subjects/digital/nps-data-api.htm">https://www.nps.gov/subjects/digital/nps-data-api.htm<br/></a> using the RESTful API endpoint to retrieve all national parks. </p>
+                  <p>We scraped data from <a href ="https://www.flickr.com/services/api/">https://www.flickr.com/services/api/<br/></a> to retrieve a maximum of 50 photos for each national park.</p>
+                  <p>We scraped data from <a href = "https://developer.bestbuy.com/">https://developer.bestbuy.com/<br/></a> to retrieve a camera data for each camera associated with each photo we scraped from flickr.</p>
+                </div>
+          </Col>
             <Col sm="4" className="data">
                 <h2 className="dataHeader">Toolbox:</h2>
                <span><a href="https://aws.amazon.com/ec2/">Amazon EC2</a>: For hosting the <a href="http://api.natphoto.me/parks">API</a><br/><a href="https://aws.amazon.com/s3/">Amazon S3</a>: For hosting the front-end React app<br/><a href="https://reactstrap.github.io/">reactstrap</a>: For styling our React app<br/><a href="https://flask-restful.readthedocs.io/en/latest/">Flask-RESTful</a>: For serving the API endpoints<br/><a href="http://www.sqlalchemy.org/">SQLAlchemy</a>: For querying our database<br/><a href="https://www.postgresql.org/">PostgreSQL</a>: Database engine hosted on Amazon RDS<br/><a href="https://github.com/flpymonkey/idb">Github</a><br/><a href="https://flpymonkey.gitbooks.io/report/content/">GitBook Documentation</a><br/><a href="https://travis-ci.org/flpymonkey/idb">Travis-ci</a><br/><a href="https://www.getpostman.com/collections/16213d651eace5b189b4">Postman</a></span>

@@ -93,22 +93,21 @@ export default class ParkDetail extends Component {
         'Directions:':this.state.directions, 'Description:': this.state.description};
   		return(
   			<div>
-  				<h1 className="parkHeader"><span>{this.state.name}</span></h1>
+  				<div className="parkHeader"><span>{this.state.name}</span></div>
           <Row>
-  	  				<Col sm="5">
-  							<div className="imgWrapper">
-  	    					<img className="image" src={this.state.image_url} alt={this.state.name}/>
+  	  				<Col sm="6">
+  							<div className="parkImgWrapper">
+  	    					<img className="parkImage" src={this.state.image_url} alt={this.state.name}/>
   							</div>
   	    			</Col>
-              <Col sm="1"/>
-              <Col sm="5">
-              <iframe
-                title={this.state.name}
-                width="400"
-                height="300"
-                frameBorder="0" style={{border:0}}
-                src={"https://www.google.com/maps/embed/v1/place?key=" + MapsAPIKey + "&q=" + this.state.name} allowFullScreen>
-              </iframe>
+              <Col sm="6" className="maps">
+                <iframe
+                  title={this.state.name}
+                  width="400"
+                  height="300"
+                  frameBorder="0" style={{border:0}}
+                  src={"https://www.google.com/maps/embed/v1/place?key=" + MapsAPIKey + "&q=" + this.state.name} allowFullScreen>
+                </iframe>
   	    			</Col>
   	  		</Row>
   				<DetailHeader pic={null} infoAttributes={parkLabels}/>

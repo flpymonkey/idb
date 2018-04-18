@@ -12,9 +12,9 @@ export default class ScrollableTable extends Component {
       <td key={i}>
         <Link to={elem.path}>
         <div className="hovereffect">
-        <img className = "photoImage" src={elem.img} alt="hi"/>
+        <img className = "photoImage" src={elem.img} alt="Not found"/>
           <div className="overlay">
-            <h1>{elem.name || "Unknown"}</h1>
+            {elem.name || "Unknown"}
           </div>
         </div>
         </Link>
@@ -23,10 +23,10 @@ export default class ScrollableTable extends Component {
 
 		return(
 			<div className="body">
-				<h1 id="title" >{this.props.tableTitle}</h1>
+				<h1 id="scrollableTitle" >{this.props.tableTitle}</h1>
 				<div id="scrollableTable">
 					<Table className = "photoTable">
-    					<tbody>
+    					<tbody className="tblBody">
           					<tr>
             					<th scope="row"></th>
 											{elems}

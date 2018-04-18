@@ -3,18 +3,33 @@
 }
 
 .photoTable {
-  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.photoImage {
-  width: 300px;
+.hovereffect img{
+	height: 200px !important;
 }
 
-#title {
+.hovereffect {
+	width: auto !important;
+}
+
+.hovereffect .overlay {
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+#scrollableTitle {
   color: #EAEAEA;
-  font-size: 50px;
+  font-size: 25px;
   margin-left: 5%;
   margin-bottom: .5%;
+}
+
+.photoImage {
+	width: auto;
 }

@@ -1,7 +1,7 @@
 .parkHeader {
  overflow: hidden;
  text-align: center;
- font-size: 400%;
+ font-size: 50px;
  font-family: Ahem!, sans-serif;
  margin-bottom: 5%;
  margin-top: 2em;
@@ -29,7 +29,7 @@
 .npsHeader {
  overflow: hidden;
  text-align: center;
- font-size: 200%;
+ font-size: 25px;
  font-family: Ahem!, sans-serif;
  margin-top: 4%;
 }
@@ -44,8 +44,26 @@
   margin-right: auto;
 }
 
-.imgWrapper {
+.parkImgWrapper {
   margin-left: auto;
+}
+
+.parkImage {
+  max-height: 300px;
+  margin: auto;
+  display: block;
+  width: auto;
+}
+
+iframe {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+
+.maps {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 #parkPhotos, #cameraPhotos {

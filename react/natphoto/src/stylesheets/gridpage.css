@@ -34,10 +34,6 @@
 	height: inherit;
 }
 
-.cardRow {
-
-}
-
 .card-title {
   max-width: 40ch;
   text-overflow: ellipsis;
@@ -57,13 +53,13 @@
 .gridTitle {
 	text-align: center;
 	color: #EAEAEA;
+	font-size: 50px;
 }
 .dropdownLabel {
 	color: #EAEAEA;
-	font-size: 150%;
+	font-size: 25px;
 	text-align: center;
 }
-
 
 .dropDowns {
 	margin-top: 1%;

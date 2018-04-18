@@ -85,8 +85,8 @@ export default class PhotoDetail extends Component {
   				<Row>
             <Col sm="2"></Col>
   					<Col sm="3" id="photoDetailTitle">
-    					<div>by {this.state.photographer}</div>
-    					<div>taken on {this.state.date}</div>
+    					<div>Taken by {this.state.photographer}</div>
+    					<div>Taken on {this.state.date}</div>
     					<div>{this.state.likes} Likes</div>
     				</Col>
             <Col sm="2"></Col>
@@ -112,7 +112,7 @@ export default class PhotoDetail extends Component {
   				</Row>
           <Row id="descriptionRow">
             <Col sm="12">
-              <h3>Description</h3>
+              <div className="photoDescHeader">Description</div>
               <p>{Parser(description) || "N/A"}</p>
             </Col>
           </Row>

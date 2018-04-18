@@ -8,18 +8,18 @@
 
 .photoTitle {
   margin-bottom: 5%;
-  font-size: 75%;
+  font-size: 20px;
 }
 
 #photoDetailTitle {
   font-family: Ahem!, sans-serif;
-  font-size: large;
+  font-size: 16px;
   text-align: left;
 }
 
 .links {
-	font-size: large;
-  text-align: left;
+	text-align: left;
+	font-size: 16px;
 }
 
 #descriptionRow {
@@ -35,18 +35,19 @@
 
 #photoContainer {
   margin-top: 2em;
-  height: 40em;
+  height: 30em;
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
 #picture {
-  max-height: 40em;
+  max-height: 30em;
 	max-width: 100%;
 	margin: auto;
 	display: block;
 	width: auto;
+  border: 1px solid #EAEAEA;
 }
 
 .imageRow {
@@ -56,4 +57,8 @@
 .headerRow {
 	margin-top: 0%;
 	margin-bottom: 0%;
+}
+
+.photoDescHeader {
+  font-size: 20px;
 }
