@@ -18,6 +18,7 @@ install:
   - pip install -r ./natphoto/requirements.txt
   - npm install -g npm
   - cd ./react/natphoto && npm install
+  - cd ../../
 
 before_script:
   - export DISPLAY=:99.0
