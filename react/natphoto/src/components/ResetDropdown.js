@@ -14,7 +14,6 @@ export default class ResetDropdown extends React.Component {
   }
 
   clearFilter(param) {
-    console.log(3)
     this.props.clearFunc(param);
   }
 

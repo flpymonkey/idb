@@ -106,8 +106,8 @@ export default class ParkDetail extends Component {
                 title={this.state.name}
                 width="400"
                 height="300"
-                frameborder="0" style={{border:0}}
-                src={"https://www.google.com/maps/embed/v1/place?key=" + MapsAPIKey + "&q=" + this.state.name} allowfullscreen>
+                frameBorder="0" style={{border:0}}
+                src={"https://www.google.com/maps/embed/v1/place?key=" + MapsAPIKey + "&q=" + this.state.name} allowFullScreen>
               </iframe>
   	    			</Col>
   	  		</Row>

@@ -7,7 +7,6 @@ export default class DetailHeader extends Component {
 	render (){
 		var keys = Object.keys(this.props.infoAttributes);
 		const listItems = keys.map(function(key, i) {
-			console.log(this.props.infoAttributes[key+""])
 			if(this.props.infoAttributes[key+""] !== null) {
 				return (
 					<Row key={i}>

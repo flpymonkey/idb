@@ -120,10 +120,8 @@ export default class Grid extends Component {
 
   clearFilter(filter) {
     if (filter === "filter1") {
-      console.log(1)
       this.setState({filter1: "", filter1Title: this.props.filterAttributes[0], activePage: 1})
     } else {
-      console.log(2)
       this.setState({filter2: "", filter2Title: this.props.filterAttributes[1], activePage: 1})
     }
   }
@@ -169,7 +167,6 @@ export default class Grid extends Component {
   }
 
 	render() {
-    console.log("render is being called");
     const {sortBy, direction} = this.state
     var data = this.props.data;
 
