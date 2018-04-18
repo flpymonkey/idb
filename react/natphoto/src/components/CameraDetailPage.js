@@ -5,6 +5,11 @@ import EmptyPage from './EmptyPage.js'
 import '../stylesheets/general.css';
 import '../stylesheets/cameradetail.css';
 
+/*
+ * Renders page that represents a camera model including details like
+ * a picture of the camera, its price, name, megapixels, etc.
+ * Links to related parks and photos.
+ */
 export default class CameraDetail extends Component {
 
   constructor(props) {
@@ -31,7 +36,19 @@ export default class CameraDetail extends Component {
     }
   }
 
+  /*
+   * Fetches all data on the given camera
+   */
   componentDidMount() {
+    this.getCameraInfo();
+    this.getPhotosForCamera();
+    this.getParksForCamera();
+  }
+
+  /*
+   * Fetches camera info from our API
+   */
+  getCameraInfo() {
     fetch('http://api.natphoto.me/cameras/' + this.props.match.params.camera_name, {
       method: 'GET',
       dataType: 'json',
@@ -61,8 +78,12 @@ export default class CameraDetail extends Component {
         });
       }
     });
+  }
 
-    // Get photos for this camera
+  /*
+   * Fetches list of photos taken with this camera from our API
+   */
+  getPhotosForCamera() {
     fetch('http://api.natphoto.me/photos?camera=' + this.props.match.params.camera_name, {
       method: 'GET',
       dataType: 'json',
@@ -76,7 +97,12 @@ export default class CameraDetail extends Component {
           photos: curr_photos
         });
     });
+  }
 
+  /*
+   * Fetches parks at which this camera was used from our API
+   */
+  getParksForCamera() {
     fetch('http://api.natphoto.me/parks?camera=' + this.props.match.params.camera_name, {
       method: 'GET',
       dataType: 'json',
@@ -92,7 +118,30 @@ export default class CameraDetail extends Component {
     });
   }
 
-	render (){
+  /*
+   * Creates and returns CameraLabels object with info to display based on API data saved in the state
+   */
+  getCameraLabels() {
+    return {
+        "Price:": this.state.price,
+        "Camera Type:": this.state.type,
+        "Effective Megapixels:": this.state.effective_megapixels,
+        "Total Megapixels:": this.state.total_megapixels,
+        "Image Resolution:": this.state.image_resolution,
+        "Video Resolution:": this.state.video_resolution,
+        "Shutter Speeds:": this.state.shutter_speeds,
+        "ISO:": this.state.iso,
+        "Water Resistant:": this.state.water_resistant,
+        "Weight:": this.state.weight,
+        "Sensor:": this.state.sensor
+    };
+  }
+
+/*
+ * If this component was rendered by an invalid URL, display EmptyPage.
+ * Otherwise, display Camera details.
+ */
+render (){
     if(this.state.valid === "unknown"){
       return <div/>
     }
@@ -100,19 +149,7 @@ export default class CameraDetail extends Component {
       return <EmptyPage />
     }
     else {
-  		var cameraLabels = {
-          "Price:": this.state.price,
-          "Camera Type:": this.state.type,
-          "Effective Megapixels:": this.state.effective_megapixels,
-          "Total Megapixels:": this.state.total_megapixels,
-          "Image Resolution:": this.state.image_resolution,
-          "Video Resolution:": this.state.video_resolution,
-          "Shutter Speeds:": this.state.shutter_speeds,
-          "ISO:": this.state.iso,
-          "Water Resistant:": this.state.water_resistant,
-          "Weight:": this.state.weight,
-          "Sensor:": this.state.sensor
-      }
+  		var cameraLabels = this.getCameraLabels();
   		return (
   			<div>
   				<h1 className="cameraHeader"><span>{this.state.name}</span></h1>
