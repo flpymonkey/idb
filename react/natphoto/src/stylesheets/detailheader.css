@@ -10,6 +10,10 @@
   border: 1px solid #EAEAEA;
 }
 
+#info-text {
+  padding-left: 5em;
+}
+
 #info-text > h3 {
   text-align-last: end;
   color: #EAEAEA;
@@ -39,7 +43,7 @@
 }
 
 .descKeysCol {
-   text-align: right;
+  
 }
 
 .descValsCol {

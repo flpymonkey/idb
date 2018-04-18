@@ -113,14 +113,16 @@ export default class SearchItem extends Component {
             let truncatedTerm = this.truncate(word, searchPhrase)
             return (
               <div key={i}>
-              <br/>
-              <h3> {elem.toUpperCase().replace("_", " ")} </h3>
-              <Highlighter
-              highlightClassName="highlighted"
-              searchWords={highlightWords}
-              autoEscape={true}
-              textToHighlight={truncatedTerm}
-              />
+                <br/>
+                <div className="attributeHeader"> {elem.toUpperCase().replace("_", " ")} </div>
+                <div className="attributeDesc">
+                  <Highlighter
+                  highlightClassName="highlighted"
+                  searchWords={highlightWords}
+                  autoEscape={true}
+                  textToHighlight={truncatedTerm}
+                  />
+                </div>
               </div>
             )
         }
@@ -142,14 +144,14 @@ export default class SearchItem extends Component {
       <Link to={this.state.link} className="searchResults">
       <Row className="singleResult">
         <Col className="searchResultDetails" md="6">
-          <h2>
-          <Highlighter
-            highlightClassName="highlighted"
-            searchWords={highlightWords}
-            autoEscape={true}
-            textToHighlight={this.state.header}
-          />
-          </h2>
+          <div className="searchResultHeader">
+            <Highlighter
+              highlightClassName="highlighted"
+              searchWords={highlightWords}
+              autoEscape={true}
+              textToHighlight={this.state.header}
+            />
+          </div>
           <div>{this.getModelAttributes(highlightWords)}</div>
         </Col>
         <Col md="6">

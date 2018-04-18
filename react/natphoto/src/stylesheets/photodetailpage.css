@@ -1,5 +1,6 @@
 .material-icons {
   color: #EAEAEA;
+  font-size: 20px;
 }
 
 .fluid-container {
@@ -8,21 +9,22 @@
 
 .photoTitle {
   margin-bottom: 5%;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 #photoDetailTitle {
   font-family: Ahem!, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   text-align: left;
 }
 
 .links {
 	text-align: left;
-	font-size: 16px;
+	font-size: 20px;
 }
 
 #descriptionRow {
+  font-size: 16px;
   padding: 2em;
 }
 
@@ -60,5 +62,5 @@
 }
 
 .photoDescHeader {
-  font-size: 20px;
+  font-size: 25px;
 }

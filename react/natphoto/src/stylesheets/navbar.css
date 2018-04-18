@@ -36,6 +36,7 @@
 ul.ml-auto.navbar-nav {
   float: right;
   margin-left: auto;
+	font-size: 20px;
 }
 
 .nav-item {

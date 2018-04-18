@@ -50,9 +50,11 @@
 
 .parkImage {
   max-height: 300px;
+  max-width: 600px;
   margin: auto;
   display: block;
   width: auto;
+  border: 1px solid #EAEAEA;
 }
 
 iframe {

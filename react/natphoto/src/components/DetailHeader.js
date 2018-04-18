@@ -10,10 +10,10 @@ export default class DetailHeader extends Component {
 			if(this.props.infoAttributes[key+""] !== null) {
 				return (
 					<Row key={i}>
-					<Col sm="2" className="descKeysCol">
+					<Col sm="3" className="descKeysCol">
 						<h3 className="descKey">{key} </h3>
 					</Col>
-					<Col sm="10" className="descValsCol">
+					<Col sm="9" className="descValsCol">
 						<h3 className="descVal">{this.props.infoAttributes[key+""]}</h3>
 					</Col>
 				</Row>)
@@ -31,8 +31,7 @@ export default class DetailHeader extends Component {
 	    					<img className="detailImage" src={this.props.pic} alt={this.props.name}/>
 							</div>
 	    			</Col>
-						<Col sm="1"></Col>
-	 		  		<Col sm="5" id="info-text">
+	 		  		<Col sm="6" id="info-text">
 							<div className="infoRow">{listItems}</div>
 	      		</Col>
 	  		</Row>
