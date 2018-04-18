@@ -19,7 +19,7 @@
   border-color: grey !important;
 }
 
-.navbar-dark .navbar-nav .nav-link {
+.navbar-dark .navbar-nav {
   color: #EAEAEA !important;
 }
 
@@ -45,8 +45,12 @@ ul.ml-auto.navbar-nav {
   padding-left: 2%;
 }
 
-.nav-item:hover {
-	color: #009D00;
+.navLink {
+	color: #EAEAEA !important;
+}
+
+.navLink:hover {
+	color: #009D00 !important;
 	text-decoration: none;
 }
 
