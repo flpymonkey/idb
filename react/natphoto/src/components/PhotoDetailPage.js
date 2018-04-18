@@ -110,7 +110,7 @@ export default class PhotoDetail extends Component {
   				</Row>
           <Row id="descriptionRow">
             <Col sm="12">
-              <h3>Description</h3>
+              <div className="photoDescHeader">Description</div>
               <p>{Parser(description) || "N/A"}</p>
             </Col>
           </Row>

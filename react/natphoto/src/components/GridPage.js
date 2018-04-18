@@ -304,7 +304,7 @@ class GridHeader extends Component {
       <div>
         <Row>
            <Col sm="4"></Col>
-           <Col className="gridTitle" sm="4"><h1>{this.props.data.title}</h1></Col>
+           <Col className="gridTitle" sm="4">{this.props.data.title}</Col>
            <Col sm="4"></Col>
         </Row>
         <Row className="dropDowns">
