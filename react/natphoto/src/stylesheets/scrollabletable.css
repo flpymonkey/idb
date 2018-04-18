@@ -11,12 +11,16 @@
 	height: 200px !important;
 }
 
+.hovereffect {
+	width: auto !important;
+}
+
 .hovereffect .overlay {
 	font-size: 16px;
 	white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
 }
 
 #scrollableTitle {
@@ -24,4 +28,8 @@ max-width: 100%;
   font-size: 25px;
   margin-left: 5%;
   margin-bottom: .5%;
+}
+
+.photoImage {
+	width: auto;
 }

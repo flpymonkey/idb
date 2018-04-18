@@ -27,8 +27,8 @@ export default class DetailHeader extends Component {
 			return (
 				<Row>
 	  				<Col sm="6">
-							<div className="imgWrapper">
-	    					<img className="image" src={this.props.pic} alt={this.props.name}/>
+							<div className="detailImgWrapper">
+	    					<img className="detailImage" src={this.props.pic} alt={this.props.name}/>
 							</div>
 	    			</Col>
 						<Col sm="1"></Col>

@@ -1,11 +1,13 @@
-.image {
-  max-height: 600px;
-  margin-left: 25%;
-  border: 1px solid #EAEAEA;
+.detailImgWrapper {
+  margin-left: auto;
 }
 
-.imgWrapper {
-  padding-right: 10%;
+.detailImage {
+  max-height: 500px;
+  margin: auto;
+  display: block;
+  width: auto;
+  border: 1px solid #EAEAEA;
 }
 
 #info-text > h3 {
