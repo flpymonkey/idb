@@ -6,8 +6,8 @@ python:
 install:
   - pwd
   - echo $DB_INFO > ./natphoto/app/dbinfo.txt
+  - echo $DB_INFO > ./backend/dbinfo.txt
   - pip install -r ./natphoto/requirements.txt
 
 script:
-  - cd natphoto
   - make test
