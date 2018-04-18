@@ -34,15 +34,15 @@ uml:
 
 # make selenium - runs selenium tests
 selenium:
-	-cd frontend && python guitests.py
+	cd frontend && python guitests.py
 
 # make frontend - runs frontend tests
 frontend:
-	-@(cd react/natphoto; npm test)
+	@(cd react/natphoto; npm test)
 
 # make backend  - runs backend tests
 backend:
-	-cd backend && python tests.py
+	cd backend && python tests.py
 
 # make website  - prints link to a website
 website:

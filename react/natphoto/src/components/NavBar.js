@@ -39,16 +39,16 @@ constructor(props) {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/photos">Photos</NavLink>
+                <NavLink className="navLink" href="/photos">Photos</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/parks">Parks</NavLink>
+                <NavLink className="navLink" href="/parks">Parks</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/cameras">Cameras</NavLink>
+                <NavLink className="navLink" href="/cameras">Cameras</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/about">About</NavLink>
+                <NavLink className="navLink" href="/about">About</NavLink>
               </NavItem>
               <NavItem>
                 <span className="searchBar"><SearchBar /></span>

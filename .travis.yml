@@ -1,5 +1,13 @@
-language: python
+sudo: required
+dist: trusty
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
+language: python
 python:
   - "3.6"
 
@@ -8,6 +16,15 @@ install:
   - echo $DB_INFO > ./natphoto/app/dbinfo.txt
   - echo $DB_INFO > ./backend/dbinfo.txt
   - pip install -r ./natphoto/requirements.txt
+  - npm install -g npm
+  - cd ./react/natphoto && npm install
+  - cd ../../
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm i -g npm@^3
+  - sleep 3
 
 script:
   - make test

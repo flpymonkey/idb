@@ -109,7 +109,7 @@ export default class Search extends Component {
             <div className="searchResults">
               <Row>
                 <Col>
-                  <h2>{this.state.numResults} results found for "{this.state.search_string}"</h2>
+                  <div className="results">{this.state.numResults} results found for "{this.state.search_string}"</div>
                 </Col>
               </Row>
               <div>{this.state.results.slice(startVal, endVal)}</div>

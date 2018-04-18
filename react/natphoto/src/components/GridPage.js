@@ -8,8 +8,7 @@ import SortDropdown from './SortDropdown.js';
 import FilterDropdown from './FilterDropdown.js';
 import ResetDropdown from './ResetDropdown.js';
 import LoadingImage from './LoadingImage.js';
-import { SyncLoader } from 'react-spinners';
-import { Card, CardImg, CardText, CardBody,
+import { Card, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap';
 import Datasort from 'react-data-sort';
 

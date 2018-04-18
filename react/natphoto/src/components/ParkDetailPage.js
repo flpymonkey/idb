@@ -110,7 +110,12 @@ export default class ParkDetail extends Component {
                 </iframe>
   	    			</Col>
   	  		</Row>
-  				<DetailHeader pic={null} infoAttributes={parkLabels}/>
+          <Row>
+            <Col sm="1"></Col>
+            <Col sm="10">
+              <DetailHeader pic={null} infoAttributes={parkLabels}/>
+            </Col>
+          </Row>
           <a href={this.state.url} target="_blank">
           <h1 className="npsHeader">Get more information from the National Park Service!</h1>
           </a>

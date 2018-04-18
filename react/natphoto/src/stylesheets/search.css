@@ -1,6 +1,11 @@
 .searchTitle {
   text-align: center;
   color: #EAEAEA;
+  font-size: 50px;
+}
+
+.results {
+  font-size: 30px;
 }
 
 .separator {
@@ -63,4 +68,16 @@ p {
   background-color: inherit;
   font-weight: bold;
   padding: 0;
+}
+
+.searchResultHeader {
+  font-size: 30px;
+}
+
+.attributeHeader {
+  font-size: 25px;
+}
+
+.attributeDesc {
+  font-size: 16px;
 }
