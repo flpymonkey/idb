@@ -1,5 +1,10 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 
 export default class ResetDropdown extends React.Component {
   constructor(props) {
@@ -26,12 +31,14 @@ export default class ResetDropdown extends React.Component {
   render() {
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>
-          Reset
-        </DropdownToggle>
+        <DropdownToggle caret>Reset</DropdownToggle>
         <DropdownMenu>
-            <DropdownItem id="reset1" onClick={() => this.clearFilter("filter1")}>{this.props.types[0]}</DropdownItem>
-            <DropdownItem id="reset2" onClick={() => this.clearFilter("filter2")}>{this.props.types[1]}</DropdownItem>
+          <DropdownItem id="reset1" onClick={() => this.clearFilter('filter1')}>
+            {this.props.types[0]}
+          </DropdownItem>
+          <DropdownItem id="reset2" onClick={() => this.clearFilter('filter2')}>
+            {this.props.types[1]}
+          </DropdownItem>
         </DropdownMenu>
       </Dropdown>
     );

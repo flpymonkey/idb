@@ -1,5 +1,10 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 
 export default class FilterDropdown extends React.Component {
   constructor(props) {
@@ -27,22 +32,17 @@ export default class FilterDropdown extends React.Component {
   // loops through all the filter options to create a dropdown for each
   // and create a dropdown item for the current opt
   render() {
-    var dropdownOpts = this.props.options.map((opt, i) =>
+    var dropdownOpts = this.props.options.map((opt, i) => (
       <div key={i} onClick={() => this.setFilterBy(opt)}>
-        <DropdownItem key={i} id={"filter"+i} >
+        <DropdownItem key={i} id={'filter' + i}>
           {opt}
         </DropdownItem>
       </div>
-
-  )
+    ));
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>
-          {this.props.dropTitle}
-        </DropdownToggle>
-        <DropdownMenu>
-          {dropdownOpts}
-        </DropdownMenu>
+        <DropdownToggle caret>{this.props.dropTitle}</DropdownToggle>
+        <DropdownMenu>{dropdownOpts}</DropdownMenu>
       </Dropdown>
     );
   }
