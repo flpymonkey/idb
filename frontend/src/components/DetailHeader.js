@@ -30,7 +30,7 @@ export default class DetailHeader extends Component {
     if (this.props.pic !== null && this.props.pic !== '') {
       return (
         <Row>
-          <Col sm="6">
+          <Col lg="6">
             <div className="detailImgWrapper">
               <img
                 className="detailImage"
@@ -39,7 +39,7 @@ export default class DetailHeader extends Component {
               />
             </div>
           </Col>
-          <Col sm="6" id="info-text">
+          <Col lg="6" id="info-text">
             <div className="infoRow">{this.getListItems()}</div>
           </Col>
         </Row>
@@ -47,7 +47,7 @@ export default class DetailHeader extends Component {
     } else {
       return (
         <Row>
-          <Col sm="11" id="info-text">
+          <Col lg="11" id="info-text">
             <div className="infoRow">{this.getListItems()}</div>
           </Col>
         </Row>
