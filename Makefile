@@ -1,6 +1,6 @@
 GithubID = flpymonkey
 RepoName = idb
-SHA      = thisneedstobeadded
+SHA      = 357a29c74dd587f3bcef4636e4a33ef79b9150ba
 
 .PHONY: frontend backend
 
@@ -26,11 +26,11 @@ issues:
 
 # make stories  - prints link to current phase's stories
 stories:
-	@echo "http://www.github.com/${GithubID}/${RepoName}/blob/${SHA}/stories.txt"
+	@echo "http://www.github.com/${GithubID}/${RepoName}/projects/1"
 
 # make uml      - prints link to uml diagram
 uml:
-	@echo "http://www.github.com/${GithubID}/${RepoName}/blob/${SHA}/uml.png"
+	@echo "http://www.github.com/${GithubID}/${RepoName}/blob/${SHA}/uml_diagram.png"
 
 # make selenium - runs selenium tests
 selenium:
@@ -58,10 +58,11 @@ apidoc:
 
 # make self     - prints link to self critique
 self:
-	@echo "http://${GithubID}.gitbooks.io/api/path-to-self-critique"
+	@echo "http://${GithubID}.gitbooks.io/report/doc/self-critique.html"
 
 # make other    - prints link to other critique
 other:
-	@echo "http://${GithubID}.gitbooks.io/api/path-to-other-critique"
+	@echo "http://${GithubID}.gitbooks.io/report/doc/other-critique.html"
 
+# run frontend and backend tests on travis
 travis: backend frontend
