@@ -3,35 +3,32 @@
 ## What did they do well?
 
 * Their site was very clean and intuitive.
-* They had a great front-end design and layout. Their website is very quirky, but
-  highly functional.
-* Their search page returned results in a very clean and reasonable manor.
+* They did a great job of addressing our user stories. They
+  went beyond our expectations to not only address our stories, but to even add
+  some features we did not specifically ask for.
+* Their site layout works very well on both desktop and mobile. This is a great
+  improvement from last phase when their layout was where most of the issues were.
 
 ## What did we learn from their api / website?
 
-* We decided to restructure our about page to look a bit more like theirs, but ours
-  shows more data.
-* We tried to make our website detail pages a bit more simplistic like theirs.
-* We used the google map component for our national park location like they showed
-  us.
+* We refactored some of our code based on the layout and design decisions they
+  made on their website.
+* We followed their lead on some examples for how to make our site more mobile
+  friendly.
 
 ## What can they do better?
 
-* They were not showing enough relevant information on their search page.
-* Their about page had some formatting issues.
-* They needed to show more information but also balance that with their clean and
-  simplistic design.
+* Their about page still has some formatting issues on Safari.
+* Some of the font on their site (particularly on the grid page) is really small,
+  it would be nice to see a more consistent use of font sizes across their site.
 
 ## What puzzles us about their api / website?
 
-* I do not know what their website has to do with tacos. But the tacos are cool.
-* We did not go much into detail about their API so I do not know much about it,
-  but they seemed to be returning a lot of data in their JSON responses which might
-  be able to be minimized to less data.
+* I still do not know what their website has to do with tacos. But the tacos are
+  cool.
+* They seem to be returning a lot of data in their API JSON responses which might
+  need to be minimized to less data.
 * I find it interesting that they handled all of their searching and filtering on
   the backend. We stayed away from this because we thought it might slow down the
   website a bit. With how little data we have, it seems more efficient to cache the
   data on the frontend and search, sort, and filter as needed.
-
-
-
