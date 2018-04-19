@@ -1,6 +1,6 @@
 GithubID = flpymonkey
 RepoName = idb
-SHA      = 357a29c74dd587f3bcef4636e4a33ef79b9150ba
+SHA      = 42eaf88dd355f607046387cb356fa03f898c06eb
 
 .PHONY: frontend backend
 
@@ -63,6 +63,10 @@ self:
 # make other    - prints link to other critique
 other:
 	@echo "http://${GithubID}.gitbooks.io/report/doc/other-critique.html"
+
+present: 
+	@echo "http://gitpitch.com/${GithubID}/${RepoName}"
+
 
 # run frontend and backend tests on travis
 travis: backend frontend
