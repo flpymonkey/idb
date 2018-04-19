@@ -137,6 +137,8 @@ export default class Grid extends Component {
   }
 
   handlePageChange(pageNumber) {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       this.setState({activePage: pageNumber});
   }
 
