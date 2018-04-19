@@ -28,6 +28,17 @@ export default class NatPhotoNavBar extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  getNavItem(pageName) {
+    return (
+      <NavItem>
+        <NavLink className="navLink" href={"/" + pageName}>
+          {pageName}
+        </NavLink>
+      </NavItem>
+    );
+  }
+
   render() {
     return (
       <div className="nav-div">
@@ -44,26 +55,10 @@ export default class NatPhotoNavBar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink className="navLink" href="/photos">
-                  Photos
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="navLink" href="/parks">
-                  Parks
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="navLink" href="/cameras">
-                  Cameras
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="navLink" href="/about">
-                  About
-                </NavLink>
-              </NavItem>
+              {this.getNavItem("Photos")}
+              {this.getNavItem("Parks")}
+              {this.getNavItem("Cameras")}
+              {this.getNavItem("About")}
               <NavItem>
                 <span className="searchBar">
                   <SearchBar />
