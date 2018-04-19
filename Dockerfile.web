@@ -8,4 +8,4 @@ COPY ./requirements.txt /app/requirements.txt
 # Install the required files for the app
 RUN pip install -r requirements.txt
 
-COPY ./app /app
+COPY ./backend /app
