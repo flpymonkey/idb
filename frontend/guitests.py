@@ -18,7 +18,7 @@ class PythonOrgSearch(unittest.TestCase):
     #     driver.implicitly_wait(15)
 
     def setUp(self):
-        self.driver = webdriver.Chrome("./chromedriver")
+        self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(25)
 
     def elementExists(self, byThis, val) :
