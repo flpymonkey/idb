@@ -55,10 +55,7 @@ export default class CameraDetail extends Component {
     }).then(results => {
       return results.json();
     }).then(data => {
-      if(data[0] === undefined) {
-        this.setState({valid: false});
-      }
-      else {
+      if(data[0] !== undefined) {
         this.setState({
           valid: true,
           effective_megapixels: data['0'].effective_megapixels,
@@ -76,6 +73,10 @@ export default class CameraDetail extends Component {
           weight: data['0'].weight,
           amazon_url: "https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=" + data['0'].name,
         });
+      } else {
+          this.setState({
+            name: this.props.match.params.camera_name
+          });
       }
     });
   }
@@ -93,9 +94,14 @@ export default class CameraDetail extends Component {
       var curr_photos = data.map((elem) => ({
         img: elem.image_url, path: "/photos/" + elem.id, name: elem.title}
       ));
-      this.setState({
-        photos: curr_photos
-      });
+      if (curr_photos.length !== 0){
+        this.setState({
+          valid: true,
+          photos: curr_photos
+        });
+      } else {
+        this.setState({valid: false});
+      }
     });
   }
 
@@ -112,9 +118,14 @@ export default class CameraDetail extends Component {
       var curr_parks = data.map((elem) => ({
         img: elem.image_url, path: "/parks/" + elem.name, name: elem.name}
       ));
-      this.setState({
-        parks: curr_parks
-      });
+      if (curr_parks.length !== 0){
+        this.setState({
+          valid: true,
+          parks: curr_parks
+        });
+      } else {
+        this.setState({valid: false});
+      }
     });
   }
 
