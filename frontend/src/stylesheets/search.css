@@ -1,7 +1,6 @@
-
 .searchTitle {
   text-align: center;
-  color: #EAEAEA;
+  color: #eaeaea;
   font-size: 50px;
 }
 
@@ -10,7 +9,7 @@
 }
 
 .separator {
-  border-bottom: 1px #EAEAEA solid;
+  border-bottom: 1px #eaeaea solid;
 }
 
 .loader {
@@ -19,17 +18,17 @@
 }
 
 .searchResults {
-  color: #EAEAEA;
+  color: #eaeaea;
 }
 
 .searchResults:hover {
   text-decoration: none;
-  color: #EAEAEA;
+  color: #eaeaea;
 }
 
 .singleResult {
-  background-color: #3A3A3A;
-  border: solid 1px #3A3A3A;
+  background-color: #3a3a3a;
+  border: solid 1px #3a3a3a;
   margin-bottom: 5%;
   padding: 20px 10px 20px 40px;
 }
@@ -65,7 +64,7 @@ p {
 }
 
 .highlighted {
-  color: #009D00;
+  color: #009d00;
   background-color: inherit;
   font-weight: bold;
   padding: 0;

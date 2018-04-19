@@ -1,37 +1,37 @@
 .Container {
-	color: #EAEAEA;
+  color: #eaeaea;
 }
 
 .card-img {
-	max-height: 100%;
-	max-width: 100%;
-	margin: auto;
-	display: block;
-	width: auto;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+  width: auto;
 }
 
 .imageContainer {
-	height: 200px;
-	justify-content: center;
-	align-items: center;
-	display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .CardBody {
-	flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .card {
-	position: relative;
-	display: flex;
-	flex-direction: column;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardDiv {
   padding-bottom: 10%;
-	margin-left: 5%;
-	margin-right: 5%;
-	height: inherit;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: inherit;
 }
 
 .card-title {
@@ -51,19 +51,19 @@
 }
 
 .gridTitle {
-	text-align: center;
-	color: #EAEAEA;
-	font-size: 50px;
+  text-align: center;
+  color: #eaeaea;
+  font-size: 50px;
 }
 .dropdownLabel {
-	color: #EAEAEA;
-	font-size: 25px;
-	text-align: center;
+  color: #eaeaea;
+  font-size: 25px;
+  text-align: center;
 }
 
 .dropDowns {
-	margin-top: 1%;
-	margin-bottom: 2%;
+  margin-top: 1%;
+  margin-bottom: 2%;
 }
 
 .paginationCol {

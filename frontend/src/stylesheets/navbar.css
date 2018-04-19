@@ -1,18 +1,18 @@
 .nav-div {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	display: block;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: block;
   list-style-type: none;
   overflow: hidden;
   list-style-type: none;
-	z-index: 9999;
+  z-index: 9999;
   font-size: 20px;
   font-family: Ahem!, sans-serif;
 }
 
 .navbar {
-	background-color: black;
+  background-color: black;
 }
 
 .navbar-dark .navbar-toggler {
@@ -20,23 +20,23 @@
 }
 
 .navbar-dark .navbar-nav {
-  color: #EAEAEA !important;
+  color: #eaeaea !important;
 }
 
 .navbar-dark .navbar-brand {
-  color: #EAEAEA !important;
+  color: #eaeaea !important;
 }
 
 .navbar-dark .navbar-brand {
   padding: 7px 5px 15px 5px;
   font-size: 20px;
-  height:100%;
+  height: 100%;
 }
 
 ul.ml-auto.navbar-nav {
   float: right;
   margin-left: auto;
-	font-size: 20px;
+  font-size: 20px;
 }
 
 .nav-item {
@@ -46,12 +46,12 @@ ul.ml-auto.navbar-nav {
 }
 
 .navLink {
-	color: #EAEAEA !important;
+  color: #eaeaea !important;
 }
 
 .navLink:hover {
-	color: #009D00 !important;
-	text-decoration: none;
+  color: #009d00 !important;
+  text-decoration: none;
 }
 
 form.form-inline {

@@ -23,8 +23,8 @@
 
 .aboutHeader:before,
 .aboutHeader:after {
-  background-color: #EAEAEA;
-  content: "";
+  background-color: #eaeaea;
+  content: '';
   display: inline-block;
   height: 1px;
   position: relative;
@@ -57,7 +57,7 @@
   margin-top: 2%;
   margin-bottom: 2%;
   margin-left: 10%;
-  border-bottom: 1px solid #EAEAEA;
+  border-bottom: 1px solid #eaeaea;
   width: 80%;
   text-align: center;
 }
@@ -119,7 +119,7 @@
 }
 
 #teamStatsBox {
-	margin-top: 27%;
+  margin-top: 27%;
 }
 
 .picName {

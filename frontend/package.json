@@ -35,7 +35,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "mocha --require ignore-styles test/setup.js test/tests.js",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write src/**.js && prettier --write src/stylesheets/*.css"
   },
   "devDependencies": {
     "babel": "^6.23.0",

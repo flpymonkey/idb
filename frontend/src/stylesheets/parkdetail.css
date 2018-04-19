@@ -1,44 +1,46 @@
 .parkHeader {
- overflow: hidden;
- text-align: center;
- font-size: 50px;
- font-family: Ahem!, sans-serif;
- margin-bottom: 5%;
- margin-top: 2em;
+  overflow: hidden;
+  text-align: center;
+  font-size: 50px;
+  font-family: Ahem!, sans-serif;
+  margin-bottom: 5%;
+  margin-top: 2em;
 }
 
 .parkHeader:before,
 .parkHeader:after {
- background-color: #EAEAEA;
- content: "";
- display: inline-block;
- height: 1px;
- position: relative;
- vertical-align: middle;
- width: 50%;
+  background-color: #eaeaea;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
 }
 .parkHeader:before {
- right: 0.5em;
- margin-left: -50%;
+  right: 0.5em;
+  margin-left: -50%;
 }
 .parkHeader:after {
- left: 0.5em;
- margin-right: -50%;
+  left: 0.5em;
+  margin-right: -50%;
 }
 
 .npsHeader {
- overflow: hidden;
- text-align: center;
- font-size: 25px;
- font-family: Ahem!, sans-serif;
- margin-top: 4%;
+  overflow: hidden;
+  text-align: center;
+  font-size: 25px;
+  font-family: Ahem!, sans-serif;
+  margin-top: 4%;
 }
 
-.photoImage, .camImage {
+.photoImage,
+.camImage {
   width: 300px;
 }
 
-.photoTable, .parkTable {
+.photoTable,
+.parkTable {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -54,7 +56,7 @@
   margin: auto;
   display: block;
   width: auto;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
 }
 
 iframe {
@@ -68,9 +70,10 @@ iframe {
   padding-left: 0;
 }
 
-#parkPhotos, #cameraPhotos {
-  color: #EAEAEA;
+#parkPhotos,
+#cameraPhotos {
+  color: #eaeaea;
   font-size: 50px;
   margin-left: 5%;
-  margin-bottom: .5%;
+  margin-bottom: 0.5%;
 }

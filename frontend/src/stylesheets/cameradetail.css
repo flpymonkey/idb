@@ -1,16 +1,16 @@
 .cameraHeader {
- overflow: hidden;
- text-align: center;
- font-size: 400%;
- font-family: Ahem!, sans-serif;
- margin-bottom: 3%;
- margin-top: 2em;
+  overflow: hidden;
+  text-align: center;
+  font-size: 400%;
+  font-family: Ahem!, sans-serif;
+  margin-bottom: 3%;
+  margin-top: 2em;
 }
 
 .cameraHeader:before,
 .cameraHeader:after {
-  background-color: #EAEAEA;
-  content: "";
+  background-color: #eaeaea;
+  content: '';
   display: inline-block;
   height: 1px;
   position: relative;
@@ -37,30 +37,31 @@
   width: 300px;
 }
 
-.photoTable, .camTable {
+.photoTable,
+.camTable {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .amazonHeader {
- overflow: hidden;
- text-align: center;
- font-size: 25px;
- font-family: Ahem!, sans-serif;
- margin-top: 3%;
+  overflow: hidden;
+  text-align: center;
+  font-size: 25px;
+  font-family: Ahem!, sans-serif;
+  margin-top: 3%;
 }
 
 #photos {
-  color: #EAEAEA;
+  color: #eaeaea;
   font-size: 50px;
-  margin-bottom: .5%;
+  margin-bottom: 0.5%;
 }
 
 #parksListed {
-  color: #EAEAEA;
+  color: #eaeaea;
   font-size: 50px;
-  margin-bottom: .5%;
+  margin-bottom: 0.5%;
 }
 
 #table-row {
@@ -68,7 +69,7 @@
 }
 
 #park-name {
-  color: #EAEAEA;
+  color: #eaeaea;
   font-size: 30px;
   font-family: Ahem!, sans-serif;
   padding-left: 5%;

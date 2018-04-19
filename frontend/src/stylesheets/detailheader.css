@@ -7,7 +7,7 @@
   margin: auto;
   display: block;
   width: auto;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
 }
 
 #info-text {
@@ -16,21 +16,21 @@
 
 #info-text > h3 {
   text-align-last: end;
-  color: #EAEAEA;
+  color: #eaeaea;
   font-family: Ahem!, sans-serif;
 }
 
 #infoHeader {
   margin-left: 40%;
   margin-bottom: 3%;
-  color: #EAEAEA;
+  color: #eaeaea;
   font-family: Ahem!, sans-serif;
   font-size: 40px;
 }
 
 #ans-text {
   padding-top: 5.25%;
-  color: #EAEAEA;
+  color: #eaeaea;
   font-family: Ahem!, sans-serif;
 }
 
@@ -43,7 +43,6 @@
 }
 
 .descKeysCol {
-  
 }
 
 .descValsCol {
