@@ -8,17 +8,17 @@ language: python
 python:
   - "3.6"
 
-before_install:
-
 install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
   - pwd
   - echo $DB_INFO > ./natphoto/app/dbinfo.txt
   - echo $DB_INFO > ./backend/dbinfo.txt
   - pip install -r ./natphoto/requirements.txt
   - npm install -g npm
-  - cd ./react/natphoto && npm install
+  - cd ./react/natphoto
+  - npm install
   - cd ../../
+  # nohup npm start &
+  # google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000 &
 
 script:
-  - make test
+  - make travis
