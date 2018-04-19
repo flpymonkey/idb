@@ -39,11 +39,11 @@ Below are useful Makefile commands for working on the project:
   background. This command is essentially the opposite of `$ make serve` and  
   stops the server.
 
-* `make selenium` runs selenium tests
+* `$ make selenium` runs selenium tests
 
-* `make frontend` runs frontend tests
+* `$ make frontend` runs frontend tests
 
-* `make backend` runs backend tests
+* `$ make backend` runs backend tests
 
 ## Running React in a development environment
 
