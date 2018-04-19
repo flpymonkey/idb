@@ -22,10 +22,55 @@ export default class Search extends Component {
       numResults: 0,
       activePage: 1
     };
-
     this.renderResults = this.renderResults.bind(this);
   }
 
+  getKeys(){
+    return ([
+      { name: 'park', weight: 0.1 },
+      { name: 'camera', weight: 0.1 },
+      { name: 'title', weight: 0.05 },
+      { name: 'name', weight: 0.4 },
+      { name: 'description', weight: 0.01 },
+      { name: 'state', weight: 0.01 },
+      { name: 'directions', weight: 0.01 },
+      { name: 'photographer', weight: 0.3 },
+      { name: 'type', weight: 0.01 },
+      { name: 'date', weight: 0.01 },
+      { name: 'likes', weight: 0.01 },
+      { name: 'price', weight: 0.01 },
+      { name: 'weight', weight: 0.01 },
+      { name: 'weather', weight: 0.01 },
+      { name: 'effective_megapixels', weight: 0.01 },
+      { name: 'total_megapixels', weight: 0.01 },
+      { name: 'shutter_speeds', weight: 0.01 },
+      { name: 'iso', weight: 0.01 },
+      { name: 'water_resistant', weight: 0.01 },
+      { name: 'sensor', weight: 0.01 }
+      ]);
+  }
+
+  /* Uses the given Fuse search object to search for the given search_string */
+  getSearchResults(search_string, fuse){
+    if (search_string !== undefined){
+      search_string = search_string.trim();
+    }
+
+    if (search_string === undefined || search_string === '') {
+      return ([]);
+    } else {
+      var search_results = fuse.search(this.state.search_string);
+      return (search_results.map((elem, i) => (
+        <SearchItem
+          key={i}
+          data={elem}
+          searchTerm={this.props.location.search}
+          />
+      )));
+    }
+  }
+
+  /* Handles set up to use Fuse object to get search results */
   componentDidMount() {
     fetch('http://api.natphoto.me/all', {
       method: 'GET',
@@ -40,45 +85,9 @@ export default class Search extends Component {
           tokenize: true,
           threshold: 0.1,
           distance: 100,
-          keys: [
-            { name: 'park', weight: 0.1 },
-            { name: 'camera', weight: 0.1 },
-            { name: 'title', weight: 0.05 },
-            { name: 'name', weight: 0.4 },
-            { name: 'description', weight: 0.01 },
-            { name: 'state', weight: 0.01 },
-            { name: 'directions', weight: 0.01 },
-            { name: 'photographer', weight: 0.3 },
-            { name: 'type', weight: 0.01 },
-            { name: 'date', weight: 0.01 },
-            { name: 'likes', weight: 0.01 },
-            { name: 'price', weight: 0.01 },
-            { name: 'weight', weight: 0.01 },
-            { name: 'weather', weight: 0.01 },
-            { name: 'effective_megapixels', weight: 0.01 },
-            { name: 'total_megapixels', weight: 0.01 },
-            { name: 'shutter_speeds', weight: 0.01 },
-            { name: 'iso', weight: 0.01 },
-            { name: 'water_resistant', weight: 0.01 },
-            { name: 'sensor', weight: 0.01 }
-          ]
+          keys: this.getKeys()
         });
-        var search_string = this.state.search_string;
-        if (search_string !== undefined) {
-          search_string = search_string.trim();
-        }
-        var search_results = fuse.search(this.state.search_string);
-        if (search_string !== '' && search_string !== undefined) {
-          search_results = search_results.map((elem, i) => (
-            <SearchItem
-              key={i}
-              data={elem}
-              searchTerm={this.props.location.search}
-            />
-          ));
-        } else {
-          search_results = [];
-        }
+        var search_results = this.getSearchResults(this.state.search_string, fuse);
         this.setState({
           results: search_results,
           loading: false,
@@ -91,18 +100,53 @@ export default class Search extends Component {
     this.setState({ activePage: pageNumber });
   }
 
-  // Render the search results OR a spinner if the results are still loading.
-  renderResults() {
+  /* Returns the JSX Markup for loading */
+  getLoadingMarkup() {
+    return (
+      <Col className="loader">
+        <SyncLoader color={'#009d00'} size={10} margin={'5px'} />
+        <br />
+        <p>Hang tight! Your search is loading...</p>
+      </Col>
+    );
+  }
+
+  /* Returns the JSX Markup for search results */
+  getSearchResultsMarkup() {
     let endVal = this.state.activePage * 5;
     let startVal = (this.state.activePage - 1) * 5;
-    if (this.state.loading) {
-      return (
-        <Col className="loader">
-          <SyncLoader color={'#009d00'} size={10} margin={'5px'} />
-          <br />
-          <p>Hang tight! Your search is loading...</p>
+    return (<div className="searchResults">
+      <Row>
+        <Col>
+          <div className="results">
+            {this.state.numResults} results found for "{this.state.search_string}"
+          </div>
         </Col>
-      );
+      </Row>
+      <div>{this.state.results.slice(startVal, endVal)}</div>
+      <Row>
+        <Col className="paginationCol">
+          <Pagination
+            activePage={this.state.activePage}
+            itemsCountPerPage={5}
+            totalItemsCount={this.state.numResults}
+            pageRangeDisplayed={5}
+            onChange={this.handlePageChange.bind(this)}
+            className="pagination"
+          />
+        </Col>
+      </Row>
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      />
+  </div>);
+  }
+
+  /* Render the search results OR a spinner if the results are still loading. */
+  renderResults() {
+    if (this.state.loading) {
+      return this.getLoadingMarkup();
     } else {
       if (this.state.results.length === 0) {
         if (this.state.search_string === undefined) {
@@ -110,36 +154,7 @@ export default class Search extends Component {
         }
         return 'No results found for "' + this.state.search_string + '".';
       } else {
-        return (
-          <div className="searchResults">
-            <Row>
-              <Col>
-                <div className="results">
-                  {this.state.numResults} results found for "{
-                    this.state.search_string
-                  }"
-                </div>
-              </Col>
-            </Row>
-            <div>{this.state.results.slice(startVal, endVal)}</div>
-            <Row>
-              <Col className="paginationCol">
-                <Pagination
-                  activePage={this.state.activePage}
-                  itemsCountPerPage={5}
-                  totalItemsCount={this.state.numResults}
-                  pageRangeDisplayed={5}
-                  onChange={this.handlePageChange.bind(this)}
-                  className="pagination"
-                />
-              </Col>
-            </Row>
-            <link
-              rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-            />
-          </div>
-        );
+        return this.getSearchResultsMarkup();
       }
     }
   }

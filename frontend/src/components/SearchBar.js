@@ -22,8 +22,9 @@ export default class SearchBar extends Component {
     this.setState({ fireRedirect: true });
   }
 
-  // Render the search bar as a form. Redirect to /search?q=<query> when
-  // the form is submitted.
+  /* Render the search bar as a form. Redirect to /search?q=<query> when
+   * the form is submitted.
+   */
   render() {
     return (
       <Form inline onSubmit={this.handleSubmit}>
