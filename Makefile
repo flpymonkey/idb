@@ -64,9 +64,9 @@ self:
 other:
 	@echo "http://${GithubID}.gitbooks.io/report/doc/other-critique.html"
 
+# make present  - prints link to gitpitch presentation
 present: 
 	@echo "http://gitpitch.com/${GithubID}/${RepoName}"
-
 
 # run frontend and backend tests on travis
 travis: backend frontend
