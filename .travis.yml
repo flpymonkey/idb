@@ -17,8 +17,8 @@ install:
   - cd ./react/natphoto
   - npm install
   - cd ../../
-  - nohup npm start &
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000 &
+  # nohup npm start &
+  # google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000 &
 
 script:
-  - make test
+  - make travis

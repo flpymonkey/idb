@@ -64,4 +64,4 @@ self:
 other:
 	@echo "http://${GithubID}.gitbooks.io/api/path-to-other-critique"
 
-test: backend frontend selenium
+travis: backend frontend
