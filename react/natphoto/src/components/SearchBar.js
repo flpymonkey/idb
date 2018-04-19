@@ -28,7 +28,7 @@ export default class SearchBar extends Component {
   render() {
     return (
       <Form inline onSubmit={this.handleSubmit}>
-        <Input name="q" id="searchBar" placeholder="Search"
+        <Input name="q" id="searchBar" placeholder="Search" maxLength="200"
                value={this.state.value} onChange={this.handleChange} />
         {this.state.fireRedirect && ( <Redirect to={"/search"} /> )}
       </Form>
@@ -36,4 +36,3 @@ export default class SearchBar extends Component {
   }
 
 }
-
