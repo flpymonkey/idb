@@ -3,7 +3,6 @@ import { Redirect } from 'react-router';
 import { Input, Form } from 'reactstrap';
 
 export default class SearchBar extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +15,7 @@ export default class SearchBar extends Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
 
   handleSubmit(event) {
@@ -28,11 +27,16 @@ export default class SearchBar extends Component {
   render() {
     return (
       <Form inline onSubmit={this.handleSubmit}>
-        <Input name="q" id="searchBar" placeholder="Search" maxLength="200"
-               value={this.state.value} onChange={this.handleChange} />
-        {this.state.fireRedirect && ( <Redirect to={"/search"} /> )}
+        <Input
+          name="q"
+          id="searchBar"
+          placeholder="Search"
+          maxLength="200"
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
+        {this.state.fireRedirect && <Redirect to={'/search'} />}
       </Form>
     );
   }
-
 }

@@ -1,5 +1,10 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 
 export default class SortDropdown extends React.Component {
   constructor(props) {
@@ -31,32 +36,80 @@ export default class SortDropdown extends React.Component {
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem id="sort1">
-            <div onClick={() => this.selectSort("sort1", "asc", this.props.items[0] + ": " + this.props.types[0])}>
+            <div
+              onClick={() =>
+                this.selectSort(
+                  'sort1',
+                  'asc',
+                  this.props.items[0] + ': ' + this.props.types[0]
+                )
+              }
+            >
               {this.props.items[0]}: {this.props.types[0]}
             </div>
           </DropdownItem>
           <DropdownItem id="sort2">
-            <div onClick={() => this.selectSort("sort1", "desc", this.props.items[0] + ": " + this.props.types[1])}>
+            <div
+              onClick={() =>
+                this.selectSort(
+                  'sort1',
+                  'desc',
+                  this.props.items[0] + ': ' + this.props.types[1]
+                )
+              }
+            >
               {this.props.items[0]}: {this.props.types[1]}
             </div>
           </DropdownItem>
           <DropdownItem id="sort3">
-            <div onClick={() => this.selectSort("sort2", "asc", this.props.items[1] + ": " + this.props.types[2])}>
+            <div
+              onClick={() =>
+                this.selectSort(
+                  'sort2',
+                  'asc',
+                  this.props.items[1] + ': ' + this.props.types[2]
+                )
+              }
+            >
               {this.props.items[1]}: {this.props.types[2]}
             </div>
           </DropdownItem>
           <DropdownItem id="sort4">
-            <div onClick={() => this.selectSort("sort2", "desc", this.props.items[1] + ": " + this.props.types[3])}>
+            <div
+              onClick={() =>
+                this.selectSort(
+                  'sort2',
+                  'desc',
+                  this.props.items[1] + ': ' + this.props.types[3]
+                )
+              }
+            >
               {this.props.items[1]}: {this.props.types[3]}
             </div>
           </DropdownItem>
           <DropdownItem id="sort5">
-            <div onClick={() => this.selectSort("sort3", "asc", this.props.items[2] + ": " +this.props.types[4])}>
+            <div
+              onClick={() =>
+                this.selectSort(
+                  'sort3',
+                  'asc',
+                  this.props.items[2] + ': ' + this.props.types[4]
+                )
+              }
+            >
               {this.props.items[2]}: {this.props.types[4]}
             </div>
           </DropdownItem>
           <DropdownItem id="sort6">
-            <div onClick={() => this.selectSort("sort3", "desc", this.props.items[2] + ": " + this.props.types[5])}>
+            <div
+              onClick={() =>
+                this.selectSort(
+                  'sort3',
+                  'desc',
+                  this.props.items[2] + ': ' + this.props.types[5]
+                )
+              }
+            >
               {this.props.items[2]}: {this.props.types[5]}
             </div>
           </DropdownItem>
