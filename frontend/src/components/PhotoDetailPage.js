@@ -55,6 +55,74 @@ export default class PhotoDetail extends Component {
       });
   }
 
+  getHead() {
+    return (
+      <div>
+        <Row className="imageRow">
+          <Col sm="12" md={{ size: 8, offset: 2 }} id="photoContainer">
+            <a href={this.state.flickr_url} target="_blank">
+              <img
+                id="picture"
+                src={this.state.image_url}
+                alt={this.state.title}
+              />
+            </a>
+          </Col>
+        </Row>
+        <Row className="headerRow">
+          <Col sm="2" />
+          <Col sm="8" id="photoTitleColumn">
+            <h3 className="photoTitle">{this.state.title}</h3>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+
+  getFoot(description) {
+    return (
+      <div>
+        <Row>
+          <Col sm="2" />
+          <Col sm="3" id="photoDetailTitle">
+            <div>Taken by {this.state.photographer}</div>
+            <div>Taken on {this.state.date}</div>
+            <div>{this.state.likes} Likes</div>
+          </Col>
+          <Col sm="2" />
+          <Col sm="5" className="links">
+            <div>
+              <Link to={this.state.camera_url}>
+                <i className="material-icons">photo_camera</i>{' '}
+                {this.state.camera}
+              </Link>
+            </div>
+
+            <div>
+              <Link to={this.state.park_url}>
+                <i className="material-icons">landscape</i> {this.state.park}
+              </Link>
+            </div>
+
+            <div>
+              <a href={this.state.flickr_url} target="_blank">
+                <i className="material-icons">insert_photo</i>{' '}
+                {'Check out this photo on flickr!'}
+              </a>
+            </div>
+          </Col>
+        </Row>
+        <Row id="descriptionRow">
+          <Col sm="12">
+            <div className="photoDescHeader">Description</div>
+            <p>{Parser(description) || 'N/A'}</p>
+          </Col>
+        </Row>
+        <br />
+      </div>
+    );
+  }
+
   render() {
     if (this.state.valid === 'unknown') {
       return <div />;
@@ -67,60 +135,8 @@ export default class PhotoDetail extends Component {
       }
       return (
         <div>
-          <Row className="imageRow">
-            <Col sm="12" md={{ size: 8, offset: 2 }} id="photoContainer">
-              <a href={this.state.flickr_url} target="_blank">
-                <img
-                  id="picture"
-                  src={this.state.image_url}
-                  alt={this.state.title}
-                />
-              </a>
-            </Col>
-          </Row>
-          <Row className="headerRow">
-            <Col sm="2" />
-            <Col sm="8" id="photoTitleColumn">
-              <h3 className="photoTitle">{this.state.title}</h3>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm="2" />
-            <Col sm="3" id="photoDetailTitle">
-              <div>Taken by {this.state.photographer}</div>
-              <div>Taken on {this.state.date}</div>
-              <div>{this.state.likes} Likes</div>
-            </Col>
-            <Col sm="2" />
-            <Col sm="5" className="links">
-              <div>
-                <Link to={this.state.camera_url}>
-                  <i className="material-icons">photo_camera</i>{' '}
-                  {this.state.camera}
-                </Link>
-              </div>
-
-              <div>
-                <Link to={this.state.park_url}>
-                  <i className="material-icons">landscape</i> {this.state.park}
-                </Link>
-              </div>
-
-              <div>
-                <a href={this.state.flickr_url} target="_blank">
-                  <i className="material-icons">insert_photo</i>{' '}
-                  {'Check out this photo on flickr!'}
-                </a>
-              </div>
-            </Col>
-          </Row>
-          <Row id="descriptionRow">
-            <Col sm="12">
-              <div className="photoDescHeader">Description</div>
-              <p>{Parser(description) || 'N/A'}</p>
-            </Col>
-          </Row>
-          <br />
+          {this.getHead()}
+          {this.getFoot(description)}
         </div>
       );
     }
