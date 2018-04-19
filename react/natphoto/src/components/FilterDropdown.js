@@ -19,10 +19,13 @@ export default class FilterDropdown extends React.Component {
     });
   }
 
+  // send filter option chosen to parent so it can set state correctly to this
   setFilterBy(param) {
     this.props.filterFunc(param);
   }
 
+  // loops through all the filter options to create a dropdown for each
+  // and create a dropdown item for the current opt
   render() {
     var dropdownOpts = this.props.options.map((opt, i) =>
       <div key={i} onClick={() => this.setFilterBy(opt)}>

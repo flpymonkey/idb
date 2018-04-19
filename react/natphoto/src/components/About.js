@@ -14,10 +14,10 @@ export default class About extends Component {
     };
   }
 
-   /* 
-    * Makes request to our API for information on the team's
-    * Github info (commits, issues)
-    */
+  /*
+  * Makes request to our API for information on the team's
+  * Github info (commits, issues)
+  */
   componentDidMount() {
     fetch('http://api.natphoto.me/about', {
       method: 'GET',
@@ -37,8 +37,8 @@ export default class About extends Component {
   }
 
   /*
-   * Returns top row of members on the about page
-   */
+  * Returns top row of members on the about page
+  */
   getTopRowMembers() {
     return (
       <Row className="topProfiles">
@@ -52,8 +52,8 @@ export default class About extends Component {
   }
 
   /*
-   * Returns bottom row of members on the about page
-   */
+  * Returns bottom row of members on the about page
+  */
   getBottomRowMembers() {
     return (
       <Row className="bottomProfiles">
@@ -83,10 +83,10 @@ export default class About extends Component {
 }
 
 /*
- * Component for group member info for about page
- * Info includes:
- * name, responsibility, bio, number of commits, number of issues, and number of unit tests
- */
+* Component for group member info for about page
+* Info includes:
+* name, responsibility, bio, number of commits, number of issues, and number of unit tests
+*/
 class GroupMember extends Component {
   render() {
     return (
@@ -105,9 +105,9 @@ class GroupMember extends Component {
 }
 
 /*
- * Component to display overall team stats including total number of commits,
- * total number of unit tests, and total number of issues
- */
+* Component to display overall team stats including total number of commits,
+* total number of unit tests, and total number of issues
+*/
 class TeamStats extends Component {
   getTeamStats() {
     return (
