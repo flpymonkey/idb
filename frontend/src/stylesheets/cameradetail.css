@@ -52,6 +52,11 @@
   margin-top: 3%;
 }
 
+.noCamData {
+  text-align: center;
+  font-size: 16px;
+}
+
 #photos {
   color: #eaeaea;
   font-size: 50px;
