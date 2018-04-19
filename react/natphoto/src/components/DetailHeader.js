@@ -7,8 +7,8 @@ export default class DetailHeader extends Component {
 
 	getListItems() {
 		var keys = Object.keys(this.props.infoAttributes);
-		return keys.map(function(key, i) {
-			if(this.props.infoAttributes[key+""] !== null) {
+		var camera_specs = keys.map(function(key, i) {
+			if(this.props.infoAttributes[key+""] !== null && this.props.infoAttributes[key+""] !== "") {
 				return (
 					<Row key={i}>
 						<Col sm="3" className="descKeysCol">
@@ -23,9 +23,19 @@ export default class DetailHeader extends Component {
 					return ;
 				}
 			}.bind(this));
-		}
+		if (camera_specs.length === 0 || camera_specs[0] === undefined){
+      return (<Row>
+                <Col sm="7">
+                  <h3 className="descKeysCol">No specifications were found for this camera.</h3>
+                  <p>The amazon link, photos taken, and parks this camera was used in are listed below.</p>
+                </Col>
+              </Row>);
+    } else {
+      return camera_specs;
+    }
+  }
 		render (){
-			if(this.props.pic !== null) {
+			if(this.props.pic !== null && this.props.pic !== "") {
 				return (
 					<Row>
 						<Col sm="6">
