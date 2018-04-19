@@ -27,31 +27,39 @@ export default class ParkDetail extends Component {
   }
 
   componentDidMount() {
+    this.getParkInfo();
+    this.getParkPhotos();
+    this.getParkCameras();
+  }
+
+  getParkInfo() {
     fetch('http://api.natphoto.me/parks/' + this.props.match.params.park_name, {
       method: 'GET',
       dataType: 'json'
     })
-      .then((results) => {
-        return results.json();
-      })
-      .then((data) => {
-        if (data[0] === undefined) {
-          this.setState({ valid: false });
-        } else {
-          this.setState({
-            valid: true,
-            description: data['0'].description,
-            directions: data['0'].directions,
-            image_url: data['0'].image_url,
-            latlong: data['0'].latlong,
-            name: data['0'].name,
-            states: data['0'].states,
-            url: data['0'].url,
-            weather: data['0'].weather
-          });
-        }
-      });
+    .then((results) => {
+      return results.json();
+    })
+    .then((data) => {
+      if (data[0] === undefined) {
+        this.setState({ valid: false });
+      } else {
+        this.setState({
+          valid: true,
+          description: data['0'].description,
+          directions: data['0'].directions,
+          image_url: data['0'].image_url,
+          latlong: data['0'].latlong,
+          name: data['0'].name,
+          states: data['0'].states,
+          url: data['0'].url,
+          weather: data['0'].weather
+        });
+      }
+    });
+  }
 
+  getParkPhotos() {
     fetch(
       'http://api.natphoto.me/photos?park=' + this.props.match.params.park_name,
       {
@@ -59,41 +67,43 @@ export default class ParkDetail extends Component {
         dataType: 'json'
       }
     )
-      .then((results) => {
-        return results.json();
-      })
-      .then((data) => {
-        var curr_photos = data.map((elem) => ({
-          img: elem.image_url,
-          path: '/photos/' + elem.id,
-          name: elem.title
-        }));
-        this.setState({
-          photos: curr_photos
-        });
+    .then((results) => {
+      return results.json();
+    })
+    .then((data) => {
+      var curr_photos = data.map((elem) => ({
+        img: elem.image_url,
+        path: '/photos/' + elem.id,
+        name: elem.title
+      }));
+      this.setState({
+        photos: curr_photos
       });
+    });
+  }
 
+  getParkCameras() {
     fetch(
       'http://api.natphoto.me/cameras?park=' +
-        this.props.match.params.park_name,
+      this.props.match.params.park_name,
       {
         method: 'GET',
         dataType: 'json'
       }
     )
-      .then((results) => {
-        return results.json();
-      })
-      .then((data) => {
-        var curr_cameras = data.map((elem) => ({
-          img: elem.image_url,
-          path: '/cameras/' + elem.name,
-          name: elem.name
-        }));
-        this.setState({
-          cameras: curr_cameras
-        });
+    .then((results) => {
+      return results.json();
+    })
+    .then((data) => {
+      var curr_cameras = data.map((elem) => ({
+        img: elem.image_url,
+        path: '/cameras/' + elem.name,
+        name: elem.name
+      }));
+      this.setState({
+        cameras: curr_cameras
       });
+    });
   }
 
   render() {
@@ -120,7 +130,7 @@ export default class ParkDetail extends Component {
                   className="parkImage"
                   src={this.state.image_url}
                   alt={this.state.name}
-                />
+                  />
               </div>
             </Col>
             <Col sm="6" className="maps">
@@ -137,7 +147,7 @@ export default class ParkDetail extends Component {
                   this.state.name
                 }
                 allowFullScreen
-              />
+                />
             </Col>
           </Row>
           <Row>
@@ -155,7 +165,7 @@ export default class ParkDetail extends Component {
           <ScrollableTable
             tableTitle="Cameras Used"
             data={this.state.cameras}
-          />
+            />
         </div>
       );
     }

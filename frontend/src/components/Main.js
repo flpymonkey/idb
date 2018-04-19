@@ -26,11 +26,7 @@ const Main = () => (
         <Route exact path="/photos" component={PhotoGrid} />
         <Route exact path="/parks/:park_name" component={ParkDetailPage} />
         <Route exact path="/parks" component={ParkGrid} />
-        <Route
-          exact
-          path="/cameras/:camera_name"
-          component={CameraDetailPage}
-        />
+        <Route exact path="/cameras/:camera_name" component={CameraDetailPage}/>
         <Route exact path="/cameras" component={CameraGrid} />
         <Route exact path="/about" component={About} />
         <Route exact path="/search" component={Search} />
