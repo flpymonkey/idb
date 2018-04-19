@@ -11,6 +11,24 @@ for Professor Glenn Downing's CS373: Software Engineering course. This project
 tasked us in creating a web application that emulates [IMDB][IMDB] to provide
 some useful and interesting information about a topic.
 
+# Prerequisites
+
+In order to run and build this application you will need a working version of
+`pip` (python 3) and `npm`. Other requirements can be installed by running
+the following command in the root directory of the project.
+
+```
+make install
+```
+
+Note that the `install` target is automatically called when testing with
+`make frontend`, `make backend`, and `make selenium`.
+
+To manually install the project dependencies, use the following commands:
+
+- python: `pip install -r requirements.txt`
+- js: `cd frontend && npm install`
+
 # API
 
 The documentation for the natphoto.me API can be found here:

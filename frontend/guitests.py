@@ -30,7 +30,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_home(self):
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         self.assertIn("NatPhoto", driver.title)
         assert driver.find_element_by_link_text('About')
         assert driver.find_element_by_class_name("navbar-brand")
@@ -43,7 +43,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_navigation(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Parks').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
         driver.find_element_by_link_text("Photos").click()
@@ -58,7 +58,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_parkgrid_photo(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Parks').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
         driver.find_element_by_id("/parks/Acadia National Park").click()
@@ -66,7 +66,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_photogrid_photo(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text("Photos").click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Photos")
         driver.find_element_by_id("/photos/480").click()
@@ -74,7 +74,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_cameragrid_photo(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text("Cameras").click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
         driver.find_element_by_id("/cameras/Apple iPhone 6").click()
@@ -82,7 +82,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_back(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         assert self.elementExists("class name", "material-icons")
         driver.find_element_by_link_text('About').click()
         assert self.elementExists("class name", "aboutDesc")
@@ -110,7 +110,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_photo_sort(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Photos').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Photos")
         driver.find_element_by_id("sortButton").click()
@@ -119,7 +119,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_park_sort(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Parks').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
         driver.find_element_by_id("sortButton").click()
@@ -131,7 +131,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_camera_sort(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Cameras').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
         driver.find_element_by_id("sortButton").click()
@@ -143,7 +143,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_photo_filter(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Photos').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Photos")
         filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
@@ -157,7 +157,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_camera_filter(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Cameras').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
         filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
@@ -168,7 +168,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_park_filter(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Parks').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
         filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
@@ -179,7 +179,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_photos_reset_button(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Photos').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Photos")
         filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
@@ -193,7 +193,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_parks_reset_button(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Parks').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
         filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
@@ -208,7 +208,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_cameras_reset_button(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Cameras').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
         filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
@@ -223,7 +223,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_photos_filter_sort(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Photos').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Photos")
         filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
@@ -243,7 +243,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_parks_filter_sort(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Parks').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
         filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
@@ -263,7 +263,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_cameras_filter_sort(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Cameras').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
         filterButtons = driver.find_elements_by_class_name(("dropdown-toggle"))
@@ -283,7 +283,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_photos_pagination(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Photos').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Photos")
         pagination = driver.find_element_by_link_text('4')
@@ -294,7 +294,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_parks_pagination(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Parks').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Parks")
         pagination = driver.find_element_by_link_text('3')
@@ -303,7 +303,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_cameras_pagination(self) :
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Cameras').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
         pagination = driver.find_element_by_link_text('4')
@@ -312,12 +312,8 @@ class PythonOrgSearch(unittest.TestCase):
         pagination.click()
         assert driver.find_element_by_id("/cameras/samsung SM-G935V")
 
-
-
     def tearDown(self):
         self.driver.close()
-
-
 
 if __name__ == "__main__":
     unittest.main()
