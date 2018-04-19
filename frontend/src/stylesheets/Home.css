@@ -1,0 +1,93 @@
+.body {
+	margin-top: 5%;
+}
+
+div.desc {
+	display: table-cell;
+  align-items: center;
+	vertical-align: middle;
+}
+
+img {
+	width: 100%;
+}
+
+.textWrapper {
+	padding-left: 12%;
+	padding-top: 20%;
+}
+
+.title {
+	text-align: center;
+	font-size: 50px;
+	display: block;
+	font-family: Ahem!, sans-serif;
+	border-radius: 25px;
+  width: 100%;
+  height: 100%;
+	color: #EAEAEA;
+}
+
+.container {
+	width: auto;
+	display: table-row;
+}
+
+#description {
+	font-family: Ahem!, sans-serif;
+	font-size: 16px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: center;
+	height: auto;
+	width: auto;
+	color: #EAEAEA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel {
+	border: 1px solid #E6E6E6;
+	height: 80%;
+	overflow: hidden;
+}
+
+
+#myCarousel {
+	display: inline;
+	float:left;
+}
+
+.typeicons {
+	align-content: center;
+	padding-top: 7%;
+	align: center;
+	padding-left: 22%;
+}
+
+#mountains {
+	color: #EAEAEA;
+	text-align: center;
+	align: center;
+	padding: 0px 10px 0px 10px;
+	font-size: 300%;
+}
+
+#cam {
+	color: #EAEAEA;
+	text-align: center;
+	align: center;
+	padding: 0px 10px 0px 10px;
+	font-size: 300%;
+}
+
+#photoicon {
+	color: #EAEAEA;
+	text-align: center;
+	align: center;
+	padding: 0px 10px 0px 10px;
+	font-size: 300%;
+}

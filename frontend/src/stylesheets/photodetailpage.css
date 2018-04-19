@@ -1,0 +1,66 @@
+.material-icons {
+  color: #EAEAEA;
+  font-size: 20px;
+}
+
+.fluid-container {
+	color: #EAEAEA;
+}
+
+.photoTitle {
+  margin-bottom: 5%;
+  font-size: 25px;
+}
+
+#photoDetailTitle {
+  font-family: Ahem!, sans-serif;
+  font-size: 20px;
+  text-align: left;
+}
+
+.links {
+	text-align: left;
+	font-size: 20px;
+}
+
+#descriptionRow {
+  font-size: 16px;
+  padding: 2em;
+}
+
+#photoTitleColumn {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: x-large;
+}
+
+#photoContainer {
+  margin-top: 2em;
+  height: 30em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#picture {
+  max-height: 30em;
+	max-width: 100%;
+	margin: auto;
+	display: block;
+	width: auto;
+  border: 1px solid #EAEAEA;
+}
+
+.imageRow {
+  height: 100%;
+}
+
+.headerRow {
+	margin-top: 0%;
+	margin-bottom: 0%;
+}
+
+.photoDescHeader {
+  font-size: 25px;
+}

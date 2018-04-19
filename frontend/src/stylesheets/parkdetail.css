@@ -1,0 +1,76 @@
+.parkHeader {
+ overflow: hidden;
+ text-align: center;
+ font-size: 50px;
+ font-family: Ahem!, sans-serif;
+ margin-bottom: 5%;
+ margin-top: 2em;
+}
+
+.parkHeader:before,
+.parkHeader:after {
+ background-color: #EAEAEA;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 50%;
+}
+.parkHeader:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+.parkHeader:after {
+ left: 0.5em;
+ margin-right: -50%;
+}
+
+.npsHeader {
+ overflow: hidden;
+ text-align: center;
+ font-size: 25px;
+ font-family: Ahem!, sans-serif;
+ margin-top: 4%;
+}
+
+.photoImage, .camImage {
+  width: 300px;
+}
+
+.photoTable, .parkTable {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.parkImgWrapper {
+  margin-left: auto;
+}
+
+.parkImage {
+  max-height: 300px;
+  max-width: 600px;
+  margin: auto;
+  display: block;
+  width: auto;
+  border: 1px solid #EAEAEA;
+}
+
+iframe {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+
+.maps {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#parkPhotos, #cameraPhotos {
+  color: #EAEAEA;
+  font-size: 50px;
+  margin-left: 5%;
+  margin-bottom: .5%;
+}

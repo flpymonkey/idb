@@ -10,15 +10,12 @@ python:
 
 install:
   - pwd
-  - echo $DB_INFO > ./natphoto/app/dbinfo.txt
   - echo $DB_INFO > ./backend/dbinfo.txt
-  - pip install -r ./natphoto/requirements.txt
+  - pip install -r requirements.txt
   - npm install -g npm
-  - cd ./react/natphoto
+  - cd ./frontend
   - npm install
-  - cd ../../
-  # nohup npm start &
-  # google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000 &
+  - cd ../
 
 script:
   - make travis

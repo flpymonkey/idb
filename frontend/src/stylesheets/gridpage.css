@@ -1,0 +1,83 @@
+.Container {
+	color: #EAEAEA;
+}
+
+.card-img {
+	max-height: 100%;
+	max-width: 100%;
+	margin: auto;
+	display: block;
+	width: auto;
+}
+
+.imageContainer {
+	height: 200px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+.CardBody {
+	flex: 1 1 auto;
+}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.cardDiv {
+  padding-bottom: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: inherit;
+}
+
+.card-title {
+  max-width: 40ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.spinner {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.gridTitle {
+	text-align: center;
+	color: #EAEAEA;
+	font-size: 50px;
+}
+.dropdownLabel {
+	color: #EAEAEA;
+	font-size: 25px;
+	text-align: center;
+}
+
+.dropDowns {
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+
+.paginationCol {
+  text-align: center;
+  align-content: center;
+}
+
+.emptyFilterTitle {
+  margin-top: 30%;
+  text-align: center;
+  font-size: 250%;
+}
+
+.emptyFilterMessage {
+  text-align: center;
+  font-size: 200%;
+}

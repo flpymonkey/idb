@@ -1,0 +1,56 @@
+.detailImgWrapper {
+  margin-left: auto;
+}
+
+.detailImage {
+  max-height: 500px;
+  margin: auto;
+  display: block;
+  width: auto;
+  border: 1px solid #EAEAEA;
+}
+
+#info-text {
+  padding-left: 5em;
+}
+
+#info-text > h3 {
+  text-align-last: end;
+  color: #EAEAEA;
+  font-family: Ahem!, sans-serif;
+}
+
+#infoHeader {
+  margin-left: 40%;
+  margin-bottom: 3%;
+  color: #EAEAEA;
+  font-family: Ahem!, sans-serif;
+  font-size: 40px;
+}
+
+#ans-text {
+  padding-top: 5.25%;
+  color: #EAEAEA;
+  font-family: Ahem!, sans-serif;
+}
+
+.descKey {
+  font-size: 16px;
+}
+
+.descVal {
+  font-size: 16px;
+}
+
+.descKeysCol {
+  
+}
+
+.descValsCol {
+  word-wrap: break-word;
+}
+
+.infoRow {
+  margin-top: 5%;
+  margin-left: 5%;
+}
