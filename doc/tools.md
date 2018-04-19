@@ -8,15 +8,13 @@ DockerHub. We developed the image with the help of [this tutorial](https://ianlo
 
 ## Makefile Commands
 
-The make file can be found at `natphoto\Makefile` in our project directory.
+The make file can be found at `idb/Makefile` in our project directory.
 
 Below are useful Makefile commands for working on the project:
 
 * `$ make run` Run the Flask application in debug mode locally. This is  
   essentially the same as running the app using python alone. The app can be  
   viewed at `localhost:5000` when run in this mode.
-
-* `$ make clean` Remove generated files.
 
 * `$ make scrub` Clean up everything.
 
@@ -40,6 +38,12 @@ Below are useful Makefile commands for working on the project:
 * `$ make halt` Stop the docker container that is running the server in the  
   background. This command is essentially the opposite of `$ make serve` and  
   stops the server.
+
+* `make selenium` runs selenium tests
+
+* `make frontend` runs frontend tests
+
+* `make backend` runs backend tests
 
 ## Running React in a development environment
 
