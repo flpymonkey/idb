@@ -7,8 +7,9 @@ Tools we use for testing:
 1. **Postman** - Software for testing API endpoints and automating unit testing
 on requests to api.natphoto.me. Postman tests can be found in [Postman.json](../Postman.json).
 
-2. **unittest** - Used to test our Python Flask code which is used to serve the
-API endpoints. Run these tests using `python tests.py`.
+2. **unittest** - Software for testing the backend API code. These tests can be
+found in `backend/tests.py`. These tests can be run with the command
+`make backend` from `idb/`.
 
 ## Testing methodology for Postman
 
@@ -29,11 +30,12 @@ API endpoints. Run these tests using `python tests.py`.
 Tools we use for testing:
 
 1. **Mocha** - Software for testing JavaScript and JSX within React. These tests
-can be found in idb\frontend\tests.js. You can run them within idb\react\nathphoto
-with the command npm test.
+can be found in `idb/frontend/test/tests.js`. These tests can be run with the
+command `make frontend` from `idb/`.
 
 2. **Selenium** - Software for testing GUI of website. These tests can be found
-in idb\frontend\guitests.py. You can run them with the command `python guitests.py`.
+in `idb/frontend/guitests.py`. You can run them with the command `make selenium`
+from `idb/`.
 
 ##Testing methodology for Mocha
 * Tests whether or not a page will render correctly to ensure that there will be no
