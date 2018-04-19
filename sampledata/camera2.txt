@@ -1,6 +1,0 @@
-Camera brand: Nikon
-Camera model: D7100
-Max Resolution: 6000x4000
-Effective Pixels: 24 megapixels
-Continuous drive speed: 6.0 fps
-Video enabled: Yes
