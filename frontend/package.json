@@ -45,10 +45,14 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "es6-promise": "^4.2.4",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-react": "^7.7.0",
     "ignore-styles": "^5.0.1",
     "isomorphic-fetch": "^2.2.1",
     "jsdom": "^11.8.0",
     "jsdom-global": "^3.0.2",
+    "prettier": "1.12.1",
     "react-addons-test-utils": "^15.6.2"
   }
 }
