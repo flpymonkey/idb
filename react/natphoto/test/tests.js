@@ -379,7 +379,10 @@ describe("<SearchItem/>", function(){
   	})
 
     it("should render", function() {
-      shallow(<SearchItem data={{id: false, name: null}}/>
+      shallow(
+        <MemoryRouter>
+          <SearchItem data={{id: false, name: null}}/>
+        </MemoryRouter>
       );
     });
 });
