@@ -11,6 +11,12 @@ http://api.natphoto.me/parks.
 
 ## Frontend
 
+We applied the sorting functionality to various attributes of all three models
+based on what users would want to sort by. Some of these include sorting by
+name for all models, number of photos taken at each park, the date taken
+for photos, and megapixels for cameras. These sorts can also be applied in
+both ascending and descending order.
+
 Our frontend sorting logic is to put specific values from the api call into specific keys
 in the JSON named `sort1`, `sort2`, and `sort3`. We can then pass these to our `GridPage`
 component, which will pass this information into the `SortDropdown` component it creates.

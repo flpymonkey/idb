@@ -12,6 +12,11 @@ http://api.natphoto.me/parks.
 
 ## Frontend
 
+We designed the filter functionality to apply to attributes of all three models
+based on what users would want to filter by. Some of these include filtering by
+state for national parks, the number of likes for photos, and the prices for
+cameras.
+
 Our frontend filtering logic is to put specific values from the api call into specific keys
 in the JSON named `filter1` and `filter2`. We can then pass these to our `GridPage`
 component, which will pass this information into the `FilterDropdown` and `ResetDropdown`
