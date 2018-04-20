@@ -1,5 +1,6 @@
-.body {
-  margin-top: 5%;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 div.desc {
@@ -10,6 +11,10 @@ div.desc {
 
 img {
   width: 100%;
+}
+
+.body {
+  margin-top: 5%;
 }
 
 .textWrapper {
@@ -33,6 +38,19 @@ img {
   display: table-row;
 }
 
+.carousel {
+  border: 1px solid #e6e6e6;
+  height: 80%;
+  overflow: hidden;
+}
+
+.typeicons {
+  align-content: center;
+  padding-top: 7%;
+  align: center;
+  padding-left: 22%;
+}
+
 #description {
   font-family: Ahem!, sans-serif;
   font-size: 16px;
@@ -44,27 +62,9 @@ img {
   color: #eaeaea;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.carousel {
-  border: 1px solid #e6e6e6;
-  height: 80%;
-  overflow: hidden;
-}
-
 #myCarousel {
   display: inline;
   float: left;
-}
-
-.typeicons {
-  align-content: center;
-  padding-top: 7%;
-  align: center;
-  padding-left: 22%;
 }
 
 #mountains {
