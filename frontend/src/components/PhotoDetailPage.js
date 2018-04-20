@@ -6,6 +6,9 @@ import Parser from 'html-react-parser';
 import '../stylesheets/photodetailpage.css';
 import '../stylesheets/general.css';
 
+/*
+ * Displays more details about the photo taken at park
+ */
 export default class PhotoDetail extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +28,9 @@ export default class PhotoDetail extends Component {
     };
   }
 
+  /*
+   * fetches information for specific photo
+   */
   componentDidMount() {
     fetch('http://api.natphoto.me/photos/' + this.props.match.params.photo_id, {
       method: 'GET',
@@ -55,6 +61,9 @@ export default class PhotoDetail extends Component {
       });
   }
 
+  /*
+   * contains actual photo and title of the photo
+   */
   getHead() {
     return (
       <div>
@@ -79,6 +88,9 @@ export default class PhotoDetail extends Component {
     );
   }
 
+  /*
+   * contains further details about photo
+   */
   getFoot(description) {
     return (
       <div>
