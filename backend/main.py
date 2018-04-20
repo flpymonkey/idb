@@ -42,7 +42,7 @@ class ParkList(Resource):
             result = handler.get_parks_by_camera(args['camera'])
         else:
             result = handler.get_parks()
-        row = result.fetchone() #use fetchone() because the query returns lots of rows
+        row = result.fetchone()
         results=[]
 
         # retrieve the photo counts
@@ -101,7 +101,7 @@ class PhotoList(Resource):
         else:
             result = handler.get_photos()
 
-        row = result.fetchone() #use fetchone() because the query returns lots of rows
+        row = result.fetchone()
         results=[]
         while row is not None:
             results.append(dict(row))
@@ -135,7 +135,7 @@ class CameraList(Resource):
         else:
             result = handler.get_cameras()
 
-        row = result.fetchone() #use fetchone() because the query returns lots of rows
+        row = result.fetchone()
         results=[]
 
         # Getting counts of photos per camera
@@ -155,6 +155,7 @@ class CameraList(Resource):
             row = result.fetchone()
         return results
 
+# This is the API Resource for return all data in our database
 class AllList(Resource):
     def get(self):
 
@@ -164,19 +165,19 @@ class AllList(Resource):
 
         results=[]
 
-        row = cameras.fetchone() #use fetchone() because the query returns lots of rows
+        row = cameras.fetchone()
         while row is not None:
             camera = dict(row)
             results.append(camera)
             row = cameras.fetchone()
 
-        row = parks.fetchone() #use fetchone() because the query returns lots of rows
+        row = parks.fetchone()
         while row is not None:
             park = dict(row)
             results.append(park)
             row = parks.fetchone()
 
-        row = photos.fetchone() #use fetchone() because the query returns lots of rows
+        row = photos.fetchone()
         while row is not None:
             photo = dict(row)
             results.append(photo)

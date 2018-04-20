@@ -151,7 +151,7 @@ class GroupMember extends Component {
       <Col sm="4" id="profile">
         <img
           className="picName"
-          src={require(`../../../backend/static/photos/${this.props.pic}`)}
+          src={require(`../static/photos/${this.props.pic}`)}
           alt="hello"
         />
         <h2 className="name">{this.props.name}</h2>
