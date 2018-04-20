@@ -32,6 +32,7 @@ export default class ParkDetail extends Component {
     this.getParkCameras();
   }
 
+  /* Sets this component state to include park data from the API */
   getParkInfo() {
     fetch('http://api.natphoto.me/parks/' + this.props.match.params.park_name, {
       method: 'GET',
@@ -59,6 +60,7 @@ export default class ParkDetail extends Component {
     });
   }
 
+  /* Sets this component state to include all photos taken in this park */
   getParkPhotos() {
     fetch(
       'http://api.natphoto.me/photos?park=' + this.props.match.params.park_name,
@@ -82,6 +84,7 @@ export default class ParkDetail extends Component {
     });
   }
 
+  /* Sets this component state to include all cameras used in this park */
   getParkCameras() {
     fetch(
       'http://api.natphoto.me/cameras?park=' +
@@ -106,6 +109,38 @@ export default class ParkDetail extends Component {
     });
   }
 
+  /* Returns the JSX markdown for the visual components */
+  getVisualComponents(){
+    return (
+      <Row>
+        <Col sm="6">
+          <div className="parkImgWrapper">
+            <img
+              className="parkImage"
+              src={this.state.image_url}
+              alt={this.state.name}
+              />
+          </div>
+        </Col>
+        <Col sm="6" className="maps">
+          <iframe
+            title={this.state.name}
+            width="400"
+            height="300"
+            frameBorder="0"
+            style={{ border: 0 }}
+            src={
+              'https://www.google.com/maps/embed/v1/place?key=' +
+              MapsAPIKey +
+              '&q=' +
+              this.state.name
+            }
+            allowFullScreen
+            />
+        </Col>
+      </Row>);
+  }
+
   render() {
     if (this.state.valid === 'unknown') {
       return <div />;
@@ -123,33 +158,7 @@ export default class ParkDetail extends Component {
           <div className="parkHeader">
             <span>{this.state.name}</span>
           </div>
-          <Row>
-            <Col sm="6">
-              <div className="parkImgWrapper">
-                <img
-                  className="parkImage"
-                  src={this.state.image_url}
-                  alt={this.state.name}
-                  />
-              </div>
-            </Col>
-            <Col sm="6" className="maps">
-              <iframe
-                title={this.state.name}
-                width="400"
-                height="300"
-                frameBorder="0"
-                style={{ border: 0 }}
-                src={
-                  'https://www.google.com/maps/embed/v1/place?key=' +
-                  MapsAPIKey +
-                  '&q=' +
-                  this.state.name
-                }
-                allowFullScreen
-                />
-            </Col>
-          </Row>
+          {this.getVisualComponents()}
           <Row>
             <Col sm="1" />
             <Col sm="10">

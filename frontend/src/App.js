@@ -5,7 +5,7 @@ import './App.css';
 import NatPhotoNavBar from './components/NavBar.js';
 import Main from './components/Main.js';
 
-/* The main App handler renders a navigation bar at the top of the page */
+/* The main App handler, renders a navigation bar at the top of the page */
 const App = () => (
   <div className="appBody">
     <NatPhotoNavBar />
