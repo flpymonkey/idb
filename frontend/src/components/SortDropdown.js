@@ -6,6 +6,9 @@ import {
   DropdownItem
 } from 'reactstrap';
 
+/*
+ * dropdown to sort options to filter model card by
+ */
 export default class SortDropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +21,9 @@ export default class SortDropdown extends React.Component {
     };
   }
 
+  /*
+   * send sort option chosen to parent so it can set state correctly to this
+   */
   selectSort(sortBy, direct, label) {
     this.props.sortFunc(sortBy, direct, label);
   }
@@ -28,6 +34,9 @@ export default class SortDropdown extends React.Component {
     });
   }
 
+  /*
+   * renders all of the sort dropdown options
+   */
   render() {
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>

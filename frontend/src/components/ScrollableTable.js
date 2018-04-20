@@ -5,6 +5,10 @@ import '../stylesheets/general.css';
 import '../stylesheets/scrollabletable.css';
 import '../stylesheets/hover.css';
 
+/*
+ * A scrollable table with one row to display related data in model
+ * detail pages (i.e. photos taken with a camera, cameras used at a park)
+ */
 export default class ScrollableTable extends Component {
   render() {
     const elems = this.props.data.map((elem, i) => (
