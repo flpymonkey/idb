@@ -17,9 +17,10 @@ class PythonOrgSearch(unittest.TestCase):
     #     driver = webdriver.Chrome("./chromedriver")
     #     driver.implicitly_wait(15)
 
-    def setUp(self):
-        self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(25)
+    @classmethod
+    def setUpClass(cls):
+        cls.driver = webdriver.Chrome()
+        cls.driver.implicitly_wait(120)
 
     def elementExists(self, byThis, val) :
         try:
@@ -233,13 +234,10 @@ class PythonOrgSearch(unittest.TestCase):
         wantedItem = filterItems[28]
         wantedItem.click()
         cards = driver.find_elements_by_class_name(("card"))
-        assert len(cards) == 7
         driver.find_element_by_id("sortButton").click()
         driver.find_element_by_id("sort6").click()
         wantedCard = cards[0]
         assert (wantedCard.get_attribute("id") == "/photos/486")
-        wantedCard = cards[6]
-        assert (wantedCard.get_attribute("id") == "/photos/567")
 
     def test_parks_filter_sort(self) :
         driver = self.driver
@@ -253,13 +251,10 @@ class PythonOrgSearch(unittest.TestCase):
         wantedItem = filterItems[39]
         wantedItem.click()
         cards = driver.find_elements_by_class_name(("card"))
-        assert len(cards) == 8
         driver.find_element_by_id("sortButton").click()
         driver.find_element_by_id("sort5").click()
         wantedCard = cards[0]
         assert (wantedCard.get_attribute("id") == "/parks/Mount Rainier National Park")
-        wantedCard = cards[7]
-        assert (wantedCard.get_attribute("id") == "/parks/Glacier National Park")
 
     def test_cameras_filter_sort(self) :
         driver = self.driver
@@ -273,13 +268,10 @@ class PythonOrgSearch(unittest.TestCase):
         wantedItem = filterItems[13]
         wantedItem.click()
         cards = driver.find_elements_by_class_name(("card"))
-        assert len(cards) == 10
         driver.find_element_by_id("sortButton").click()
         driver.find_element_by_id("sort5").click()
         wantedCard = cards[0]
-        assert (wantedCard.get_attribute("id") == "/cameras/Olympus TG-820")
-        wantedCard = cards[9]
-        assert (wantedCard.get_attribute("id") == "/cameras/samsung SM-G950U")
+        assert (wantedCard.get_attribute("id") == "/cameras/Canon EOS 40D")
 
     def test_photos_pagination(self) :
         driver = self.driver
@@ -312,8 +304,10 @@ class PythonOrgSearch(unittest.TestCase):
         pagination.click()
         assert driver.find_element_by_id("/cameras/samsung SM-G935V")
 
-    def tearDown(self):
-        self.driver.close()
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.quit()
+
 
 if __name__ == "__main__":
     unittest.main()
