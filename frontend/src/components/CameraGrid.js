@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Grid from './GridPage.js';
 
+/*
+ * Fetches data from camera api and constructs grid page
+ */
 export default class CameraGrid extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +12,9 @@ export default class CameraGrid extends Component {
     };
   }
 
+  /*
+   * fetches data from camera api
+   */
   componentDidMount() {
     fetch('http://api.natphoto.me/cameras', {
       method: 'GET',

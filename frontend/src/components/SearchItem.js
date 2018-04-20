@@ -5,11 +5,11 @@ import Highlighter from 'react-highlight-words';
 
 const SEARCH_RANGE = 100;
 
-  /*
-   * Renders a search item to appear as a search result
-   */
+/*
+* Renders a search item to appear as a search result
+*/
 export default class SearchItem extends Component {
-  
+
   /*
    * Saves relevant data based on model type (Camera, Park, or Photo)
    */

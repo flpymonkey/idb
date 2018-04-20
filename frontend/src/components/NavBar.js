@@ -14,6 +14,9 @@ import {
 } from 'reactstrap';
 import SearchBar from './SearchBar.js';
 
+/*
+ * navbar to help navigate through website
+ */
 export default class NatPhotoNavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -29,6 +32,9 @@ export default class NatPhotoNavBar extends React.Component {
     });
   }
 
+  /*
+   * makes nav item for each page
+   */
   getNavItem(pageName) {
     return (
       <NavItem>

@@ -3,6 +3,9 @@ import { CardImg } from 'reactstrap';
 import { SyncLoader } from 'react-spinners';
 import { Row } from 'reactstrap';
 
+/*
+ * Loading spinner to display while the photo still hasn't finished loading
+ */
 export default class LoadingImage extends Component {
   constructor(props) {
     super(props);
@@ -13,8 +16,10 @@ export default class LoadingImage extends Component {
     this.setState({ loading: false });
   }
 
-  // Wait until the image is loaded, then display it. Display a spinner in
-  // its place when it is still loading.
+  /*
+   * Wait until the image is loaded, then display it. Display a spinner in
+   * its place when it is still loading.
+   */
   renderImage() {
     if (this.state.loading) {
       return (
