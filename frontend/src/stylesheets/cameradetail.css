@@ -28,11 +28,6 @@
   margin-right: -50%;
 }
 
-#camera-row {
-  margin-top: 3%;
-  margin-bottom: 7%;
-}
-
 .photoImage {
   width: 300px;
 }
@@ -55,6 +50,11 @@
 .noCamData {
   text-align: center;
   font-size: 16px;
+}
+
+#camera-row {
+  margin-top: 3%;
+  margin-bottom: 7%;
 }
 
 #photos {
