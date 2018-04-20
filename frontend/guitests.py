@@ -258,6 +258,8 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_cameras_filter_sort(self) :
         driver = self.driver
+        # for
+        # try
         driver.get("http://natphoto.me")
         driver.find_element_by_link_text('Cameras').click()
         assert (driver.find_element_by_class_name("gridTitle").text == "Cameras")
@@ -272,6 +274,10 @@ class PythonOrgSearch(unittest.TestCase):
         driver.find_element_by_id("sort5").click()
         wantedCard = cards[0]
         assert (wantedCard.get_attribute("id") == "/cameras/Canon EOS 40D")
+        # break
+        # except: pass
+        #for/else: 
+
 
     def test_photos_pagination(self) :
         driver = self.driver

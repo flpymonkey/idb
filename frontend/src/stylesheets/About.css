@@ -6,12 +6,6 @@
   font-size: 50px;
 }
 
-#aboutTitle {
-  text-align: center;
-  height: 100px;
-  font-size: 50px;
-}
-
 .aboutDesc {
   padding-top: 3em;
   padding-bottom: 2%;
@@ -40,26 +34,6 @@
 .aboutHeader:after {
   left: 0.5em;
   margin-right: -50%;
-}
-
-#profile {
-  align-content: center;
-  text-align: center;
-}
-
-#bio {
-  padding-top: 5%;
-  padding-bottom: 5%;
-  font-size: 16px;
-}
-
-#bioLine {
-  margin-top: 2%;
-  margin-bottom: 2%;
-  margin-left: 10%;
-  border-bottom: 1px solid #eaeaea;
-  width: 80%;
-  text-align: center;
 }
 
 .resp {
@@ -118,10 +92,6 @@
   font-size: 16px;
 }
 
-#teamStatsBox {
-  margin-top: 27%;
-}
-
 .picName {
   height: 350px;
   width: 350px;
@@ -129,4 +99,35 @@
 
 .totalsCol {
   margin-bottom: 15%;
+}
+
+#aboutTitle {
+  text-align: center;
+  height: 100px;
+  font-size: 50px;
+}
+
+
+#profile {
+  align-content: center;
+  text-align: center;
+}
+
+#bio {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 16px;
+}
+
+#bioLine {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+  border-bottom: 1px solid #eaeaea;
+  width: 80%;
+  text-align: center;
+}
+
+#teamStatsBox {
+  margin-top: 27%;
 }

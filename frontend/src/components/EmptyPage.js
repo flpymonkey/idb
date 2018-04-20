@@ -3,6 +3,9 @@ import { Row, Col } from 'reactstrap';
 import '../stylesheets/general.css';
 import '../stylesheets/emptypage.css';
 
+/*
+ * Renders the page that is displayed when a 404 Error is thrown
+ */
 export default class EmptyPage extends Component {
   render() {
     return (

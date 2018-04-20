@@ -12,15 +12,28 @@
   font-size: 25px;
 }
 
-#photoDetailTitle {
-  font-family: Ahem!, sans-serif;
-  font-size: 20px;
-  text-align: left;
+.imageRow {
+  height: 100%;
+}
+
+.headerRow {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.photoDescHeader {
+  font-size: 25px;
 }
 
 .links {
   text-align: left;
   font-size: 20px;
+}
+
+#photoDetailTitle {
+  font-family: Ahem!, sans-serif;
+  font-size: 20px;
+  text-align: left;
 }
 
 #descriptionRow {
@@ -50,17 +63,4 @@
   display: block;
   width: auto;
   border: 1px solid #eaeaea;
-}
-
-.imageRow {
-  height: 100%;
-}
-
-.headerRow {
-  margin-top: 0%;
-  margin-bottom: 0%;
-}
-
-.photoDescHeader {
-  font-size: 25px;
 }

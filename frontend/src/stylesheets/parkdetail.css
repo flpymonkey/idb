@@ -1,3 +1,9 @@
+iframe {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+
 .parkHeader {
   overflow: hidden;
   text-align: center;
@@ -57,12 +63,6 @@
   display: block;
   width: auto;
   border: 1px solid #eaeaea;
-}
-
-iframe {
-  width: 90%;
-  margin: auto;
-  display: block;
 }
 
 .maps {

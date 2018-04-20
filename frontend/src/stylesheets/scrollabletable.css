@@ -1,7 +1,3 @@
-#scrollableTable {
-  overflow-x: auto;
-}
-
 .photoTable {
   margin-left: auto;
   margin-right: auto;
@@ -23,13 +19,17 @@
   max-width: 100%;
 }
 
+.photoImage {
+  width: auto;
+}
+
+#scrollableTable {
+  overflow-x: auto;
+}
+
 #scrollableTitle {
   color: #eaeaea;
   font-size: 25px;
   margin-left: 5%;
   margin-bottom: 0.5%;
-}
-
-.photoImage {
-  width: auto;
 }
