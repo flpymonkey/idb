@@ -14,15 +14,22 @@ export default class SearchBar extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  /*
+   * Captures value entered into the search bar
+   */
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
 
+  /*
+   * Handles a search submission
+   */
   handleSubmit(event) {
     this.setState({ fireRedirect: true });
   }
 
-  /* Render the search bar as a form. Redirect to /search?q=<query> when
+  /* 
+   * Render the search bar as a form. Redirect to /search?q=<query> when
    * the form is submitted.
    */
   render() {
