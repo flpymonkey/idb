@@ -349,7 +349,7 @@ class GridHeader extends Component {
           <Col sm="2" className="dropdownLabel">
             Filter by:
           </Col>
-          <Col sm="2">
+          <Col sm="2" className="filter">
             <FilterDropdown
               style={{ zIndex: 1000 }}
               dropTitle={this.props.state.filter1Title}
@@ -357,14 +357,14 @@ class GridHeader extends Component {
               filterFunc={this.props.filterFunc1}
             />
           </Col>
-          <Col sm="2">
+          <Col sm="2" className="filter">
             <FilterDropdown
               dropTitle={this.props.state.filter2Title}
               options={this.props.data.filterOptions2}
               filterFunc={this.props.filterFunc2}
             />
           </Col>
-          <Col sm="2">
+          <Col sm="2" className="filter">
             <ResetDropdown
               types={this.props.data.filterAttributes}
               clearFunc={this.props.clearFunc}
