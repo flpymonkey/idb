@@ -4,6 +4,9 @@ import { Row, Col, Container } from 'reactstrap';
 import '../stylesheets/Home.css';
 import '../stylesheets/general.css';
 
+/*
+ * The default/home page of Natphoto.me
+ */
 export default class Home extends Component {
   render() {
     return (
