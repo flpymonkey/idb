@@ -6,6 +6,9 @@ import {
   DropdownItem
 } from 'reactstrap';
 
+/*
+ * dropdown of options to reset any filter chosen
+ */
 export default class ResetDropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +21,9 @@ export default class ResetDropdown extends React.Component {
     };
   }
 
+  /*
+   * send reset option chosen to parent so it can set state correctly to this
+   */
   clearFilter(param) {
     this.props.clearFunc(param);
   }
@@ -28,6 +34,9 @@ export default class ResetDropdown extends React.Component {
     });
   }
 
+  /*
+   * renders reset dropdown options
+   */
   render() {
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>

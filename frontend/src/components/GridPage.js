@@ -11,6 +11,9 @@ import LoadingImage from './LoadingImage.js';
 import { Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import Datasort from 'react-data-sort';
 
+/*
+ * Grid component that will display cards for each model instance
+ */
 export default class Grid extends Component {
   constructor(props) {
     super(props);
@@ -60,7 +63,8 @@ export default class Grid extends Component {
         newCond[0]
       );
     } else if (Number.isInteger(item)) {
-      // filter option doesn't contain $ and the filter data of current card is integer
+      // filter option doesn't contain $ and the filter data of
+      // current card is integer
       return this.checkingCondition(
         item,
         parseInt(newCond[0], 10),
@@ -80,7 +84,10 @@ export default class Grid extends Component {
     }
   }
 
-  // check if current card data should be included when filtering by this condition or not
+  /*
+   * check if current card data should be included when filtering by this
+   * condition or not
+   */
   checkingCondition(item, lower, condVal, upper, condition) {
     if (condition === '<') {
       return item < condVal;
@@ -116,7 +123,10 @@ export default class Grid extends Component {
     return item.includes(condition);
   }
 
-  // check if filter1 option has ranges or just one value, send correct function to filter by
+  /*
+   * check if filter1 option has ranges or just one value, send correct
+   * function to filter by
+   */
   filter1Data(data) {
     if (this.props.filter1Range) {
       return data.filter(this.filter1ConditionRange);
@@ -125,7 +135,10 @@ export default class Grid extends Component {
     }
   }
 
-  // check if filter2 option has ranges or just one value, send correct function to filter by
+  /*
+   * check if filter2 option has ranges or just one value, send correct
+   * function to filter by
+   */
   filter2Data(data) {
     if (this.props.filter2Range) {
       return data.filter(this.filter2ConditionRange);
@@ -143,17 +156,24 @@ export default class Grid extends Component {
     });
   }
 
-  // correctly set filter1 state to filter option chosen
+  /*
+   * correctly set filter1 state to filter option chosen
+   */
   setFilter1(filter) {
     this.setState({ filter1: filter, filter1Title: filter, activePage: 1 });
   }
 
-  // correctly set filter2 state to filter option chosen
+  /*
+   * correctly set filter2 state to filter option chosen
+   */
   setFilter2(filter) {
     this.setState({ filter2: filter, filter2Title: filter, activePage: 1 });
   }
 
-  // check if filter chosen to reset was either filter1 or filter2, reset the correct one
+  /*
+   * check if filter chosen to reset was either filter1 or filter2,
+   * reset the correct one
+   */
   clearFilter(filter) {
     if (filter === 'filter1') {
       this.setState({
@@ -176,6 +196,9 @@ export default class Grid extends Component {
     this.setState({ activePage: pageNumber });
   }
 
+  /*
+   * puts grid item cards in row
+   */
   getRow(data, index, numItems) {
     let count = 0;
     let cards = [];
@@ -188,6 +211,9 @@ export default class Grid extends Component {
     return cards;
   }
 
+  /*
+   * create cards from data and makes new row after every fourth card
+   */
   getCards(data) {
     let endVal = this.state.activePage * 16;
     let startVal = (this.state.activePage - 1) * 16;
@@ -302,6 +328,9 @@ export default class Grid extends Component {
   }
 }
 
+/*
+ * creates cards with photo and their data
+ */
 class GridItemCard extends Component {
   render() {
     return (
@@ -323,6 +352,9 @@ class GridItemCard extends Component {
   }
 }
 
+/*
+ * Contains title and dropdowns
+ */
 class GridHeader extends Component {
   render() {
     return (
