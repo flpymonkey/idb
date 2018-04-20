@@ -5,6 +5,10 @@ import '../stylesheets/carousel.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+
+/*
+ * A bootstrap-like Carousel to display some of the national parks on the homepage
+ */
 export class MyCarousel extends Component {
   render() {
     return (

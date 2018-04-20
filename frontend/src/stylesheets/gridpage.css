@@ -21,6 +21,11 @@
   flex: 1 1 auto;
 }
 
+.filter {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
 .card {
   position: relative;
   display: flex;
