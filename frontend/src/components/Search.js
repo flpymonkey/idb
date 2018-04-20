@@ -8,6 +8,7 @@ import '../stylesheets/search.css';
 
 import * as Fuse from 'fuse.js';
 
+/* This component handles search functionality on www.natphoto.me/search */
 export default class Search extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +26,9 @@ export default class Search extends Component {
     this.renderResults = this.renderResults.bind(this);
   }
 
+  /* Contains attributes of our models we are searching on.
+  * Also contains the search attribute weights to optimize our search results
+  */
   getKeys(){
     return ([
       { name: 'park', weight: 0.1 },
