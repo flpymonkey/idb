@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import { Input, Form } from 'reactstrap';
 
+/*
+ * Displays search bar
+ */
 export default class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +31,7 @@ export default class SearchBar extends Component {
     this.setState({ fireRedirect: true });
   }
 
-  /* 
+  /*
    * Render the search bar as a form. Redirect to /search?q=<query> when
    * the form is submitted.
    */

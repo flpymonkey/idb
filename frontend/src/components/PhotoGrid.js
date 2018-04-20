@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Grid from './GridPage.js';
 
+/*
+ * Fetches data from photo api and constructs grid page
+ */
 export default class PhotoGrid extends Component {
   constructor(props) {
     super(props);
@@ -10,6 +13,9 @@ export default class PhotoGrid extends Component {
     };
   }
 
+  /*
+   * fetches data from photo api
+   */
   componentDidMount() {
     fetch('http://api.natphoto.me/photos', {
       method: 'GET',

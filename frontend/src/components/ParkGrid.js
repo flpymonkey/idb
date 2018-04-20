@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Grid from './GridPage.js';
 
+/*
+ * Fetches data from park api and constructs grid page
+ */
 export default class ParkGrid extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +12,9 @@ export default class ParkGrid extends Component {
     };
   }
 
+  /*
+   * fetches data from park api
+   */
   componentDidMount() {
     fetch('http://api.natphoto.me/parks', {
       method: 'GET',
