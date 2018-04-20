@@ -10,6 +10,26 @@
   border: 1px solid #eaeaea;
 }
 
+.descKey {
+  font-size: 16px;
+}
+
+.descVal {
+  font-size: 16px;
+}
+
+.descKeysCol {
+}
+
+.descValsCol {
+  word-wrap: break-word;
+}
+
+.infoRow {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
 #info-text {
   padding-left: 5em;
 }
@@ -32,24 +52,4 @@
   padding-top: 5.25%;
   color: #eaeaea;
   font-family: Ahem!, sans-serif;
-}
-
-.descKey {
-  font-size: 16px;
-}
-
-.descVal {
-  font-size: 16px;
-}
-
-.descKeysCol {
-}
-
-.descValsCol {
-  word-wrap: break-word;
-}
-
-.infoRow {
-  margin-top: 5%;
-  margin-left: 5%;
 }
