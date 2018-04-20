@@ -1,6 +1,6 @@
 GithubID = flpymonkey
 RepoName = idb
-SHA      = 42eaf88dd355f607046387cb356fa03f898c06eb
+SHA      = 1ff0b4db0fe88cf179e63a83405d7bbf177753b0
 
 .PHONY: frontend backend
 
@@ -65,7 +65,7 @@ other:
 	@echo "http://${GithubID}.gitbooks.io/report/doc/other-critique.html"
 
 # make present    - prints link to gitpitch presentation
-present: 
+present:
 	@echo "http://gitpitch.com/${GithubID}/${RepoName}"
 
 # make install    - install frontend and backend requirements
