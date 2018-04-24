@@ -5,9 +5,8 @@
 # https://github.com/gitpitch/gitpitch/wiki/Slideshow-Settings
 #
 theme : beige
-theme-override : assets/css/PITCHME.css
-logo : assets/image/logo.png
-background : assets/image/envelope.svg
+theme-override : PITCHME.css
+background : envelope.svg
 background-size : cover
 highlight : atom-one-dark
 transition : none
