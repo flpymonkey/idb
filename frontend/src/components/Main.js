@@ -10,6 +10,7 @@ import ParkDetailPage from './ParkDetailPage.js';
 import CameraDetailPage from './CameraDetailPage.js';
 import Search from './Search.js';
 import EmptyPage from './EmptyPage.js';
+import Visualization from './Visualization.js';
 import '../stylesheets/main.css';
 
 /*
@@ -32,6 +33,7 @@ const Main = () => (
         <Route exact path="/cameras" component={CameraGrid} />
         <Route exact path="/about" component={About} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/visualization" component={Visualization} />
         <Route component={EmptyPage} />
       </Switch>
     </div>
