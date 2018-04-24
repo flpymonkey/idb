@@ -1,17 +1,26 @@
 @title[Introduction]
-# Envelope
+# Natphoto
 
-### A GitPitch Presentation Template
+### SWEet Tea
 
 ---
 
-## Tips!
+## Introduction
 
 <br>
-
-@fa[arrows gp-tip](Press F to go Fullscreen)
-
-@fa[microphone gp-tip](Press S for Speaker Notes)
+<div class="left">
+    <div>Backend</div>
+    <li>Jeff Bell</li>
+    <li>Private URLs</li>
+</div>
+<div class="right">
+    <div>Frontend</div>
+    <ul>
+        <li>Private Repos</li>
+        <li>Private URLs</li>
+        <li>Password-Protection</li>
+    </ul>
+</div>
 
 ---
 
@@ -78,7 +87,7 @@ http.createServer(function (request, response) {
 ## Template Help
 
 - [Code Presenting](https://github.com/gitpitch/gitpitch/wiki/Code-Presenting)
-  + [Repo Source](https://github.com/gitpitch/gitpitch/wiki/Code-Delimiter-Slides), [Static Blocks](https://github.com/gitpitch/gitpitch/wiki/Code-Slides), [GIST](https://github.com/gitpitch/gitpitch/wiki/GIST-Slides) 
+  + [Repo Source](https://github.com/gitpitch/gitpitch/wiki/Code-Delimiter-Slides), [Static Blocks](https://github.com/gitpitch/gitpitch/wiki/Code-Slides), [GIST](https://github.com/gitpitch/gitpitch/wiki/GIST-Slides)
 - [Custom CSS Styling](https://github.com/gitpitch/gitpitch/wiki/Slideshow-Custom-CSS)
 - [Slideshow Background Images](https://github.com/gitpitch/gitpitch/wiki/Background-Setting)
 - [Background Image Scaling](https://github.com/gitpitch/gitpitch/wiki/Image-Slides#scaling)
@@ -122,4 +131,3 @@ http.createServer(function (request, response) {
 
 ### <span class="white">Get your presentation started!</span>
 ### [Download this template @fa[external-link gp-download]](https://gitpitch.com/template/download/envelope)
-
