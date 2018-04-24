@@ -118,18 +118,15 @@ http.createServer(function (request, response) {
 
 ---
 
-### Natphoto.me API
+## Natphoto.me API
 
 ---
 
-# Camera {#camera}
+## Camera
 
-The following information shows how to retrieve data on a camera using
-the natphoto.me API.
+Retrieve camera data from the natphoto.me API.
 
-## Requests
-
-The following requests can be made
+### Requests
 
 **GET** `/cameras`
 * Returns a list of all cameras
@@ -146,36 +143,30 @@ The following requests can be made
 
 ---
 
-## Usage Examples
+### Usage Examples
 
 Get a list of all cameras
-
 ```
 http://api.natphoto.me/cameras
 ```
 
 Get a list of all cameras that are used at a particular park
-
 ```
 http://api.natphoto.me/cameras?park=Yellowstone%20National%20Park
 ```
 
 Get the details for a specific camera
-
 ```
 http://api.natphoto.me/cameras/Canon%20EOS%2080D
 ```
 
 ---
 
-# National Park {#park}
+## National Park
 
-The following information shows how to retrieve data on a national park using
-the natphoto.me API.
+Retrieve national park data from the natphoto.me API.
 
-## Requests
-
-The following requests can be made
+### Requests
 
 **GET** `/parks`
 * Returns a list of all parks
@@ -192,36 +183,30 @@ The following requests can be made
 
 ---
 
-## Usage Examples
+### Usage Examples
 
 Get a list of all parks
-
 ```
 http://api.natphoto.me/parks
 ```
 
 Get a list of all parks that are shot by a particular camera
-
 ```
 http://api.natphoto.me/parks?camera=Canon%20EOS%2080D
 ```
 
 Get the details for a specific park
-
 ```
 http://api.natphoto.me/parks/Yellowstone%20National%20Park
 ```
 
 ---
 
-# Photo {#photo}
+## Photo
 
-The following information shows how to retrieve data on a photo using
-the natphoto.me API.
+Retrieve photo data from natphoto.me API.
 
-## Requests
-
-The following requests can be made
+### Requests
 
 **GET** `/photos`
 * Returns a list of all photos
@@ -239,42 +224,30 @@ The following requests can be made
 
 ---
 
-## Usage Examples
+### Usage Examples
 
 Get a list of all photos
-
 ```
 http://api.natphoto.me/photos
 ```
 
 Get a list of all photos that are shot by a particular camera
-
 ```
 http://api.natphoto.me/photos?camera=Canon%20EOS%2080D
 ```
 
-Get a list of all photos of a particular park
-
-```
-http://api.natphoto.me/photos?park=Yellowstone%20National%20Park
-```
-
 Get the details for a specific photo
-
 ```
 http://api.natphoto.me/photos/123
 ```
 
 ---
 
-# All {#all}
+## All
 
-The following information shows how to retrieve data from the `api.natphoto.me/all`
-endpoint in our API.
+Retrieve data from the `api.natphoto.me/all` endpoint in our API.
 
-## Request
-
-The following request can be made
+### Request
 
 **GET** `/all`
 * Returns a list of all model instances in our database (all photos, cameras, and
@@ -285,10 +258,9 @@ The following request can be made
 
 ---
 
-## Usage Examples
+### Usage Examples
 
 Get a list of all model instances in our database
-
 ```
 http://api.natphoto.me/all
 ```
