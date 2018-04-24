@@ -3,22 +3,25 @@
 
 ### SWEet Tea
 
----
+---?color=#96d9a4
+
 
 ## Introduction
+
+
 
 <br>
 <div class="left">
     <div>Backend</div>
     <li>Jeff Bell</li>
-    <li>Private URLs</li>
+    <li>Ben Johnson</li>
 </div>
 <div class="right">
     <div>Frontend</div>
     <ul>
-        <li>Private Repos</li>
-        <li>Private URLs</li>
-        <li>Password-Protection</li>
+        <li>Bri Vargas</li>
+        <li>Tony DeNapoli</li>
+        <li>Dayanny Caballero</li>
     </ul>
 </div>
 
