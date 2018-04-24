@@ -245,7 +245,7 @@ class DataHandler (object):
         photos_table = self.metadata.tables['photos']
         my_join = parks_table.join(photos_table,
                     parks_table.c.name == photos_table.c.park)
-        sel = select([parks_table]).select_from(my_join).where(photos_table.c.camera == camera)
+        sel = select([parks_table]).select_from(my_join).where(photos_table.c.camera == camera).distinct()
         result = self.connection.execute(sel)
         return result
 
@@ -322,7 +322,7 @@ class DataHandler (object):
         photos_table = self.metadata.tables['photos']
         my_join = cameras_table.join(photos_table,
                     cameras_table.c.name == photos_table.c.camera)
-        sel = select([cameras_table]).select_from(my_join).where(photos_table.c.park == park)
+        sel = select([cameras_table]).select_from(my_join).where(photos_table.c.park == park).distinct()
         result = self.connection.execute(sel)
         return result
 
