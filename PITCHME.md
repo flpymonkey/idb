@@ -17,6 +17,7 @@
 ---?color=#c7f9d2
 
 ## Frontend Team
+
 ---?color=#c7f9d2
 
 ## Natphoto.me API
@@ -72,6 +73,29 @@ http://api.natphoto.me/all
 ```
 ---?color=#c7f9d2
 ## How we made the frontend
+- Create-react-app
+- React-strap Rows and Cols
+- Components
+---?color=c7f9d2
+```bash
+├── frontend
+│   ├── source
+│   │   ├── components
+│   │   │   ├── About.js
+│   │   │   ├── CameraDetailPage.js
+│   │   │   ├── CameraGrid.js
+│   │   │   ├── Carousel.js
+│   │   │   ├── DetailHeader.js
+│   │   │   ...
+│   │   └── stylesheets
+│   │   │   ├── About.css
+│   │   │   ├── CameraDetailPage.css
+│   │   │   ├── CameraGrid.css
+│   │   │   ├── Carousel.css
+│   │   │   ├── DetailHeader.css
+│   │   │   ...
+
+```
 ---?color=#c7f9d2
 ## Things that went well...
 ---?color=#c7f9d2
