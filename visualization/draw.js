@@ -1,7 +1,7 @@
-var width = 500,
-    height = 500,
+var width = 800,
+    height = 800,
     radius = Math.min(width, height) / 2,
-    innerRadius = 0.3 * radius;
+    innerRadius = 0.2 * radius;
 
 var pie = d3.layout.pie()
     .sort(null)
@@ -17,7 +17,7 @@ var tip = d3.tip()
 var arc = d3.svg.arc()
   .innerRadius(innerRadius)
   .outerRadius(function (d) {
-    return (radius - innerRadius) * (d.data.score / 100.0) + innerRadius;
+    return (radius - innerRadius) * (d.data.score / 100.0) + innerRadius - 45;
   });
 
 var outlineArc = d3.svg.arc()

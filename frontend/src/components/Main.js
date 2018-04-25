@@ -10,7 +10,6 @@ import ParkDetailPage from './ParkDetailPage.js';
 import CameraDetailPage from './CameraDetailPage.js';
 import Search from './Search.js';
 import EmptyPage from './EmptyPage.js';
-import Visualization from './Visualization.js';
 import '../stylesheets/main.css';
 
 /*
