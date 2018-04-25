@@ -129,12 +129,37 @@ http://api.natphoto.me/all
 ---?color=#c7f9d2
 
 ## Things that puzzle us
+- Differences in browsers (Safari, Firefox) |
+- More professional styling and features |
 ---?color=#c7f9d2
+
 ### TacoBoutAustin
-- Did well
-- Could do better
-- Learned
-- Puzzles us
+---?color=#c7f9d2
+
+## Did well
+- Taco theme
+  - Ratings
+  - Loading
+  - Logo
+- Visually pleasing
+- Seperate tabs for searching different models
+- Concept
+- Filtering
+---?color=#c7f9d2
+
+## Could do better
+- "Rating of at least"
+- Unclear what the user is filtering by
+- Inconsistent font sizing across site
+---?color=#c7f9d2
+
+## Learned
+Grid Cards
+PUT IMAGES
+---?color=#c7f9d2
+## Puzzles us
+- Not using fetch to hit API
+- XML fetches
 ---?color=#c7f9d2
 ## Visualization
 ---?color=#c7f9d2
