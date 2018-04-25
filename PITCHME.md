@@ -11,9 +11,11 @@
 ## Backend Team
 <img src="./frontend/src/static/photos/ben.png">
 <img src="./frontend/src/static/photos/jeff.png">
+
 | Ben Johnson | Jeff Bell |
 | -------- | -------- | 
 | DID THINGS | ALSO DID THINGS |
+
 ---?color=#c7f9d2
 
 ## Frontend Team
