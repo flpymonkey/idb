@@ -1,4 +1,5 @@
 @title[Introduction]
+---?color=#96d9a4
 # Natphoto
 
 ### SWEet Tea
@@ -25,7 +26,7 @@
     </ul>
 </div>
 
----
+---?color=#96d9a4
 
 ## Template Features
 
@@ -42,7 +43,7 @@
 @[8-18](Without ever leaving your slideshow.)
 @[19-28](Using GitPitch code-presenting with (optional) annotations.)
 
----
+---?color=#96d9a4
 
 @title[JavaScript Block]
 
@@ -85,7 +86,7 @@ http.createServer(function (request, response) {
 
 <!-- Sample slide background image scaling and custom color fill -->
 
----
+---?color=#96d9a4
 
 ## Template Help
 
@@ -96,7 +97,7 @@ http.createServer(function (request, response) {
 - [Background Image Scaling](https://github.com/gitpitch/gitpitch/wiki/Image-Slides#scaling)
 - [Custom Logo](https://github.com/gitpitch/gitpitch/wiki/Logo-Setting), [TOC](https://github.com/gitpitch/gitpitch/wiki/Table-of-Contents), and [Footnotes](https://github.com/gitpitch/gitpitch/wiki/Footnote-Setting)
 
----
+---?color=#96d9a4
 
 ## GitPitch Pro Features
 
@@ -116,11 +117,11 @@ http.createServer(function (request, response) {
     </ul>
 </div>
 
----
+---?color=#96d9a4
 
 ## Natphoto.me API
 
----
+---?color=#96d9a4
 
 ## Camera
 * All cameras
@@ -138,7 +139,7 @@ http.createServer(function (request, response) {
 * Park details by name
 * Park by cameras
 
----
+---?color=#96d9a4
 
 ### Usage Examples
 
@@ -163,7 +164,7 @@ Get a list of all photos of a particular park
 http://api.natphoto.me/photos?park=Yellowstone%20National%20Park
 ```
 
----
+---?color=#96d9a4
 
 ## All
 
@@ -178,7 +179,7 @@ Retrieve data from the `api.natphoto.me/all` endpoint in our API.
   * None
 * Return Content-Type: application/json
 
----
+---?color=#96d9a4
 
 ### Usage Examples
 
@@ -186,7 +187,7 @@ Get a list of all model instances in our database
 ```
 http://api.natphoto.me/all
 ```
----
+---?color=#96d9a4
 
 ### Questions?
 
