@@ -147,12 +147,6 @@ Get the details for a specific photo
 http://api.natphoto.me/photos/123
 ```
 
-Get a list of all photos of a particular park
-
-```
-http://api.natphoto.me/photos?park=Yellowstone%20National%20Park
-```
-
 ---?color=#96d9a4
 
 ## All
