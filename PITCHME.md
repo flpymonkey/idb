@@ -10,13 +10,15 @@
 
 ## Backend Team
 <br>
+![](./frontend/src/static/photos/ben.png)
 <div class="left">
-    <img class="BenPic" src="./frontend/src/static/photos/ben.png"><br>
-    <span>I DID STUFF</span>
+    <br>
+    I DID STUFF
 </div>
-<div class="left">
-    <img class="JeffPic" src="./frontend/src/static/photos/jeff.png"><br>
-    <span>I DID STUFF TOO</span>
+![](./frontend/src/static/photos/jeff.png)
+<div class="right">
+    <br>
+    I DID STUFF TOO
 </div>
 ---?color=#c7f9d2
 
