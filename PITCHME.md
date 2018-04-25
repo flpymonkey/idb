@@ -9,9 +9,11 @@
 ---?color=#c7f9d2
 
 ## Backend Team
-![](./frontend/src/static/photos/ben.png)| ![](./frontend/src/static/photos/jeff.png)
-:---------------------------------------:|:---------------------------------------:
-I DID STUFF                              | I DID STUFF TOO
+| ![](./frontend/src/static/photos/ben.png) | ![](./frontend/src/static/photos/jeff.png) |
+| -------- | -------- |
+|  Did this  | Did this    |
+|  and this  | and this    |
+|  plus this  | plus this    |
 ---?color=#c7f9d2
 
 ## Frontend Team
