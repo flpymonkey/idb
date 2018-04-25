@@ -26,6 +26,7 @@
 ---?color=#c7f9d2
 
 | Camera | Photo | Park |
+| -------- | -------- | -------- |
 | All cameras | All photos | All parks |
 | Detail | Detail | Detail |
 | By park | By park or camera | By camera |
