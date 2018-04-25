@@ -123,21 +123,10 @@ http.createServer(function (request, response) {
 
 ---?color=#96d9a4
 
-## Camera
-* All cameras
-* Camera details by name
-* Camera by park
-
-## Photo
-* All photos
-* Photo details by id
-* Photo by park
-* Photo by camera
-
-## Park
-* All parks
-* Park details by name
-* Park by cameras
+| Camera | Photo | Park |
+| All cameras | All photos | All parks |
+| Detail | Detail | Detail |
+| By park | By park or camera | By camera |
 
 ---?color=#96d9a4
 
