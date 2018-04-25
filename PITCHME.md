@@ -74,9 +74,11 @@ http://api.natphoto.me/all
 ---?color=#c7f9d2
 ## How we made the frontend
 - Create-react-app
+- React-router
 - React-strap Rows and Cols
 - Components
----?color=c7f9d2
+- npm
+---?color=#c7f9d2
 ```bash
 ├── frontend
 │   ├── source
@@ -98,6 +100,10 @@ http://api.natphoto.me/all
 ```
 ---?color=#c7f9d2
 ## Things that went well...
+- Meeting bi-weekly requirements |
+- Getting feedback from other teams |
+- Keeping consistent coding style |
+- Breaking down code into components |
 ---?color=#c7f9d2
 ## Things that didn't go well...
 ---?color=#c7f9d2
