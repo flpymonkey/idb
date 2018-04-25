@@ -28,6 +28,32 @@
 
 ---?color=#96d9a4
 
+## Overview
+---?color=#96d9a4
+## Backend Team
+---?color=#96d9a4
+## Frontend Team
+---?color=#96d9a4
+## API STUFFS
+---?color=#96d9a4
+## How we made the frontend
+---?color=#96d9a4
+## Things that went well...
+---?color=#96d9a4
+## Things that didn't go well...
+---?color=#96d9a4
+## What we learned
+---?color=#96d9a4
+## Things that puzzle us
+---?color=#96d9a4
+### TacoBoutAustin
+- Did well
+- Could do better
+- Learned
+- Puzzles us
+---?color=#96d9a4
+## Visualization
+---?color=#96d9a4
 ## Template Features
 
 - Code Presenting |
