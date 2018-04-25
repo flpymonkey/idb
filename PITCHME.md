@@ -73,11 +73,11 @@ http://api.natphoto.me/all
 ```
 ---?color=#c7f9d2
 ## How we made the frontend
-- Create-react-app
-- React-router
-- React-strap Rows and Cols
-- Components
-- npm
+- Create-react-app |
+- React-router |
+- React-strap Rows and Cols |
+- Components |
+- npm |
 ---?color=#c7f9d2
 ```bash
 ├── frontend
@@ -104,11 +104,25 @@ http://api.natphoto.me/all
 - Getting feedback from other teams |
 - Keeping consistent coding style |
 - Breaking down code into components |
+- Pair programming
 ---?color=#c7f9d2
+
 ## Things that didn't go well...
+- We didn't use branches |
+- Bri's commits :( |
+- Could not get multi-select dropdowns for filtering |
+- AWS charges |
+- Mocha testing |
 ---?color=#c7f9d2
+
 ## What we learned
+- React
+- Filtering on the frontend
+- Fetching
+- How to use AWS
+- Dockerized server
 ---?color=#c7f9d2
+
 ## Things that puzzle us
 ---?color=#c7f9d2
 ### TacoBoutAustin
