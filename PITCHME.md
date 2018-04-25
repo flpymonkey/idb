@@ -9,10 +9,13 @@
 ---?color=#c7f9d2
 
 ## Backend Team
-![](./frontend/src/static/photos/ben.png) ![](./frontend/src/static/photos/jeff.png)
+<img src="./frontend/src/static/photos/ben.png">
+<img src="./frontend/src/static/photos/jeff.png">
 ---?color=#c7f9d2
 
 ## Frontend Team
+
+![](./frontend/src/static/photos/tony.png) ![](./frontend/src/static/photos/dayanny.png)
 
 ---?color=#c7f9d2
 
