@@ -3,37 +3,26 @@
 # Natphoto
 
 ### SWEet Tea
-
----?color=#c7f9d2
-
-
-## Introduction
-
-
-
-<br>
-<div class="left">
-    <div>Backend</div>
-    <li>Jeff Bell</li>
-    <li>Ben Johnson</li>
-</div>
-<div class="right">
-    <div>Frontend</div>
-    <ul>
-        <li>Bri Vargas</li>
-        <li>Tony DeNapoli</li>
-        <li>Dayanny Caballero</li>
-    </ul>
-</div>
-
 ---?color=#c7f9d2
 
 ## Overview
 ---?color=#c7f9d2
+
 ## Backend Team
+<br>
+<div class="left">
+    <img class="BenPic" src="./frontend/src/static/photos/ben.png"><br>
+    <span>I DID STUFF</span>
+</div>
+<div class="left">
+    <img class="JeffPic" src="./frontend/src/static/photos/jeff.png"><br>
+    <span>I DID STUFF TOO</span>
+</div>
 ---?color=#c7f9d2
+
 ## Frontend Team
 ---?color=#c7f9d2
+
 ## Natphoto.me API
 
 ---?color=#c7f9d2
