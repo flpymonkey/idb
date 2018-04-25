@@ -1,10 +1,10 @@
 @title[Introduction]
----?color=#96d9a4
+---?color=#c7f9d2
 # Natphoto
 
 ### SWEet Tea
 
----?color=#96d9a4
+---?color=#c7f9d2
 
 
 ## Introduction
@@ -26,8 +26,84 @@
     </ul>
 </div>
 
----?color=#96d9a4
+---?color=#c7f9d2
 
+## Overview
+---?color=#c7f9d2
+## Backend Team
+---?color=#c7f9d2
+## Frontend Team
+---?color=#c7f9d2
+## Natphoto.me API
+
+---?color=#c7f9d2
+
+| Camera | Photo | Park |
+| All cameras | All photos | All parks |
+| Detail | Detail | Detail |
+| By park | By park or camera | By camera |
+
+---?color=#c7f9d2
+
+### Usage Examples
+
+Get a list of all cameras
+```
+http://api.natphoto.me/cameras
+```
+
+Get a list of all parks that are shot by a particular camera
+```
+http://api.natphoto.me/parks?camera=Canon%20EOS%2080D
+```
+
+Get the details for a specific photo
+```
+http://api.natphoto.me/photos/123
+```
+
+---?color=#c7f9d2
+
+## All
+
+Retrieve data from the `api.natphoto.me/all` endpoint in our API.
+
+### Request
+
+**GET** `/all`
+* Returns a list of all model instances in our database (all photos, cameras, and
+  parks)
+* Additional Parameters:
+  * None
+* Return Content-Type: application/json
+
+---?color=#c7f9d2
+
+### Usage Examples
+
+Get a list of all model instances in our database
+```
+http://api.natphoto.me/all
+```
+---?color=#c7f9d2
+## How we made the frontend
+---?color=#c7f9d2
+## Things that went well...
+---?color=#c7f9d2
+## Things that didn't go well...
+---?color=#c7f9d2
+## What we learned
+---?color=#c7f9d2
+## Things that puzzle us
+---?color=#c7f9d2
+### TacoBoutAustin
+- Did well
+- Could do better
+- Learned
+- Puzzles us
+---?color=#c7f9d2
+## Visualization
+---?color=#c7f9d2
 ## Template Features
 
 - Code Presenting |
@@ -117,59 +193,6 @@ http.createServer(function (request, response) {
     </ul>
 </div>
 
----?color=#96d9a4
-
-## Natphoto.me API
-
----?color=#96d9a4
-
-| Camera | Photo | Park |
-| All cameras | All photos | All parks |
-| Detail | Detail | Detail |
-| By park | By park or camera | By camera |
-
----?color=#96d9a4
-
-### Usage Examples
-
-Get a list of all cameras
-```
-http://api.natphoto.me/cameras
-```
-
-Get a list of all parks that are shot by a particular camera
-```
-http://api.natphoto.me/parks?camera=Canon%20EOS%2080D
-```
-
-Get the details for a specific photo
-```
-http://api.natphoto.me/photos/123
-```
-
----?color=#96d9a4
-
-## All
-
-Retrieve data from the `api.natphoto.me/all` endpoint in our API.
-
-### Request
-
-**GET** `/all`
-* Returns a list of all model instances in our database (all photos, cameras, and
-  parks)
-* Additional Parameters:
-  * None
-* Return Content-Type: application/json
-
----?color=#96d9a4
-
-### Usage Examples
-
-Get a list of all model instances in our database
-```
-http://api.natphoto.me/all
-```
 ---?color=#96d9a4
 
 ### Questions?
