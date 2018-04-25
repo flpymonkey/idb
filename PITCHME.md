@@ -9,14 +9,9 @@
 ---?color=#c7f9d2
 
 ## Backend Team
-@ol
-- ![](./frontend/src/static/photos/ben.png)
-- I DID STUFF
-@olend
-@ol
-- ![](./frontend/src/static/photos/jeff.png)
-- I DID STUFF
-@olend
+![](./frontend/src/static/photos/ben.png)| ![](./frontend/src/static/photos/jeff.png)
+:---------------------------------------:|:---------------------------------------:
+I DID STUFF                              | I DID STUFF TOO
 ---?color=#c7f9d2
 
 ## Frontend Team
