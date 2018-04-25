@@ -9,17 +9,14 @@
 ---?color=#c7f9d2
 
 ## Backend Team
-<br>
-<div class="left">
-    ![](./frontend/src/static/photos/ben.png)
-    <br>
-    I DID STUFF
-</div>
-<div class="right">
-    ![](./frontend/src/static/photos/jeff.png)
-    <br>
-    I DID STUFF TOO
-</div>
+@ol
+- ![](./frontend/src/static/photos/ben.png)
+- I DID STUFF
+@olend
+@ol
+- ![](./frontend/src/static/photos/jeff.png)
+- I DID STUFF
+@olend
 ---?color=#c7f9d2
 
 ## Frontend Team
