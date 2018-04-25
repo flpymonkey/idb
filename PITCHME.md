@@ -10,13 +10,13 @@
 
 ## Backend Team
 <br>
-![](./frontend/src/static/photos/ben.png)
 <div class="left">
+    ![](./frontend/src/static/photos/ben.png)
     <br>
     I DID STUFF
 </div>
-![](./frontend/src/static/photos/jeff.png)
 <div class="right">
+    ![](./frontend/src/static/photos/jeff.png)
     <br>
     I DID STUFF TOO
 </div>
