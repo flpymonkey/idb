@@ -123,23 +123,20 @@ http.createServer(function (request, response) {
 ---
 
 ## Camera
+* All cameras
+* Camera details by name
+* Camera by park
 
-Retrieve camera data from the natphoto.me API.
+## Photo
+* All photos
+* Photo details by id
+* Photo by park
+* Photo by camera
 
-### Requests
-
-**GET** `/cameras`
-* Returns a list of all cameras
-* Additional Parameters:
-  * park - The name of a national park used to filter the list
-* Return Content-Type: application/json
-
-**GET** `/cameras/<camera_name>`
-* Returns information about a specific camera
-* camera_name - The name of the camera for which to get details
-* Additional Parameters:
-  * none
-* Return Content-Type: application/json
+## Park
+* All parks
+* Park details by name
+* Park by cameras
 
 ---
 
@@ -150,95 +147,20 @@ Get a list of all cameras
 http://api.natphoto.me/cameras
 ```
 
-Get a list of all cameras that are used at a particular park
-```
-http://api.natphoto.me/cameras?park=Yellowstone%20National%20Park
-```
-
-Get the details for a specific camera
-```
-http://api.natphoto.me/cameras/Canon%20EOS%2080D
-```
-
----
-
-## National Park
-
-Retrieve national park data from the natphoto.me API.
-
-### Requests
-
-**GET** `/parks`
-* Returns a list of all parks
-* Additional Parameters:
-  * camera - The name of a camera used to filter the list
-* Return Content-Type: application/json
-
-**GET** `/park/park_name`
-* Returns information about a specific park
-* park_name - The name of the park for which to get details
-* Additional Parameters:
-  * none
-* Return Content-Type: application/json
-
----
-
-### Usage Examples
-
-Get a list of all parks
-```
-http://api.natphoto.me/parks
-```
-
 Get a list of all parks that are shot by a particular camera
 ```
 http://api.natphoto.me/parks?camera=Canon%20EOS%2080D
 ```
 
-Get the details for a specific park
-```
-http://api.natphoto.me/parks/Yellowstone%20National%20Park
-```
-
----
-
-## Photo
-
-Retrieve photo data from natphoto.me API.
-
-### Requests
-
-**GET** `/photos`
-* Returns a list of all photos
-* Additional Parameters:
-  * camera - The name of a camera used to filter the list
-  * park - The name of a park used to filter the list
-* Return Content-Type: application/json
-
-**GET** `/photo/photo_id`
-* Returns information about a specific photo
-* photo_id - The ID number of the photo for which to get details
-* Additional Parameters:
-  * none
-* Content-Type: application/json
-
----
-
-### Usage Examples
-
-Get a list of all photos
-```
-http://api.natphoto.me/photos
-```
-
-Get a list of all photos that are shot by a particular camera
-```
-http://api.natphoto.me/photos?camera=Canon%20EOS%2080D
-```
-
 Get the details for a specific photo
 ```
 http://api.natphoto.me/photos/123
+```
+
+Get a list of all photos of a particular park
+
+```
+http://api.natphoto.me/photos?park=Yellowstone%20National%20Park
 ```
 
 ---
