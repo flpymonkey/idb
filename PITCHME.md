@@ -4,7 +4,7 @@
 
 ### SWEet Tea
 
----?color=#96d9a4
+---?color=#c7f9d2
 
 
 ## Introduction
@@ -26,10 +26,10 @@
     </ul>
 </div>
 
----?color=#96d9a4
+---?color=#c7f9d2
 
 ## Overview
----?color=#96d9a4
+---?color=#c7f9d2
 ## Backend Team
 ---?color=#96d9a4
 ## Frontend Team
