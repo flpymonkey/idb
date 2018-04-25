@@ -78,28 +78,27 @@ http://api.natphoto.me/all
 ```
 ---?color=#c7f9d2
 ## How we made the frontend
-- Create-react-app |
-- React-router |
-- React-strap Rows and Cols |
-- Components |
-- npm |
+- Create-react-app
+- React-router
+- React-strap Rows and Cols
+- Components
+- npm
 ---?color=#c7f9d2
+
 ```bash
 ├── frontend
-│   ├── source
+│   ├── src
 │   │   ├── components
 │   │   │   ├── About.js
 │   │   │   ├── CameraDetailPage.js
 │   │   │   ├── CameraGrid.js
 │   │   │   ├── Carousel.js
-│   │   │   ├── DetailHeader.js
 │   │   │   ...
 │   │   └── stylesheets
 │   │   │   ├── About.css
 │   │   │   ├── CameraDetailPage.css
 │   │   │   ├── CameraGrid.css
 │   │   │   ├── Carousel.css
-│   │   │   ├── DetailHeader.css
 │   │   │   ...
 
 ```
@@ -109,7 +108,7 @@ http://api.natphoto.me/all
 - Getting feedback from other teams |
 - Keeping consistent coding style |
 - Breaking down code into components |
-- Pair programming
+- Pair programming |
 ---?color=#c7f9d2
 
 ## Things that didn't go well...
