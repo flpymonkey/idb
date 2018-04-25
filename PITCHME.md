@@ -9,14 +9,10 @@
 ---?color=#c7f9d2
 
 ## Backend Team
-<div>
-  <img src="./frontend/src/static/photos/ben.png">
-  <span>I DID STUFF</span>
-</div>
-<div>
-   <img src="./frontend/src/static/photos/jeff.png">
-   <span>I DID STUFF</span>
-</div>
+<img src="./frontend/src/static/photos/ben.png">
+<img src="./frontend/src/static/photos/jeff.png">
+| -------- | -------- | 
+| DID THINGS | ALSO DID THINGS |
 ---?color=#c7f9d2
 
 ## Frontend Team
