@@ -33,7 +33,6 @@ const Main = () => (
         <Route exact path="/cameras" component={CameraGrid} />
         <Route exact path="/about" component={About} />
         <Route exact path="/search" component={Search} />
-        <Route exact path="/visualization" component={Visualization} />
         <Route component={EmptyPage} />
       </Switch>
     </div>
