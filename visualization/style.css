@@ -1,5 +1,6 @@
 body {
   font: 10px sans-serif;
+  text-align: center;
 }
 
 .axis path,
@@ -61,10 +62,4 @@ body {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
-}
-
-.vis_elem {
-  margin: auto;
-  align-content: center;
-  align-items: center;
 }
