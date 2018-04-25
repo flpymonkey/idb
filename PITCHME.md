@@ -1,5 +1,5 @@
 @title[Introduction]
----?color=#96d9a4
+---?color=#c7f9d2
 # Natphoto
 
 ### SWEet Tea
@@ -31,19 +31,19 @@
 ## Overview
 ---?color=#c7f9d2
 ## Backend Team
----?color=#96d9a4
+---?color=#c7f9d2
 ## Frontend Team
----?color=#96d9a4
+---?color=#c7f9d2
 ## Natphoto.me API
 
----?color=#96d9a4
+---?color=#c7f9d2
 
 | Camera | Photo | Park |
 | All cameras | All photos | All parks |
 | Detail | Detail | Detail |
 | By park | By park or camera | By camera |
 
----?color=#96d9a4
+---?color=#c7f9d2
 
 ### Usage Examples
 
@@ -62,7 +62,7 @@ Get the details for a specific photo
 http://api.natphoto.me/photos/123
 ```
 
----?color=#96d9a4
+---?color=#c7f9d2
 
 ## All
 
@@ -77,7 +77,7 @@ Retrieve data from the `api.natphoto.me/all` endpoint in our API.
   * None
 * Return Content-Type: application/json
 
----?color=#96d9a4
+---?color=#c7f9d2
 
 ### Usage Examples
 
@@ -85,25 +85,25 @@ Get a list of all model instances in our database
 ```
 http://api.natphoto.me/all
 ```
----?color=#96d9a4
+---?color=#c7f9d2
 ## How we made the frontend
----?color=#96d9a4
+---?color=#c7f9d2
 ## Things that went well...
----?color=#96d9a4
+---?color=#c7f9d2
 ## Things that didn't go well...
----?color=#96d9a4
+---?color=#c7f9d2
 ## What we learned
----?color=#96d9a4
+---?color=#c7f9d2
 ## Things that puzzle us
----?color=#96d9a4
+---?color=#c7f9d2
 ### TacoBoutAustin
 - Did well
 - Could do better
 - Learned
 - Puzzles us
----?color=#96d9a4
+---?color=#c7f9d2
 ## Visualization
----?color=#96d9a4
+---?color=#c7f9d2
 ## Template Features
 
 - Code Presenting |
