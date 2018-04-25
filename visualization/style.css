@@ -62,3 +62,9 @@ body {
   top: 100%;
   left: 0;
 }
+
+.vis_elem {
+  margin: auto;
+  align-content: center;
+  align-items: center;
+}

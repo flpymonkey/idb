@@ -1,5 +1,5 @@
-var width = 800,
-    height = 800,
+var width = 500,
+    height = 500,
     radius = Math.min(width, height) / 2,
     innerRadius = 0.2 * radius;
 
@@ -17,7 +17,7 @@ var tip = d3.tip()
 var arc = d3.svg.arc()
   .innerRadius(innerRadius)
   .outerRadius(function (d) {
-    return (radius - innerRadius) * (d.data.score / 100.0) + innerRadius - 45;
+    return (radius - innerRadius) * (d.data.score / 100.0) + innerRadius - 30;
   });
 
 var outlineArc = d3.svg.arc()
