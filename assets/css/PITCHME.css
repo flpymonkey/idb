@@ -5,6 +5,15 @@
  * https://github.com/gitpitch/gitpitch/wiki/Slideshow-Custom-CSS
  */
 
+body {
+  background: #333;
+  background-color: #333;
+}
+
+.reveal {
+  color: #eaeaea;
+}
+
 .reveal pre {
   width: 100%;
   box-shadow : none;
