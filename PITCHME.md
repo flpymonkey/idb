@@ -9,8 +9,8 @@
 ---?color=#c7f9d2
 
 ## Backend Team
-<img src="./frontend/src/static/photos/ben.png">
-<img src="./frontend/src/static/photos/jeff.png">
+<img width=50% src="./frontend/src/static/photos/ben.png">
+<img width=50% src="./frontend/src/static/photos/jeff.png">
 
 | Ben Johnson | Jeff Bell |
 | -------- | -------- |
@@ -20,7 +20,9 @@
 
 ## Frontend Team
 
-![](./frontend/src/static/photos/tony.png) ![](./frontend/src/static/photos/dayanny.png)
+<img width=33% src="./frontend/src/static/photos/tony.png">
+<img width=33% src="./frontend/src/static/photos/dayanny.png">
+<img width=33% src="./frontend/src/static/photos/bri.png">
 
 ---?color=#c7f9d2
 
@@ -63,6 +65,10 @@ http://api.natphoto.me/all
 ```
 
 ---?color=#c7f9d2
+
+## Slide on API implementation goes here!
+
+---?color=#c7f9d2
 ## How we made the frontend
 - Create-react-app
 - React-router
@@ -91,6 +97,7 @@ http://api.natphoto.me/all
 ---?color=#c7f9d2
 ## Things that went well...
 - Meeting bi-weekly requirements |
+- Postman |
 - Getting feedback from other teams |
 - Keeping consistent coding style |
 - Breaking down code into components |
@@ -98,7 +105,7 @@ http://api.natphoto.me/all
 ---?color=#c7f9d2
 
 ## Things that didn't go well...
-- We didn't use branches |
+- We could have used more branches |
 - Bri's commits :( |
 - Could not get multi-select dropdowns for filtering |
 - AWS charges |
