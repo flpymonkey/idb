@@ -217,6 +217,12 @@ class TeamStats extends Component {
             <span className="teamStatsInfo">{this.props.totalUnitTests}</span>
           </Col>
         </Row>
+        <br />
+        <Row>
+          <a href="http://jhbell.com/visualization/visualization.html" target="_blank">
+          Visualization of tacoboutaustin.me!
+          </a>
+        </Row>
       </Col>
     );
   }
