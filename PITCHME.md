@@ -296,5 +296,3 @@ http://natphoto.me
 ---
 
 # Questions?
-
----
