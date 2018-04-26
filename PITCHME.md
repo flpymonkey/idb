@@ -8,7 +8,7 @@
 ## Overview
 ---?color=#c7f9d2
 ## Backend Team
-<img src="./frontend/src/static/photos/jeff.png">
+<img width = 30% src="./frontend/src/static/photos/jeff.png">
 
 | Jeff Bell |
 | -------- |
@@ -16,7 +16,7 @@
 
 ---?color=#c7f9d2
 ## Backend Team
-<img src="./frontend/src/static/photos/ben.png">
+<img width = 30% src="./frontend/src/static/photos/ben.png">
 
 | Ben Johnson |
 | -------- |
@@ -25,7 +25,7 @@
 ---?color=#c7f9d2
 
 ## Frontend Team
-<img src="./frontend/src/static/photos/tony.png">
+<img width = 30% src="./frontend/src/static/photos/tony.png">
 
 | Tony DeNapoli |
 | -------- |
@@ -34,7 +34,7 @@
 ---?color=#c7f9d2
 
 ## Frontend Team
-<img src="./frontend/src/static/photos/dayanny.png">
+<img width = 30% src="./frontend/src/static/photos/dayanny.png">
 
 | Dayanny Caballero |
 | -------- |
@@ -43,7 +43,7 @@
 ---?color=#c7f9d2
 
 ## Frontend Team
-<img src="./frontend/src/static/photos/bri.png">
+<img width = 30% src="./frontend/src/static/photos/bri.png">
 
 | Bri Vargas |
 | -------- |
