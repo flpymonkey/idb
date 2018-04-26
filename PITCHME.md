@@ -1,54 +1,64 @@
 @title[Introduction]
+
 # Natphoto
 
 ### SWEet Tea
----?color=#c7f9d2
 
-## Overview
----?color=#c7f9d2
+---
+
+# Overview
+
+---
+
 ## Backend Team
+
 <img width = 30% src="./frontend/src/static/photos/jeff.png">
 
 | Jeff Bell |
 | -------- |
 | Server, AWS, API, Searching, Sorting, Styling |
 
----?color=#c7f9d2
+---
+
 ## Backend Team
+
 <img width = 30% src="./frontend/src/static/photos/ben.png">
 
 | Ben Johnson |
 | -------- |
 | API, AWS, Searching, Routing, Styling |
 
----?color=#c7f9d2
+---
 
 ## Frontend Team
+
 <img width = 30% src="./frontend/src/static/photos/tony.png">
 
 | Tony DeNapoli |
 | -------- |
 | Sorting, Filtering, Design, React, Styling |
 
----?color=#c7f9d2
+---
 
 ## Frontend Team
+
 <img width = 30% src="./frontend/src/static/photos/dayanny.png">
 
 | Dayanny Caballero |
 | -------- |
 | Sorting, Filtering, Design, React, Styling |
 
----?color=#c7f9d2
+---
 
 ## Frontend Team
+
 <img width = 30% src="./frontend/src/static/photos/bri.png">
 
 | Bri Vargas |
 | -------- |
 | Sorting, Filtering, Design, React, Styling |
 
----?color=#c7f9d2
+---
 
 # Backend
 
@@ -88,21 +98,20 @@ COPY ./backend /app
 ## Building and Running with Docker
 
 Build the docker server
-```
+```bash
 docker build -t natphoto -f Dockerfile.web .
 ```
 
 Run the server as a daemon
-```
+```bash
 docker run -d --name natphoto_run --restart=always -p 80:80 -t natphoto
 ```
 
 ---
 
+# Natphoto.me API
 
-## Natphoto.me API
-
----?color=#c7f9d2
+---
 
 | Camera | Photo | Park |
 | -------- | -------- | -------- |
@@ -110,7 +119,7 @@ docker run -d --name natphoto_run --restart=always -p 80:80 -t natphoto
 | Detail | Detail | Detail |
 | By park | By park or camera | By camera |
 
----?color=#c7f9d2
+---
 
 ### Usage Examples
 
@@ -129,7 +138,7 @@ Get a list of all photos taken in Yellowstone with the Canon EOS 5D Mark III
 http://api.natphoto.me/photos?park=Yellowstone%20National%20Park&camera=Canon%20EOS%205D%20Mark%20III
 ```
 
----?color=#c7f9d2
+---
 
 ## All
 
@@ -138,14 +147,17 @@ Retrieve data from the `api.natphoto.me/all` endpoint in our API.
 http://api.natphoto.me/all
 ```
 
----?color=#c7f9d2
+---
+
 ## How we made the frontend
+
 - Create-react-app
 - React-router
 - React-strap Rows and Cols
 - Components
 - npm
----?color=#c7f9d2
+
+---
 
 ```bash
 ├── frontend
@@ -164,41 +176,53 @@ http://api.natphoto.me/all
 │   │   │   ...
 
 ```
----?color=#c7f9d2
+
+---
+
 ## Things that went well...
+
 - Meeting bi-weekly requirements |
 - Postman |
 - Getting feedback from other teams |
 - Keeping consistent coding style |
 - Breaking down code into components |
 - Pair programming |
----?color=#c7f9d2
+
+---
 
 ## Things that didn't go well...
+
 - We could have used more branches |
 - Bri's commits :( |
 - Could not get multi-select dropdowns for filtering |
 - AWS charges |
 - Mocha testing |
----?color=#c7f9d2
+
+---
 
 ## What we learned
+
 - React
 - Filtering on the frontend
 - Fetching
 - How to use AWS
 - Dockerized server
----?color=#c7f9d2
+
+---
 
 ## Things that puzzle us
+
 - Differences in browsers (Safari, Firefox) |
 - More professional styling and features |
----?color=#c7f9d2
 
-### TacoBoutAustin
----?color=#c7f9d2
+---
 
-## Did well
+# TacoBoutAustin
+
+---
+
+## What They Did Well
+
 - Taco theme
   - Ratings
   - Loading
@@ -207,25 +231,37 @@ http://api.natphoto.me/all
 - Seperate tabs for searching different models
 - Concept
 - Filtering
----?color=#c7f9d2
 
-## Could do better
+---
+
+## What They Could do better
+
 - "Rating of at least"
 - Unclear what the user is filtering by
 - Inconsistent font sizing across site
----?color=#c7f9d2
 
-## Learned
+---
+
+## What We Learned
+
 Grid Cards
 PUT IMAGES
----?color=#c7f9d2
+
+---
+
 ## Puzzles us
+
 - Not using fetch to hit API
 - XML fetches
----?color=#c7f9d2
-## Visualization
 
----?color=#c7f9d2
-### Questions?
+---
 
-<br>
+# Demo and Visualization
+
+[natphoto.me][http://natphoto.me]
+
+---
+
+# Questions?
+
+---
