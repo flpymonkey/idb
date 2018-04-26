@@ -149,7 +149,11 @@ http://api.natphoto.me/all
 
 ---
 
-## How we made the frontend
+# Frontend
+
+---
+
+## How We Made the Frontend
 
 - Create-react-app
 - React-router
@@ -176,6 +180,34 @@ http://api.natphoto.me/all
 │   │   │   ...
 
 ```
+
+---
+
+# Testing
+
+---
+
+## Backend Testing
+
+<img src="./assets/images/backend.png" />
+
+---
+
+## API Testing
+
+<img src="./assets/images/postman.png" />
+
+---
+
+## Frontend Testing
+
+<img src="./assets/images/frontend.png" />
+
+---
+
+## GUI Testing
+
+<img src="./assets/images/frontend.png" />
 
 ---
 
@@ -258,7 +290,7 @@ PUT IMAGES
 
 # Demo and Visualization
 
-[natphoto.me][http://natphoto.me]
+http://natphoto.me
 
 ---
 
