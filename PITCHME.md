@@ -207,7 +207,7 @@ http://api.natphoto.me/all
 
 ## GUI Testing
 
-<img src="./assets/image/frontend.png" />
+<img src="./assets/image/selenium.png" />
 
 ---
 
