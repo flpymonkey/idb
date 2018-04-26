@@ -9,8 +9,8 @@
 ---?color=#c7f9d2
 
 ## Backend Team
-<img width=50% src="./frontend/src/static/photos/ben.png">
-<img width=50% src="./frontend/src/static/photos/jeff.png">
+<img width=10% src="./frontend/src/static/photos/ben.png">
+<img width=10% src="./frontend/src/static/photos/jeff.png">
 
 | Ben Johnson | Jeff Bell |
 | -------- | -------- |
@@ -20,9 +20,9 @@
 
 ## Frontend Team
 
-<img width=33% src="./frontend/src/static/photos/tony.png">
-<img width=33% src="./frontend/src/static/photos/dayanny.png">
-<img width=33% src="./frontend/src/static/photos/bri.png">
+<img width=10% src="./frontend/src/static/photos/tony.png">
+<img width=10% src="./frontend/src/static/photos/dayanny.png">
+<img width=10% src="./frontend/src/static/photos/bri.png">
 
 ---?color=#c7f9d2
 
