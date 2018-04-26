@@ -219,7 +219,7 @@ class TeamStats extends Component {
         </Row>
         <br />
         <Row>
-          <a href="http://jhbell.com/visualization/visualization.html" target="_blank">
+          <a href="http://jhbell.com/visualization/visualization.html" target="_blank" rel="noopener noreferrer">
           Visualization of tacoboutaustin.me!
           </a>
         </Row>
