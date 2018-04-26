@@ -7,14 +7,20 @@
 
 ## Overview
 ---?color=#c7f9d2
-
 ## Backend Team
-<img width=30% src="./frontend/src/static/photos/ben.png">
 <img width=30% src="./frontend/src/static/photos/jeff.png">
 
-| Ben Johnson | Jeff Bell |
-| -------- | -------- |
-| DID THINGS | ALSO DID THINGS |
+| Jeff Bell |
+| -------- |
+| Server, AWS, API, Searching, Sorting, Styling |
+
+---?color=#c7f9d2
+## Backend Team
+<img width=30% src="./frontend/src/static/photos/ben.png">
+
+| Ben Johnson |
+| -------- |
+| API, AWS, Searching, Routing, Styling |
 
 ---?color=#c7f9d2
 
@@ -63,10 +69,6 @@ Retrieve data from the `api.natphoto.me/all` endpoint in our API.
 ```
 http://api.natphoto.me/all
 ```
-
----?color=#c7f9d2
-
-## Slide on API implementation goes here!
 
 ---?color=#c7f9d2
 ## How we made the frontend
