@@ -1,5 +1,4 @@
 @title[Introduction]
----?color=#c7f9d2
 # Natphoto
 
 ### SWEet Tea
@@ -50,6 +49,56 @@
 | Sorting, Filtering, Design, React, Styling |
 
 ---?color=#c7f9d2
+
+# Backend
+
+---
+
+## Backend Tools
+
+- EC2 -- API server
+- S3 -- React static hosting
+- Route53 -- Nameservers
+- RDS -- Database Hosting
+- PostgreSQL -- Database
+- Docker -- Server container
+- tiangolo/uwsgi-nginx-flask/ -- Baseline docker image
+
+---
+
+## The API Server
+
+EC2 instance running docker container
+```
+FROM tiangolo/uwsgi-nginx-flask:python3.6
+
+RUN pwd
+
+# Copy in the current files
+COPY ./requirements.txt /app/requirements.txt
+
+# Install the required files for the app
+RUN pip install -r requirements.txt
+
+COPY ./backend /app
+```
+
+---
+
+## Building and Running with Docker
+
+Build the docker server
+```
+docker build -t natphoto -f Dockerfile.web .
+```
+
+Run the server as a daemon
+```
+docker run -d --name natphoto_run --restart=always -p 80:80 -t natphoto
+```
+
+---
+
 
 ## Natphoto.me API
 
