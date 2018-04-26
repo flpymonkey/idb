@@ -189,25 +189,25 @@ http://api.natphoto.me/all
 
 ## Backend Testing
 
-<img src="./assets/images/backend.png" />
+<img src="./assets/image/backend.png" />
 
 ---
 
 ## API Testing
 
-<img src="./assets/images/postman.png" />
+<img src="./assets/image/postman.png" />
 
 ---
 
 ## Frontend Testing
 
-<img src="./assets/images/frontend.png" />
+<img src="./assets/image/frontend.png" />
 
 ---
 
 ## GUI Testing
 
-<img src="./assets/images/frontend.png" />
+<img src="./assets/image/frontend.png" />
 
 ---
 
