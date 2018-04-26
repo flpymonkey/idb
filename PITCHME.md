@@ -13,7 +13,7 @@
 <img src="./frontend/src/static/photos/jeff.png">
 
 | Ben Johnson | Jeff Bell |
-| -------- | -------- | 
+| -------- | -------- |
 | DID THINGS | ALSO DID THINGS |
 
 ---?color=#c7f9d2
@@ -38,14 +38,9 @@
 
 ### Usage Examples
 
-Get a list of all cameras
-```
-http://api.natphoto.me/cameras
-```
-
 Get a list of all parks that are shot by a particular camera
 ```
-http://api.natphoto.me/parks?camera=Canon%20EOS%2080D
+http://api.natphoto.me/parks?camera=<camera name>
 ```
 
 Get the details for a specific photo
@@ -53,29 +48,20 @@ Get the details for a specific photo
 http://api.natphoto.me/photos/123
 ```
 
+Get a list of all photos taken in Yellowstone with the Canon EOS 5D Mark III
+```
+http://api.natphoto.me/photos?park=Yellowstone%20National%20Park&camera=Canon%20EOS%205D%20Mark%20III
+```
+
 ---?color=#c7f9d2
 
 ## All
 
 Retrieve data from the `api.natphoto.me/all` endpoint in our API.
-
-### Request
-
-**GET** `/all`
-* Returns a list of all model instances in our database (all photos, cameras, and
-  parks)
-* Additional Parameters:
-  * None
-* Return Content-Type: application/json
-
----?color=#c7f9d2
-
-### Usage Examples
-
-Get a list of all model instances in our database
 ```
 http://api.natphoto.me/all
 ```
+
 ---?color=#c7f9d2
 ## How we made the frontend
 - Create-react-app
