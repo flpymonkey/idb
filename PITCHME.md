@@ -277,7 +277,7 @@ http://api.natphoto.me/all
 ## What We Learned
 
 Grid Cards
-<img src="./assets/image/card.PNG" />
+<img width=20% src="./assets/image/card.PNG" />
 
 ---
 
