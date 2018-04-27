@@ -56,7 +56,7 @@
 
 | Bri Vargas |
 | -------- |
-| Sorting, Filtering, Design, React, Styling |
+| Home Page, About Page, Searching, Design, React, Overall Styling |
 
 ---
 
