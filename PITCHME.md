@@ -213,22 +213,22 @@ http://api.natphoto.me/all
 
 ## Things that went well...
 
-- Meeting bi-weekly requirements |
-- Postman |
-- Getting feedback from other teams |
-- Keeping consistent coding style |
-- Breaking down code into components |
-- Pair programming |
+- Meeting bi-weekly requirements 
+- Postman 
+- Getting feedback from other teams 
+- Keeping consistent coding style 
+- Breaking down code into components 
+- Pair programming 
 
 ---
 
 ## Things that didn't go well...
 
-- We could have used more branches |
-- Bri's commits :( |
-- Could not get multi-select dropdowns for filtering |
-- AWS charges |
-- Mocha testing |
+- We could have used more branches 
+- Bri's commits :( 
+- Could not get multi-select dropdowns for filtering 
+- AWS charges 
+- Mocha testing 
 
 ---
 
@@ -244,8 +244,8 @@ http://api.natphoto.me/all
 
 ## Things that puzzle us
 
-- Differences in browsers (Safari, Firefox) |
-- More professional styling and features |
+- Differences in browsers (Safari, Firefox) 
+- More professional styling and features 
 
 ---
 
