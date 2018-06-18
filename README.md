@@ -1,5 +1,7 @@
 # NatPhoto.me
 
+[![Build Status](https://travis-ci.org/flpymonkey/idb.svg?branch=master)](https://travis-ci.org/flpymonkey/idb)
+
 There is a lot that goes into a photograph. Natphoto.me shows off the  
 beautiful United States National Parks while giving you an inside look at the  
 lens that took the photo. The project connects cameras, photos  
